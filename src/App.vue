@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-large">
+  <div>
     <LoadIn
       v-if="!contentLoaded && !this.$router.resolve(this.$route.path).route.meta.NoLoadIn && firstVisit == true"
       :contentLoaded="contentLoaded"

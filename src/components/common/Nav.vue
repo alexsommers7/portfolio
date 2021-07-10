@@ -38,6 +38,7 @@ export default {
   data() {
     return {
       timeline: gsap.timeline(),
+      mobileNavHeightHalf: `${75 / 2}px`,
     };
   },
   props: {
@@ -45,27 +46,37 @@ export default {
   },
   methods: {
     toggleNav() {
-      this.$el.querySelector("nav").classList.contains("open") ? this.closeNav() : this.openNav();
+      let nav = this.$el.querySelector("nav");
+      nav.classList.contains("open") ? this.closeNav() : this.openNav();
+      nav.classList.toggle("open");
     },
     openNav() {
+      document.body.classList.add("no-scroll");
       this.onMobile
-        ? this.timeline.fromTo(".navigation__list", { top: "-100%" }, { top: "0", duration: 0.5, ease: "power4.out" })
+        ? this.timeline.fromTo(
+            ".navigation__list",
+            { top: "-100%" },
+            { top: this.mobileNavHeightHalf, duration: 0.6, ease: "power4.in" }
+          )
         : this.timeline.fromTo(
             ".navigation__list",
             { left: "-100%" },
             { left: "95px", duration: 0.5, ease: "expo.out" }
           );
-      this.$el.querySelector("nav").classList.add("open");
     },
     closeNav() {
+      document.body.classList.remove("no-scroll");
       this.onMobile
-        ? this.timeline.fromTo(".navigation__list", { top: "0" }, { top: "-100%", duration: 0.5, ease: "power4.out" })
+        ? this.timeline.fromTo(
+            ".navigation__list",
+            { top: this.mobileNavHeightHalf },
+            { top: "-100%", duration: 0.6, ease: "power4.out" }
+          )
         : this.timeline.fromTo(
             ".navigation__list",
             { left: "95px" },
             { left: "-100%", duration: 0.5, ease: "expo.in" }
           );
-      this.$el.querySelector("nav").classList.remove("open");
     },
     scrollToTop() {
       let currentPage = window.location.pathname;
@@ -101,7 +112,7 @@ a.skip-link {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -237,8 +248,7 @@ header {
     position: fixed;
     top: -100%;
     left: 0;
-    height: 100vh; // fallback for browsers w/o custom properties
-    height: calc(100% - #{$nav-mobile-height});
+    height: 100%;
     overflow-y: auto;
     width: 100vw;
     list-style: none;
@@ -252,7 +262,6 @@ header {
     text-align: center;
     z-index: -1;
     font-weight: 700;
-    transform: translateY($nav-mobile-height); // nav height
     transition: visibility 1s, height 0.8s;
 
     @include respond(desk-small) {
@@ -260,7 +269,6 @@ header {
       left: $nav-desktop-width;
       height: 100vh;
       width: calc(100% - (#{$nav-desktop-width} * 2));
-      transform: translateY(0);
       flex-direction: column;
       flex-wrap: nowrap;
     }
@@ -272,7 +280,6 @@ header {
       opacity: 0;
       background-color: $color-background;
       border-bottom: 2px solid $color-primary;
-      transform: translateY(calc(#{$nav-mobile-height} / -2)); // -nav height / 2
       transition: all 0.3s;
 
       @include respond(desk-small) {

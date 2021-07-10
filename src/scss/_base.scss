@@ -84,26 +84,23 @@ a:focus {
 }
 
 // Layout
-.grid-large {
+main,
+footer {
   @include respond(desk-small) {
-    display: grid;
-    grid-template-columns: $nav-desktop-width 1fr $nav-desktop-width;
-    grid-template-rows: 1fr $nav-desktop-width;
+    padding: 0 $nav-desktop-width;
   }
 }
-main,
-header,
-aside {
+main {
+  padding-top: $nav-mobile-height;
+
   @include respond(desk-small) {
-    grid-row: 1 / span 1;
+    padding-top: 0;
   }
 }
 footer {
   min-height: $nav-mobile-height;
 
   @include respond(desk-small) {
-    grid-row: 2 / span 1;
-    grid-column: 2 / span 1;
-    min-height: none;
+    min-height: $nav-desktop-width;
   }
 }
