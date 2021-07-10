@@ -20,11 +20,11 @@
         <span class="navigation__hamburger navigation__hamburger--2"></span>
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
-      <ul class="navigation__list">
-        <li><a href="/#projects" class="js-nav-link" data-section-name="projects" @click="toggleNav">PROJECTS</a></li>
-        <li><a href="/#resume" class="js-nav-link" data-section-name="resume" @click="toggleNav">RESUME</a></li>
-        <li><a href="/#toolbox" class="js-nav-link" data-section-name="toolbox" @click="toggleNav">TOOLBOX</a></li>
-        <li><a href="/#contact" class="js-nav-link" data-section-name="contact" @click="toggleNav">CONTACT</a></li>
+      <ul class="navigation__list" @click="closeNav">
+        <li><a href="/#projects" class="js-nav-link" data-section-name="projects">PROJECTS</a></li>
+        <li><a href="/#resume" class="js-nav-link" data-section-name="resume">RESUME</a></li>
+        <li><a href="/#toolbox" class="js-nav-link" data-section-name="toolbox">TOOLBOX</a></li>
+        <li><a href="/#contact" class="js-nav-link" data-section-name="contact">CONTACT</a></li>
       </ul>
     </nav>
   </header>
@@ -36,24 +36,36 @@ import { gsap } from "gsap";
 export default {
   name: "Nav",
   data() {
-    return {};
+    return {
+      timeline: gsap.timeline(),
+    };
   },
   props: {
     onMobile: Boolean,
   },
   methods: {
     toggleNav() {
-      let timeline = gsap.timeline();
-      if (this.onMobile) {
-        this.$el.querySelector("nav").classList.contains("open")
-          ? timeline.to(".navigation__list", { duration: 0.6, top: "100%", ease: "back.in(1)" })
-          : timeline.to(".navigation__list", { duration: 0.6, top: "0", ease: "back.out(1)" });
-      } else {
-        this.$el.querySelector("nav").classList.contains("open")
-          ? timeline.to(".navigation__list", { duration: 0.5, left: "-100%", ease: "expo.in" })
-          : timeline.to(".navigation__list", { duration: 0.5, left: "95px", ease: "expo.out" });
-      }
-      this.$el.querySelector("nav").classList.toggle("open");
+      this.$el.querySelector("nav").classList.contains("open") ? this.closeNav() : this.openNav();
+    },
+    openNav() {
+      this.onMobile
+        ? this.timeline.fromTo(".navigation__list", { top: "-100%" }, { top: "0", duration: 0.5, ease: "power4.out" })
+        : this.timeline.fromTo(
+            ".navigation__list",
+            { left: "-100%" },
+            { left: "95px", duration: 0.5, ease: "expo.out" }
+          );
+      this.$el.querySelector("nav").classList.add("open");
+    },
+    closeNav() {
+      this.onMobile
+        ? this.timeline.fromTo(".navigation__list", { top: "0" }, { top: "-100%", duration: 0.5, ease: "power4.out" })
+        : this.timeline.fromTo(
+            ".navigation__list",
+            { left: "95px" },
+            { left: "-100%", duration: 0.5, ease: "expo.in" }
+          );
+      this.$el.querySelector("nav").classList.remove("open");
     },
     scrollToTop() {
       let currentPage = window.location.pathname;
@@ -222,11 +234,13 @@ header {
 
   &__list {
     visibility: hidden;
-    top: 100%;
     position: fixed;
-    height: 100%;
-    width: 100vw;
+    top: -100%;
     left: 0;
+    height: 100vh; // fallback for browsers w/o custom properties
+    height: calc(100% - #{$nav-mobile-height});
+    overflow-y: auto;
+    width: 100vw;
     list-style: none;
     z-index: 40;
     background-color: $color-background-light;
@@ -243,7 +257,7 @@ header {
 
     @include respond(desk-small) {
       top: 0;
-      left: -100%;
+      left: $nav-desktop-width;
       height: 100vh;
       width: calc(100% - (#{$nav-desktop-width} * 2));
       transform: translateY(0);
