@@ -68,18 +68,7 @@ export default {
       });
     },
     checkScreenSize() {
-      let nav = document.querySelector("nav.navigation");
-      let navList = document.querySelector(".navigation__list");
       this.onMobile = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200;
-      if (this.onMobile) {
-        navList.style.top = "100%";
-        navList.style.left = "0";
-        nav.style.width = "100%";
-      } else {
-        navList.style.top = "0";
-        navList.style.left = "-100%";
-        nav.style.width = "95px";
-      }
     },
     onHideLoadIn() {
       // need to keep loadIn component but set opacity to 0

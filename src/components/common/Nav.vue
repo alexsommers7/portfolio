@@ -38,8 +38,18 @@ export default {
   data() {
     return {
       timeline: gsap.timeline(),
-      mobileNavHeightHalf: `${75 / 2}px`,
+      mobileNavHeight: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-mobile-height")),
+      desktopNavWidth: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-desktop-width")),
+      scrollbarWidth: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--scrollbar-width")),
     };
+  },
+  computed: {
+    mobileNavHeightHalf: function() {
+      return `${this.mobileNavHeight / 2}px`;
+    },
+    desktopNavWidthWithScrollbar: function() {
+      return `${this.desktopNavWidth - this.scrollbarWidth}px`;
+    },
   },
   props: {
     onMobile: Boolean,
@@ -61,7 +71,7 @@ export default {
         : this.timeline.fromTo(
             ".navigation__list",
             { left: "-100%" },
-            { left: "95px", duration: 0.5, ease: "expo.out" }
+            { left: this.desktopNavWidthWithScrollbar, duration: 0.5, ease: "expo.out" }
           );
     },
     closeNav() {
@@ -74,13 +84,29 @@ export default {
           )
         : this.timeline.fromTo(
             ".navigation__list",
-            { left: "95px" },
+            { left: this.desktopNavWidthWithScrollbar },
             { left: "-100%", duration: 0.5, ease: "expo.in" }
           );
     },
     scrollToTop() {
       let currentPage = window.location.pathname;
       currentPage == "/" ? window.scrollTo({ top: 0, behavior: "smooth" }) : (window.location.href = "/");
+    },
+  },
+  watch: {
+    onMobile: {
+      handler: function() {
+        let nav = document.querySelector("nav.navigation");
+        let navList = document.querySelector(".navigation__list");
+        if (this.onMobile) {
+          navList.style.left = "0";
+          navList.style.top = "-100%";
+        } else {
+          navList.style.left = "-100%";
+          navList.style.top = "0";
+        }
+        if (nav.classList.contains("open")) nav.classList.remove("open");
+      },
     },
   },
 };
@@ -116,12 +142,12 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: $nav-mobile-height;
+  height: var(--nav-mobile-height);
   z-index: 50;
 
   @include respond(desk-small) {
     height: 100vh;
-    width: $nav-desktop-width;
+    width: var(--nav-desktop-width);
   }
 }
 
@@ -262,13 +288,13 @@ header {
     text-align: center;
     z-index: -1;
     font-weight: 700;
-    transition: visibility 1s, height 0.8s;
+    transition: visibility 1s;
 
     @include respond(desk-small) {
       top: 0;
-      left: $nav-desktop-width;
+      left: var(--nav-desktop-width);
       height: 100vh;
-      width: calc(100% - (#{$nav-desktop-width} * 2));
+      width: calc(100% - (var(--nav-desktop-width) * 2));
       flex-direction: column;
       flex-wrap: nowrap;
     }
@@ -284,7 +310,6 @@ header {
 
       @include respond(desk-small) {
         flex-basis: auto;
-        transform: translateY(0);
         font-size: 3.5rem;
         width: 30%;
       }
@@ -293,8 +318,12 @@ header {
         margin: 2rem auto;
       }
 
+      @media all and (max-height: 550px) {
+        flex: 0 0 43%;
+      }
+
       &:hover {
-        transform: translate(1rem, calc(#{$nav-mobile-height} / -2));
+        transform: translateX(1rem);
         border-bottom: 2px solid transparent;
 
         @include respond(desk-small) {

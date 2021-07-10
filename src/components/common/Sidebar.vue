@@ -192,7 +192,8 @@ export default {
 @import "../../scss/_variables";
 
 .no-scroll .sidebar {
-  margin-right: $scrollbar-width;
+  // prevent slight jump when scrollbar goes in/out
+  margin-right: var(--scrollbar-width);
 }
 
 .sidebar {
@@ -204,7 +205,7 @@ export default {
     right: 0;
     display: flex;
     flex-direction: column;
-    width: $nav-desktop-width;
+    width: var(--nav-desktop-width);
     transform: scale(1);
     transform-origin: top;
     height: Max(100vh, 500px); // make sure to capitalize Max or it will run as SCSS function

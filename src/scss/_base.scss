@@ -24,7 +24,7 @@ body {
 
   &::-webkit-scrollbar {
     background-color: $color-background-light;
-    width: $scrollbar-width;
+    width: var(--scrollbar-width);
   }
 
   &::-webkit-scrollbar-thumb {
@@ -87,20 +87,20 @@ a:focus {
 main,
 footer {
   @include respond(desk-small) {
-    padding: 0 $nav-desktop-width;
+    padding: 0 var(--nav-desktop-width);
   }
 }
 main {
-  padding-top: $nav-mobile-height;
+  padding-top: var(--nav-mobile-height);
 
   @include respond(desk-small) {
     padding-top: 0;
   }
 }
 footer {
-  min-height: $nav-mobile-height;
+  min-height: var(--nav-mobile-height);
 
   @include respond(desk-small) {
-    min-height: $nav-desktop-width;
+    min-height: var(--nav-desktop-width);
   }
 }
