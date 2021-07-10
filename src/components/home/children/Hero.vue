@@ -29,7 +29,8 @@ export default {
 
 section.hero {
   padding: 0 1rem;
-  min-height: calc(100vh - #{$nav-mobile-height});
+  // min-height: calc(100vh - #{$nav-mobile-height});
+  min-height: calc(calc(100vh - calc(100vh - 100%)) - #{$nav-mobile-height}); // safari vh bug fix
   display: grid;
   grid-template-rows: 1fr 318px;
   overflow: hidden;
