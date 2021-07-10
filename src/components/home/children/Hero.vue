@@ -46,6 +46,10 @@ section.hero {
     grid-template-columns: minmax(450px, 45%) minmax(350px, 40%);
   }
 
+  @include respond(desk-xlarge) {
+    grid-template-columns: minmax(450px, 33%) minmax(350px, 40%);
+  }
+
   .intro {
     text-align: center;
     padding: 15% 0;

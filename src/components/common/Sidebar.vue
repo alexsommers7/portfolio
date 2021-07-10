@@ -191,6 +191,10 @@ export default {
 @import "../../scss/_mixins";
 @import "../../scss/_variables";
 
+.no-scroll .sidebar {
+  margin-right: $scrollbar-width;
+}
+
 .sidebar {
   display: none;
 

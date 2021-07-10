@@ -20,7 +20,7 @@
         <span class="navigation__hamburger navigation__hamburger--2"></span>
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
-      <ul class="navigation__list" @click="closeNav">
+      <ul class="navigation__list" @click="toggleNav">
         <li><a href="/#projects" class="js-nav-link" data-section-name="projects">PROJECTS</a></li>
         <li><a href="/#resume" class="js-nav-link" data-section-name="resume">RESUME</a></li>
         <li><a href="/#toolbox" class="js-nav-link" data-section-name="toolbox">TOOLBOX</a></li>
@@ -56,7 +56,7 @@ export default {
         ? this.timeline.fromTo(
             ".navigation__list",
             { top: "-100%" },
-            { top: this.mobileNavHeightHalf, duration: 0.6, ease: "power4.in" }
+            { top: this.mobileNavHeightHalf, duration: 0.6, ease: "power2.in" }
           )
         : this.timeline.fromTo(
             ".navigation__list",
@@ -70,7 +70,7 @@ export default {
         ? this.timeline.fromTo(
             ".navigation__list",
             { top: this.mobileNavHeightHalf },
-            { top: "-100%", duration: 0.6, ease: "power4.out" }
+            { top: "-100%", duration: 0.6, ease: "power2.out" }
           )
         : this.timeline.fromTo(
             ".navigation__list",

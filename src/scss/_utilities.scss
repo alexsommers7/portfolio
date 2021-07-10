@@ -21,9 +21,7 @@
   word-wrap: normal !important;
 }
 .no-scroll {
-  position: fixed;
-  top: 0;
-  left: 0;
+  overflow: hidden;
 }
 .invisible {
   opacity: 0;
