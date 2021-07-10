@@ -1,0 +1,109 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+::selection {
+  background: $color-highlight;
+  color: $color-highlight-text;
+}
+
+body {
+  font-weight: $font-weight-default;
+  line-height: 1.6;
+  color: $color-text-light;
+  background-color: $color-background;
+  overflow-x: hidden;
+  overflow-y: scroll; // prevent slight layout shift when introducing content below the fold
+
+  &::-webkit-scrollbar {
+    background-color: $color-background-light;
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-text-light;
+  }
+
+  &.using-mouse .tab-focus {
+    outline: none;
+  }
+}
+
+body * {
+  // for prefers-reduced-motion
+  @include motionless {
+    transition: all 0s !important;
+    animation: none !important;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-main;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  transition: all 1s;
+}
+
+section {
+  padding: 3rem 1rem;
+
+  &:not(#load-in) {
+    position: relative;
+  }
+}
+
+// Zurb Foundation overrides
+.row {
+  max-width: 1920px;
+}
+a:hover,
+a:active,
+a:focus {
+  color: $color-text-light;
+}
+
+// Layout
+.grid-large {
+  @include respond(desk-small) {
+    display: grid;
+    grid-template-columns: $nav-desktop-width 1fr $nav-desktop-width;
+    grid-template-rows: 1fr $nav-desktop-width;
+  }
+}
+main,
+header,
+aside {
+  @include respond(desk-small) {
+    grid-row: 1 / span 1;
+  }
+}
+footer {
+  min-height: $nav-mobile-height;
+
+  @include respond(desk-small) {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+    min-height: none;
+  }
+}

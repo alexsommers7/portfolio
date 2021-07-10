@@ -1,0 +1,78 @@
+.ie-message {
+  display: none !important;
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    top: 0;
+    left: 0;
+    background-color: $color-background;
+    z-index: 999;
+
+    .modal {
+      background-color: $color-background-light;
+      width: 75%;
+      min-height: 75%;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &__text {
+        width: 70%;
+
+        p {
+          margin-bottom: 1rem;
+        }
+      }
+
+      &__heading {
+        font-size: 3rem;
+        text-align: center;
+      }
+
+      &__downloads {
+        .download {
+          margin: 2rem 0;
+
+          a {
+            display: flex;
+            align-items: center;
+            color: $color-primary;
+            transition: color 0.2s;
+            max-width: 15rem;
+
+            &:hover {
+              color: rgba($color-primary, 0.8);
+            }
+          }
+        }
+
+        svg {
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-right: 1rem;
+        }
+      }
+
+      &__edge {
+        text-align: center;
+
+        p {
+          margin: 1rem 0 0.5rem;
+        }
+
+        button {
+          padding: 0.5rem 2rem;
+          width: 33%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

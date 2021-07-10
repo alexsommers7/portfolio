@@ -1,0 +1,64 @@
+.btn {
+  font-family: $font-family-main;
+  font-size: clamp(0.5rem, calc(-0.875rem + 8.333vw), 1.4rem);
+  width: 100%;
+  padding: 0.75rem 2rem;
+  text-align: center;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  border: 1px solid $color-primary;
+  border-radius: $design-border-radius-default;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $color-primary;
+    color: $color-text-dark;
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $color-primary;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: rgba($color-primary, 0.85);
+    color: $color-text-dark;
+  }
+}
+
+.heading {
+  line-height: 1;
+
+  &--1 {
+    font-size: clamp(3rem, calc(-0.875rem + 8.333vw), 6rem);
+    font-weight: 300;
+    color: $color-primary;
+  }
+
+  &--2 {
+    font-size: clamp(2rem, calc(-0.875rem + 8.333vw), 3rem);
+    font-weight: 300;
+  }
+
+  &--3 {
+    // mobile section headers
+    font-size: clamp(3rem, calc(-0.875rem + 8.333vw), 6rem);
+    font-weight: 700;
+    color: $color-background-light;
+
+    &.hide-for-large {
+      @include respond(desk-small) {
+        display: none !important;
+      }
+    }
+  }
+}
+
+p {
+  font-size: clamp(1rem, calc(-0.875rem + 8.333vw), 1.6rem);
+  margin-bottom: 1rem;
+}

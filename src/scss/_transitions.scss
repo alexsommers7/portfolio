@@ -1,0 +1,40 @@
+// Custom Animations
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Vue Transition Classes
+.fade-y-enter-active {
+  transition: all 0.75s;
+  transform-origin: center;
+
+  @include respond(desk-small) {
+    transform-origin: top;
+  }
+}
+.fade-y-enter,
+.fade-y-leave-to {
+  opacity: 0;
+  transform: scaleY(0);
+}
+.fade-y-enter-to,
+.fade-y-leave {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.fade-scale-enter,
+.fade-scale-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+}
+.fade-scale-enter-to,
+.fade-scale-leave {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
