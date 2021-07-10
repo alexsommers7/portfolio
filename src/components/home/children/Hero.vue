@@ -57,7 +57,11 @@ section.hero {
     }
 
     .heading--2 {
-      padding: 1rem 0 2.75rem;
+      padding: 1.25rem 0;
+
+      @include respond(desk-small) {
+        padding: 1rem 0 2.75rem;
+      }
     }
 
     &__buttons {
