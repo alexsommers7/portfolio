@@ -29,8 +29,6 @@ export default {
 
 section.hero {
   padding: 0 1rem;
-  // min-height: calc(100vh - #{$nav-mobile-height});
-  min-height: calc(calc(100vh - calc(100vh - 100%)) - #{$nav-mobile-height}); // safari vh bug fix
   display: grid;
   grid-template-rows: 1fr 318px;
   overflow: hidden;
@@ -50,10 +48,14 @@ section.hero {
 
   .intro {
     text-align: center;
-    padding: 20% 0;
+    padding: 15% 0;
 
     @include respond(tab-land) {
       text-align: left;
+    }
+
+    @include respond(desk-small) {
+      padding: 20% 0;
     }
 
     .heading--2 {
