@@ -46,8 +46,8 @@ export default {
       let timeline = gsap.timeline();
       if (this.onMobile) {
         this.$el.querySelector("nav").classList.contains("open")
-          ? timeline.to(".navigation__list", { duration: 0.6, top: "100%", ease: "back.in(2.2)" })
-          : timeline.to(".navigation__list", { duration: 0.6, top: "0", ease: "back.out(2.2)" });
+          ? timeline.to(".navigation__list", { duration: 0.6, top: "100%", ease: "back.in(1)" })
+          : timeline.to(".navigation__list", { duration: 0.6, top: "0", ease: "back.out(1)" });
       } else {
         this.$el.querySelector("nav").classList.contains("open")
           ? timeline.to(".navigation__list", { duration: 0.5, left: "-100%", ease: "expo.in" })
@@ -224,7 +224,7 @@ header {
     visibility: hidden;
     top: 100%;
     position: fixed;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     left: 0;
     list-style: none;
@@ -244,6 +244,7 @@ header {
     @include respond(desk-small) {
       top: 0;
       left: -100%;
+      height: 100vh;
       width: calc(100% - (#{$nav-desktop-width} * 2));
       transform: translateY(0);
       flex-direction: column;
@@ -253,7 +254,7 @@ header {
     li {
       flex: 0 0 75%;
       margin: 1rem auto;
-      font-size: 3rem;
+      font-size: 2.5rem;
       opacity: 0;
       background-color: $color-background;
       border-bottom: 2px solid $color-primary;
@@ -264,7 +265,6 @@ header {
         flex-basis: auto;
         transform: translateY(0);
         font-size: 3.5rem;
-        margin: 1rem auto;
         width: 30%;
       }
 
