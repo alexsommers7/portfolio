@@ -38,9 +38,11 @@ export default {
   data() {
     return {
       timeline: gsap.timeline(),
-      mobileNavHeight: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-mobile-height")),
-      desktopNavWidth: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--nav-desktop-width")),
-      scrollbarWidth: parseInt(getComputedStyle(document.documentElement).getPropertyValue("--scrollbar-width")),
+      navElement: "",
+      navListElement: "",
+      mobileNavHeight: this.getCustomProperty("--nav-mobile-height"),
+      desktopNavWidth: this.getCustomProperty("--nav-desktop-width"),
+      scrollbarWidth: this.getCustomProperty("--scrollbar-width"),
     };
   },
   computed: {
@@ -62,50 +64,63 @@ export default {
     },
     openNav() {
       document.body.classList.add("no-scroll");
+      let fadeInDelay = this.onMobile ? 0.5 : 0.2;
       this.onMobile
         ? this.timeline.fromTo(
-            ".navigation__list",
+            this.navList,
             { top: "-100%" },
             { top: this.mobileNavHeightHalf, duration: 0.6, ease: "power2.in" }
           )
         : this.timeline.fromTo(
-            ".navigation__list",
+            this.navList,
             { left: "-100%" },
             { left: this.desktopNavWidthWithScrollbar, duration: 0.5, ease: "expo.out" }
           );
+      this.timeline.fromTo(
+        ".navigation__list > li",
+        { opacity: 0 },
+        { opacity: 1, delay: fadeInDelay, duration: 0.2, stagger: 0.125 },
+        "<"
+      );
+    },
+    getCustomProperty(propertyName) {
+      return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
     },
     closeNav() {
       document.body.classList.remove("no-scroll");
       this.onMobile
         ? this.timeline.fromTo(
-            ".navigation__list",
+            this.navList,
             { top: this.mobileNavHeightHalf },
             { top: "-100%", duration: 0.6, ease: "power2.out" }
           )
         : this.timeline.fromTo(
-            ".navigation__list",
+            this.navList,
             { left: this.desktopNavWidthWithScrollbar },
             { left: "-100%", duration: 0.5, ease: "expo.in" }
           );
+      this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
     scrollToTop() {
       let currentPage = window.location.pathname;
       currentPage == "/" ? window.scrollTo({ top: 0, behavior: "smooth" }) : (window.location.href = "/");
     },
   },
+  mounted() {
+    this.nav = document.querySelector("nav.navigation");
+    this.navList = document.querySelector(".navigation__list");
+  },
   watch: {
     onMobile: {
       handler: function() {
-        let nav = document.querySelector("nav.navigation");
-        let navList = document.querySelector(".navigation__list");
         if (this.onMobile) {
-          navList.style.left = "0";
-          navList.style.top = "-100%";
+          this.navList.style.left = "0";
+          this.navList.style.top = "-100%";
         } else {
-          navList.style.left = "-100%";
-          navList.style.top = "0";
+          this.navList.style.left = "-100%";
+          this.navList.style.top = "0";
         }
-        if (nav.classList.contains("open")) nav.classList.remove("open");
+        if (this.nav.classList.contains("open")) this.nav.classList.remove("open");
       },
     },
   },
