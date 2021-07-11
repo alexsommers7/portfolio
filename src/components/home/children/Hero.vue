@@ -115,7 +115,45 @@ section.hero {
       left: 0;
       z-index: 20;
       transform: translateY(30%);
-      background-image: linear-gradient(180deg, rgba(18, 18, 18, 0) 1%, $color-background 30%);
+      // background-image: linear-gradient(180deg, rgba(18, 18, 18, 0) 1%, $color-background 30%);
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#121212+1,272727+57,272727+62&0+1,1+49 */
+      background: -moz-linear-gradient(
+        top,
+        rgba(18, 18, 18, 0) 1%,
+        rgba(36, 36, 36, 1) 49%,
+        rgba(39, 39, 39, 1) 57%,
+        rgba(39, 39, 39, 1) 62%
+      ); /* FF3.6-15 */
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(1%, rgba(18, 18, 18, 0)),
+        color-stop(49%, rgba(36, 36, 36, 1)),
+        color-stop(57%, rgba(39, 39, 39, 1)),
+        color-stop(62%, rgba(39, 39, 39, 1))
+      ); /* Chrome4-9,Safari4-5 */
+      background: -webkit-linear-gradient(
+        top,
+        rgba(18, 18, 18, 0) 1%,
+        rgba(36, 36, 36, 1) 49%,
+        rgba(39, 39, 39, 1) 57%,
+        rgba(39, 39, 39, 1) 62%
+      ); /* Chrome10-25,Safari5.1-6 */
+      background: -o-linear-gradient(
+        top,
+        rgba(18, 18, 18, 0) 1%,
+        rgba(36, 36, 36, 1) 49%,
+        rgba(39, 39, 39, 1) 57%,
+        rgba(39, 39, 39, 1) 62%
+      ); /* Opera 11.10-11.50 */
+      background: linear-gradient(
+        to bottom,
+        rgba(18, 18, 18, 0) 1%,
+        rgba(36, 36, 36, 1) 49%,
+        rgba(39, 39, 39, 1) 57%,
+        rgba(39, 39, 39, 1) 62%
+      ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
 
     .photo {
