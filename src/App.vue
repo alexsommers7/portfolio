@@ -15,7 +15,7 @@
       </main>
     </transition>
     <Sidebar :observerTargets="observerTargets" :onMobile="onMobile" :noScrollArrow="noScrollArrow"></Sidebar>
-    <Footer></Footer>
+    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0"><Footer></Footer></transition>
     <IE></IE>
   </div>
 </template>
