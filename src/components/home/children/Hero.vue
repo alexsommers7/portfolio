@@ -112,10 +112,10 @@ section.hero {
       height: 20%;
       position: absolute;
       bottom: 0;
-      left: 50%;
+      left: 0;
       z-index: 20;
-      transform: translate(-50%, 30%);
-      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0), $color-background 30%);
+      transform: translateY(30%);
+      background-image: linear-gradient(180deg, rgba(18, 18, 18, 0) 1%, $color-background 30%);
     }
 
     .photo {
