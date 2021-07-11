@@ -143,6 +143,7 @@ export default {
       &--2 {
         background-color: $color-background;
         z-index: 40;
+        height: 98%; // fixing bug where gold was peaking out
       }
     }
 
