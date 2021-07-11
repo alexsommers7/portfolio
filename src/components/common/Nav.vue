@@ -77,7 +77,7 @@ export default {
       this.timeline.fromTo(
         ".navigation__list > li",
         { opacity: 0 },
-        { opacity: 1, delay: 0.2, duration: 0.2, stagger: 0.1 },
+        { opacity: 1, delay: 0.2, duration: 0.15, stagger: 0.05 },
         "<"
       );
       this.timeline.add(function() {
