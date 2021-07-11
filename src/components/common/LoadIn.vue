@@ -56,7 +56,7 @@ export default {
       opacity: 0,
       transform: "translateY(-4rem)",
     });
-    timeline.from("#hero figure", { duration: 0.75, opacity: 0 });
+    timeline.from("#hero figure", { duration: 0.8, opacity: 0, delay: 0.4 });
   },
   methods: {
     onHideLoadIn() {

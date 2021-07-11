@@ -63,12 +63,11 @@ export default {
       nav.classList.toggle("open");
     },
     openNav() {
-      let fadeInDelay = this.onMobile ? 0.5 : 0.2;
       this.onMobile
         ? this.timeline.fromTo(
             this.navList,
             { top: "-100%" },
-            { top: this.mobileNavHeightHalf, duration: 0.75, ease: "power2.in" }
+            { top: this.mobileNavHeightHalf, duration: 0.4, ease: "power1.out" }
           )
         : this.timeline.fromTo(
             this.navList,
@@ -78,7 +77,7 @@ export default {
       this.timeline.fromTo(
         ".navigation__list > li",
         { opacity: 0 },
-        { opacity: 1, delay: fadeInDelay, duration: 0.2, stagger: 0.125 },
+        { opacity: 1, delay: 0.2, duration: 0.2, stagger: 0.125 },
         "<"
       );
       this.timeline.add(function() {
@@ -95,7 +94,7 @@ export default {
         ? this.timeline.fromTo(
             this.navList,
             { top: this.mobileNavHeightHalf },
-            { top: "-100%", duration: 0.75, ease: "power2.out" }
+            { top: "-100%", duration: 0.75, ease: "power4.out" }
           )
         : this.timeline.fromTo(
             this.navList,
@@ -120,9 +119,11 @@ export default {
         if (this.onMobile) {
           this.navList.style.left = "0";
           this.navList.style.top = "-100%";
+          this.nav.style.width = "100%";
         } else {
           this.navList.style.left = "-100%";
           this.navList.style.top = "0";
+          this.nav.style.width = this.desktopNavWidth;
         }
         if (this.nav.classList.contains("open")) {
           this.nav.classList.remove("open");
