@@ -63,18 +63,17 @@ export default {
       nav.classList.toggle("open");
     },
     openNav() {
-      document.body.classList.add("no-scroll");
       let fadeInDelay = this.onMobile ? 0.5 : 0.2;
       this.onMobile
         ? this.timeline.fromTo(
             this.navList,
             { top: "-100%" },
-            { top: this.mobileNavHeightHalf, duration: 0.6, ease: "power2.in" }
+            { top: this.mobileNavHeightHalf, duration: 0.75, ease: "power2.in" }
           )
         : this.timeline.fromTo(
             this.navList,
             { left: "-100%" },
-            { left: this.desktopNavWidthWithScrollbar, duration: 0.5, ease: "expo.out" }
+            { left: this.desktopNavWidthWithScrollbar, duration: 0.4, ease: "circ.out" }
           );
       this.timeline.fromTo(
         ".navigation__list > li",
@@ -82,6 +81,10 @@ export default {
         { opacity: 1, delay: fadeInDelay, duration: 0.2, stagger: 0.125 },
         "<"
       );
+      this.timeline.add(function() {
+        // prevent slight twitch on main content
+        document.body.classList.add("no-scroll");
+      }, "<+.4");
     },
     getCustomProperty(propertyName) {
       return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
@@ -92,12 +95,12 @@ export default {
         ? this.timeline.fromTo(
             this.navList,
             { top: this.mobileNavHeightHalf },
-            { top: "-100%", duration: 0.6, ease: "power2.out" }
+            { top: "-100%", duration: 0.75, ease: "power2.out" }
           )
         : this.timeline.fromTo(
             this.navList,
             { left: this.desktopNavWidthWithScrollbar },
-            { left: "-100%", duration: 0.5, ease: "expo.in" }
+            { left: "-100%", duration: 0.5, ease: "circ.out" }
           );
       this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
@@ -113,6 +116,7 @@ export default {
   watch: {
     onMobile: {
       handler: function() {
+        let navListItems = document.querySelectorAll(".navigation__list > li");
         if (this.onMobile) {
           this.navList.style.left = "0";
           this.navList.style.top = "-100%";
@@ -120,7 +124,11 @@ export default {
           this.navList.style.left = "-100%";
           this.navList.style.top = "0";
         }
-        if (this.nav.classList.contains("open")) this.nav.classList.remove("open");
+        if (this.nav.classList.contains("open")) {
+          this.nav.classList.remove("open");
+          document.body.classList.remove("no-scroll");
+          navListItems.forEach((item) => (item.style.opacity = 0));
+        }
       },
     },
   },
