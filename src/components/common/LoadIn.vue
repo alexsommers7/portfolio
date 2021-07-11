@@ -13,7 +13,15 @@
         >
         <div class="wrapper__cliff"></div>
       </strong>
-      <div class="wrapper__steamroller wrapper__steamroller--1"></div>
+      <div class="wrapper__steamroller wrapper__steamroller--1">
+        <svg class="load__logo" viewBox="0 0 125 105.4">
+          <polygon class="cls-1" points="62.5 6.47 23.46 49.34 101.54 49.34 62.5 6.47" />
+          <polygon class="cls-1" points="62.5 99.62 101.54 56.75 23.46 56.75 62.5 99.62" />
+          <polygon class="cls-1" points="62.5 25.63 40.9 49.34 84.1 49.34 62.5 25.63" />
+          <polygon class="cls-1" points="62.5 80.47 84.1 56.75 40.9 56.75 62.5 80.47" />
+          <line class="cls-1" x1="62.5" y1="25.63" x2="62.5" y2="80.47" />
+        </svg>
+      </div>
       <div class="wrapper__steamroller wrapper__steamroller--2"></div>
     </div>
   </section>
@@ -34,7 +42,8 @@ export default {
     timeline.from(introContent, { duration: 0.9, opacity: 0, y: 150, stagger: 0.2, ease: "back.out(1.7)" });
     timeline.to(".wrapper__dot", { duration: 0.25, opacity: 0 }, "+=1.25");
     timeline.to(introContent, { duration: 0.3, opacity: 0, y: 150, stagger: 0.1 }, "+=0.15");
-    timeline.to(".wrapper__steamroller", { duration: 0.45, width: "100%", stagger: 0.3, ease: "expo.out" });
+    timeline.to(".wrapper__steamroller", { duration: 0.75, width: "100%", stagger: 0.75, ease: "expo.out" });
+    timeline.from(".wrapper__steamroller svg", { duration: 0.4, opacity: 0 }, "<+.2");
     timeline.add(this.onHideLoadIn);
     timeline.from("nav.navigation", { duration: 0.5, width: 0, opacity: 0, ease: "expo.out" });
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
@@ -124,6 +133,7 @@ export default {
       left: 0;
       width: 0;
       height: 100%;
+      transform: skew(-20deg);
 
       &--1 {
         background-color: $color-primary;
@@ -156,5 +166,20 @@ export default {
       }
     }
   }
+}
+
+.load__logo {
+  width: 75%;
+  height: 75%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) skew(20deg);
+}
+.cls-1 {
+  fill: none;
+  stroke: $color-background-light;
+  stroke-miterlimit: 10;
+  stroke-width: 2px;
 }
 </style>
