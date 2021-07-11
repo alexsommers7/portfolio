@@ -47,7 +47,7 @@ export default {
       opacity: 0,
       transform: "translateX(-4rem)",
     });
-    timeline.from("#hero .photo", { duration: 0.3, opacity: 0, ease: "expo.out" });
+    timeline.from("#hero figure", { duration: 0.5, opacity: 0, ease: "expo.out" });
   },
   methods: {
     onHideLoadIn() {

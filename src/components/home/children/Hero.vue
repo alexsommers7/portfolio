@@ -115,7 +115,6 @@ section.hero {
       left: 0;
       z-index: 20;
       transform: translateY(30%);
-      // background-image: linear-gradient(180deg, rgba(18, 18, 18, 0) 1%, $color-background 30%);
       /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#121212+1,272727+57,272727+62&0+1,1+49 */
       background: -moz-linear-gradient(
         top,

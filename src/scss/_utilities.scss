@@ -23,6 +23,19 @@
 .no-scroll {
   overflow: hidden;
 }
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.opacity-0 {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.opacity-1 {
+  opacity: 1;
+}
 .invisible {
   opacity: 0;
   visibility: hidden;

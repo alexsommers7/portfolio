@@ -9,9 +9,11 @@
       :class="[seeThroughLoadIn ? 'invisible' : 'visible']"
     ></LoadIn>
     <Nav :onMobile="onMobile"></Nav>
-    <main id="main">
-      <router-view></router-view>
-    </main>
+    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
+      <main id="main">
+        <router-view></router-view>
+      </main>
+    </transition>
     <Sidebar :observerTargets="observerTargets" :onMobile="onMobile" :noScrollArrow="noScrollArrow"></Sidebar>
     <Footer></Footer>
     <IE></IE>
@@ -41,7 +43,7 @@ export default {
   methods: {
     finishIntro() {
       this.firstVisit = false;
-      document.body.classList.remove("no-scroll");
+      document.body.classList.remove("loading");
       sessionStorage.setItem("firstVisit", false);
     },
     addSmoothScroll() {
