@@ -14,7 +14,7 @@
         <div class="wrapper__cliff"></div>
       </strong>
       <div class="wrapper__steamroller wrapper__steamroller--1">
-        <svg class="load__logo" viewBox="0 0 125 105.4">
+        <svg class="logo" viewBox="0 0 125 105.4">
           <polygon class="cls-1" points="62.5 6.47 23.46 49.34 101.54 49.34 62.5 6.47" />
           <polygon class="cls-1" points="62.5 99.62 101.54 56.75 23.46 56.75 62.5 99.62" />
           <polygon class="cls-1" points="62.5 25.63 40.9 49.34 84.1 49.34 62.5 25.63" />
@@ -42,7 +42,7 @@ export default {
     timeline.from(introContent, { duration: 0.9, opacity: 0, y: 150, stagger: 0.2, ease: "back.out(1.7)" });
     timeline.to(".wrapper__dot", { duration: 0.25, opacity: 0 }, "+=1.25");
     timeline.to(introContent, { duration: 0.3, opacity: 0, y: 150, stagger: 0.1 }, "+=0.15");
-    timeline.to(".wrapper__steamroller", { duration: 0.75, width: "100%", stagger: 0.75, ease: "expo.out" });
+    timeline.to(".wrapper__steamroller", { duration: 0.75, width: "105%", stagger: 0.75, ease: "expo.out" });
     timeline.from(".wrapper__steamroller svg", { duration: 0.4, opacity: 0 }, "<+.2");
     timeline.add(this.onHideLoadIn);
     timeline.from("nav.navigation", { duration: 0.5, width: 0, opacity: 0, ease: "expo.out" });
@@ -57,6 +57,7 @@ export default {
       transform: "translateY(-4rem)",
     });
     timeline.from("#hero figure", { duration: 0.8, opacity: 0, delay: 0.4 });
+    timeline.from("#about", { duration: 0.8, opacity: 0 }, "<");
   },
   methods: {
     onHideLoadIn() {
@@ -143,7 +144,23 @@ export default {
       &--2 {
         background-color: $color-background;
         z-index: 40;
-        height: 99%; // fixing bug where gold was peaking out
+        height: 100%;
+      }
+
+      .logo {
+        width: 75%;
+        height: 75%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) skew(20deg);
+      }
+
+      .cls-1 {
+        fill: none;
+        stroke: $color-background-light;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
       }
     }
 
@@ -167,20 +184,5 @@ export default {
       }
     }
   }
-}
-
-.load__logo {
-  width: 75%;
-  height: 75%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) skew(20deg);
-}
-.cls-1 {
-  fill: none;
-  stroke: $color-background-light;
-  stroke-miterlimit: 10;
-  stroke-width: 2px;
 }
 </style>

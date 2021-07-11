@@ -31,9 +31,10 @@ section.hero {
   padding: 0 1rem;
   display: grid;
   grid-gap: 2rem;
+  max-width: 100%;
 
   @include respond(tab-land) {
-    min-height: 100vh;
+    height: Min(100vh, 1080px);
     grid-template-columns: minmax(450px, 60%) minmax(350px, 30%);
     align-items: center;
     justify-content: center;
@@ -85,7 +86,6 @@ section.hero {
       a {
         width: 45%;
         max-width: 10rem;
-        text-decoration: none;
         padding: 0.5rem 0.8rem;
         height: 100%;
 
@@ -104,6 +104,7 @@ section.hero {
   figure {
     margin: 0;
     position: relative;
+    max-width: 900px;
 
     &::after {
       content: "";

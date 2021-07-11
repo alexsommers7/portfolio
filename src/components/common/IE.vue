@@ -10,7 +10,7 @@
         <p>Please download one of these alternatives to proceed:</p>
         <div class="modal__downloads">
           <div class="download">
-            <a href="https://www.microsoft.com/en-us/edge" target="_blank">
+            <a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">
               <svg
                 height="2500"
                 width="2500"
@@ -129,7 +129,7 @@
             >
           </div>
           <div class="download">
-            <a href="https://www.google.com/chrome/" target="_blank">
+            <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">
               <svg xmlns="http://www.w3.org/2000/svg" width="2491" height="2500" viewBox="0 0 435.816 437.46">
                 <path
                   d="M217.341.039s128.478-5.783 196.57 123.337H206.416s-39.188-1.289-72.593 46.255c-9.634 19.916-19.91 40.473-8.349 80.937C108.773 222.309 36.823 97.04 36.823 97.04S87.578 5.176 217.341.039z"
@@ -180,7 +180,7 @@
             >
           </div>
           <div class="download">
-            <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">
+            <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="noopener">
               <svg
                 viewBox="-4.502953659537916 -1.816370980454367 85.1080168931947 83.43087708452362"
                 xmlns="http://www.w3.org/2000/svg"

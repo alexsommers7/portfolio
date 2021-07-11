@@ -83,7 +83,7 @@ export default {
       this.timeline.add(function() {
         // prevent slight twitch on main content
         document.body.classList.add("no-scroll");
-      }, "<+.4");
+      }, "<+.3");
     },
     getCustomProperty(propertyName) {
       return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
@@ -165,7 +165,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: var(--nav-mobile-height);
   z-index: 50;
 
