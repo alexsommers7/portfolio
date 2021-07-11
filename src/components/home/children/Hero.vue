@@ -30,12 +30,10 @@ export default {
 section.hero {
   padding: 0 1rem;
   display: grid;
-  grid-template-rows: 1fr 318px;
-  overflow: hidden;
+  grid-gap: 2rem;
 
   @include respond(tab-land) {
     min-height: 100vh;
-    grid-template-rows: 1fr;
     grid-template-columns: minmax(450px, 60%) minmax(350px, 30%);
     align-items: center;
     justify-content: center;
@@ -122,9 +120,7 @@ section.hero {
 
     .photo {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+      height: auto;
     }
   }
 }
