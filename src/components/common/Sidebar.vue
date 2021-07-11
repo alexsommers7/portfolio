@@ -199,6 +199,7 @@ export default {
 
 .sidebar {
   display: none;
+  transition: all 0.15s;
 
   @include respond(desk-small) {
     position: fixed;

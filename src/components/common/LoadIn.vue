@@ -34,20 +34,20 @@ export default {
     timeline.from(introContent, { duration: 0.9, opacity: 0, y: 150, stagger: 0.2, ease: "back.out(1.7)" });
     timeline.to(".wrapper__dot", { duration: 0.25, opacity: 0 }, "+=1.25");
     timeline.to(introContent, { duration: 0.3, opacity: 0, y: 150, stagger: 0.1 }, "+=0.15");
-    timeline.to(".wrapper__steamroller", { duration: 0.8, width: "100%", stagger: 0.3, ease: "expo.out" });
+    timeline.to(".wrapper__steamroller", { duration: 0.45, width: "100%", stagger: 0.3, ease: "expo.out" });
     timeline.add(this.onHideLoadIn);
     timeline.from("nav.navigation", { duration: 0.5, width: 0, opacity: 0, ease: "expo.out" });
     if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
-      timeline.from(".sidebar", { duration: 0.75, transform: "scaleY(0)", opacity: 0, ease: "expo.out" }, "<");
+      timeline.from(".sidebar", { duration: 0.5, width: 0, opacity: 0, ease: "expo.out" }, "<");
       timeline.from(".sidebar svg", { duration: 0.5, opacity: 0, stagger: 0.15, ease: "expo.out" }, "<");
     }
     timeline.from("#hero > .intro", { duration: 0.5, opacity: 0 });
     timeline.from("#hero > .intro > .heading--2", {
       duration: 0.5,
       opacity: 0,
-      transform: "translateX(-4rem)",
+      transform: "translateY(-4rem)",
     });
-    timeline.from("#hero figure", { duration: 0.5, opacity: 0, ease: "expo.out" });
+    timeline.from("#hero figure", { duration: 0.75, opacity: 0 });
   },
   methods: {
     onHideLoadIn() {
@@ -91,10 +91,8 @@ export default {
 }
 
 .wrapper.loading {
-  overflow: hidden;
-
   .wrapper__content {
-    height: 101vh;
+    height: 100vh;
     width: 100vw;
     position: absolute;
     top: 0;
