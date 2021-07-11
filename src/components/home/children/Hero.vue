@@ -36,18 +36,18 @@ section.hero {
   @include respond(tab-land) {
     min-height: 100vh;
     grid-template-rows: 1fr;
-    grid-template-columns: minmax(450px, 60%) minmax(350px, 33%);
+    grid-template-columns: minmax(450px, 60%) minmax(350px, 30%);
     align-items: center;
     justify-content: center;
     padding: 0 4rem;
   }
 
   @include respond(desk-medium) {
-    grid-template-columns: minmax(450px, 45%) minmax(350px, 40%);
+    grid-template-columns: minmax(450px, 45%) minmax(350px, 30%);
   }
 
   @include respond(desk-xlarge) {
-    grid-template-columns: minmax(450px, 33%) minmax(350px, 40%);
+    grid-template-columns: minmax(450px, 40%) minmax(350px, 35%);
   }
 
   .intro {
@@ -110,14 +110,14 @@ section.hero {
     &::after {
       content: "";
       display: block;
-      width: 86%;
-      height: 30%;
+      width: 100%;
+      height: 20%;
       position: absolute;
       bottom: 0;
       left: 50%;
       z-index: 20;
       transform: translate(-50%, 30%);
-      background-image: linear-gradient(180deg, rgba(18, 18, 18, 0) 1%, $color-background 37%);
+      background-image: linear-gradient(180deg, rgba(18, 18, 18, 0) 1%, $color-background 30%);
     }
 
     .photo {
