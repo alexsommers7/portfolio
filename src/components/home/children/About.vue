@@ -1,5 +1,5 @@
 <template>
-  <section class="track about" data-section="About" id="about">
+  <section class="track about" data-section="About">
     <span class="anchor-span" id="about"></span>
     <div class="about__intro">
       <h3 class="heading heading--3 hide-for-large">ABOUT ME</h3>
@@ -67,7 +67,10 @@ export default {
 @import "../../../scss/_variables";
 
 .about {
+  margin-top: 3rem;
+
   @include respond(desk-small) {
+    margin-top: 0;
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -132,6 +135,7 @@ export default {
 
         p {
           margin-bottom: 0;
+          padding-top: 0.5rem;
         }
       }
     }

@@ -1,6 +1,7 @@
 .btn {
   font-family: $font-family-main;
-  font-size: clamp(0.5rem, calc(-0.875rem + 8.333vw), 1.3rem);
+  font-size: clamp(0.5rem, calc(-0.875rem + 8.333vw), 1.25rem);
+  font-weight: 700;
   width: 100%;
   padding: 0.5rem 0.8rem;
   text-align: center;
@@ -54,12 +55,6 @@
     top: 3.6rem;
     left: 0;
     z-index: -1;
-
-    &.hide-for-large {
-      @include respond(desk-small) {
-        display: none !important;
-      }
-    }
   }
 
   &--4 {
@@ -70,7 +65,7 @@
 }
 
 p {
-  font-size: clamp(1rem, calc(-0.875rem + 8.333vw), 1.6rem);
+  font-size: clamp(1rem, calc(-0.875rem + 8.333vw), 1.3rem);
   margin-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 400;
 }

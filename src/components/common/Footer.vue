@@ -1,6 +1,6 @@
 <template>
   <footer class="flex-center">
-    <div class="show-for-small">
+    <div class="hide-for-large icons">
       <a href="https://github.com/alexsommers7" target="_blank" rel="noopener" aria-label="Link to Github Profile">
         <svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
           <g>
@@ -98,12 +98,8 @@ footer {
     margin-bottom: 0;
   }
 }
-.show-for-small {
+.icons {
   display: flex;
-
-  @include respond(desk-small) {
-    display: none !important;
-  }
 }
 svg {
   width: 2rem;

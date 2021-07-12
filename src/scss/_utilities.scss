@@ -6,9 +6,6 @@
 .align-self-start {
   align-self: flex-start;
 }
-.full-width {
-  max-width: none !important;
-}
 .screen-reader-only {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -49,6 +46,11 @@
 .color-primary {
   color: $color-primary;
   font-weight: 500;
+}
+.hide-for-large {
+  @include respond(desk-small) {
+    display: none !important;
+  }
 }
 .anchor-span {
   position: absolute;

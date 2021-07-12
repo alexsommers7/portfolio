@@ -80,6 +80,10 @@ section {
   &:not(#load-in) {
     position: relative;
   }
+
+  &.full-width {
+    max-width: 100%;
+  }
 }
 
 // Zurb Foundation overrides

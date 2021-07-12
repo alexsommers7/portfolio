@@ -1,5 +1,5 @@
 <template>
-  <section class="hero" id="hero">
+  <section class="hero full-width" id="hero">
     <div class="intro">
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
       <h2 class="heading heading--2">Front-End Web Developer</h2>
@@ -31,7 +31,6 @@ section.hero {
   padding: 0 1rem;
   display: grid;
   grid-gap: 2rem;
-  max-width: 100%;
 
   @include respond(tab-land) {
     height: Min(100vh, 1080px);
@@ -102,9 +101,9 @@ section.hero {
   }
 
   figure {
-    margin: 0;
     position: relative;
-    max-width: 900px;
+    max-width: 600px;
+    margin: auto;
 
     &::after {
       content: "";

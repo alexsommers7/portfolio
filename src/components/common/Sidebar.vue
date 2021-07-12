@@ -165,7 +165,7 @@ export default {
       };
       const scrollOptions = {
         root: null,
-        threshold: 0.8,
+        threshold: 0.6,
         rootMargin: "10px",
       };
       const observer = new IntersectionObserver(updateCurrentSection, scrollOptions);
@@ -342,7 +342,7 @@ export default {
           height: 45%;
           fill: $color-background-light;
           transform: rotate(-180deg);
-          transition: all 0.25s ease;
+          transition: transform 0.25s ease;
           // offset 5px padding on container
           // was needed to horizontally center text
           margin-right: -5px;
