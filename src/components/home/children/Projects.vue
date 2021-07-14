@@ -2,7 +2,7 @@
   <section class="track projects full-width" data-section="Projects">
     <span class="anchor-span" id="projects"></span>
     <h3 class="heading heading--3 hide-for-large">PROJECTS</h3>
-    <h4 class="heading heading--4">Interfaces for the Modern World</h4>
+    <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
     <div class="project-group">
       <article v-for="project in projects" :key="project.title">
         <img :src="project.image" :alt="project.alt" />
@@ -46,8 +46,8 @@ export default {
         {
           title: "Vue Shop",
           description:
-            "A fake shop landing page built with Vue, featuring sorting, filtering, and cart functionality. Product data is fetched asynchronously from a fake store API endpoint.",
-          tools: ["Vue", "SCSS", "Fake Store API", "Foundation", "Babel", "Netlify"],
+            "A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product data is fetched asynchronously from a fake store API endpoint.",
+          tools: ["Vue.js", "SCSS", "Fake Store API", "Foundation", "Babel", "Netlify"],
           primaryCTA: "View Demo",
           primaryLink: "https://vue-fake-shop.netlify.app/",
           secondaryCTA: "View Code",
@@ -85,18 +85,6 @@ export default {
     margin-top: 6rem;
   }
 
-  .heading--4 {
-    text-align: center;
-
-    @include respond(tab-port) {
-      text-align: left;
-    }
-
-    @include respond(desk-small) {
-      text-align: center;
-    }
-  }
-
   .project-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 100%));
@@ -107,10 +95,12 @@ export default {
 
     @include respond(tab-port) {
       grid-template-columns: repeat(auto-fit, 480px);
+      margin: 6rem auto 0;
     }
 
     article {
       background-color: $color-background-light;
+      border-top: 2px solid $color-primary;
       padding: 2rem 1rem;
       margin: 0 auto;
       border-radius: $design-border-radius-default;
@@ -172,6 +162,10 @@ export default {
     max-width: 15rem;
     display: block;
     margin: 4rem auto;
+
+    @include respond(tab-port) {
+      margin: 6rem auto;
+    }
   }
 }
 </style>

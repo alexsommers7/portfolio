@@ -62,6 +62,18 @@
     font-size: clamp(1.8rem, calc(-0.875rem + 8.333vw), 2rem);
     color: $color-primary;
   }
+
+  &--section {
+    text-align: center;
+
+    @include respond(tab-port) {
+      text-align: left;
+    }
+
+    @include respond(desk-small) {
+      text-align: center;
+    }
+  }
 }
 
 p {

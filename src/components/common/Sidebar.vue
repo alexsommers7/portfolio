@@ -98,7 +98,6 @@
       </a>
       <a
         href="https://onedrive.live.com/embed?cid=3A9F6FC30DCB1820&resid=3A9F6FC30DCB1820%21221295&authkey=AFmyQ-Yn9i6Bynw&em=2"
-        role="button"
         aria-label="Link to Download Resume"
         target="_blank"
         rel="noopener"
@@ -165,7 +164,7 @@ export default {
       };
       const scrollOptions = {
         root: null,
-        threshold: 0.6,
+        threshold: 0.25,
         rootMargin: "10px",
       };
       const observer = new IntersectionObserver(updateCurrentSection, scrollOptions);
@@ -173,17 +172,13 @@ export default {
     },
   },
   watch: {
-    observerTargets: {
-      handler: function() {
-        if (this.observerTargets.length > 1 && !this.onMobile) {
-          this.configureIntersectionObserver();
-        }
-      },
+    observerTargets: function(newArr) {
+      if (newArr.length > 1 && !this.onMobile) {
+        this.configureIntersectionObserver();
+      }
     },
-    onMobile: {
-      handler: function() {
-        if (!this.onMobile) this.configureIntersectionObserver();
-      },
+    onMobile: function(newVal) {
+      if (!newVal) this.configureIntersectionObserver();
     },
   },
 };

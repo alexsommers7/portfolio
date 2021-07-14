@@ -21,10 +21,10 @@
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
       <ul class="navigation__list" @click="toggleNav">
-        <li><a href="/#projects" class="js-nav-link" data-section-name="projects">PROJECTS</a></li>
-        <li><a href="/#resume" class="js-nav-link" data-section-name="resume">RESUME</a></li>
-        <li><a href="/#toolbox" class="js-nav-link" data-section-name="toolbox">TOOLBOX</a></li>
-        <li><a href="/#contact" class="js-nav-link" data-section-name="contact">CONTACT</a></li>
+        <li><a href="/#about" class="js-nav-link">ABOUT</a></li>
+        <li><a href="/#projects" class="js-nav-link">PROJECTS</a></li>
+        <li><a href="/#resume" class="js-nav-link">RESUME</a></li>
+        <li><a href="/#contact" class="js-nav-link">CONTACT</a></li>
       </ul>
     </nav>
   </header>
@@ -113,24 +113,22 @@ export default {
     this.navList = document.querySelector(".navigation__list");
   },
   watch: {
-    onMobile: {
-      handler: function() {
-        let navListItems = document.querySelectorAll(".navigation__list > li");
-        if (this.onMobile) {
-          this.navList.style.left = "0";
-          this.navList.style.top = "-100%";
-          this.nav.style.width = "100%";
-        } else {
-          this.navList.style.left = "-100%";
-          this.navList.style.top = "0";
-          this.nav.style.width = this.desktopNavWidth;
-        }
-        if (this.nav.classList.contains("open")) {
-          this.nav.classList.remove("open");
-          document.body.classList.remove("no-scroll");
-          navListItems.forEach((item) => (item.style.opacity = 0));
-        }
-      },
+    onMobile: function(newVal) {
+      let navListItems = document.querySelectorAll(".navigation__list > li");
+      if (newVal) {
+        this.navList.style.left = "0";
+        this.navList.style.top = "-100%";
+        this.nav.style.width = "100%";
+      } else {
+        this.navList.style.left = "-100%";
+        this.navList.style.top = "0";
+        this.nav.style.width = this.desktopNavWidth;
+      }
+      if (this.nav.classList.contains("open")) {
+        this.nav.classList.remove("open");
+        document.body.classList.remove("no-scroll");
+        navListItems.forEach((item) => (item.style.opacity = 0));
+      }
     },
   },
 };
@@ -168,10 +166,12 @@ header {
   width: 100%;
   height: var(--nav-mobile-height);
   z-index: 50;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15);
 
   @include respond(desk-small) {
     height: 100vh;
     width: var(--nav-desktop-width);
+    box-shadow: none;
   }
 }
 
@@ -220,7 +220,7 @@ header {
       }
 
       &--1 {
-        transform: rotate(-675deg);
+        transform: rotate(-495deg);
       }
 
       &--3 {
@@ -239,7 +239,7 @@ header {
   }
 
   &__toggle {
-    margin-right: 0.5rem;
+    margin-right: 3px;
     position: relative;
     appearance: none;
     border: none;

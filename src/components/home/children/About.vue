@@ -30,7 +30,7 @@ export default {
     return {
       recentLanguages: [
         {
-          title: "Vue",
+          title: "Vue.js",
           icon: require("@/assets/icons/vue.svg"),
           alt: "Vue.js",
         },
