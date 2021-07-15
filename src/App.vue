@@ -31,7 +31,6 @@ export default {
   name: "App",
   data() {
     return {
-      products: [],
       observerTargets: [],
       contentLoaded: false,
       onMobile: false,

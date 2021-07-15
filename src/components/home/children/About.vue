@@ -80,9 +80,15 @@ export default {
     grid-template-columns: minmax(550px, 3fr) minmax(550px, 2fr);
   }
 
+  &__intro {
+    @media all and (min-width: 1289px) {
+      // arbitrary breakpoint, sorry future me
+      padding-top: 1rem;
+    }
+  }
+
   &__lately {
     @media all and (min-width: 1289px) {
-      // arbitrary breakpoint
       border-left: 2px solid $color-background-light;
       padding: 1rem 2rem;
     }

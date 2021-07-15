@@ -79,8 +79,6 @@ export default {
 @import "../../../scss/_variables";
 
 .projects {
-  margin-top: 1rem;
-
   @include respond(desk-small) {
     margin-top: 6rem;
   }
@@ -161,7 +159,7 @@ export default {
   .cta {
     max-width: 15rem;
     display: block;
-    margin: 4rem auto;
+    margin: 4rem auto 1rem;
 
     @include respond(tab-port) {
       margin: 6rem auto;

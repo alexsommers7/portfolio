@@ -1,5 +1,5 @@
 <template>
-  <section class="track" data-section="Resume">
+  <section class="track resume full-width" data-section="Resume">
     <span class="anchor-span" id="resume"></span>
     <h3 class="heading heading--3 hide-for-large">RESUME</h3>
     <h4 class="heading heading--4 heading--section">Digital Marketing to Web Development</h4>
@@ -83,7 +83,7 @@ export default {
           title: "B.A. - Marketing",
           company: "Baldwin Wallace University",
           location: "Berea, OH",
-          timeframe: "August 2017 - May 2017",
+          timeframe: "August 2013 - May 2017",
           description: "Magna cum laude",
         },
       ],
@@ -98,14 +98,19 @@ export default {
 @import "../../../scss/_variables";
 
 .resume {
+  @include respond(desk-small) {
+    margin-top: 2rem;
+  }
+
   &__content {
-    margin-top: 4rem;
+    margin-top: 2rem;
 
     @include respond(tab-land) {
+      margin-top: 4rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 45%));
+      grid-template-columns: repeat(2, minmax(400px, 45%));
       grid-gap: 2rem;
-      justify-content: center;
+      justify-content: flex-end; // assumes education section doesn't have as much content
       justify-items: center;
     }
 
@@ -124,7 +129,7 @@ export default {
           height: 20px;
           position: absolute;
           left: 0px;
-          top: 5px;
+          top: 7px;
           border-radius: 50%;
           border: 2px solid $color-primary;
           z-index: 20;
