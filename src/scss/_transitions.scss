@@ -9,32 +9,17 @@
 }
 
 // Vue Transition Classes
-.fade-y-enter-active {
-  transition: all 0.75s;
-  transform-origin: center;
-
-  @include respond(desk-small) {
-    transform-origin: top;
-  }
+.list-item {
+  transition: transform 0.45s, opacity 0.3s;
 }
-.fade-y-enter,
-.fade-y-leave-to {
+.list-enter,
+.list-leave-to {
   opacity: 0;
-  transform: scaleY(0);
+  transform: translateY(30px) scale(0);
 }
-.fade-y-enter-to,
-.fade-y-leave {
-  opacity: 1;
-  transform: scaleY(1);
+.list-leave-active {
+  position: absolute;
 }
-
-.fade-scale-enter,
-.fade-scale-leave-to {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0);
-}
-.fade-scale-enter-to,
-.fade-scale-leave {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+.list-move {
+  transition: transform 1s, opacity 0.3s;
 }

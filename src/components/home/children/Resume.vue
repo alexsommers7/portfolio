@@ -103,7 +103,8 @@ export default {
   }
 
   &__content {
-    margin-top: 2rem;
+    max-width: 1800px;
+    margin: 2rem auto 0 auto;
 
     @include respond(tab-land) {
       margin-top: 4rem;
@@ -129,7 +130,7 @@ export default {
           height: 20px;
           position: absolute;
           left: 0px;
-          top: 7px;
+          top: 6px;
           border-radius: 50%;
           border: 2px solid $color-primary;
           z-index: 20;

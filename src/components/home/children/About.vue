@@ -4,7 +4,7 @@
     <div class="about__intro">
       <h3 class="heading heading--3 hide-for-large">ABOUT ME</h3>
       <p><strong class="about__heading typewriter">Hey there, I'm Alex.</strong></p>
-      <p>I'm a <span class="color-primary">Front End Web Developer</span> based out of Tempe, Arizona.</p>
+      <p>I'm a <span class="color-primary">Front-End Web Developer</span> based out of Tempe, Arizona.</p>
       <p>
         In both freelance and professional settings, I harness the power of modern web technologies to craft memorable,
         accessible user experiences.
@@ -14,8 +14,10 @@
       <h4 class="heading heading--4">What I've Been Building With Lately</h4>
       <ul class="languages">
         <li v-for="lang in recentLanguages" :key="lang.title">
-          <img :src="lang.icon" :alt="lang.alt" />
-          <p>{{ lang.title }}</p>
+          <div>
+            <img :src="lang.icon" :alt="`${lang.alt ? lang.alt : lang.title} Icon`" />
+            <p>{{ lang.title }}</p>
+          </div>
         </li>
       </ul>
       <a href="#toolbox" class="btn btn--secondary"><strong>See What's in My Toolbox</strong></a>
@@ -32,17 +34,15 @@ export default {
         {
           title: "Vue.js",
           icon: require("@/assets/icons/vue.svg"),
-          alt: "Vue.js",
         },
         {
           title: "JavaScript",
           icon: require("@/assets/icons/javascript.svg"),
-          alt: "JavaScript",
         },
         {
           title: "GSAP",
           icon: require("@/assets/icons/gsap.svg"),
-          alt: "Green Sock Animation Platform (GSAP)",
+          alt: "Greensock Animation Platform (GSAP)",
         },
         {
           title: "SCSS",
@@ -133,15 +133,25 @@ export default {
         flex: 0 0 8rem;
         background-color: $color-background-light;
         text-align: center;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: $design-border-radius-default;
 
-        img {
-          width: 60%;
-          height: 60%;
-        }
+        div {
+          img {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: block;
+            margin: auto;
+          }
 
-        p {
-          margin-bottom: 0;
-          padding-top: 0.5rem;
+          p {
+            margin-bottom: 0;
+            margin-top: 1rem;
+            line-height: 1;
+          }
         }
       }
     }
