@@ -172,7 +172,7 @@ export default {
         position: absolute;
         left: 0;
         top: 4px;
-        transform: translateX(0);
+        transform: translateX(4px);
         display: block;
         border-radius: 100px;
         background-image: linear-gradient(90deg, $color-primary, $color-primary);
