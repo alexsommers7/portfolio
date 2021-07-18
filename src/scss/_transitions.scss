@@ -10,13 +10,12 @@
 
 // Vue Transition Classes
 .list-item {
-  transform: translateY(0) scale(1);
   transition: transform 0.45s, opacity 0.3s;
 }
 .list-enter,
 .list-leave-to {
   opacity: 0;
-  transform: translateY(30px) scale(0);
+  transform: translateY(30px) scale(1);
 }
 .list-leave-active {
   position: absolute;
