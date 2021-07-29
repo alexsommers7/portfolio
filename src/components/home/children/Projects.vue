@@ -79,10 +79,6 @@ export default {
 @import "../../../scss/_variables";
 
 .projects {
-  @include respond(desk-small) {
-    margin-top: 6rem;
-  }
-
   .project-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 100%));
@@ -162,7 +158,7 @@ export default {
     margin: 4rem auto 1rem;
 
     @include respond(tab-port) {
-      margin: 6rem auto;
+      margin: 6rem auto 0;
     }
   }
 }

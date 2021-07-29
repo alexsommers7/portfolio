@@ -164,8 +164,8 @@ export default {
       };
       const scrollOptions = {
         root: null,
-        threshold: 0.25,
-        rootMargin: "10px",
+        threshold: 0.65,
+        rootMargin: "100px",
       };
       const observer = new IntersectionObserver(updateCurrentSection, scrollOptions);
       this.observerTargets.forEach((target) => observer.observe(target));

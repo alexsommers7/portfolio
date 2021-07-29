@@ -67,7 +67,7 @@
         </svg>
       </a>
     </div>
-    <p>© Alex Sommers 2021. All Rights Reserved.</p>
+    <p>© Alex Sommers {{ currentYear }}. All Rights Reserved.</p>
   </footer>
 </template>
 
@@ -75,9 +75,10 @@
 export default {
   name: "Footer",
   data() {
-    return {};
+    return {
+      currentYear: new Date().getFullYear(),
+    };
   },
-  props: {},
 };
 </script>
 

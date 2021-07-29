@@ -15,7 +15,7 @@
 .list-enter,
 .list-leave-to {
   opacity: 0;
-  transform: translateY(30px) scale(0.1);
+  transform: translateY(30px) scale(0.1); // scale(0) bugs out in Safari
 }
 .list-leave-active {
   position: absolute;

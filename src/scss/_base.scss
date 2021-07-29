@@ -69,7 +69,7 @@ section {
   padding: 4rem 1rem;
 
   @include respond(desk-small) {
-    padding: 3rem 2rem;
+    padding: 5rem 2rem;
   }
 
   @include respond(desk-large) {
