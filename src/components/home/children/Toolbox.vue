@@ -49,6 +49,12 @@ export default {
           type: "tech",
         },
         {
+          title: "SCSS",
+          icon: require("@/assets/icons/sass.svg"),
+          type: "tech",
+          alt: "Sassy CSS (SCSS)",
+        },
+        {
           title: "CSS",
           icon: require("@/assets/icons/css.svg"),
           type: "tech",
@@ -65,10 +71,10 @@ export default {
           alt: "Greensock Animation Platform (GSAP)",
         },
         {
-          title: "SCSS",
-          icon: require("@/assets/icons/sass.svg"),
+          title: "Foundation",
+          icon: require("@/assets/icons/zurb-foundation.svg"),
+          alt: "Zurb Foundation",
           type: "tech",
-          alt: "Sassy CSS (SCSS)",
         },
         {
           title: "Bootstrap",
@@ -76,10 +82,10 @@ export default {
           type: "tech",
         },
         {
-          title: "NPM",
-          icon: require("@/assets/icons/npm.svg"),
+          title: "Ampscript",
+          icon: require("@/assets/icons/marketing-cloud.svg"),
           type: "tech",
-          alt: "Node Package Manager (NPM)",
+          alt: "Salesforce Marketing Cloud",
         },
         {
           title: "Git",
@@ -87,10 +93,10 @@ export default {
           type: "tech",
         },
         {
-          title: "Ampscript",
-          icon: require("@/assets/icons/marketing-cloud.svg"),
+          title: "NPM",
+          icon: require("@/assets/icons/npm.svg"),
           type: "tech",
-          alt: "Salesforce Marketing Cloud",
+          alt: "Node Package Manager (NPM)",
         },
         {
           title: "Photoshop",
@@ -131,15 +137,33 @@ export default {
   },
   props: {},
   methods: {
-    toggleButton(event) {
-      let direction = event.target.dataset.toggle;
+    toggleButton(event, forceTo = "left") {
+      let direction = event ? event.target.dataset.toggle : forceTo;
       if (direction == this.toggle) return;
-
       this.$el.querySelectorAll(".toolbox__toggle button").forEach((btn) => btn.classList.toggle("active"));
       this.$el.querySelector(".buttons").classList = `buttons ${direction}`;
       this.currentType = direction === "left" ? "tech" : "design";
       this.toggle = direction;
     },
+    calculateIconsHeight() {
+      // if not on mobile, keep this element at initial height when toggled to avoid layout shift
+      let toolsEl = this.$el.querySelector(".tools");
+      if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200) {
+        toolsEl.style.height = "auto";
+        return;
+      }
+      this.toggleButton(null, "left");
+      toolsEl.style.height = "auto";
+      setTimeout(function() {
+        // slight pause to let window finish resizing - was being inconsistent
+        let height = toolsEl.getBoundingClientRect().height;
+        toolsEl.style.height = `${height}px`;
+      }, 800);
+    },
+  },
+  mounted() {
+    this.calculateIconsHeight();
+    window.addEventListener("resize", this.calculateIconsHeight);
   },
 };
 </script>
@@ -152,6 +176,7 @@ export default {
   &__toggle {
     text-align: center;
     display: flex;
+    align-items: center;
     justify-content: center;
     align-items: center;
     margin: 4rem auto 3rem;
