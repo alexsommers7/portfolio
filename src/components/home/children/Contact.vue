@@ -3,7 +3,14 @@
     <span class="anchor-span" id="contact"></span>
     <h3 class="heading heading--3 hide-for-large">CONTACT</h3>
     <h4 class="heading heading--4 heading--section">In Need of a Developer? Let's Chat</h4>
-    <form ref="form" name="contact" method="POST" class="form" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form
+      name="contact"
+      class="form"
+      method="POST"
+      action="/submit"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
       <input type="hidden" name="form-name" value="contact" />
       <div class="form__field">
         <input type="text" id="name" name="name" required="true" placeholder=" " />
@@ -17,7 +24,7 @@
         <textarea type="text" id="message" name="message" required="true" placeholder=" "></textarea>
         <label for="message">Message</label>
       </div>
-      <button class="btn btn--secondary" type="submit" @click.stop.prevent="submit()">Send It</button>
+      <button class="btn btn--secondary" type="submit">Send It</button>
     </form>
   </section>
 </template>
@@ -27,13 +34,6 @@ export default {
   name: "Contact",
   data() {
     return {};
-  },
-  methods: {
-    submit() {
-      // if you want to send any data into server before redirection then you can do it here
-      this.$router.push("/submit");
-      this.$refs.form.requestSubmit();
-    },
   },
 };
 </script>
@@ -81,7 +81,6 @@ export default {
     input,
     textarea {
       z-index: 1;
-      border-radius: $design-border-radius-default;
       outline: none;
       font-size: 1rem;
 
