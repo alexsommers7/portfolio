@@ -64,6 +64,7 @@ export default {
       border: none;
       border-bottom: 1px solid $color-primary;
       appearance: none; // safari rounds inputs by default
+      border-radius: 0;
 
       &:focus-visible {
         outline: none;
