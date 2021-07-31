@@ -3,14 +3,7 @@
     <span class="anchor-span" id="contact"></span>
     <h3 class="heading heading--3 hide-for-large">CONTACT</h3>
     <h4 class="heading heading--4 heading--section">In Need of a Developer? Let's Chat</h4>
-    <form
-      name="contact"
-      class="form"
-      method="POST"
-      action="/submit"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-    >
+    <form name="contact" class="form" method="POST" action="/submit" netlify netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
       <div class="form__field">
         <input type="text" id="name" name="name" required="true" placeholder=" " />
