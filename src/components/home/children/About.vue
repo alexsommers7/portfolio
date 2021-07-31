@@ -119,9 +119,10 @@ export default {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 2rem 0 2rem -0.5rem; // acct for li first-child left margin
+      margin: 2rem 0; // acct for li first-child left margin
 
       @include respond(desk-small) {
+        margin: 2rem 0 2rem -0.5rem; // acct for li first-child left margin
         justify-content: flex-start;
       }
 
