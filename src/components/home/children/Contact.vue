@@ -77,7 +77,7 @@ export default {
       font-family: $font-family-main;
       display: block;
       width: 100%;
-      transition: all 0.3s ease;
+      transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
     }
 
     input,
