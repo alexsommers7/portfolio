@@ -62,10 +62,8 @@ export default {
       color: $color-text-light;
       background-color: transparent;
       border: none;
-      border-top: 1px solid $color-background-light;
-      border-right: 1px solid $color-background-light;
       border-bottom: 1px solid $color-primary;
-      border-left: 1px solid $color-background-light;
+      appearance: none; // safari rounds inputs by default
 
       &:focus-visible {
         outline: none;
