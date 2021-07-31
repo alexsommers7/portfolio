@@ -148,7 +148,7 @@ export default {
       color: $color-text-light;
       pointer-events: none;
       position: absolute;
-      top: -16px;
+      top: -12px;
       left: 1px;
       z-index: 2;
       font-size: 1.4rem;

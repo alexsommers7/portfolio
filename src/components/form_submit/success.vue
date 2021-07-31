@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <h1>You're Awesome! Thank you for your submission!</h1>
+  <div class="wrapper">
+    <h1 class="heading heading--2">Hey, thanks for reaching out. I'll be in touch.</h1>
     <router-link to="/">
-      <button>Back to form</button>
+      <button class="btn btn--secondary">Return to Home Page</button>
     </router-link>
   </div>
 </template>
@@ -12,3 +12,26 @@ export default {
   name: "formSuccess",
 };
 </script>
+
+<style scoped lang="scss">
+@import "../../scss/_mixins";
+@import "../../scss/_variables";
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h1,
+  h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
+}
+</style>
