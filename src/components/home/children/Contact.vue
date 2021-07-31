@@ -14,15 +14,22 @@
     >
       <input type="hidden" name="form-name" value="contact" />
       <div class="form__field">
-        <input type="text" id="name" name="name" required="true" placeholder=" " />
+        <input type="text" id="name" name="name" v-model="form.name" required="true" placeholder=" " />
         <label for="name">Name</label>
       </div>
       <div class="form__field">
-        <input type="email" id="email" name="email" required="true" placeholder=" " />
+        <input type="email" id="email" name="email" v-model="form.email" required="true" placeholder=" " />
         <label for="email">Email</label>
       </div>
       <div class="form__field">
-        <textarea type="text" id="message" name="message" required="true" placeholder=" "></textarea>
+        <textarea
+          type="text"
+          id="message"
+          name="message"
+          v-model="form.message"
+          required="true"
+          placeholder=" "
+        ></textarea>
         <label for="message">Message</label>
       </div>
       <button class="btn btn--secondary" type="submit">Send It</button>
