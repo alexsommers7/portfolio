@@ -98,10 +98,10 @@ export default {
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
       &:-webkit-autofill:active {
-        -webkit-box-shadow: 0 0 0 30px $color-background-light inset !important;
-        -webkit-text-fill-color: $color-text-light !important;
-        background-color: $color-background-light !important;
-        background-clip: content-box !important;
+        // -webkit-box-shadow: 0 0 0 30px $color-background-light inset !important;
+        // -webkit-text-fill-color: $color-text-light !important;
+        // background-color: $color-background-light !important;
+        // background-clip: content-box !important;
       }
     }
 
