@@ -1,12 +1,12 @@
 <template>
   <section>
-    SUCCESS PAGE
+    SUBMIT PAGE
   </section>
 </template>
 
 <script>
 export default {
-  name: "SuccessPage",
+  name: "Submit",
   data() {
     return {};
   },
