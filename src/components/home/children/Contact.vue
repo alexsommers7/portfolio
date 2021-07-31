@@ -62,7 +62,10 @@ export default {
       color: $color-text-light;
       background-color: transparent;
       border: none;
+      border-top: 1px solid $color-background-light;
+      border-right: 1px solid $color-background-light;
       border-bottom: 1px solid $color-primary;
+      border-left: 1px solid $color-background-light;
 
       &:focus-visible {
         outline: none;
@@ -81,7 +84,7 @@ export default {
     input,
     textarea {
       z-index: 1;
-      outline: 0px solid transparent; // safari bug
+      outline: none;
       font-size: 1rem;
       padding: 0;
 
