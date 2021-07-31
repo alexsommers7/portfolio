@@ -3,7 +3,15 @@
     <span class="anchor-span" id="contact"></span>
     <h3 class="heading heading--3 hide-for-large">CONTACT</h3>
     <h4 class="heading heading--4 heading--section">In Need of a Developer? Let's Chat</h4>
-    <form name="contact" class="form" method="POST" action="/submit" netlify netlify-honeypot="bot-field">
+    <form
+      name="contact"
+      class="form"
+      method="POST"
+      action="/submit"
+      netlify
+      netlify-honeypot="bot-field"
+      @submit.prevent="formSubmit"
+    >
       <input type="hidden" name="form-name" value="contact" />
       <div class="form__field">
         <input type="text" id="name" name="name" required="true" placeholder=" " />
@@ -23,10 +31,38 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Contact",
   data() {
-    return {};
+    return {
+      form: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+        .join("&");
+    },
+    formSubmit() {
+      const axiosConfig = {
+        header: { "Content-Type": "application/x-www-form-urlencoded" },
+      };
+      axios.post(
+        "/",
+        this.encode({
+          "form-name": "contact",
+          ...this.form,
+        }),
+        axiosConfig
+      );
+    },
   },
 };
 </script>
@@ -93,6 +129,7 @@ export default {
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
       &:-webkit-autofill:active {
+        box-shadow: 0 0 0 30px $color-background-light inset !important;
         -webkit-box-shadow: 0 0 0 30px $color-background-light inset !important;
         -webkit-text-fill-color: $color-text-light !important;
         background-color: $color-background-light !important;
