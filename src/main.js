@@ -3,7 +3,9 @@ import VueRouter from "vue-router";
 import App from "./App.vue";
 import Homepage from "./components/home/Homepage.vue";
 import Projects from "./components/projects/ProjectShowcasePage.vue";
-import formSubmit from "./components/form_submit/LandingPage.vue";
+import formSuccess from "./components/form_submit/success";
+import formFailure from "./components/form_submit/failure";
+import pageNotFound from "./components/common/404";
 
 Vue.use(VueRouter);
 
@@ -16,7 +18,9 @@ export const router = new VueRouter({
       component: Projects,
       meta: { NoLoadIn: true, NoScrollArrow: true },
     },
-    { path: "/submit", component: formSubmit, meta: { NoLoadIn: true, NoScrollArrow: true } },
+    { path: "/thanks", name: "success", component: formSuccess, meta: { NoLoadIn: true, NoScrollArrow: true } },
+    { path: "/404", name: "fail", component: formFailure, meta: { NoLoadIn: true, NoScrollArrow: true } },
+    { path: "*", component: pageNotFound, meta: { NoLoadIn: true, NoScrollArrow: true } },
   ],
   mode: "history",
 });

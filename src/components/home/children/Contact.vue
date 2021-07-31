@@ -61,14 +61,14 @@ export default {
       const axiosConfig = {
         header: { "Content-Type": "application/x-www-form-urlencoded" },
       };
-      axios.post(
-        "/",
-        this.encode({
-          "form-name": "contact",
-          ...this.form,
-        }),
-        axiosConfig
-      );
+      axios
+        .post("/", this.encode({ "form-name": "contact", ...this.form }), axiosConfig)
+        .then(() => {
+          this.$router.push("thanks");
+        })
+        .catch(() => {
+          this.$router.push("404");
+        });
     },
   },
 };
