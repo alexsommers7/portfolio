@@ -83,6 +83,7 @@ export default {
       z-index: 1;
       outline: none;
       font-size: 1rem;
+      padding: 0;
 
       &:focus + label,
       &:not(:placeholder-shown) + label {
