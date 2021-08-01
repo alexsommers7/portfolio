@@ -21,7 +21,7 @@
         </li>
       </ul>
       <button class="btn btn--secondary" data-section="toolbox" @click="anchorClick">
-        <strong @click="anchorClick" data-section="toolbox">See What's in My Toolbox</strong>
+        <strong data-section="toolbox" @click="anchorClick">See What's in My Toolbox</strong>
       </button>
     </div>
   </section>

@@ -4,8 +4,12 @@
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
       <h2 class="heading heading--2">Front-End Web Developer</h2>
       <div class="intro__buttons">
-        <a href="#projects" class="btn btn--primary"><strong>My Work</strong></a>
-        <a href="#contact" class="btn btn--secondary"><strong>Contact Me</strong></a>
+        <button class="btn btn--primary" data-section="projects" @click="anchorClick">
+          <strong data-section="projects" @click="anchorClick">My Work</strong>
+        </button>
+        <button class="btn btn--secondary" data-section="contact" @click="anchorClick">
+          <strong data-section="contact" @click="anchorClick">Contact Me</strong>
+        </button>
       </div>
     </div>
     <figure>
@@ -15,10 +19,19 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 export default {
   name: "Hero",
   data() {
     return {};
+  },
+  methods: {
+    anchorClick(e) {
+      gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
+    },
   },
 };
 </script>
@@ -82,15 +95,12 @@ section.hero {
         margin-top: 0.5rem;
       }
 
-      a {
+      button {
         width: 45%;
         max-width: 10rem;
-        padding: 0.5rem 0.8rem;
-        height: 100%;
 
         @include respond(desk-small) {
           max-width: 12rem;
-          padding: 0.25rem 0.25rem;
         }
 
         &:first-child {

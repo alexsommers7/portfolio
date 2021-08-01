@@ -7,7 +7,7 @@
         aria-label="Scroll to Top"
         class="navigation__logo"
         viewBox="0 0 125 105.4"
-        @click="scrollToTop"
+        @click="onLogoClick"
       >
         <polygon class="cls-1" points="62.5 6.47 23.46 49.34 101.54 49.34 62.5 6.47" />
         <polygon class="cls-1" points="62.5 99.62 101.54 56.75 23.46 56.75 62.5 99.62" />
@@ -21,10 +21,10 @@
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
       <ul class="navigation__list" @click="toggleNav">
-        <li><button data-section="about" class="btn" @click="anchorClick">ABOUT</button></li>
-        <li><button data-section="projects" class="btn" @click="anchorClick">PROJECTS</button></li>
-        <li><button data-section="resume" class="btn" @click="anchorClick">RESUME</button></li>
-        <li><button data-section="contact" class="btn" @click="anchorClick">CONTACT</button></li>
+        <li><button data-section="about" class="btn" @click="onAnchorClick">ABOUT</button></li>
+        <li><button data-section="projects" class="btn" @click="onAnchorClick">PROJECTS</button></li>
+        <li><button data-section="resume" class="btn" @click="onAnchorClick">RESUME</button></li>
+        <li><button data-section="contact" class="btn" @click="onAnchorClick">CONTACT</button></li>
       </ul>
     </nav>
   </header>
@@ -105,12 +105,12 @@ export default {
           );
       this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
-    anchorClick(e) {
+    onAnchorClick(e) {
       gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
     },
-    scrollToTop() {
+    onLogoClick() {
       let currentPage = window.location.pathname;
-      currentPage === "/" ? gsap.to(window, { duration: 0.8, scrollTo: 0 }) : (window.location.href = "/");
+      currentPage === "/" ? gsap.to(window, { duration: 0.8, scrollTo: 0 }) : this.$router.push("/");
     },
   },
   mounted() {
