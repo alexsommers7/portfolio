@@ -59,6 +59,6 @@
   top: calc(-1.5 * var(--nav-mobile-height));
 
   @include respond(desk-small) {
-    top: -40px;
+    top: 20px;
   }
 }

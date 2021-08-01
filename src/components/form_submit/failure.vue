@@ -6,7 +6,7 @@
       </h1>
       <h2>Please try again</h2>
       <router-link to="/">
-        <button class="btn btn--secondary">Return to Home Page</button>
+        <button class="btn btn--secondary" @click="snapToTop">Return to Home Page</button>
       </router-link>
     </div>
   </transition>
@@ -15,6 +15,11 @@
 <script>
 export default {
   name: "formFailure",
+  methods: {
+    snapToTop() {
+      window.scrollTo({ top: 0 });
+    },
+  },
 };
 </script>
 

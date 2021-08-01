@@ -20,12 +20,18 @@
           </div>
         </li>
       </ul>
-      <a href="#toolbox" class="btn btn--secondary"><strong>See What's in My Toolbox</strong></a>
+      <button class="btn btn--secondary" data-section="toolbox" @click="anchorClick">
+        <strong @click="anchorClick" data-section="toolbox">See What's in My Toolbox</strong>
+      </button>
     </div>
   </section>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+
 export default {
   name: "About",
   data() {
@@ -51,6 +57,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    anchorClick(e) {
+      gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
+    },
   },
   /* 
       timeline.to("#about .typewriter", {

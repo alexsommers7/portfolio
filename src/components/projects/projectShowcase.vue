@@ -32,7 +32,7 @@
           </div>
         </article>
       </div>
-      <router-link to="/" class="btn btn--secondary cta">Return Home</router-link>
+      <router-link to="/" class="btn btn--secondary cta" @click.native="snapToTop">Return Home</router-link>
     </section>
   </transition>
 </template>
@@ -118,7 +118,11 @@ export default {
       ],
     };
   },
-  props: {},
+  methods: {
+    snapToTop() {
+      window.scrollTo({ top: 0 });
+    },
+  },
 };
 </script>
 

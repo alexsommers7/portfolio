@@ -21,10 +21,10 @@
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
       <ul class="navigation__list" @click="toggleNav">
-        <li><a href="/#about" class="js-nav-link">ABOUT</a></li>
-        <li><a href="/#projects" class="js-nav-link">PROJECTS</a></li>
-        <li><a href="/#resume" class="js-nav-link">RESUME</a></li>
-        <li><a href="/#contact" class="js-nav-link">CONTACT</a></li>
+        <li><button data-section="about" class="btn" @click="anchorClick">ABOUT</button></li>
+        <li><button data-section="projects" class="btn" @click="anchorClick">PROJECTS</button></li>
+        <li><button data-section="resume" class="btn" @click="anchorClick">RESUME</button></li>
+        <li><button data-section="contact" class="btn" @click="anchorClick">CONTACT</button></li>
       </ul>
     </nav>
   </header>
@@ -32,6 +32,8 @@
 
 <script>
 import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
 
 export default {
   name: "Nav",
@@ -103,9 +105,12 @@ export default {
           );
       this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
+    anchorClick(e) {
+      gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
+    },
     scrollToTop() {
       let currentPage = window.location.pathname;
-      currentPage === "/" ? window.scrollTo({ top: 0, behavior: "smooth" }) : (window.location.href = "/");
+      currentPage === "/" ? gsap.to(window, { duration: 0.8, scrollTo: 0 }) : (window.location.href = "/");
     },
   },
   mounted() {
@@ -355,15 +360,18 @@ header {
         }
       }
 
-      a {
+      button {
         padding: 0.5rem 1rem;
         text-decoration: none;
         color: $color-text-light;
+        border: none;
+        font-size: inherit;
         width: 100%;
         height: 100%;
         display: inline-block;
         background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-primary 50%);
         background-size: 230%;
+        background-color: transparent;
         transition: all 0.5s;
 
         &:hover,

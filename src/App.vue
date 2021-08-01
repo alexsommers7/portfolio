@@ -45,19 +45,6 @@ export default {
       document.body.classList.remove("loading");
       sessionStorage.setItem("firstVisit", false);
     },
-    addSmoothScroll() {
-      // add smooth scroll for all anchor links except nav links
-      // having this setting on nav links would mess with sidebar updating section name
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function(event) {
-          if (this.classList.contains("js-nav-link")) return;
-          event.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    },
     setOutlineFocus() {
       // only outline focus if user is tabbing
       let b = document.body;
@@ -90,7 +77,6 @@ export default {
       this.observerTargets = [...this.$el.querySelectorAll("#main section.track")];
     }
     this.setOutlineFocus();
-    this.addSmoothScroll();
     this.checkScreenSize();
     window.addEventListener("resize", this.checkScreenSize);
   },
