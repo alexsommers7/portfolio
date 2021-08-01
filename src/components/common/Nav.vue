@@ -105,7 +105,7 @@ export default {
     },
     scrollToTop() {
       let currentPage = window.location.pathname;
-      currentPage == "/" ? window.scrollTo({ top: 0, behavior: "smooth" }) : (window.location.href = "/");
+      currentPage === "/" ? window.scrollTo({ top: 0, behavior: "smooth" }) : (window.location.href = "/");
     },
   },
   mounted() {

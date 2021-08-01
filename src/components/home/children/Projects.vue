@@ -21,7 +21,9 @@
         </div>
       </article>
     </div>
-    <router-link to="/project-showcase" class="btn btn--secondary cta">View All Projects</router-link>
+    <router-link to="/project-showcase" class="btn btn--secondary cta" @click.native="snapToTop"
+      >View All Projects</router-link
+    >
   </section>
 </template>
 
@@ -70,6 +72,10 @@ export default {
       ],
     };
   },
-  props: {},
+  methods: {
+    snapToTop() {
+      window.scrollTo({ top: 0 });
+    },
+  },
 };
 </script>

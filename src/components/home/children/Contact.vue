@@ -64,11 +64,16 @@ export default {
       axios
         .post("/", this.encode({ "form-name": "contact", ...this.form }), axiosConfig)
         .then(() => {
+          this.snapToTop();
           this.$router.push("thanks");
         })
         .catch(() => {
+          this.snapToTop();
           this.$router.push("404");
         });
+    },
+    snapToTop() {
+      window.scrollTo({ top: 0 });
     },
   },
 };
