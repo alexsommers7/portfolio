@@ -1,0 +1,84 @@
+.projects {
+  .project-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 100%));
+    justify-content: center;
+    grid-gap: 3rem;
+    max-width: 1700px;
+    margin: 4rem auto 0;
+
+    @include respond(tab-port) {
+      grid-template-columns: repeat(auto-fit, 480px);
+      margin: 6rem auto 0;
+    }
+
+    article {
+      background-color: $color-background-light;
+      border-top: 2px solid $color-primary;
+      padding: 2rem 1rem;
+      margin: 0 auto;
+      border-radius: $design-border-radius-default;
+      width: 480px;
+      max-width: 100%;
+
+      @include respond(desk-medium) {
+        padding: 2rem;
+      }
+
+      img {
+        max-width: 80%;
+        display: block;
+        margin: auto;
+      }
+
+      .title {
+        color: $color-primary;
+        padding: 1rem 0.5rem 0.5rem;
+        font-size: 2rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1.2;
+      }
+
+      .tools {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem 0 0 -0.5rem; // acct for margin of children
+
+        li {
+          padding: 0.5rem 1rem;
+          margin: 0.5rem;
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: $color-primary;
+          background-color: $color-background;
+          border-radius: $design-border-radius-default;
+        }
+      }
+
+      .btns {
+        margin-top: 2rem;
+        display: flex;
+
+        a {
+          flex: 0 0 40%;
+
+          &.btn--primary {
+            margin-right: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .cta {
+    max-width: 15rem;
+    display: block;
+    margin: 4rem auto 1rem;
+
+    @include respond(tab-port) {
+      margin: 6rem auto 0;
+    }
+  }
+}
