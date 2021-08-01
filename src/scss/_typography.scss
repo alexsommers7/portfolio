@@ -17,11 +17,19 @@
   &--primary {
     background-color: $color-primary;
     color: $color-text-dark;
+
+    &:focus {
+      color: $color-text-dark;
+    }
   }
 
   &--secondary {
     background-color: transparent;
     color: $color-primary;
+
+    &:focus {
+      color: $color-primary;
+    }
   }
 
   &:hover,
