@@ -5,7 +5,7 @@
     <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
     <div class="project-group">
       <article v-for="project in projects" :key="project.title">
-        <img :src="project.image" :alt="project.alt" />
+        <img :src="project.image" :alt="project.alt" loading="lazy" />
         <p class="title">{{ project.title }}</p>
         <p>{{ project.description }}</p>
         <ul class="tools">
@@ -22,8 +22,8 @@
       </article>
     </div>
     <router-link to="/project-showcase" class="btn btn--secondary cta" @click.native="snapToTop"
-      >View All Projects</router-link
-    >
+      >View All Projects
+    </router-link>
   </section>
 </template>
 

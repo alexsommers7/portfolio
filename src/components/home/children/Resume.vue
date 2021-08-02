@@ -7,7 +7,7 @@
       <div>
         <h5 class="resume__heading"><strong>Experience</strong></h5>
         <ul>
-          <li v-for="job in jobs" :key="job.id">
+          <li v-for="job in jobs" :key="job.id" class="gsap-li">
             <h5 class="title">{{ job.jobTitle }}</h5>
             <p class="company">{{ job.company }} | {{ job.location }}</p>
             <p class="timeframe">
@@ -20,7 +20,7 @@
       <div>
         <h5 class="resume__heading"><strong>Education</strong></h5>
         <ul>
-          <li v-for="school in schooling" :key="school.id">
+          <li v-for="school in schooling" :key="school.id" class="gsap-li">
             <h5 class="title">{{ school.title }}</h5>
             <p class="company">{{ school.company }} | {{ school.location }}</p>
             <p class="timeframe">
@@ -44,6 +44,10 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "Resume",
   data() {
@@ -89,7 +93,26 @@ export default {
       ],
     };
   },
-  props: {},
+  mounted() {
+    ScrollTrigger.defaults({
+      toggleActions: "restart pause restart reset",
+      // markers: true,
+    });
+    const listItems = gsap.utils.toArray(".gsap-li");
+    listItems.forEach((item) => {
+      gsap.from(item, {
+        duration: 1,
+        ease: "none",
+        "--scale-after": 0,
+        scrollTrigger: {
+          trigger: item,
+          start: "top 75%",
+          end: "top 25%",
+          scrub: true,
+        },
+      });
+    });
+  },
 };
 </script>
 
@@ -122,6 +145,7 @@ export default {
         position: relative;
         padding: 0 5px 0 44px;
         margin-bottom: 3.5rem;
+        --scale-after: 1;
 
         &::before {
           content: "";
@@ -134,8 +158,7 @@ export default {
           border-radius: 50%;
           border: 2px solid $color-primary;
           z-index: 20;
-          // transform: scale(0);
-          transition: transform 0.4s ease 0s;
+          transition: transform 0.4s ease;
         }
 
         &:not(:last-of-type)::after,
@@ -148,8 +171,8 @@ export default {
           top: 12px;
           z-index: 10;
           background: $color-primary;
-          // transform: scaleY(0);
-          transition: transform 0.4s ease 0s;
+          transform: scaleY(var(--scale-after));
+          transition: transform 0.4s ease;
           transform-origin: center top;
         }
 
