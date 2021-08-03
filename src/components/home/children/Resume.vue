@@ -7,7 +7,7 @@
       <div>
         <h5 class="resume__heading"><strong>Experience</strong></h5>
         <ul>
-          <li v-for="job in jobs" :key="job.id" class="gsap-li">
+          <li v-for="job in jobs" :key="job.id" :style="{ transitionDelay: job.transitionDelay }" class="gsap-li">
             <h5 class="title">{{ job.jobTitle }}</h5>
             <p class="company">{{ job.company }} | {{ job.location }}</p>
             <p class="timeframe">
@@ -20,7 +20,12 @@
       <div>
         <h5 class="resume__heading"><strong>Education</strong></h5>
         <ul>
-          <li v-for="school in schooling" :key="school.id" class="gsap-li">
+          <li
+            v-for="school in schooling"
+            :key="school.id"
+            :style="{ transitionDelay: school.transitionDelay }"
+            class="gsap-li"
+          >
             <h5 class="title">{{ school.title }}</h5>
             <p class="company">{{ school.company }} | {{ school.location }}</p>
             <p class="timeframe">
@@ -28,7 +33,7 @@
             </p>
             <p class="description">{{ school.description }}</p>
           </li>
-          <li>
+          <li class="gsap-li" style="transition-delay: .6s">
             <a
               href="https://onedrive.live.com/embed?cid=3A9F6FC30DCB1820&resid=3A9F6FC30DCB1820%21221295&authkey=AFmyQ-Yn9i6Bynw&em=2"
               target="_blank"
@@ -61,6 +66,7 @@ export default {
           timeframe: "April 2021 - Present",
           description:
             "Work with Vue.js, Alpine.js, JavaScript (ES6), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.",
+          transitionDelay: "0s",
         },
         {
           id: 2,
@@ -70,6 +76,7 @@ export default {
           timeframe: "July 2020 - Present",
           description:
             "Work with small business owners to conceptualize, design, and develop static websites. Deploy and maintain sites via GitHub repositories and Netlify continuous integration.",
+          transitionDelay: ".6s",
         },
         {
           id: 3,
@@ -79,6 +86,7 @@ export default {
           timeframe: "September 2019 - April 2021",
           description:
             "Built contemporary, interactive webpages in Sitecore and Salesforce Marketing Cloud with an emphasis on JavaScript, Marketing Cloud Ampscript, CSS, and semantic HTML.",
+          transitionDelay: ".6s",
         },
       ],
       schooling: [
@@ -89,27 +97,28 @@ export default {
           location: "Berea, OH",
           timeframe: "August 2013 - May 2017",
           description: "Magna cum laude",
+          transitionDelay: "0s",
         },
       ],
     };
   },
   mounted() {
     ScrollTrigger.defaults({
-      toggleActions: "restart pause restart reset",
       // markers: true,
     });
-    const listItems = gsap.utils.toArray(".gsap-li");
-    listItems.forEach((item) => {
-      gsap.from(item, {
-        duration: 1,
-        ease: "none",
-        "--scale-after": 0,
-        scrollTrigger: {
-          trigger: item,
-          start: "top 75%",
-          end: "top 25%",
-          scrub: true,
-        },
+
+    const items = this.$el.querySelectorAll(".gsap-li");
+    items.forEach((item) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top 75%",
+        onEnter: (self) => self.trigger.classList.add("active"),
+      });
+
+      ScrollTrigger.create({
+        trigger: item,
+        start: "top bottom",
+        onLeaveBack: (self) => self.trigger.classList.remove("active"),
       });
     });
   },
@@ -145,7 +154,6 @@ export default {
         position: relative;
         padding: 0 5px 0 44px;
         margin-bottom: 3.5rem;
-        --scale-after: 1;
 
         &::before {
           content: "";
@@ -158,7 +166,10 @@ export default {
           border-radius: 50%;
           border: 2px solid $color-primary;
           z-index: 20;
-          transition: transform 0.4s ease;
+          transform: scale(0);
+          transform-origin: center center;
+          transition: transform 0.6s;
+          transition-delay: inherit;
         }
 
         &:not(:last-of-type)::after,
@@ -171,8 +182,9 @@ export default {
           top: 12px;
           z-index: 10;
           background: $color-primary;
-          transform: scaleY(var(--scale-after));
-          transition: transform 0.4s ease;
+          transform: scaleY(0);
+          transition: transform 1s;
+          transition-delay: inherit;
           transform-origin: center top;
         }
 
@@ -203,6 +215,15 @@ export default {
 
         .btn {
           width: auto;
+        }
+
+        &.active {
+          &::before {
+            transform: scale(1);
+          }
+          &::after {
+            transform: scaleY(1);
+          }
         }
       }
     }

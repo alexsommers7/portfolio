@@ -5,7 +5,7 @@
     <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
     <div class="project-group">
       <article v-for="project in projects" :key="project.title">
-        <img :src="project.image" :alt="project.alt" loading="lazy" />
+        <img :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
         <p class="title">{{ project.title }}</p>
         <p>{{ project.description }}</p>
         <ul class="tools">
