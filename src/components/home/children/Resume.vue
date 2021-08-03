@@ -6,8 +6,8 @@
     <div class="resume__content">
       <div>
         <h5 class="resume__heading"><strong>Experience</strong></h5>
-        <ul>
-          <li v-for="job in jobs" :key="job.id" :style="{ transitionDelay: job.transitionDelay }" class="gsap-li">
+        <ul class="gsap-ul">
+          <li v-for="job in jobs" :key="job.id">
             <h5 class="title">{{ job.jobTitle }}</h5>
             <p class="company">{{ job.company }} | {{ job.location }}</p>
             <p class="timeframe">
@@ -19,13 +19,8 @@
       </div>
       <div>
         <h5 class="resume__heading"><strong>Education</strong></h5>
-        <ul>
-          <li
-            v-for="school in schooling"
-            :key="school.id"
-            :style="{ transitionDelay: school.transitionDelay }"
-            class="gsap-li"
-          >
+        <ul class="gsap-ul">
+          <li v-for="school in schooling" :key="school.id">
             <h5 class="title">{{ school.title }}</h5>
             <p class="company">{{ school.company }} | {{ school.location }}</p>
             <p class="timeframe">
@@ -39,8 +34,8 @@
               target="_blank"
               rel="noopener"
               class="btn btn--primary"
-              >Download Full Resume</a
-            >
+              >Download Full Resume
+            </a>
           </li>
         </ul>
       </div>
@@ -66,7 +61,6 @@ export default {
           timeframe: "April 2021 - Present",
           description:
             "Work with Vue.js, Alpine.js, JavaScript (ES6), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.",
-          transitionDelay: "0s",
         },
         {
           id: 2,
@@ -76,7 +70,6 @@ export default {
           timeframe: "July 2020 - Present",
           description:
             "Work with small business owners to conceptualize, design, and develop static websites. Deploy and maintain sites via GitHub repositories and Netlify continuous integration.",
-          transitionDelay: ".6s",
         },
         {
           id: 3,
@@ -86,7 +79,6 @@ export default {
           timeframe: "September 2019 - April 2021",
           description:
             "Built contemporary, interactive webpages in Sitecore and Salesforce Marketing Cloud with an emphasis on JavaScript, Marketing Cloud Ampscript, CSS, and semantic HTML.",
-          transitionDelay: ".6s",
         },
       ],
       schooling: [
@@ -97,21 +89,20 @@ export default {
           location: "Berea, OH",
           timeframe: "August 2013 - May 2017",
           description: "Magna cum laude",
-          transitionDelay: "0s",
         },
       ],
     };
   },
   mounted() {
-    ScrollTrigger.defaults({
-      // markers: true,
-    });
+    // ScrollTrigger.defaults({
+    //   markers: true,
+    // });
 
-    const items = this.$el.querySelectorAll(".gsap-li");
+    const items = this.$el.querySelectorAll(".gsap-ul");
     items.forEach((item) => {
       ScrollTrigger.create({
         trigger: item,
-        start: "top 75%",
+        start: "top 55%",
         onEnter: (self) => self.trigger.classList.add("active"),
       });
 
@@ -155,12 +146,16 @@ export default {
         padding: 0 5px 0 44px;
         margin-bottom: 3.5rem;
 
-        &::before {
+        &::before,
+        &::after {
           content: "";
+          position: absolute;
+        }
+
+        &::before {
           background: $color-background;
           width: 20px;
           height: 20px;
-          position: absolute;
           left: 0px;
           top: 6px;
           border-radius: 50%;
@@ -168,36 +163,33 @@ export default {
           z-index: 20;
           transform: scale(0);
           transform-origin: center center;
-          transition: transform 0.6s;
-          transition-delay: inherit;
         }
 
         &:not(:last-of-type)::after,
         &:first-of-type::after {
-          content: "";
           width: 2px;
           height: calc(100% + 3.5rem); // add li margin-bottom
-          position: absolute;
           left: 9px;
           top: 12px;
           z-index: 10;
           background: $color-primary;
           transform: scaleY(0);
-          transition: transform 1s;
-          transition-delay: inherit;
           transform-origin: center top;
+        }
+
+        .title,
+        .company {
+          line-height: 1.2;
         }
 
         .title {
           color: $color-primary;
           font-size: 1.8rem;
-          line-height: 1.2;
         }
 
         .company {
           font-size: 1.25rem;
           margin-bottom: 0;
-          line-height: 1.2;
         }
 
         .timeframe {
@@ -216,13 +208,44 @@ export default {
         .btn {
           width: auto;
         }
+      }
 
-        &.active {
+      &.active {
+        // only need to edit these 2 variables to adjust timing
+        $before-interval: 0.3;
+        $after-interval: 1;
+
+        li {
           &::before {
+            transition: transform ($before-interval + 0s) cubic-bezier(0.34, 1.56, 0.62, 1.25);
             transform: scale(1);
           }
+
           &::after {
+            transition: transform ($after-interval + 0s);
             transform: scaleY(1);
+          }
+
+          &:first-child::after {
+            transition-delay: ($before-interval + 0s);
+          }
+
+          &:nth-child(2) {
+            &::before {
+              transition-delay: ($before-interval + $after-interval + 0s);
+            }
+            &::after {
+              transition-delay: (($before-interval * 2) + $after-interval + 0s);
+            }
+          }
+
+          &:nth-child(3) {
+            &::before {
+              transition-delay: (($before-interval * 2) + ($after-interval * 2) + 0s);
+            }
+            &::after {
+              transition-delay: (($before-interval * 3) + ($after-interval * 2) + 0s);
+            }
           }
         }
       }
