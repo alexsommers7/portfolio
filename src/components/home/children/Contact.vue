@@ -22,14 +22,7 @@
         <label for="email">Email</label>
       </div>
       <div class="form__field">
-        <textarea
-          type="text"
-          id="message"
-          name="message"
-          v-model="form.message"
-          required="true"
-          placeholder=" "
-        ></textarea>
+        <textarea id="message" name="message" v-model="form.message" required="true" placeholder=" "></textarea>
         <label for="message">Message</label>
       </div>
       <button class="btn btn--secondary" type="submit">Send It</button>
