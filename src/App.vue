@@ -10,12 +10,19 @@
     ></LoadIn>
     <Nav :onMobile="onMobile"></Nav>
     <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
-      <main id="main">
+      <main id="main" ref="main">
         <router-view></router-view>
       </main>
     </transition>
-    <Sidebar :observerTargets="observerTargets" :onMobile="onMobile" :noScrollArrow="noScrollArrow"></Sidebar>
-    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0"><Footer></Footer></transition>
+    <Sidebar
+      :observerTargets="observerTargets"
+      :observeSections="observeSections"
+      :onMobile="onMobile"
+      :noScrollArrow="noScrollArrow"
+    ></Sidebar>
+    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
+      <Footer></Footer>
+    </transition>
     <IE></IE>
   </div>
 </template>
@@ -32,10 +39,11 @@ export default {
   data() {
     return {
       observerTargets: [],
+      observeSections: true,
       contentLoaded: false,
       onMobile: false,
       firstVisit: sessionStorage.getItem("firstVisit") || true,
-      noScrollArrow: this.$router.resolve(this.$route.path).route.meta.NoScrollArrow || false,
+      noScrollArrow: this.$router.resolve(this.$route.path).route.meta.noScrollArrow || false,
       seeThroughLoadIn: false,
     };
   },
@@ -63,22 +71,37 @@ export default {
       // once we hit the appropriate point in the load-in timeline
       this.seeThroughLoadIn = true;
     },
+    handleIntro() {
+      if (this.firstVisit == "false") {
+        this.finishIntro();
+        this.updateTargets();
+      }
+      this.setOutlineFocus();
+      this.checkScreenSize();
+      window.addEventListener("resize", this.checkScreenSize);
+    },
     onLoadInFinish() {
       this.finishIntro();
       this.$nextTick(() => {
-        this.observerTargets = [...this.$el.querySelectorAll("#main section.track")];
+        this.updateTargets();
       });
       this.contentLoaded = true;
     },
+    updateTargets() {
+      this.observeSections = true;
+      this.observerTargets = [...this.$refs.main.querySelectorAll("section.track")];
+    },
   },
   mounted() {
-    if (this.firstVisit == "false") {
-      this.finishIntro();
-      this.observerTargets = [...this.$el.querySelectorAll("#main section.track")];
-    }
-    this.setOutlineFocus();
-    this.checkScreenSize();
-    window.addEventListener("resize", this.checkScreenSize);
+    this.handleIntro();
+    this.updateTargets();
+  },
+  watch: {
+    $route() {
+      this.$nextTick(() => {
+        this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
+      });
+    },
   },
   components: {
     LoadIn,

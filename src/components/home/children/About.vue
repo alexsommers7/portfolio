@@ -1,5 +1,5 @@
 <template>
-  <section class="track about" data-section="About">
+  <section class="track about" data-sidebar="About">
     <span class="anchor-span" id="about"></span>
     <div class="about__intro">
       <h3 class="heading heading--3 hide-for-large">ABOUT ME</h3>
@@ -20,8 +20,8 @@
           </div>
         </li>
       </ul>
-      <button class="btn btn--secondary" data-section="toolbox" @click="anchorClick">
-        <strong data-section="toolbox" @click="anchorClick">See What's in My Toolbox</strong>
+      <button class="btn btn--secondary" data-section="toolbox" @click="onAnchorClick">
+        <strong data-section="toolbox" @click="onAnchorClick">See What's in My Toolbox</strong>
       </button>
     </div>
   </section>
@@ -56,7 +56,7 @@ export default {
     };
   },
   methods: {
-    anchorClick(e) {
+    onAnchorClick(e) {
       gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
     },
   },

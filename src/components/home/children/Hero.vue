@@ -4,11 +4,11 @@
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
       <h2 class="heading heading--2">Front-End Web Developer</h2>
       <div class="intro__buttons">
-        <button class="btn btn--primary" data-section="projects" @click="anchorClick">
-          <strong data-section="projects" @click="anchorClick">My Work</strong>
+        <button class="btn btn--primary" data-section="projects" @click="onAnchorClick">
+          <strong data-section="projects" @click="onAnchorClick">My Work</strong>
         </button>
-        <button class="btn btn--secondary" data-section="contact" @click="anchorClick">
-          <strong data-section="contact" @click="anchorClick">Contact Me</strong>
+        <button class="btn btn--secondary" data-section="contact" @click="onAnchorClick">
+          <strong data-section="contact" @click="onAnchorClick">Contact Me</strong>
         </button>
       </div>
     </div>
@@ -29,7 +29,7 @@ export default {
     return {};
   },
   methods: {
-    anchorClick(e) {
+    onAnchorClick(e) {
       gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
     },
   },

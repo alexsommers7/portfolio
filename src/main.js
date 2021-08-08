@@ -11,16 +11,16 @@ Vue.use(VueRouter);
 
 export const router = new VueRouter({
   routes: [
-    { path: "/", component: Homepage, meta: { NoLoadIn: false, NoScrollArrow: false } },
+    { path: "/", name: "Home", component: Homepage, meta: { NoLoadIn: false, noScrollArrow: false } },
     {
       path: "/project-showcase",
       name: "Projects",
       component: Projects,
-      meta: { NoLoadIn: true, NoScrollArrow: true },
+      meta: { NoLoadIn: true, noScrollArrow: true },
     },
-    { path: "/thanks", name: "thanks!", component: formSuccess, meta: { NoLoadIn: true, NoScrollArrow: true } },
-    { path: "/404", name: "", component: formFailure, meta: { NoLoadIn: true, NoScrollArrow: true } },
-    { path: "*", component: pageNotFound, meta: { NoLoadIn: true, NoScrollArrow: true } },
+    { path: "/thanks", name: "thanks!", component: formSuccess, meta: { NoLoadIn: true, noScrollArrow: true } },
+    { path: "/404", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
+    { path: "*", component: pageNotFound, meta: { NoLoadIn: true, noScrollArrow: true } },
   ],
   mode: "history",
 });

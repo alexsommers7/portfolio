@@ -111,7 +111,7 @@
     </div>
     <div class="current-section">
       <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
-        <p v-if="!noScrollArrow" key="arrow">
+        <p v-if="!noScrollArrow">
           <button aria-label="Go to Main Content" data-section="about" class="btn" @click="onAnchorClick">
             <svg version="1.1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;">
               <g>
@@ -127,7 +127,7 @@
             </svg>
           </button>
         </p>
-        <p v-else key="text">{{ this.$route.name }}</p>
+        <p v-else>{{ this.$route.name }}</p>
       </transition>
     </div>
   </aside>
@@ -146,6 +146,7 @@ export default {
     return {};
   },
   props: {
+    observeSections: Boolean,
     observerTargets: Array,
     onMobile: Boolean,
     noScrollArrow: Boolean,
@@ -156,25 +157,36 @@ export default {
       gsap.to(textEl, {
         duration: 0.95,
         text: {
-          value: `${triggerObj.trigger.dataset.section}`,
+          value: `${triggerObj.trigger.dataset.sidebar}`,
           padSpace: true,
         },
         ease: "power1.out",
       });
     },
     configureScrollTrigger() {
+      if (!this.observeSections) {
+        if (ScrollTrigger.getById("sidebar")) ScrollTrigger.getById("sidebar").kill(true);
+        return (this.$el.querySelector(".current-section p").innerText = this.$route.name);
+      }
       // ScrollTrigger.defaults({
       //   markers: true,
       // });
 
       this.observerTargets.forEach((section) => {
         ScrollTrigger.create({
+          id: "sidebar",
           trigger: section,
           start: "top 55%",
           end: "center 20%",
           toggleActions: "play restart play reverse",
-          onEnter: (self) => this.updateText(self),
-          onEnterBack: (self) => this.updateText(self),
+          onEnter: (self) => {
+            if (this.observeSections) {
+              this.updateText(self);
+            }
+          },
+          onEnterBack: (self) => {
+            if (this.observeSections) this.updateText(self);
+          },
         });
       });
     },
@@ -188,9 +200,17 @@ export default {
         this.configureScrollTrigger();
       }
     },
+    observeSections: function(newVal) {
+      if (!newVal) this.configureScrollTrigger();
+    },
     onMobile: function(newVal) {
       if (!newVal) this.configureScrollTrigger();
     },
+    // $route() {
+    //   this.$nextTick(() => {
+    //     this.configureScrollTrigger();
+    //   });
+    // },
   },
 };
 </script>

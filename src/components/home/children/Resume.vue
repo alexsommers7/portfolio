@@ -1,5 +1,5 @@
 <template>
-  <section class="track resume full-width" data-section="Resume">
+  <section class="track resume full-width" data-sidebar="Resume">
     <span class="anchor-span" id="resume"></span>
     <h3 class="heading heading--3 hide-for-large">RESUME</h3>
     <h4 class="heading heading--4 heading--section">Digital Marketing to Web Development</h4>
@@ -93,25 +93,30 @@ export default {
       ],
     };
   },
+  methods: {
+    configureScrollTrigger() {
+      // ScrollTrigger.defaults({
+      //   markers: true,
+      // });
+
+      const items = this.$el.querySelectorAll(".gsap-ul");
+      items.forEach((item) => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 60%",
+          onEnter: (self) => self.trigger.classList.add("active"),
+        });
+
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top bottom",
+          onLeaveBack: (self) => self.trigger.classList.remove("active"),
+        });
+      });
+    },
+  },
   mounted() {
-    // ScrollTrigger.defaults({
-    //   markers: true,
-    // });
-
-    const items = this.$el.querySelectorAll(".gsap-ul");
-    items.forEach((item) => {
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top 60%",
-        onEnter: (self) => self.trigger.classList.add("active"),
-      });
-
-      ScrollTrigger.create({
-        trigger: item,
-        start: "top bottom",
-        onLeaveBack: (self) => self.trigger.classList.remove("active"),
-      });
-    });
+    this.configureScrollTrigger();
   },
 };
 </script>
