@@ -102,7 +102,7 @@ export default {
     items.forEach((item) => {
       ScrollTrigger.create({
         trigger: item,
-        start: "top 55%",
+        start: "top 60%",
         onEnter: (self) => self.trigger.classList.add("active"),
       });
 

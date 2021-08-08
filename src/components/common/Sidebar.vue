@@ -110,23 +110,25 @@
       </a>
     </div>
     <div class="current-section">
-      <p v-if="!noScrollArrow">
-        <a href="#about" aria-label="Go to Main Content">
-          <svg version="1.1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;">
-            <g>
-              <path
-                d="M27,0C12.112,0,0,12.112,0,27s12.112,27,27,27s27-12.112,27-27S41.888,0,27,0z M27,52C13.215,52,2,40.785,2,27
+      <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
+        <p v-if="!noScrollArrow" key="arrow">
+          <button aria-label="Go to Main Content" data-section="about" class="btn" @click="onAnchorClick">
+            <svg version="1.1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;">
+              <g>
+                <path
+                  d="M27,0C12.112,0,0,12.112,0,27s12.112,27,27,27s27-12.112,27-27S41.888,0,27,0z M27,52C13.215,52,2,40.785,2,27
 		S13.215,2,27,2s25,11.215,25,25S40.785,52,27,52z"
-              />
-              <path
-                d="M28,38.086V13.5c0-0.553-0.448-1-1-1s-1,0.447-1,1v24.586l-8.293-8.293l-1.414,1.414L27,41.914l10.707-10.707l-1.414-1.414
+                />
+                <path
+                  d="M28,38.086V13.5c0-0.553-0.448-1-1-1s-1,0.447-1,1v24.586l-8.293-8.293l-1.414,1.414L27,41.914l10.707-10.707l-1.414-1.414
 		L28,38.086z"
-              />
-            </g>
-          </svg>
-        </a>
-      </p>
-      <p v-else>{{ this.$route.name }}</p>
+                />
+              </g>
+            </svg>
+          </button>
+        </p>
+        <p v-else key="text">{{ this.$route.name }}</p>
+      </transition>
     </div>
   </aside>
 </template>
@@ -134,7 +136,9 @@
 <script>
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "Sidebar",
@@ -147,38 +151,45 @@ export default {
     noScrollArrow: Boolean,
   },
   methods: {
-    configureIntersectionObserver() {
-      let currentSectionP = this.$el.querySelector(".current-section p");
-      const updateCurrentSection = function(entries) {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          gsap.to(currentSectionP, {
-            duration: 0.675,
-            text: {
-              value: `${entry.target.dataset.section}`,
-              padSpace: true,
-            },
-            ease: "power1.out",
-          });
+    updateText(triggerObj) {
+      let textEl = this.$el.querySelector(".current-section p");
+      gsap.to(textEl, {
+        duration: 0.95,
+        text: {
+          value: `${triggerObj.trigger.dataset.section}`,
+          padSpace: true,
+        },
+        ease: "power1.out",
+      });
+    },
+    configureScrollTrigger() {
+      // ScrollTrigger.defaults({
+      //   markers: true,
+      // });
+
+      this.observerTargets.forEach((section) => {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top 55%",
+          end: "center 20%",
+          toggleActions: "play restart play reverse",
+          onEnter: (self) => this.updateText(self),
+          onEnterBack: (self) => this.updateText(self),
         });
-      };
-      const scrollOptions = {
-        root: null,
-        threshold: 0.65,
-        rootMargin: "100px",
-      };
-      const observer = new IntersectionObserver(updateCurrentSection, scrollOptions);
-      this.observerTargets.forEach((target) => observer.observe(target));
+      });
+    },
+    onAnchorClick(e) {
+      gsap.to(window, { duration: 0.8, scrollTo: { y: `#${e.target.dataset.section}`, offsetY: 75 } });
     },
   },
   watch: {
     observerTargets: function(newArr) {
-      if (newArr.length > 1 && !this.onMobile) {
-        this.configureIntersectionObserver();
+      if (newArr.length && !this.onMobile) {
+        this.configureScrollTrigger();
       }
     },
     onMobile: function(newVal) {
-      if (!newVal) this.configureIntersectionObserver();
+      if (!newVal) this.configureScrollTrigger();
     },
   },
 };
@@ -319,12 +330,14 @@ export default {
         font-size: 4rem;
       }
 
-      a {
+      button {
         appearance: none;
         background: transparent;
         border: none;
         cursor: pointer;
-        display: flex;
+        width: 6rem;
+        height: 6rem;
+        transform: translateY(-10px);
 
         &:hover {
           svg {
@@ -333,8 +346,9 @@ export default {
         }
 
         svg {
-          width: 45%;
-          height: 45%;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
           fill: $color-background-light;
           transform: rotate(-180deg);
           transition: transform 0.25s ease;

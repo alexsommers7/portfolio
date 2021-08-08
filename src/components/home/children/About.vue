@@ -42,18 +42,14 @@ export default {
           icon: require("@/assets/icons/vue.svg"),
         },
         {
-          title: "JavaScript",
-          icon: require("@/assets/icons/javascript.svg"),
+          title: "SCSS",
+          icon: require("@/assets/icons/sass.svg"),
+          alt: "Sassy CSS (SCSS)",
         },
         {
           title: "GSAP",
           icon: require("@/assets/icons/gsap.svg"),
           alt: "Greensock Animation Platform (GSAP)",
-        },
-        {
-          title: "SCSS",
-          icon: require("@/assets/icons/sass.svg"),
-          alt: "Sassy CSS (SCSS)",
         },
       ],
     };
@@ -79,29 +75,45 @@ export default {
 
 .about {
   margin-top: 3rem;
+  max-width: 1350px;
 
   @include respond(desk-small) {
     margin-top: 0;
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  @include respond(desk-xlarge) {
-    grid-template-columns: minmax(550px, 3fr) minmax(550px, 2fr);
+  &__intro,
+  &__lately {
+    @include respond(desk-small) {
+      flex-basis: 50%;
+    }
   }
 
   &__intro {
-    @media all and (min-width: 1289px) {
-      // arbitrary breakpoint, sorry future me
+    padding: 0 1rem;
+
+    @include respond(desk-small) {
+      flex: 2 0 45%;
       padding-top: 1rem;
     }
   }
 
   &__lately {
-    @media all and (min-width: 1289px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include respond(desk-small) {
+      flex: 1 0 500px;
       border-left: 2px solid $color-background-light;
       padding: 1rem 2rem;
+    }
+
+    .heading,
+    .languages {
+      width: 100%;
     }
 
     .heading {
@@ -109,7 +121,6 @@ export default {
       margin-top: 4rem;
 
       @include respond(desk-small) {
-        text-align: left;
         margin-top: 0;
       }
     }
@@ -121,7 +132,7 @@ export default {
       display: block;
 
       @include respond(desk-small) {
-        margin: 0;
+        margin-top: 0.4rem;
       }
     }
 
@@ -130,11 +141,10 @@ export default {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 2rem 0; // acct for li first-child left margin
+      margin: 2rem 0;
 
       @include respond(desk-small) {
-        margin: 2rem 0 2rem -0.5rem; // acct for li first-child left margin
-        justify-content: flex-start;
+        margin: 2rem 0;
       }
 
       li {
