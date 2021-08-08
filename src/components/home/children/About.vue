@@ -40,11 +40,12 @@ export default {
         {
           title: "Vue.js",
           icon: require("@/assets/icons/vue.svg"),
+          alt: "Vue JavaScript Framework",
         },
         {
           title: "SCSS",
           icon: require("@/assets/icons/sass.svg"),
-          alt: "Sassy CSS (SCSS)",
+          alt: "Sassy CSS (SCSS) Preprocessor",
         },
         {
           title: "GSAP",

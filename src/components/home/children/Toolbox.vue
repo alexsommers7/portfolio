@@ -36,17 +36,20 @@ export default {
           title: "Vue.js",
           icon: require("@/assets/icons/vue.svg"),
           type: "tech",
+          alt: "Vue JavaScript Framework",
         },
         {
           title: "Alpine.js",
           icon: require("@/assets/icons/alpine.svg"),
           type: "tech",
           class: "brighten",
+          alt: "Alpine JavaScript Framework",
         },
         {
           title: "JavaScript",
           icon: require("@/assets/icons/javascript.svg"),
           type: "tech",
+          alt: "JavaScript (ES6)",
         },
         {
           title: "SCSS",
@@ -58,11 +61,13 @@ export default {
           title: "CSS",
           icon: require("@/assets/icons/css.svg"),
           type: "tech",
+          alt: "Cascading Style Sheets (CSS)",
         },
         {
           title: "HTML",
           icon: require("@/assets/icons/html.svg"),
           type: "tech",
+          alt: "HyperText Markup Language (HTML)",
         },
         {
           title: "GSAP",
@@ -73,13 +78,14 @@ export default {
         {
           title: "Foundation",
           icon: require("@/assets/icons/zurb-foundation.svg"),
-          alt: "Zurb Foundation",
           type: "tech",
+          alt: "Zurb Foundation CSS Framework",
         },
         {
           title: "Bootstrap",
           icon: require("@/assets/icons/bootstrap.svg"),
           type: "tech",
+          alt: "Bootstrap CSS Framework",
         },
         {
           title: "Ampscript",
@@ -91,6 +97,7 @@ export default {
           title: "Git",
           icon: require("@/assets/icons/git.svg"),
           type: "tech",
+          alt: "Git Version Control",
         },
         {
           title: "NPM",
@@ -126,6 +133,7 @@ export default {
           title: "Figma",
           icon: require("@/assets/icons/figma.svg"),
           type: "design",
+          alt: "Figma Design Software",
         },
       ],
     };
