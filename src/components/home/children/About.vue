@@ -231,10 +231,6 @@ export default {
     margin-bottom: 1.5rem;
   }
 
-  // .typewriter-1 {
-  //   opacity: 0;
-  // }
-
   #cursor {
     margin: 0;
     display: inline-block;
