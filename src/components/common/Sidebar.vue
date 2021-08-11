@@ -206,11 +206,6 @@ export default {
     onMobile: function(newVal) {
       if (!newVal) this.configureScrollTrigger();
     },
-    // $route() {
-    //   this.$nextTick(() => {
-    //     this.configureScrollTrigger();
-    //   });
-    // },
   },
 };
 </script>

@@ -3,7 +3,11 @@
     <span class="anchor-span" id="about"></span>
     <div class="about__intro">
       <h3 class="heading heading--3 hide-for-large">ABOUT ME</h3>
-      <p><strong class="about__heading typewriter">Hey there, I'm Alex.</strong></p>
+      <p>
+        <strong class="about__heading typewriter-1"></strong>
+        <strong class="about__heading typewriter-2"></strong>
+        <span class="about__heading" id="cursor">|</span>
+      </p>
       <p>I'm a <span class="color-primary">Front-End Web Developer</span> based out of Tempe, Arizona.</p>
       <p>
         In both freelance and professional settings, I harness the power of modern web technologies to craft memorable,
@@ -30,7 +34,11 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
 gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
 export default {
   name: "About",
@@ -59,21 +67,58 @@ export default {
     onAnchorClick(e) {
       gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
     },
+    configureScrollTrigger() {
+      // ScrollTrigger.defaults({
+      //   markers: true,
+      // });
+
+      const cursor = gsap.fromTo(
+        "#cursor",
+        { autoAlpha: 0, x: -10 },
+        {
+          autoAlpha: 1,
+          duration: 0.5,
+          repeat: 8,
+          ease: "steps(1)",
+          onComplete: function() {
+            document.getElementById("cursor").style.opacity = "0";
+          },
+        }
+      );
+
+      const tl = gsap.timeline();
+      tl.to(".typewriter-1", {
+        text: { value: "Hey there, " },
+        duration: 1.15,
+        delay: 0.6,
+      }).to(".typewriter-2", {
+        text: { value: "I'm Alex." },
+        duration: 1.15,
+        delay: 0.4,
+      });
+
+      ScrollTrigger.create({
+        animation: tl,
+        trigger: ".typewriter-1",
+        start: "top 70%",
+      });
+
+      ScrollTrigger.create({
+        animation: cursor,
+        trigger: ".typewriter-1",
+        start: "top 70%",
+      });
+    },
   },
-  /* 
-      timeline.to("#about .typewriter", {
-      text: { value: "Hey there, I'm Alex." },
-      duration: 0.5,
-      ease: "none",
-    });  
-  */
+  mounted() {
+    this.configureScrollTrigger();
+  },
 };
 </script>
 
 <style scoped lang="scss">
 @import "../../../scss/_mixins";
 @import "../../../scss/_variables";
-
 .about {
   margin-top: 3rem;
   max-width: 1350px;
@@ -184,6 +229,17 @@ export default {
     font-size: clamp(1.8rem, calc(-0.875rem + 8.333vw), 2rem);
     line-height: 1;
     margin-bottom: 1.5rem;
+  }
+
+  // .typewriter-1 {
+  //   opacity: 0;
+  // }
+
+  #cursor {
+    margin: 0;
+    display: inline-block;
+    margin-left: 8px;
+    opacity: 0;
   }
 }
 </style>
