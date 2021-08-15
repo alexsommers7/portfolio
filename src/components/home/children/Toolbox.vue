@@ -192,16 +192,16 @@ export default {
         trigger: ".toolbox .toolbox__toggle",
         start: `top ${this.mobileNavHeight}`,
         end: `+=${this.toolsHeight + this.toggleHeight / 2}`,
+        anticipatePin: 1,
         pin: this.onMobile,
         pinSpacing: false,
         markers: true,
-        onEnter: (self) => self.trigger.classList.add("active"),
       });
 
       ScrollTrigger.create({
         trigger: ".toolbox .toolbox__toggle",
         start: "top bottom",
-        onLeaveBack: (self) => self.trigger.classList.remove("active"),
+        onLeaveBack: (self) => console.log(self),
       });
     },
   },
