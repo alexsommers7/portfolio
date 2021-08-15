@@ -98,7 +98,7 @@ export default {
           }),
         onEnterBack: (batch) =>
           gsap.to(batch, { opacity: 1, duration: 0.8, ease: "power4.out", y: 0, stagger: 0.25, overwrite: true }),
-        start: "top 60%",
+        start: "top 75%",
       });
 
       ScrollTrigger.batch("article.project", {

@@ -25,12 +25,22 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "Toolbox",
   data() {
     return {
       toggle: "left",
       currentType: "tech",
+      onMobile: false,
+      mobileNavHeight: this.getCustomProperty("--nav-mobile-height"),
+      toggleHeight: 0,
+      toolsHeight: 0,
       tools: [
         {
           title: "Vue.js",
@@ -144,11 +154,18 @@ export default {
     },
   },
   methods: {
+    checkScreenSize() {
+      this.onMobile = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200;
+    },
+    getCustomProperty(propertyName) {
+      return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
+    },
     toggleButton(event, forceTo = "left") {
       let direction = event ? event.target.dataset.toggle : forceTo;
       if (direction == this.toggle) return;
       this.$el.querySelectorAll(".toolbox__toggle button").forEach((btn) => btn.classList.toggle("active"));
       this.$el.querySelector(".buttons").classList = `buttons ${direction}`;
+      gsap.to(window, { duration: 0.8, scrollTo: ".toolbox .heading--section" });
       this.currentType = direction === "left" ? "tech" : "design";
       this.toggle = direction;
     },
@@ -167,10 +184,37 @@ export default {
         toolsEl.style.height = `${height}px`;
       }, 800);
     },
+    configureScrollTrigger() {
+      if (!this.onMobile) return this.$el.querySelector(".toolbox__toggle").classList.remove("active");
+      this.toolsHeight = this.$el.querySelector(".tools").getBoundingClientRect().height;
+      this.toggleHeight = this.$el.querySelector(".toolbox__toggle").getBoundingClientRect().height;
+      ScrollTrigger.create({
+        trigger: ".toolbox .toolbox__toggle",
+        start: `top ${this.mobileNavHeight}`,
+        end: `+=${this.toolsHeight + this.toggleHeight / 2}`,
+        pin: this.onMobile,
+        pinSpacing: false,
+        markers: true,
+        onEnter: (self) => self.trigger.classList.add("active"),
+      });
+
+      ScrollTrigger.create({
+        trigger: ".toolbox .toolbox__toggle",
+        start: "top bottom",
+        onLeaveBack: (self) => self.trigger.classList.remove("active"),
+      });
+    },
   },
   mounted() {
+    let vm = this;
+    this.checkScreenSize();
     this.calculateIconsHeight();
-    window.addEventListener("resize", this.calculateIconsHeight);
+    this.configureScrollTrigger();
+    window.addEventListener("resize", function() {
+      vm.calculateIconsHeight();
+      vm.checkScreenSize();
+      vm.configureScrollTrigger();
+    });
   },
 };
 </script>
@@ -187,6 +231,12 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 4rem auto 3rem;
+    z-index: 30;
+
+    &.active {
+      background-color: $color-background;
+      padding: 2.5rem 0 !important;
+    }
 
     .buttons {
       background-color: $color-background-light;

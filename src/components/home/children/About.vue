@@ -81,7 +81,7 @@ export default {
           repeat: 8,
           ease: "steps(1)",
           onComplete: function() {
-            document.getElementById("cursor").style.opacity = "0";
+            if (document.getElementById("cursor")) document.getElementById("cursor").style.opacity = "0";
           },
         }
       );
@@ -100,7 +100,7 @@ export default {
       ScrollTrigger.create({
         animation: tl,
         trigger: ".typewriter-1",
-        start: "top 70%",
+        start: "top 75%",
       });
 
       ScrollTrigger.create({

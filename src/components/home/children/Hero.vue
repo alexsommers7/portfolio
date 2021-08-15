@@ -13,7 +13,12 @@
       </div>
     </div>
     <figure>
-      <img class="photo" src="../../../assets/alex-sommers.png" alt="Alex Sommers | Front-End Web Developer" />
+      <img
+        class="photo"
+        src="../../../assets/alex-sommers.png"
+        height="468"
+        alt="Alex Sommers | Front-End Web Developer"
+      />
     </figure>
   </section>
 </template>
