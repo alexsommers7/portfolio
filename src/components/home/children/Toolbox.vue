@@ -197,12 +197,6 @@ export default {
         pinSpacing: false,
         markers: true,
       });
-
-      ScrollTrigger.create({
-        trigger: ".toolbox .toolbox__toggle",
-        start: "top bottom",
-        onLeaveBack: (self) => console.log(self),
-      });
     },
   },
   mounted() {
