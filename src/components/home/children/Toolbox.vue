@@ -230,13 +230,10 @@ export default {
     align-items: center;
     justify-content: center;
     align-items: center;
-    margin: 4rem auto 3rem;
+    margin: 2rem auto 1rem;
+    background-color: $color-background;
+    padding: 1rem 0 !important; // override GSAP pin style
     z-index: 30;
-
-    &.active {
-      background-color: $color-background;
-      padding: 2.5rem 0 !important;
-    }
 
     .buttons {
       background-color: $color-background-light;
