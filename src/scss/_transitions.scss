@@ -32,6 +32,7 @@
 }
 .list-leave-active {
   position: absolute;
+  opacity: 0;
 }
 .list-move {
   transition: transform 1s, opacity 0.3s;

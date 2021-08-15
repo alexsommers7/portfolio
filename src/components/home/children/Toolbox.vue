@@ -27,20 +27,14 @@
 <script>
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-gsap.registerPlugin(ScrollToPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: "Toolbox",
   data() {
     return {
-      toggle: "left",
+      togglePosition: "left",
       currentType: "tech",
-      onMobile: false,
-      mobileNavHeight: this.getCustomProperty("--nav-mobile-height"),
-      toggleHeight: 0,
-      toolsHeight: 0,
       tools: [
         {
           title: "Vue.js",
@@ -154,20 +148,13 @@ export default {
     },
   },
   methods: {
-    checkScreenSize() {
-      this.onMobile = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200;
-    },
-    getCustomProperty(propertyName) {
-      return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
-    },
     toggleButton(event, forceTo = "left") {
       let direction = event ? event.target.dataset.toggle : forceTo;
-      if (direction == this.toggle) return;
+      if (direction == this.togglePosition) return;
       this.$el.querySelectorAll(".toolbox__toggle button").forEach((btn) => btn.classList.toggle("active"));
       this.$el.querySelector(".buttons").classList = `buttons ${direction}`;
-      gsap.to(window, { duration: 0.8, scrollTo: ".toolbox .heading--section" });
       this.currentType = direction === "left" ? "tech" : "design";
-      this.toggle = direction;
+      this.togglePosition = direction;
     },
     calculateIconsHeight() {
       // if not on mobile, keep this element at initial height when toggled to avoid layout shift
@@ -185,28 +172,31 @@ export default {
       }, 800);
     },
     configureScrollTrigger() {
-      if (!this.onMobile) return this.$el.querySelector(".toolbox__toggle").classList.remove("active");
-      this.toolsHeight = this.$el.querySelector(".tools").getBoundingClientRect().height;
-      this.toggleHeight = this.$el.querySelector(".toolbox__toggle").getBoundingClientRect().height;
-      ScrollTrigger.create({
-        trigger: ".toolbox .toolbox__toggle",
-        start: `top ${this.mobileNavHeight}`,
-        end: `+=${this.toolsHeight + this.toggleHeight / 2}`,
-        pin: this.onMobile,
-        pinSpacing: false,
+      let listItems = this.$el.querySelectorAll(".toolbox .list-item");
+      gsap.set(".toolbox .list-item", { y: 100, opacity: 0 });
+
+      ScrollTrigger.batch(".toolbox .list-item", {
+        start: "top 85%",
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.2,
+            ease: "power4.in",
+            y: 0,
+            stagger: { each: 0.08 },
+            overwrite: true,
+            // prevent gsap inline style from messing up Vue list transition
+            onComplete: () => listItems.forEach((item) => item.removeAttribute("style")),
+          }),
       });
+
+      ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".toolbox .list-item", { y: 0, opacity: 1 }));
     },
   },
   mounted() {
-    let vm = this;
-    this.checkScreenSize();
     this.calculateIconsHeight();
     this.configureScrollTrigger();
-    window.addEventListener("resize", function() {
-      vm.calculateIconsHeight();
-      vm.checkScreenSize();
-      vm.configureScrollTrigger();
-    });
+    window.addEventListener("resize", this.calculateIconsHeight);
   },
 };
 </script>
@@ -222,10 +212,7 @@ export default {
     align-items: center;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto 1rem;
-    background-color: $color-background;
-    padding: 1rem 0 !important; // override GSAP pin style
-    z-index: 30;
+    margin: 4rem auto 3rem;
 
     .buttons {
       background-color: $color-background-light;
