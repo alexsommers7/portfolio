@@ -192,10 +192,8 @@ export default {
         trigger: ".toolbox .toolbox__toggle",
         start: `top ${this.mobileNavHeight}`,
         end: `+=${this.toolsHeight + this.toggleHeight / 2}`,
-        anticipatePin: 1,
         pin: this.onMobile,
         pinSpacing: false,
-        markers: true,
       });
     },
   },
