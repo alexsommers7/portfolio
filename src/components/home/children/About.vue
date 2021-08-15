@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     onAnchorClick(e) {
-      gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
+      gsap.to(window, { duration: 0.8, scrollTo: { y: `#${e.target.dataset.section}`, offsetY: -20 } });
     },
     configureScrollTrigger() {
       // ScrollTrigger.defaults({
@@ -178,7 +178,7 @@ export default {
       display: block;
 
       @include respond(desk-small) {
-        margin-top: 0.4rem;
+        margin-top: 3px;
       }
     }
 

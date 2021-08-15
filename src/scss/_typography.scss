@@ -18,6 +18,11 @@
     background-color: $color-primary;
     color: $color-text-dark;
 
+    &:hover,
+    &:active {
+      background-color: rgba($color-primary, 0.85);
+    }
+
     &:focus {
       color: $color-text-dark;
     }
@@ -27,6 +32,11 @@
     background-color: transparent;
     color: $color-primary;
 
+    &:hover,
+    &:active {
+      background-color: $color-primary;
+    }
+
     &:focus {
       color: $color-primary;
     }
@@ -34,7 +44,6 @@
 
   &:hover,
   &:active {
-    background-color: rgba($color-primary, 0.85);
     color: $color-text-dark;
   }
 }

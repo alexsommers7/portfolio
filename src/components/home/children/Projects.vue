@@ -3,8 +3,8 @@
     <span class="anchor-span" id="projects"></span>
     <h3 class="heading heading--3 hide-for-large">PROJECTS</h3>
     <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
-    <div class="project-group">
-      <article v-for="project in projects" :key="project.title">
+    <div class="project-group" ref="projects">
+      <article v-for="project in projects" :key="project.title" class="project">
         <img :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
         <p class="title">{{ project.title }}</p>
         <p>{{ project.description }}</p>
@@ -28,6 +28,10 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "Projects",
   data() {
@@ -76,6 +80,37 @@ export default {
     snapToTop() {
       window.scrollTo({ top: 0 });
     },
+    configureScrollTrigger() {
+      // ScrollTrigger.defaults({
+      //   markers: true,
+      // });
+
+      gsap.set("article.project", { y: 100, opacity: 0 });
+      ScrollTrigger.batch("article.project", {
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.8,
+            ease: "power4.out",
+            y: 0,
+            stagger: { each: 0.25 },
+            overwrite: true,
+          }),
+        onEnterBack: (batch) =>
+          gsap.to(batch, { opacity: 1, duration: 0.8, ease: "power4.out", y: 0, stagger: 0.25, overwrite: true }),
+        start: "top 60%",
+      });
+
+      ScrollTrigger.batch("article.project", {
+        onLeaveBack: (batch) => gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
+        start: "top bottom",
+      });
+
+      ScrollTrigger.addEventListener("refreshInit", () => gsap.set("article.project", { y: 0, opacity: 1 }));
+    },
+  },
+  mounted() {
+    this.configureScrollTrigger();
   },
 };
 </script>

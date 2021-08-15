@@ -143,7 +143,6 @@ export default {
       return this.tools.filter((tool) => tool.type === this.currentType);
     },
   },
-  props: {},
   methods: {
     toggleButton(event, forceTo = "left") {
       let direction = event ? event.target.dataset.toggle : forceTo;
