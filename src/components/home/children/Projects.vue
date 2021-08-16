@@ -81,11 +81,8 @@ export default {
       window.scrollTo({ top: 0 });
     },
     configureScrollTrigger() {
-      // ScrollTrigger.defaults({
-      //   markers: true,
-      // });
-
       gsap.set("article.project", { y: 100, opacity: 0 });
+
       ScrollTrigger.batch("article.project", {
         onEnter: (batch) =>
           gsap.to(batch, {

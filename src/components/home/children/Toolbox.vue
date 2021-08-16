@@ -175,7 +175,7 @@ export default {
       gsap.set(".toolbox .list-item", { y: 100, opacity: 0 });
 
       ScrollTrigger.batch(".toolbox .list-item", {
-        start: "top 85%",
+        start: "top 88%",
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
@@ -194,6 +194,11 @@ export default {
                 }, 800)
               ),
           }),
+      });
+
+      ScrollTrigger.batch(".toolbox .list-item", {
+        start: "top bottom",
+        onLeaveBack: (batch) => gsap.set(batch, { y: 100, opacity: 0, overwrite: true }),
       });
 
       ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".toolbox .list-item", { y: 0, opacity: 1 }));
