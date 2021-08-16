@@ -93,14 +93,6 @@ export default {
             stagger: { each: 0.25 },
             overwrite: true,
           }),
-        onEnterBack: (batch) =>
-          gsap.to(batch, { opacity: 1, duration: 0.8, ease: "power4.out", y: 0, stagger: 0.25, overwrite: true }),
-        start: "top 75%",
-      });
-
-      ScrollTrigger.batch("article.project", {
-        onLeaveBack: (batch) => gsap.set(batch, { opacity: 0, y: 100, overwrite: true }),
-        start: "top bottom",
       });
 
       ScrollTrigger.addEventListener("refreshInit", () => gsap.set("article.project", { y: 0, opacity: 1 }));

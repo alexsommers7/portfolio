@@ -36,9 +36,7 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-gsap.registerPlugin(ScrollToPlugin);
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(TextPlugin);
+gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, TextPlugin);
 
 export default {
   name: "About",

@@ -95,22 +95,13 @@ export default {
   },
   methods: {
     configureScrollTrigger() {
-      // ScrollTrigger.defaults({
-      //   markers: true,
-      // });
-
       const items = this.$el.querySelectorAll(".gsap-ul");
+
       items.forEach((item) => {
         ScrollTrigger.create({
           trigger: item,
           start: "top 65%",
           onEnter: (self) => self.trigger.classList.add("active"),
-        });
-
-        ScrollTrigger.create({
-          trigger: item,
-          start: "top bottom",
-          onLeaveBack: (self) => self.trigger.classList.remove("active"),
         });
       });
     },
