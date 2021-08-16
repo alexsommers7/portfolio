@@ -172,7 +172,6 @@ export default {
       }, 800);
     },
     configureScrollTrigger() {
-      let listItems = this.$el.querySelectorAll(".toolbox .list-item");
       gsap.set(".toolbox .list-item", { y: 100, opacity: 0 });
 
       ScrollTrigger.batch(".toolbox .list-item", {
@@ -185,8 +184,9 @@ export default {
             y: 0,
             stagger: { each: 0.08 },
             overwrite: true,
-            // prevent gsap inline style from messing up Vue list transition
-            onComplete: () => listItems.forEach((item) => item.removeAttribute("style")),
+            onCompleteParams: [batch],
+            // prevent gsap inline style from messing with Vue list transition
+            onComplete: (batch) => batch.forEach((item) => item.removeAttribute("style")),
           }),
       });
 
