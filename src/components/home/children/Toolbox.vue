@@ -172,36 +172,15 @@ export default {
       }, 800);
     },
     configureScrollTrigger() {
-      gsap.set(".toolbox .list-item", { y: 100, opacity: 0 });
-
-      ScrollTrigger.batch(".toolbox .list-item", {
-        start: "top 88%",
-        onEnter: (batch) =>
-          gsap.to(batch, {
-            opacity: 1,
-            duration: 0.2,
-            ease: "power4.in",
-            y: 0,
-            stagger: { each: 0.08 },
-            overwrite: true,
-            onCompleteParams: [batch],
-            // prevent gsap inline style from messing with Vue list transition
-            // adding setTimeout to fix safari bug
-            onComplete: (batch) =>
-              batch.forEach((item) =>
-                setTimeout(() => {
-                  item.removeAttribute("style");
-                }, 800)
-              ),
-          }),
+      gsap.to(".toolbox .tools", {
+        scrollTrigger: {
+          trigger: ".toolbox .tools",
+          start: "top 80%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
       });
-
-      ScrollTrigger.batch(".toolbox .list-item", {
-        start: "top bottom",
-        onLeaveBack: (batch) => gsap.set(batch, { y: 100, opacity: 0, overwrite: true }),
-      });
-
-      ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".toolbox .list-item", { y: 0, opacity: 1 }));
     },
   },
   mounted() {
@@ -283,6 +262,8 @@ export default {
     flex-wrap: wrap;
     margin: 2rem auto;
     max-width: 1000px;
+    opacity: 0;
+    transform: translateY(100px);
 
     li {
       margin: 0.5rem;
