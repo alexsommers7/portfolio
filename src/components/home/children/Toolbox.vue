@@ -186,7 +186,13 @@ export default {
             overwrite: true,
             onCompleteParams: [batch],
             // prevent gsap inline style from messing with Vue list transition
-            onComplete: (batch) => batch.forEach((item) => item.removeAttribute("style")),
+            // adding setTimeout to fix safari bug
+            onComplete: (batch) =>
+              batch.forEach((item) =>
+                setTimeout(() => {
+                  item.removeAttribute("style");
+                }, 800)
+              ),
           }),
       });
 
