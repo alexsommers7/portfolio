@@ -1,6 +1,5 @@
 <template>
   <section class="track projects full-width" data-sidebar="Projects">
-    <span class="anchor-span" id="projects"></span>
     <h3 class="heading heading--3 hide-for-large">PROJECTS</h3>
     <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
     <div class="project-group" ref="projects">
@@ -84,11 +83,11 @@ export default {
       gsap.set("article.project", { y: 100, opacity: 0 });
 
       ScrollTrigger.batch("article.project", {
+        start: "top 80%",
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
             duration: 0.8,
-            ease: "power4.out",
             y: 0,
             stagger: { each: 0.25 },
             overwrite: true,

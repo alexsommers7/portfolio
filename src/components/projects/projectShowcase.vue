@@ -1,11 +1,12 @@
 <template>
   <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
     <section class="projects full-width">
-      <span class="anchor-span" id="projects"></span>
-      <h3 class="heading heading--3 hide-for-large">PROJECTS</h3>
-      <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
+      <div class="headings">
+        <h3 class="heading heading--3">PROJECTS</h3>
+        <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
+      </div>
       <div class="project-group">
-        <article v-for="project in projects" :key="project.title">
+        <article v-for="project in projects" :key="project.title" class="project">
           <img :src="project.image" :alt="project.alt" />
           <p class="title">{{ project.title }}</p>
           <p>{{ project.description }}</p>
@@ -38,6 +39,10 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: "projectShowcase",
   data() {
@@ -122,8 +127,50 @@ export default {
     snapToTop() {
       window.scrollTo({ top: 0 });
     },
+    configureScrollTrigger() {
+      gsap.set("article.project", { y: 100, opacity: 0 });
+
+      ScrollTrigger.batch("article.project", {
+        start: "top 75s%",
+        onEnter: (batch) =>
+          gsap.to(batch, {
+            opacity: 1,
+            duration: 0.8,
+            y: 0,
+            stagger: { each: 0.25 },
+            overwrite: true,
+          }),
+      });
+
+      ScrollTrigger.addEventListener("refreshInit", () => gsap.set("article.project", { y: 0, opacity: 1 }));
+    },
+  },
+  mounted() {
+    this.configureScrollTrigger();
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+@import "../../scss/_mixins";
+@import "../../scss/_variables";
+
+.headings {
+  margin-top: 2rem;
+}
+.heading--3 {
+  top: 4rem;
+}
+
+@include respond(desk-small) {
+  .headings {
+    padding-left: 4rem;
+  }
+  .heading--3 {
+    left: 4rem;
+  }
+  .heading--4 {
+    text-align: left;
+  }
+}
+</style>

@@ -1,6 +1,5 @@
 <template>
   <section class="track toolbox" data-sidebar="Toolbox">
-    <span class="anchor-span" id="toolbox"></span>
     <h3 class="heading heading--3 hide-for-large">TOOLBOX</h3>
     <h4 class="heading heading--4 heading--section">Modern Technology, Efficient Workflow</h4>
     <div class="toolbox__toggle">
