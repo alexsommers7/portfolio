@@ -258,9 +258,11 @@ header {
       margin-right: 0;
     }
 
-    &:hover {
-      .navigation__hamburger {
-        width: 100%;
+    @include hover {
+      &:hover {
+        .navigation__hamburger {
+          width: 100%;
+        }
       }
     }
   }
