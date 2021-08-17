@@ -263,7 +263,7 @@ export default {
     margin: 2rem auto;
     max-width: 1000px;
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(50px);
 
     li {
       margin: 0.5rem;

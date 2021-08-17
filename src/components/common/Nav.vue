@@ -225,11 +225,11 @@ header {
       }
 
       &--1 {
-        transform: rotate(-495deg);
+        transform: rotate(135deg);
       }
 
       &--3 {
-        transform: rotate(135deg);
+        transform: rotate(-135deg);
       }
     }
   }
@@ -260,13 +260,13 @@ header {
 
     &:hover {
       .navigation__hamburger {
-        background-color: rgba($color-primary, 0.8);
+        width: 100%;
       }
     }
   }
 
   &__hamburger {
-    transition: all 0.5s;
+    transition: all 0.4s;
     position: absolute;
     height: 2px;
     background-color: $color-primary;
