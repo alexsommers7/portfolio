@@ -1,5 +1,6 @@
 <template>
   <section class="track" data-sidebar="Contact">
+    <span class="anchor-span" id="contact"></span>
     <h3 class="heading heading--3 hide-for-large">CONTACT</h3>
     <h4 class="heading heading--4 heading--section">In Need of a Developer? Let's Chat</h4>
     <form

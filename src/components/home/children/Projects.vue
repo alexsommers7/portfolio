@@ -1,5 +1,6 @@
 <template>
   <section class="track projects full-width" data-sidebar="Projects">
+    <span class="anchor-span" id="projects"></span>
     <h3 class="heading heading--3 hide-for-large">PROJECTS</h3>
     <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
     <div class="project-group" ref="projects">
