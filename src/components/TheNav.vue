@@ -140,9 +140,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../scss/_mixins";
-@import "../../scss/_variables";
-@import "../../scss/_transitions";
+@import "@/scss/_mixins";
+@import "@/scss/_variables";
+@import "@/scss/_transitions";
 
 a.skip-link {
   background: $color-primary;
@@ -272,10 +272,6 @@ header {
     position: absolute;
     height: 2px;
     background-color: $color-primary;
-
-    @include respond(desk-small) {
-      height: 3px;
-    }
 
     &--2 {
       width: 100%;

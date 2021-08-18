@@ -115,8 +115,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../../scss/_mixins";
-@import "../../../scss/_variables";
+@import "@/scss/_mixins";
+@import "@/scss/_variables";
 .about {
   margin-top: 3rem;
   max-width: 1350px;

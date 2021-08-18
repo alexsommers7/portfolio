@@ -71,9 +71,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../scss/_mixins";
-@import "../../scss/_variables";
-@import "../../scss/_transitions";
+@import "@/scss/_mixins";
+@import "@/scss/_variables";
+@import "@/scss/_transitions";
 
 .wrapper {
   &__content {
