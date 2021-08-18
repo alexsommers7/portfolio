@@ -106,7 +106,7 @@ export default {
       this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
     onAnchorClick(e) {
-      gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
+      gsap.to(window, { duration: 1.2, ease: "expo.inOut", scrollTo: `#${e.target.dataset.section}` });
     },
     onLogoClick() {
       let currentPage = window.location.pathname;

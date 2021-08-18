@@ -63,7 +63,11 @@ export default {
   },
   methods: {
     onAnchorClick(e) {
-      gsap.to(window, { duration: 0.8, scrollTo: { y: `#${e.target.dataset.section}`, offsetY: -20 } });
+      gsap.to(window, {
+        duration: 1.2,
+        ease: "expo.inOut",
+        scrollTo: { y: `#${e.target.dataset.section}`, offsetY: -20 },
+      });
     },
     configureScrollTrigger() {
       // ScrollTrigger.defaults({

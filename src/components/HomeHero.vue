@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     onAnchorClick(e) {
-      gsap.to(window, { duration: 0.8, scrollTo: `#${e.target.dataset.section}` });
+      gsap.to(window, { duration: 1.2, ease: "expo.inOut", scrollTo: `#${e.target.dataset.section}` });
     },
   },
 };
