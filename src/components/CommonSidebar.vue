@@ -194,7 +194,7 @@ export default {
       gsap.to(window, {
         duration: 1.2,
         ease: "expo.inOut",
-        scrollTo: { y: `#${e.target.dataset.section}`, offsetY: 75 },
+        scrollTo: `#${e.target.dataset.section}`,
       });
     },
   },

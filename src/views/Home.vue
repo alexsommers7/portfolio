@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import Hero from "./HomeHero";
-import About from "./HomeAbout";
-import Projects from "./HomeProjects";
-import Resume from "./HomeResume";
-import Toolbox from "./HomeToolbox";
-import Contact from "./HomeContact";
+import Hero from "@/components/HomeHero";
+import About from "@/components/HomeAbout";
+import Projects from "@/components/HomeProjects";
+import Resume from "@/components/HomeResume";
+import Toolbox from "@/components/HomeToolbox";
+import Contact from "@/components/HomeContact";
 
 export default {
   name: "Home",

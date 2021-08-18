@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
-import Homepage from "./components/Home.vue";
-import Projects from "./components/ProjectShowcase.vue";
-import formSuccess from "./components/FormSuccess";
-import formFailure from "./components/FormFailure";
-import pageNotFound from "./components/The404";
+import Homepage from "./views/Home.vue";
+import Projects from "./views/ProjectShowcase.vue";
+import formSuccess from "./views/FormSuccess";
+import formFailure from "./views/FormFailure";
+import pageNotFound from "./views/The404";
 
 Vue.use(VueRouter);
 

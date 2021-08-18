@@ -225,7 +225,7 @@ header {
       }
 
       &--1 {
-        transform: rotate(135deg);
+        transform: rotate(495deg);
       }
 
       &--3 {
@@ -268,7 +268,7 @@ header {
   }
 
   &__hamburger {
-    transition: all 0.4s;
+    transition: transform 0.7s, width 0.4s;
     position: absolute;
     height: 2px;
     background-color: $color-primary;
