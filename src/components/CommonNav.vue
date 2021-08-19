@@ -22,10 +22,10 @@
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
       <ul class="navigation__list" @click="toggleNav">
-        <li><button data-view="/" data-section="about" class="btn" @click="onNavItemClick">ABOUT</button></li>
-        <li><button data-view="/" data-section="projects" class="btn" @click="onNavItemClick">PROJECTS</button></li>
-        <li><button data-view="/" data-section="resume" class="btn" @click="onNavItemClick">RESUME</button></li>
-        <li><button data-view="/" data-section="contact" class="btn" @click="onNavItemClick">CONTACT</button></li>
+        <li><button data-path="/" data-section="about" class="btn" @click="onNavItemClick">ABOUT</button></li>
+        <li><button data-path="/" data-section="projects" class="btn" @click="onNavItemClick">PROJECTS</button></li>
+        <li><button data-path="/" data-section="resume" class="btn" @click="onNavItemClick">RESUME</button></li>
+        <li><button data-path="/" data-section="contact" class="btn" @click="onNavItemClick">CONTACT</button></li>
       </ul>
     </nav>
   </header>
@@ -107,11 +107,15 @@ export default {
       this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
     onNavItemClick(e) {
-      if (e.target.dataset.view && this.$route !== e.target.dataset.view) this.$router.push(e.target.dataset.view);
-      gsap.to(window, {
-        duration: 1.2,
-        ease: "expo.inOut",
-        scrollTo: `#${e.target.dataset.section}` || { x: 0, y: 0 },
+      if (e.target.dataset.path && this.$route.path !== e.target.dataset.path) {
+        this.$router.push(e.target.dataset.path);
+      }
+      this.$nextTick(() => {
+        gsap.to(window, {
+          duration: 1.2,
+          ease: "expo.inOut",
+          scrollTo: e.target.dataset.section ? `#${e.target.dataset.section}` : { x: 0, y: 0 },
+        });
       });
     },
   },
