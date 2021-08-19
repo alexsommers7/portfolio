@@ -22,6 +22,9 @@ export const router = new VueRouter({
     { path: "/404", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "*", component: pageNotFound, meta: { NoLoadIn: true, noScrollArrow: true } },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition ? savedPosition : { x: 0, y: 0 };
+  },
   mode: "history",
 });
 

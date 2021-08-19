@@ -22,6 +22,13 @@
 }
 
 // Vue Transition Classes
+.opacity-0 {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.opacity-1 {
+  opacity: 1;
+}
 .list-item {
   transition: transform 0.45s, opacity 0.3s;
 }

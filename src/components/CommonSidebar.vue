@@ -292,19 +292,20 @@ export default {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0.4rem 0;
+    padding: 0.5rem 0;
   }
 
   .mail {
-    flex-basis: 90px;
+    flex-basis: 80px;
 
     svg {
       fill: $color-text-light;
+      margin: 0.5rem;
     }
   }
 
   .social {
-    flex: 0 1 285px;
+    flex: 0 1 250px;
     border-top: 1px solid $color-text-light;
 
     @include respond(desk-xlarge) {
@@ -344,6 +345,7 @@ export default {
       writing-mode: vertical-lr;
       transform: rotate(-180deg);
       padding-right: 5px;
+      padding-bottom: 1.25rem;
 
       @include respond(desk-medium) {
         font-size: 4rem;

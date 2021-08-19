@@ -3,7 +3,7 @@
     <div class="wrapper">
       <h1 class="heading heading--2">Hey, thanks for reaching out. I'll be in touch.</h1>
       <router-link to="/">
-        <button class="btn btn--secondary" @click="snapToTop">Return to Home Page</button>
+        <button class="btn btn--secondary">Return to Home Page</button>
       </router-link>
     </div>
   </transition>
@@ -12,11 +12,6 @@
 <script>
 export default {
   name: "formSuccess",
-  methods: {
-    snapToTop() {
-      window.scrollTo({ top: 0 });
-    },
-  },
 };
 </script>
 

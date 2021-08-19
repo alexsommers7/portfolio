@@ -110,6 +110,18 @@ export default {
           alt: "Node Package Manager (NPM)",
         },
         {
+          title: "XD",
+          icon: require("@/assets/icons/xd.svg"),
+          type: "design",
+          alt: "Adobe XD",
+        },
+        {
+          title: "Figma",
+          icon: require("@/assets/icons/figma.svg"),
+          type: "design",
+          alt: "Figma Design Software",
+        },
+        {
           title: "Photoshop",
           icon: require("@/assets/icons/photoshop.svg"),
           type: "design",
@@ -122,22 +134,10 @@ export default {
           alt: "Adobe Illustrator",
         },
         {
-          title: "XD",
-          icon: require("@/assets/icons/xd.svg"),
-          type: "design",
-          alt: "Adobe XD",
-        },
-        {
           title: "Lightroom",
           icon: require("@/assets/icons/lightroom.svg"),
           type: "design",
           alt: "Adobe Lightroom",
-        },
-        {
-          title: "Figma",
-          icon: require("@/assets/icons/figma.svg"),
-          type: "design",
-          alt: "Figma Design Software",
         },
       ],
     };
@@ -175,11 +175,12 @@ export default {
       gsap.to(".toolbox .tools", {
         scrollTrigger: {
           trigger: ".toolbox .tools",
-          start: "top 80%",
+          start: "top 75%",
         },
         opacity: 1,
         y: 0,
         duration: 0.8,
+        ease: "expo.out",
       });
     },
   },
