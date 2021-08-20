@@ -7,7 +7,7 @@
       </div>
       <div class="project-group">
         <article v-for="project in projects" :key="project.title" class="project">
-          <img :src="project.image" :alt="project.alt" />
+          <img :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
           <p class="title">{{ project.title }}</p>
           <p>{{ project.description }}</p>
           <ul class="tools">
