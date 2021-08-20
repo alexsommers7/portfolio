@@ -15,7 +15,7 @@
       </p>
     </div>
     <div class="about__lately">
-      <h4 class="heading heading--4">What I've Been Building With Lately</h4>
+      <h3 class="heading heading--4">What I've Been Building With Lately</h3>
       <ul class="languages">
         <li v-for="lang in recentLanguages" :key="lang.title">
           <div>
