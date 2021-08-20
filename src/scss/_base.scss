@@ -104,6 +104,7 @@ footer {
   }
 }
 main {
+  opacity: 1;
   padding-top: var(--nav-mobile-height);
 
   @include respond(desk-small) {

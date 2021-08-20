@@ -13,16 +13,8 @@
         >
         <div class="wrapper__cliff"></div>
       </strong>
-      <div class="wrapper__steamroller wrapper__steamroller--1">
-        <svg class="logo" viewBox="0 0 125 105.4">
-          <polygon class="cls-1" points="62.5 6.47 23.46 49.34 101.54 49.34 62.5 6.47" />
-          <polygon class="cls-1" points="62.5 99.62 101.54 56.75 23.46 56.75 62.5 99.62" />
-          <polygon class="cls-1" points="62.5 25.63 40.9 49.34 84.1 49.34 62.5 25.63" />
-          <polygon class="cls-1" points="62.5 80.47 84.1 56.75 40.9 56.75 62.5 80.47" />
-          <line class="cls-1" x1="62.5" y1="25.63" x2="62.5" y2="80.47" />
-        </svg>
-      </div>
-      <div class="wrapper__steamroller wrapper__steamroller--2"></div>
+      <div class="wrapper__steamroller wrapper__steamroller--1"></div>
+      <!-- <div class="wrapper__steamroller wrapper__steamroller--2"></div> -->
     </div>
   </section>
 </template>
@@ -39,25 +31,26 @@ export default {
   mounted() {
     let introContent = document.querySelectorAll(".wrapper__dot, .wrapper__word");
     let timeline = gsap.timeline({ onComplete: this.onLoadInFinish });
-    timeline.from(introContent, { duration: 0.9, opacity: 0, y: 150, stagger: 0.2, ease: "back.out(1.7)" });
-    timeline.to(".wrapper__dot", { duration: 0.25, opacity: 0 }, "+=1.25");
-    timeline.to(introContent, { duration: 0.3, opacity: 0, y: 150, stagger: 0.1 }, "+=0.15");
-    timeline.to(".wrapper__steamroller", { duration: 0.75, width: "105%", stagger: 0.75, ease: "expo.out" });
-    timeline.from(".wrapper__steamroller svg", { duration: 0.4, opacity: 0 }, "<+.2");
-    timeline.add(this.onHideLoadIn);
-    timeline.from("nav.navigation", { duration: 0.5, width: 0, opacity: 0, ease: "expo.out" });
-    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
-      timeline.from(".sidebar", { duration: 0.5, width: 0, opacity: 0, ease: "expo.out" }, "<");
-      timeline.from(".sidebar svg", { duration: 0.5, opacity: 0, stagger: 0.15, ease: "expo.out" }, "<");
-    }
-    timeline.from("#hero > .intro", { duration: 0.5, opacity: 0 });
-    timeline.from("#hero > .intro > .heading--2", {
-      duration: 0.5,
+    timeline.from(introContent, {
+      duration: 0.75,
       opacity: 0,
-      transform: "translateY(-4rem)",
+      y: 150,
+      stagger: 0.1,
+      delay: 0.5,
+      ease: "back.out(1.7)",
     });
-    timeline.from("#hero figure", { duration: 0.8, opacity: 0, delay: 0.4 });
-    timeline.from("#about", { duration: 0.8, opacity: 0 }, "<");
+    timeline.to(".wrapper__dot", { duration: 0.25, opacity: 0 }, "+=.8");
+    timeline.to(introContent, { duration: 0.5, opacity: 0, y: 150, stagger: 0.15 }, "+=0.15");
+    timeline.to(".wrapper__steamroller", { duration: 0.3, height: "101%", ease: "sine.ease" });
+    timeline.to(".wrapper__steamroller", { duration: 0.5, y: "-105%", ease: "sine.ease" }, "+=.2");
+    timeline.add(this.onHideLoadIn);
+    timeline.from("nav.navigation", { duration: 0.25, width: 0, opacity: 0, ease: "expo.out" }, "<");
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
+      timeline.from(".sidebar", { duration: 0.25, width: 0, opacity: 0, ease: "expo.out" }, "<");
+      timeline.from(".sidebar svg", { duration: 0.15, opacity: 0, stagger: 0.1, ease: "expo.out" }, "<");
+    }
+    timeline.from("#hero", { duration: 0.6, opacity: 0 });
+    timeline.from("#about", { duration: 0.4, opacity: 0 }, "<");
   },
   methods: {
     onHideLoadIn() {
@@ -111,11 +104,13 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
+    transform: translateY(-50px);
     background-color: $color-background;
     z-index: 400;
 
     @include respond(tab-land) {
       text-align: left;
+      transform: translateY(-50px);
     }
 
     .wrapper__cliff {
@@ -130,11 +125,10 @@ export default {
 
     .wrapper__steamroller {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
-      width: 0;
-      height: 100%;
-      transform: skew(-20deg);
+      height: 0;
+      width: 100%;
 
       &--1 {
         background-color: $color-primary;
@@ -144,16 +138,6 @@ export default {
       &--2 {
         background-color: $color-background;
         z-index: 40;
-        height: 100%;
-      }
-
-      .logo {
-        width: 75%;
-        height: 75%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) skew(20deg);
       }
 
       .cls-1 {

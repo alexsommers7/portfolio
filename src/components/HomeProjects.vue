@@ -83,10 +83,11 @@ export default {
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
-            duration: 0.8,
+            duration: 1.2,
             y: 0,
-            stagger: { each: 0.25 },
+            stagger: { each: 0.2 },
             overwrite: true,
+            ease: "expo.out",
           }),
       });
 

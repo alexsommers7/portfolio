@@ -49,8 +49,8 @@ export default {
   },
   methods: {
     finishIntro() {
-      this.firstVisit = false;
       document.body.classList.remove("loading");
+      this.firstVisit = false;
       sessionStorage.setItem("firstVisit", false);
     },
     setOutlineFocus() {
