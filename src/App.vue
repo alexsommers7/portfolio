@@ -48,13 +48,6 @@ export default {
     };
   },
   methods: {
-    handleIntro() {
-      this.finishIntro();
-      this.updateTargets();
-      this.setOutlineFocus();
-      this.checkScreenSize();
-      window.addEventListener("resize", this.checkScreenSize);
-    },
     finishIntro() {
       document.body.classList.remove("loading");
       this.firstVisit = false;
@@ -77,6 +70,15 @@ export default {
       // need to keep loadIn component but set opacity to 0
       // once we hit the appropriate point in the load-in timeline
       this.seeThroughLoadIn = true;
+    },
+    handleIntro() {
+      if (this.firstVisit == "false" || this.$router.resolve(this.$route.path).route.name !== "Home") {
+        this.finishIntro();
+        this.updateTargets();
+      }
+      this.setOutlineFocus();
+      this.checkScreenSize();
+      window.addEventListener("resize", this.checkScreenSize);
     },
     onLoadInFinish() {
       this.finishIntro();

@@ -44,11 +44,11 @@ export default {
     timeline.to(".wrapper__steamroller", { duration: 0.7, height: "101%", ease: "expo.in" });
     timeline.to(".wrapper__steamroller", { duration: 0.7, y: "-105%", ease: "expo.out" }, "+=.25");
     timeline.to(".wrapper__steamroller", { duration: 0.3, opacity: 0 });
-    timeline.from("nav.navigation", { duration: 0.3, width: 0, opacity: 0, ease: "expo.out" });
-    // if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
-    //   timeline.from(".sidebar", { duration: 0.3, width: 0, opacity: 0, ease: "expo.out" }, "<");
-    // }
-    // timeline.add(this.onHideLoadIn);
+    timeline.add(this.onHideLoadIn);
+    timeline.from("nav.navigation", { duration: 0.3, width: 0, opacity: 0, ease: "expo.out" }, "<");
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
+      timeline.from(".sidebar", { duration: 0.3, width: 0, opacity: 0, ease: "expo.out" }, "<");
+    }
     timeline.from("#hero", { duration: 0.6, opacity: 0, ease: "expo.in" });
     timeline.from("#about", { duration: 0.6, opacity: 0, ease: "expo.in" }, "<");
   },
