@@ -121,9 +121,8 @@ export default {
         // a bit hacky here, but ...
         // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
         setTimeout(function() {
-          let hash = `#${e.target.dataset.section}`;
-          window.location = hash;
-        }, 100);
+          window.location = `#${e.target.dataset.section}`;
+        }, 500);
       });
     },
   },
