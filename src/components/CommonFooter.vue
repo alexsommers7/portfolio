@@ -56,7 +56,7 @@
         </svg>
       </a>
       <a
-        href="https://onedrive.live.com/embed?cid=3A9F6FC30DCB1820&resid=3A9F6FC30DCB1820%21221295&authkey=AFmyQ-Yn9i6Bynw&em=2"
+        href="https://1drv.ms/b/s!AiAYyw3Db586oM0HV8ltjr73J9OFxQ"
         aria-label="Link to Download Resume"
         target="_blank"
         rel="noopener"

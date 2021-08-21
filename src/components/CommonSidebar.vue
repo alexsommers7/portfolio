@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <div class="mail">
-      <a href="mailto:asommers22@hotmail.com" class="flex-center" aria-label="Send Email to Alex Sommers"
+      <a href="mailto:alex@alexsommers.com" class="flex-center" aria-label="Send Email to Alex Sommers"
         ><svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
           <g>
             <g>
@@ -97,7 +97,7 @@
         <p>LinkedIn</p>
       </a>
       <a
-        href="https://onedrive.live.com/embed?cid=3A9F6FC30DCB1820&resid=3A9F6FC30DCB1820%21221295&authkey=AFmyQ-Yn9i6Bynw&em=2"
+        href="https://1drv.ms/b/s!AiAYyw3Db586oM0HV8ltjr73J9OFxQ"
         aria-label="Link to Download Resume"
         target="_blank"
         rel="noopener"
