@@ -286,10 +286,6 @@ export default {
           height: 3.5rem;
           display: block;
           margin: auto;
-
-          &.brighten {
-            filter: brightness(1.5);
-          }
         }
 
         p {

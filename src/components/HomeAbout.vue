@@ -19,7 +19,11 @@
       <ul class="languages">
         <li v-for="lang in recentLanguages" :key="lang.title">
           <div>
-            <img :src="lang.icon" :alt="`${lang.alt ? lang.alt : lang.title} Icon`" />
+            <img
+              :src="lang.icon"
+              :alt="`${lang.alt ? lang.alt : lang.title} Icon`"
+              :class="`${lang.class ? lang.class : ''}`"
+            />
             <p>{{ lang.title }}</p>
           </div>
         </li>
@@ -49,9 +53,11 @@ export default {
           alt: "Vue JavaScript Framework",
         },
         {
-          title: "SCSS",
-          icon: require("@/assets/icons/sass.svg"),
-          alt: "Sassy CSS (SCSS) Preprocessor",
+          title: "Alpine.js",
+          icon: require("@/assets/icons/alpine.svg"),
+          type: "tech",
+          class: "brighten",
+          alt: "Alpine JavaScript Framework",
         },
         {
           title: "GSAP",

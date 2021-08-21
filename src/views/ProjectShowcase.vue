@@ -52,6 +52,45 @@ export default {
     return {
       projects: [
         {
+          title: "AlexSommers.com",
+          description:
+            "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
+          tools: ["Vue.js", "Vue Router", "GSAP", "SCSS", "Foundation", "Netlify", "Adobe XD"],
+          primaryCTA: "View Demo",
+          primaryLink: "https://lovelyheartsaz.com/",
+          secondaryCTA: "View Code",
+          secondaryLink: "https://github.com/alexsommers7/portfolio",
+          image: require("@/assets/project-showcase--alex-sommers.png"),
+          imageWebp: require("@/assets/project-showcase--alex-sommers.webp"),
+          alt: "AlexSommers.com displayed on various devices",
+        },
+        {
+          title: "Lovely Hearts AZ",
+          description:
+            "Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.",
+          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
+          primaryCTA: "View Demo",
+          primaryLink: "https://lovelyheartsaz.com/",
+          secondaryCTA: "View Code",
+          secondaryLink: "https://github.com/alexsommers7/lovelyheartsaz",
+          image: require("@/assets/project-showcase--lovely-hearts-az.png"),
+          imageWebp: require("@/assets/project-showcase--lovely-hearts-az.webp"),
+          alt: "Lovely Hearts AZ website displayed on various devices",
+        },
+        {
+          title: "J.A Dancik Electric",
+          description:
+            'My first "real world" website! This client, a local electrician, wanted to keep the information basic and simply establish a way for current and future customers to contact them.',
+          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
+          primaryCTA: "View Demo",
+          primaryLink: "https://jadancikelectric.com/",
+          secondaryCTA: "View Code",
+          secondaryLink: "https://github.com/alexsommers7/ja-dancik-electric",
+          image: require("@/assets/project-showcase--jad-electric.png"),
+          imageWebp: require("@/assets/project-showcase--jad-electric.webp"),
+          alt: "J.A. Dancik Electric website displayed on various devices",
+        },
+        {
           title: "Heritage Assisted Living",
           description:
             "A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.",
@@ -89,45 +128,6 @@ export default {
           image: require("@/assets/project-showcase--glamorous-bags.png"),
           imageWebp: require("@/assets/project-showcase--glamorous-bags.webp"),
           alt: "Glamorous Bags website displayed on various devices",
-        },
-        {
-          title: "AlexSommers.com",
-          description:
-            "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
-          tools: ["Vue.js", "Vue Router", "GSAP", "SCSS", "Foundation", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://lovelyheartsaz.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/portfolio",
-          image: require("@/assets/project-showcase--lovely-hearts-az.png"),
-          imageWebp: require("@/assets/project-showcase--lovely-hearts-az.webp"),
-          alt: "AlexSommers.com displayed on various devices",
-        },
-        {
-          title: "Lovely Hearts AZ",
-          description:
-            "Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.",
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://lovelyheartsaz.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/lovelyheartsaz",
-          image: require("@/assets/project-showcase--lovely-hearts-az.png"),
-          imageWebp: require("@/assets/project-showcase--lovely-hearts-az.webp"),
-          alt: "Lovely Hearts AZ website displayed on various devices",
-        },
-        {
-          title: "J.A Dancik Electric",
-          description:
-            'My first "real world" website! This client, a local electrician, wanted to keep the information basic and simply establish a way for current and future customers to contact them.',
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://jadancikelectric.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/ja-dancik-electric",
-          image: require("@/assets/project-showcase--jad-electric.png"),
-          imageWebp: require("@/assets/project-showcase--jad-electric.webp"),
-          alt: "J.A. Dancik Electric website displayed on various devices",
         },
       ],
     };
