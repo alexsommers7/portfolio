@@ -13,8 +13,6 @@
         >
         <div class="wrapper__cliff"></div>
       </strong>
-      <div class="wrapper__steamroller wrapper__steamroller--1"></div>
-      <!-- <div class="wrapper__steamroller wrapper__steamroller--2"></div> -->
     </div>
   </section>
 </template>
@@ -31,26 +29,22 @@ export default {
   mounted() {
     let introContent = document.querySelectorAll(".wrapper__dot, .wrapper__word");
     let timeline = gsap.timeline({ onComplete: this.onLoadInFinish });
-    timeline.from(introContent, {
-      duration: 0.75,
-      opacity: 0,
-      y: 150,
-      stagger: 0.1,
-      delay: 0.5,
-      ease: "back.out(1.7)",
-    });
-    timeline.to(".wrapper__dot", { duration: 0.25, opacity: 0 }, "+=.8");
-    timeline.to(introContent, { duration: 0.5, opacity: 0, y: 150, stagger: 0.15 }, "+=0.15");
-    timeline.to(".wrapper__steamroller", { duration: 0.7, height: "101%", ease: "expo.in" });
-    timeline.to(".wrapper__steamroller", { duration: 0.7, y: "-105%", ease: "expo.out" }, "+=.25");
-    timeline.to(".wrapper__steamroller", { duration: 0.3, opacity: 0 });
-    timeline.add(this.onHideLoadIn);
-    timeline.from("nav.navigation", { duration: 0.3, width: 0, opacity: 0, ease: "expo.out" }, "<");
-    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) > 1200) {
-      timeline.from(".sidebar", { duration: 0.3, width: 0, opacity: 0, ease: "expo.out" }, "<");
-    }
-    timeline.from("#hero", { duration: 0.6, opacity: 0, ease: "expo.in" });
-    timeline.from("#about", { duration: 0.6, opacity: 0, ease: "expo.in" }, "<");
+    timeline
+      .from(introContent, {
+        duration: 0.75,
+        autoAlpha: 0,
+        y: 150,
+        stagger: 0.2,
+        delay: 0.5,
+        ease: "back.out(1.7)",
+      })
+      .to(".wrapper__dot", { duration: 0.25, autoAlpha: 0 }, "+=.8")
+      .to(introContent, { duration: 0.5, autoAlpha: 0, y: 150, stagger: 0.15 }, "+=0.25")
+      .add(this.onHideLoadIn)
+      .from("nav.navigation", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
+      .from(".sidebar", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
+      .from("#hero", { duration: 0.6, autoAlpha: 0, ease: "expo.in" })
+      .from("#about", { duration: 0.6, autoAlpha: 0, ease: "expo.in" }, "<");
   },
   methods: {
     onHideLoadIn() {
@@ -121,31 +115,6 @@ export default {
       left: 0;
       z-index: 20;
       background-color: $color-background;
-    }
-
-    .wrapper__steamroller {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 0;
-      width: 100%;
-
-      &--1 {
-        background-color: $color-primary;
-        z-index: 30;
-      }
-
-      &--2 {
-        background-color: $color-background;
-        z-index: 40;
-      }
-
-      .cls-1 {
-        fill: none;
-        stroke: $color-background-light;
-        stroke-miterlimit: 10;
-        stroke-width: 2px;
-      }
     }
 
     .wrapper__dot,
