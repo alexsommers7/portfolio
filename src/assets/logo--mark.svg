@@ -1,1 +1,17 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125 105.4"><defs><style>.cls-1{fill:none;stroke:#c5a47f;stroke-miterlimit:10;stroke-width:2px;}</style></defs><polygon class="cls-1" points="62.5 6.47 23.46 49.34 101.54 49.34 62.5 6.47"/><polygon class="cls-1" points="62.5 99.62 101.54 56.75 23.46 56.75 62.5 99.62"/><polygon class="cls-1" points="62.5 25.63 40.9 49.34 84.1 49.34 62.5 25.63"/><polygon class="cls-1" points="62.5 80.47 84.1 56.75 40.9 56.75 62.5 80.47"/><line class="cls-1" x1="62.5" y1="25.63" x2="62.5" y2="80.47"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 125 105.4" style="enable-background:new 0 0 125 105.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#C5A47F;stroke-width:4;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#C5A47F;stroke-width:5;stroke-miterlimit:10;}
+	.st3{fill:#333333;}
+	.st4{fill:none;stroke:#C5A47F;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<polygon class="st4" points="62.5,4.47 23.46,47.34 101.54,47.34 "/>
+<polygon class="st4" points="62.5,100.62 101.54,57.75 23.46,57.75 "/>
+<polygon class="st4" points="62.5,23.63 40.9,47.34 84.1,47.34 "/>
+<polygon class="st4" points="62.5,81.47 84.1,57.75 40.9,57.75 "/>
+<line class="st4" x1="62.5" y1="24.62" x2="62.5" y2="81.01"/>
+</svg>

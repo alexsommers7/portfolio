@@ -9,12 +9,13 @@
         viewBox="0 0 125 105.4"
         data-section="top"
         @click="onNavItemClick"
+        style="enable-background:new 0 0 125 105.4;"
       >
-        <polygon class="cls-1" points="62.5 6.47 23.46 49.34 101.54 49.34 62.5 6.47" />
-        <polygon class="cls-1" points="62.5 99.62 101.54 56.75 23.46 56.75 62.5 99.62" />
-        <polygon class="cls-1" points="62.5 25.63 40.9 49.34 84.1 49.34 62.5 25.63" />
-        <polygon class="cls-1" points="62.5 80.47 84.1 56.75 40.9 56.75 62.5 80.47" />
-        <line class="cls-1" x1="62.5" y1="25.63" x2="62.5" y2="80.47" />
+        <polygon class="st4" points="62.5,4.47 23.46,47.34 101.54,47.34 " />
+        <polygon class="st4" points="62.5,100.62 101.54,57.75 23.46,57.75 " />
+        <polygon class="st4" points="62.5,23.63 40.9,47.34 84.1,47.34 " />
+        <polygon class="st4" points="62.5,81.47 84.1,57.75 40.9,57.75 " />
+        <line class="st4" x1="62.5" y1="24.62" x2="62.5" y2="81.01" />
       </svg>
       <button class="navigation__toggle tab-focus" aria-label="Toggle Navigation" @click="toggleNav">
         <span class="navigation__hamburger navigation__hamburger--1"></span>
@@ -387,10 +388,30 @@ header {
     }
   }
 }
-.cls-1 {
+.st0 {
   fill: none;
-  stroke: $color-primary;
+  stroke: #000000;
   stroke-miterlimit: 10;
-  stroke-width: 2px;
+}
+.st1 {
+  fill: none;
+  stroke: #c5a47f;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+}
+.st2 {
+  fill: none;
+  stroke: #c5a47f;
+  stroke-width: 5;
+  stroke-miterlimit: 10;
+}
+.st3 {
+  fill: #333333;
+}
+.st4 {
+  fill: none;
+  stroke: #c5a47f;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
 }
 </style>
