@@ -12,9 +12,10 @@
         </button>
       </div>
     </div>
-    <figure>
+    <picture>
+      <source srcset="../assets/alex-sommers.webp" type="image/webp" />
       <img class="photo" src="../assets/alex-sommers.png" alt="Alex Sommers | Front-End Web Developer" />
-    </figure>
+    </picture>
   </section>
 </template>
 
@@ -110,7 +111,7 @@ section.hero {
     }
   }
 
-  figure {
+  picture {
     position: relative;
     max-width: 600px;
     margin: auto;

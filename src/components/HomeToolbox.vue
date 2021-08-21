@@ -203,7 +203,7 @@ export default {
     align-items: center;
     justify-content: center;
     align-items: center;
-    margin: 4rem auto 3rem;
+    margin: 3rem auto;
 
     .buttons {
       background-color: $color-background-light;
