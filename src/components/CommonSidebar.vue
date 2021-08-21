@@ -168,9 +168,6 @@ export default {
         if (ScrollTrigger.getById("sidebar")) ScrollTrigger.getById("sidebar").kill(true);
         return (this.$el.querySelector(".current-section p").innerText = this.$route.name);
       }
-      // ScrollTrigger.defaults({
-      //   markers: true,
-      // });
 
       this.observerTargets.forEach((section) => {
         ScrollTrigger.create({
