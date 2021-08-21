@@ -108,6 +108,7 @@ export default {
       this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
     },
     onNavItemClick(e) {
+      e.preventDefault();
       if (e.target.dataset.path && this.$route.path !== e.target.dataset.path) {
         this.$router.push(e.target.dataset.path);
       }
@@ -117,6 +118,12 @@ export default {
           ease: "expo.inOut",
           scrollTo: e.target.dataset.section ? `#${e.target.dataset.section}` : { x: 0, y: 0 },
         });
+        // a bit hacky here, but ...
+        // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
+        setTimeout(function() {
+          let hash = `#${e.target.dataset.section}`;
+          window.location = hash;
+        }, 100);
       });
     },
   },
