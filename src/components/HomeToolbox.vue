@@ -16,6 +16,7 @@
             :src="tool.icon"
             :alt="`${tool.alt ? tool.alt : tool.title} Icon`"
             :class="`${tool.class ? tool.class : ''}`"
+            loading="lazy"
           />
           <p>{{ tool.title }}</p>
         </div>

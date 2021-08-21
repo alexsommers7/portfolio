@@ -5,7 +5,10 @@
     <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
     <div class="project-group" ref="projects">
       <article v-for="project in projects" :key="project.title" class="project">
-        <img :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
+        <picture>
+          <source :srcset="project.imageWebp" type="image/webp" />
+          <img class="photo" :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
+        </picture>
         <p class="title">{{ project.title }}</p>
         <p>{{ project.description }}</p>
         <ul class="tools">
@@ -45,6 +48,7 @@ export default {
           secondaryCTA: "View Code",
           secondaryLink: "https://github.com/alexsommers7/heritage-assisted-living",
           image: require("@/assets/project-showcase--heritage-assited-living.png"),
+          imageWebp: require("@/assets/project-showcase--heritage-assited-living.webp"),
           alt: "Heritage Assisted Living website displayed on various devices",
         },
         {
@@ -57,6 +61,7 @@ export default {
           secondaryCTA: "View Code",
           secondaryLink: "https://github.com/alexsommers7/vue-shop",
           image: require("@/assets/project-showcase--vue-shop.png"),
+          imageWebp: require("@/assets/project-showcase--vue-shop.webp"),
           alt: "Vue Shop website displayed on various devices",
         },
         {
@@ -69,6 +74,7 @@ export default {
           secondaryCTA: "View Code",
           secondaryLink: "https://github.com/alexsommers7/glamorous-bags-by-shae",
           image: require("@/assets/project-showcase--glamorous-bags.png"),
+          imageWebp: require("@/assets/project-showcase--glamorous-bags.webp"),
           alt: "Glamorous Bags website displayed on various devices",
         },
       ],
