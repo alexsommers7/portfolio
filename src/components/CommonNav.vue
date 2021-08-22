@@ -4,11 +4,11 @@
       <a class="skip-link" href="#main">Skip to content</a>
       <svg
         role="button"
-        aria-label="Scroll to Top"
+        :aria-label="this.$route.path === '/' ? 'Scroll to Top' : 'Home'"
         class="navigation__logo"
         viewBox="0 0 125 105.4"
         data-section="top"
-        @click="onNavItemClick"
+        @click="onLogoClick"
         style="enable-background:new 0 0 125 105.4;"
       >
         <polygon class="st4" points="62.5,4.47 23.46,47.34 101.54,47.34 " />
@@ -124,6 +124,11 @@ export default {
           window.location = `#${e.target.dataset.section}`;
         }, 500);
       });
+    },
+    onLogoClick() {
+      this.$route.path !== "/"
+        ? this.$router.push("/")
+        : gsap.to(window, { duration: 1.2, ease: "expo.inOut", scrollTo: { x: 0, y: 0 } });
     },
   },
   mounted() {
