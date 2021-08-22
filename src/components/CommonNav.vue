@@ -281,7 +281,7 @@ header {
   }
 
   &__hamburger {
-    transition: transform 0.7s, width 0.4s;
+    transition: transform 0.8s cubic-bezier(0.06, 0.975, 0.195, 0.985), width 0.3s;
     position: absolute;
     height: 2px;
     background-color: $color-primary;

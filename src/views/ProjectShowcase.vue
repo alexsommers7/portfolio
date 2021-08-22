@@ -9,7 +9,7 @@
         <article v-for="project in projects" :key="project.title" class="project">
           <picture>
             <source :srcset="project.imageWebp" type="image/webp" />
-            <img class="photo" :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
+            <img class="photo" :src="project.image" :alt="project.alt" width="333" height="285" />
           </picture>
           <p class="title">{{ project.title }}</p>
           <p>{{ project.description }}</p>
