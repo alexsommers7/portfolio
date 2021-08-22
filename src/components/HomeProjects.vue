@@ -15,12 +15,22 @@
           <li v-for="tool in project.tools" :key="tool">{{ tool }}</li>
         </ul>
         <div class="btns">
-          <a :href="project.primaryLink" class="btn btn--primary" target="_blank" rel="noopener">{{
-            project.primaryCTA
-          }}</a>
-          <a :href="project.secondaryLink" class="btn btn--secondary" target="_blank" rel="noopener">{{
-            project.secondaryCTA
-          }}</a>
+          <a
+            :href="project.primaryLink"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener"
+            :aria-label="`${project.primaryCTA} for ${project.title}`"
+            >{{ project.primaryCTA }}</a
+          >
+          <a
+            :href="project.secondaryLink"
+            class="btn btn--secondary"
+            target="_blank"
+            rel="noopener"
+            :aria-label="`${project.secondaryCTA} for ${project.title}`"
+            >{{ project.secondaryCTA }}</a
+          >
         </div>
       </article>
     </div>

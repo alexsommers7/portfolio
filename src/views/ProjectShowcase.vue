@@ -23,6 +23,7 @@
               class="btn btn--primary"
               target="_blank"
               rel="noopener"
+              :aria-label="`${project.primaryCTA} for ${project.title}`"
               >{{ project.primaryCTA }}</a
             >
             <a
@@ -31,6 +32,7 @@
               :class="project.title === 'AlexSommers.com' ? 'btn--primary' : 'btn--secondary'"
               target="_blank"
               rel="noopener"
+              :aria-label="`${project.secondaryCTA} for ${project.title}`"
               >{{ project.secondaryCTA }}</a
             >
           </div>
