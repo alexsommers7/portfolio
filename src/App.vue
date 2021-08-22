@@ -28,11 +28,11 @@
 </template>
 
 <script>
-import LoadIn from "./components/CommonLoadIn";
-import Nav from "./components/CommonNav";
-import Sidebar from "./components/CommonSidebar";
-import Footer from "./components/CommonFooter";
-import IE from "./components/CommonIE";
+import LoadIn from "./components/LoadIn";
+import Nav from "./components/Nav";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+import IE from "./components/IE";
 
 export default {
   name: "App",

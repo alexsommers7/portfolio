@@ -127,7 +127,7 @@
             </svg>
           </button>
         </p>
-        <p v-else>{{ this.$route.name }}</p>
+        <p v-else>{{ this.$route.name || " " }}</p>
       </transition>
     </div>
   </aside>
