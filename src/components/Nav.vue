@@ -65,6 +65,14 @@ export default {
     getCustomProperty(propertyName) {
       return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
     },
+    init() {
+      this.nav = this.$el.querySelector("nav.navigation");
+      this.navList = this.$el.querySelector(".navigation__list");
+      const vm = this;
+      window.addEventListener("resize", function() {
+        vm.portraitMode = window.matchMedia("(orientation: portrait)").matches;
+      });
+    },
     resetNav() {
       this.navList.setAttribute("style", "");
       if (this.nav.classList.contains("open")) this.closeNav();
@@ -138,12 +146,7 @@ export default {
     },
   },
   mounted() {
-    this.nav = this.$el.querySelector("nav.navigation");
-    this.navList = this.$el.querySelector(".navigation__list");
-    let vm = this;
-    window.addEventListener("resize", function() {
-      vm.portraitMode = window.matchMedia("(orientation: portrait)").matches;
-    });
+    this.init();
   },
   watch: {
     onMobile: function(newVal) {
