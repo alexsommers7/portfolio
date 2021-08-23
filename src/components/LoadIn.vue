@@ -27,7 +27,7 @@ export default {
     onMobile: Boolean,
   },
   mounted() {
-    let introContent = document.querySelectorAll(".wrapper__dot, .wrapper__word");
+    let introContent = this.$el.querySelectorAll(".wrapper__dot, .wrapper__word");
     let timeline = gsap.timeline({ onComplete: this.onLoadInFinish });
     timeline
       .from(introContent, {
@@ -65,7 +65,7 @@ export default {
 .wrapper {
   &__content {
     @include ieOnly {
-      /* need !important because JS doesn't work to remove loading class */
+      /* need !important because JS doesn't remove loading class */
       display: none !important;
     }
 

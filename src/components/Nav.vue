@@ -42,8 +42,9 @@ export default {
   data() {
     return {
       timeline: gsap.timeline(),
-      navElement: "",
-      navListElement: "",
+      nav: "",
+      navList: "",
+      portraitMode: window.matchMedia("(orientation: portrait)").matches,
       mobileNavHeight: this.getCustomProperty("--nav-mobile-height"),
       desktopNavWidth: this.getCustomProperty("--nav-desktop-width"),
       scrollbarWidth: this.getCustomProperty("--scrollbar-width"),
@@ -61,6 +62,13 @@ export default {
     onMobile: Boolean,
   },
   methods: {
+    getCustomProperty(propertyName) {
+      return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
+    },
+    resetNav() {
+      this.navList.setAttribute("style", "");
+      if (this.nav.classList.contains("open")) this.closeNav();
+    },
     toggleNav() {
       let nav = this.$el.querySelector("nav");
       nav.classList.contains("open") ? this.closeNav() : this.openNav();
@@ -78,22 +86,20 @@ export default {
             { left: "-100%" },
             { left: this.desktopNavWidthWithScrollbar, duration: 0.4, ease: "circ.out" }
           );
-      this.timeline.fromTo(
-        ".navigation__list > li",
-        { opacity: 0 },
-        { opacity: 1, delay: 0.2, duration: 0.15, stagger: 0.05 },
-        "<"
-      );
-      this.timeline.add(function() {
-        // prevent slight twitch on main content
-        document.body.classList.add("no-scroll");
-      }, "<+.3");
-    },
-    getCustomProperty(propertyName) {
-      return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
+      this.timeline
+        .fromTo(
+          ".navigation__list > li",
+          { opacity: 0 },
+          { opacity: 1, delay: 0.2, duration: 0.15, stagger: 0.05 },
+          "<"
+        )
+        .add(function() {
+          // prevent slight twitch on main content
+          this.$el.closest("body").classList.add("no-scroll");
+        }, "<+.3");
     },
     closeNav() {
-      document.body.classList.remove("no-scroll");
+      this.$el.closest("body").classList.remove("no-scroll");
       this.onMobile
         ? this.timeline.fromTo(
             this.navList,
@@ -132,26 +138,20 @@ export default {
     },
   },
   mounted() {
-    this.nav = document.querySelector("nav.navigation");
-    this.navList = document.querySelector(".navigation__list");
+    this.nav = this.$el.querySelector("nav.navigation");
+    this.navList = this.$el.querySelector(".navigation__list");
+    let vm = this;
+    window.addEventListener("resize", function() {
+      vm.portraitMode = window.matchMedia("(orientation: portrait)").matches;
+    });
   },
   watch: {
     onMobile: function(newVal) {
-      let navListItems = document.querySelectorAll(".navigation__list > li");
-      if (newVal) {
-        this.navList.style.left = "0";
-        this.navList.style.top = "-100%";
-        this.nav.style.width = "100%";
-      } else {
-        this.navList.style.left = "-100%";
-        this.navList.style.top = "0";
-        this.nav.style.width = this.desktopNavWidth;
-      }
-      if (this.nav.classList.contains("open")) {
-        this.nav.classList.remove("open");
-        document.body.classList.remove("no-scroll");
-        navListItems.forEach((item) => (item.style.opacity = 0));
-      }
+      this.resetNav();
+      this.nav.classList[newVal ? "remove" : "add"]("isDesktop");
+    },
+    portraitMode: function() {
+      this.resetNav();
     },
   },
 };
@@ -213,6 +213,15 @@ header {
   @include respond(desk-small) {
     padding: 0 0.5rem;
     justify-content: center;
+  }
+
+  &.isDesktop {
+    width: var(--nav-desktop-width);
+
+    .navigation__list {
+      left: -100%;
+      top: 0;
+    }
   }
 
   &.open {
