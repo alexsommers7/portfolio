@@ -5,7 +5,6 @@ import Homepage from "./views/Home.vue";
 import Projects from "./views/ProjectShowcase.vue";
 import formSuccess from "./views/FormSuccess";
 import formFailure from "./views/FormFailure";
-// import pageNotFound from "./views/404";
 
 Vue.use(VueRouter);
 
@@ -19,7 +18,7 @@ export const router = new VueRouter({
       meta: { NoLoadIn: true, noScrollArrow: true },
     },
     { path: "/thanks", name: "Thanks!", component: formSuccess, meta: { NoLoadIn: true, noScrollArrow: true } },
-    { path: "/404", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
+    { path: "/error", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
   scrollBehavior(to) {
