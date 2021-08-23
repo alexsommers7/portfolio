@@ -103,7 +103,7 @@ export default {
         )
         .add(function() {
           // prevent slight twitch on main content
-          this.$el.closest("body").classList.add("no-scroll");
+          document.body.classList.add("no-scroll");
         }, "<+.3");
     },
     closeNav() {
