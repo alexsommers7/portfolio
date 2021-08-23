@@ -290,6 +290,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     padding: 0.5rem 0;
+    transition: all 0.2s;
   }
 
   .mail {
@@ -376,6 +377,14 @@ export default {
         }
       }
     }
+  }
+}
+
+body.no-scroll {
+  // nav open state
+  .mail,
+  .social {
+    background-color: $color-background;
   }
 }
 </style>

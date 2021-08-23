@@ -81,10 +81,6 @@ export default {
       }, 500);
     },
     configureScrollTrigger() {
-      // ScrollTrigger.defaults({
-      //   markers: true,
-      // });
-
       const cursor = gsap.fromTo(
         "#cursor",
         { autoAlpha: 0, x: -10 },
@@ -200,11 +196,7 @@ export default {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 2rem 0;
-
-      @include respond(desk-small) {
-        margin: 2rem 0;
-      }
+      margin: 1.75rem 0 2.25rem;
 
       li {
         margin: 0.5rem;
