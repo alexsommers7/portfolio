@@ -1,6 +1,6 @@
 <template>
   <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
-    <section class="projects full-width">
+    <section class="projects project-showcase full-width">
       <div class="headings">
         <h3 class="heading heading--3">PROJECTS</h3>
         <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
@@ -136,9 +136,9 @@ export default {
   },
   methods: {
     configureScrollTrigger() {
-      gsap.set("article.project", { y: 100, opacity: 0 });
+      gsap.set(".project-showcase article.project", { y: 100, opacity: 0 });
 
-      ScrollTrigger.batch("article.project", {
+      ScrollTrigger.batch(".project-showcase article.project", {
         start: "top 80%",
         onEnter: (batch) =>
           gsap.to(batch, {
@@ -151,7 +151,9 @@ export default {
           }),
       });
 
-      ScrollTrigger.addEventListener("refreshInit", () => gsap.set("article.project", { y: 0, opacity: 1 }));
+      ScrollTrigger.addEventListener("refreshInit", () =>
+        gsap.set(".project-showcase article.project", { y: 0, opacity: 1 })
+      );
     },
   },
   mounted() {
