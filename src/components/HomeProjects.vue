@@ -99,7 +99,7 @@ export default {
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
-            duration: 1.2,
+            duration: 1.1,
             y: 0,
             stagger: { each: 0.2 },
             overwrite: true,

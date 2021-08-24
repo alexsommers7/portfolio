@@ -176,7 +176,7 @@ export default {
       gsap.to(".toolbox .tools", {
         scrollTrigger: {
           trigger: ".toolbox .tools",
-          start: "top 75%",
+          start: "top 80%",
         },
         opacity: 1,
         y: 0,

@@ -38,7 +38,7 @@
           </div>
         </article>
       </div>
-      <router-link to="/" class="btn btn--secondary cta">Return Home</router-link>
+      <router-link :to="{ path: '/', hash: '#resume' }" class="btn btn--secondary cta">Return Home</router-link>
     </section>
   </transition>
 </template>
@@ -139,14 +139,15 @@ export default {
       gsap.set("article.project", { y: 100, opacity: 0 });
 
       ScrollTrigger.batch("article.project", {
-        start: "top 75s%",
+        start: "top 80%",
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
-            duration: 0.8,
+            duration: 1.1,
             y: 0,
             stagger: { each: 0.25 },
             overwrite: true,
+            ease: "expo.out",
           }),
       });
 
