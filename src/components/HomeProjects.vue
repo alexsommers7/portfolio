@@ -64,7 +64,7 @@ export default {
         {
           title: "Vue Shop",
           description:
-            "A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and catagory data is fetched from a fake store API endpoint.",
+            "A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.",
           tools: ["Vue.js", "SCSS", "Fake Store API", "Foundation", "Babel", "Netlify"],
           primaryCTA: "View Demo",
           primaryLink: "https://vue-fake-shop.netlify.app/",
