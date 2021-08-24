@@ -155,7 +155,7 @@ export default {
     updateText(triggerObj) {
       let textEl = this.$el.querySelector(".current-section p");
       gsap.to(textEl, {
-        duration: 0.95,
+        duration: 0.75,
         text: {
           value: `${triggerObj.trigger.dataset.sidebar}`,
           padSpace: true,
