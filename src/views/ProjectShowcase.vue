@@ -2,8 +2,8 @@
   <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
     <section class="projects project-showcase full-width">
       <div class="headings">
-        <h3 class="heading heading--3">PROJECTS</h3>
-        <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
+        <h1 class="heading heading--3">PROJECTS</h1>
+        <h2 class="heading heading--4 heading--section">Interfaces for the Modern World</h2>
       </div>
       <div class="project-group">
         <article v-for="project in projects" :key="project.title" class="project">
