@@ -2,29 +2,33 @@
   display: none !important;
 
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    width: 100vw;
-    height: 100vh;
     position: fixed;
     display: flex !important;
     justify-content: center;
+    overflow-x: hidden;
+    overflow-y: auto;
     align-items: center;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    padding: 2rem;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     background-color: $color-background;
     z-index: 999;
 
     .modal {
       background-color: $color-background-light;
-      width: 75%;
-      min-height: 75%;
+      width: 1200px;
+      max-width: 80%;
+      margin: 1.75rem 0;
       padding: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
 
       &__text {
-        width: 70%;
+        max-width: 90%;
 
         p {
           margin-bottom: 1rem;
@@ -34,11 +38,12 @@
       &__heading {
         font-size: 3rem;
         text-align: center;
+        line-height: 1;
       }
 
       &__downloads {
         .download {
-          margin: 2rem 0;
+          margin: 1.25rem 0;
 
           a {
             display: flex;
@@ -69,7 +74,7 @@
 
         button {
           padding: 0.5rem 2rem;
-          width: 33%;
+          width: 20rem;
           font-size: 1rem;
         }
       }
