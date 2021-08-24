@@ -38,7 +38,7 @@
           </div>
         </article>
       </div>
-      <router-link :to="{ path: '/', hash: '#resume' }" class="btn btn--secondary cta">Return Home</router-link>
+      <router-link to="/" class="btn btn--secondary cta">Return Home</router-link>
     </section>
   </transition>
 </template>
