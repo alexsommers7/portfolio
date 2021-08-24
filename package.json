@@ -12,7 +12,6 @@
     "core-js": "^3.6.5",
     "gsap": "^3.7.0",
     "vue": "^2.6.11",
-    "vue-meta": "^2.4.0",
     "vue-router": "^3.5.2"
   },
   "devDependencies": {

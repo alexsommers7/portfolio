@@ -34,8 +34,6 @@ import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import IE from "./components/IE";
 
-let ROOT_PATH = "https://alexsommers.com";
-
 export default {
   name: "App",
   data() {
@@ -47,7 +45,6 @@ export default {
       firstVisit: sessionStorage.getItem("firstVisit") || true,
       noScrollArrow: this.$router.resolve(this.$route.path).route.meta.noScrollArrow || false,
       seeThroughLoadIn: false,
-      og: ROOT_PATH + require("./assets/og-image.jpg"),
     };
   },
   methods: {
@@ -112,11 +109,6 @@ export default {
     Sidebar,
     Footer,
     IE,
-  },
-  metaInfo() {
-    return {
-      meta: [{ property: "og:image", content: this.og }],
-    };
   },
 };
 </script>

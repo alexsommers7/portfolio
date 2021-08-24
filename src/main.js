@@ -1,6 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Meta from "vue-meta";
 import App from "./App.vue";
 import Homepage from "./views/Home.vue";
 import Projects from "./views/ProjectShowcase.vue";
@@ -8,7 +7,6 @@ import formSuccess from "./views/FormSuccess";
 import formFailure from "./views/FormFailure";
 
 Vue.use(VueRouter);
-Vue.use(Meta);
 
 export const router = new VueRouter({
   routes: [
