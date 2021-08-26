@@ -1,5 +1,19 @@
 # alexsommers.com
 
+**Highlights:**
+
+&nbsp;&nbsp; ✔️ SPA built with Vue and Vue Router
+
+&nbsp;&nbsp; ✔️ Mobile-first, without sacrificing the desktop experience
+
+&nbsp;&nbsp; ✔️ WCAG and ADA-compliant
+
+&nbsp;&nbsp; ✔️ Scroll-based GSAP animations
+
+&nbsp;&nbsp; ✔️ WebP Images
+
+🔗 **[AlexSommers.com](https://alexsommers.com/)**
+
 ## Project setup
 ```
 npm install
