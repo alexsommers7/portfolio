@@ -98,7 +98,7 @@ export default {
     justify-content: center;
     align-items: center;
     text-align: center;
-    transform: translateY(-50px);
+    transform: translateY(-40px);
     background-color: $color-background;
     z-index: 400;
 
