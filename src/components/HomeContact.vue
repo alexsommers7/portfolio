@@ -68,9 +68,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 .form {
   max-width: 800px;
   margin: 4rem auto;

@@ -43,9 +43,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 section.hero {
   padding: 0 1rem;
   display: grid;

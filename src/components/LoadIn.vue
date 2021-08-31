@@ -39,7 +39,7 @@ export default {
         ease: "back.out(1.7)",
       })
       .to(".wrapper__dot", { duration: 0.25, autoAlpha: 0 }, "+=.8")
-      .to(introContent, { duration: 0.5, autoAlpha: 0, y: 150, stagger: 0.15 }, "+=0.25")
+      .to(introContent, { duration: 0.3, autoAlpha: 0, y: 150, stagger: 0.1 }, "+=0.25")
       .add(this.onHideLoadIn)
       .from("nav.navigation", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
       .from(".sidebar", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
@@ -58,8 +58,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
 @import "@/scss/_transitions";
 
 .wrapper {

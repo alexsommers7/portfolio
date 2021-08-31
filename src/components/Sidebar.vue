@@ -212,9 +212,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 .loading .sidebar,
 .no-scroll .sidebar {
   // prevent slight jump when scrollbar goes in/out

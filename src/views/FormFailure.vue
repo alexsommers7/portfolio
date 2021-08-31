@@ -19,9 +19,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 .wrapper {
   min-height: 100vh;
   display: flex;

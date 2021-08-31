@@ -113,9 +113,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 .resume {
   @include respond(desk-small) {
     margin-top: 2rem;

@@ -194,9 +194,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 .toolbox {
   &__toggle {
     text-align: center;

@@ -170,9 +170,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_mixins";
-@import "@/scss/_variables";
-
 .headings {
   margin-top: 2rem;
 }

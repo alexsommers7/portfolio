@@ -373,6 +373,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_variables";
 @import "@/scss/_ie";
 </style>
