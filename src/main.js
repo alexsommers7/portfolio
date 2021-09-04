@@ -22,9 +22,7 @@ export const router = new VueRouter({
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
   scrollBehavior() {
-    setTimeout(() => {
-      return { x: 0, y: 0 };
-    }, 1000);
+    return { x: 0, y: 0 };
   },
   mode: "history",
 });
