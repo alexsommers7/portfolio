@@ -97,9 +97,8 @@ export default {
     this.updateTargets();
   },
   watch: {
-    $route(to, from) {
+    $route() {
       this.$nextTick(() => {
-        if (to.name !== from.name) window.scrollTo({ top: 0, behavior: "smooth" });
         this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
       });
     },
