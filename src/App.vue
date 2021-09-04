@@ -9,11 +9,11 @@
       :class="[seeThroughLoadIn ? 'invisible' : 'visible']"
     ></LoadIn>
     <Nav :onMobile="onMobile"></Nav>
-    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0" mode="out-in">
-      <main id="main" ref="main">
-        <router-view></router-view>
-      </main>
-    </transition>
+    <!-- <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0" mode="out-in"> -->
+    <main id="main" ref="main">
+      <router-view></router-view>
+    </main>
+    <!-- </transition> -->
     <Sidebar
       :observerTargets="observerTargets"
       :observeSections="observeSections"
