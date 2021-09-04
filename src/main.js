@@ -22,7 +22,8 @@ export const router = new VueRouter({
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
   scrollBehavior() {
-    return { x: 0, y: 0 };
+    // workaround - vue router scrollBehavior was being inconsistent
+    document.getElementById("app").scrollIntoView();
   },
   mode: "history",
 });
