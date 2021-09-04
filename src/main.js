@@ -15,34 +15,45 @@ export const router = new VueRouter({
       path: "/",
       name: "Home",
       component: Homepage,
-      meta: { NoLoadIn: false, noScrollArrow: false, scrollToTop: true },
+      meta: {
+        NoLoadIn: false,
+        noScrollArrow: false,
+        scrollPos: {
+          top: 0,
+          left: 0,
+        },
+      },
     },
     {
       path: "/project-showcase",
       name: "Projects",
       component: Projects,
-      meta: { NoLoadIn: true, noScrollArrow: true, scrollToTop: true },
+      meta: {
+        NoLoadIn: true,
+        noScrollArrow: true,
+        scrollPos: {
+          top: 0,
+          left: 0,
+        },
+      },
     },
     { path: "/thanks", name: "Thanks!", component: formSuccess, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "/error", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
-  scrollBehavior: (to, from, savedPosition) =>
-    new Promise((resolve) => {
-      const position = savedPosition || {};
-      if (!savedPosition) {
-        if (to.hash) {
-          position.selector = to.hash;
-        }
-        if (to.matched.some((m) => m.meta.scrollToTop)) {
-          position.x = 0;
-          position.y = 0;
-        }
-      }
-      router.app.$root.$once("triggerScroll", () => {
-        router.app.$nextTick(() => resolve(position));
-      });
-    }),
+  scrollBehavior(to, from, savedPosition) {
+    // scroll to top if on same route
+    if (to.name === from.name) {
+      to.meta?.scrollPos && (to.meta.scrollPos.top = 0);
+      return { left: 0, top: 0 };
+    }
+    const scrollpos = savedPosition || to.meta?.scrollPos || { left: 0, top: 0 };
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(scrollpos);
+      }, 600); // transition just before 600ms
+    });
+  },
 });
 
 new Vue({
