@@ -30,7 +30,7 @@ export const router = new VueRouter({
 
     // Workaround for transitions scrolling to the top of the page
     // However, there are still some problems being fixed by the vue team
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         resolve(position);
       }, 1000);
