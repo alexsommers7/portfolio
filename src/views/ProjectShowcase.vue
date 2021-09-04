@@ -151,9 +151,9 @@ export default {
           }),
       });
 
-      // ScrollTrigger.addEventListener("refreshInit", () =>
-      //   gsap.set(".project-showcase article.project", { y: 0, opacity: 1 })
-      // );
+      ScrollTrigger.addEventListener("refreshInit", () =>
+        gsap.set(".project-showcase article.project", { y: 0, opacity: 1 })
+      );
     },
   },
   mounted() {
