@@ -21,20 +21,8 @@ export const router = new VueRouter({
     { path: "/error", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    let position = { x: 0, y: 0 };
-    // Keep scroll position when using browser buttons
-    if (savedPosition) {
-      position = savedPosition;
-    }
-
-    // Workaround for transitions scrolling to the top of the page
-    // However, there are still some problems being fixed by the vue team
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(position);
-      }, 1000);
-    });
+  scrollBehavior() {
+    return { x: 0, y: 0 };
   },
   mode: "history",
 });
