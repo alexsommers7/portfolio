@@ -111,7 +111,7 @@ export default {
     },
   },
   mounted() {
-    this.configureScrollTrigger();
+    // this.configureScrollTrigger();
   },
 };
 </script>
