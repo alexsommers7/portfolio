@@ -9,7 +9,13 @@
       :class="[seeThroughLoadIn ? 'invisible' : 'visible']"
     ></LoadIn>
     <Nav :onMobile="onMobile"></Nav>
-    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0" mode="out-in">
+    <transition
+      enter-active-class="opacity-1"
+      leave-active-class="opacity-0"
+      mode="out-in"
+      :duration="200"
+      @after-leave="$root.$emit('triggerScroll')"
+    >
       <main id="main" ref="main">
         <router-view></router-view>
       </main>

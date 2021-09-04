@@ -11,23 +11,38 @@ Vue.use(VueRouter);
 export const router = new VueRouter({
   mode: "history",
   routes: [
-    { path: "/", name: "Home", component: Homepage, meta: { NoLoadIn: false, noScrollArrow: false } },
+    {
+      path: "/",
+      name: "Home",
+      component: Homepage,
+      meta: { NoLoadIn: false, noScrollArrow: false, scrollToTop: true },
+    },
     {
       path: "/project-showcase",
       name: "Projects",
       component: Projects,
-      meta: { NoLoadIn: true, noScrollArrow: true },
+      meta: { NoLoadIn: true, noScrollArrow: true, scrollToTop: true },
     },
     { path: "/thanks", name: "Thanks!", component: formSuccess, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "/error", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
-  scrollBehavior() {
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-    return { x: 0, y: 0 };
-  },
+  scrollBehavior: (to, from, savedPosition) =>
+    new Promise((resolve) => {
+      const position = savedPosition || {};
+      if (!savedPosition) {
+        if (to.hash) {
+          position.selector = to.hash;
+        }
+        if (to.matched.some((m) => m.meta.scrollToTop)) {
+          position.x = 0;
+          position.y = 0;
+        }
+      }
+      router.app.$root.$once("triggerScroll", () => {
+        router.app.$nextTick(() => resolve(position));
+      });
+    }),
 });
 
 new Vue({
