@@ -97,8 +97,9 @@ export default {
     this.updateTargets();
   },
   watch: {
-    $route() {
+    $route(to, from) {
       this.$nextTick(() => {
+        if (to.name !== from.name) document.body.scrollTop = document.documentElement.scrollTop = 0;
         this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
       });
     },
