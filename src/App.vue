@@ -95,6 +95,7 @@ export default {
   mounted() {
     this.handleIntro();
     this.updateTargets();
+    window.scrollTo(0, 0);
   },
   watch: {
     $route() {
