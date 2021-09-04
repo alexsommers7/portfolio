@@ -9,6 +9,7 @@ import formFailure from "./views/FormFailure";
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  mode: "history",
   routes: [
     { path: "/", name: "Home", component: Homepage, meta: { NoLoadIn: false, noScrollArrow: false } },
     {
@@ -21,10 +22,9 @@ export const router = new VueRouter({
     { path: "/error", name: "", component: formFailure, meta: { NoLoadIn: true, noScrollArrow: true } },
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
-  scrollBehavior(to, from, savedPosition) {
-    return savedPosition ? savedPosition : { x: 0, y: 0 };
-  },
-  mode: "history",
+  // scrollBehavior() {
+  //   return { x: 0, y: 0 };
+  // },
 });
 
 new Vue({
