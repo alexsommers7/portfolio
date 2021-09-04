@@ -95,11 +95,11 @@ export default {
   mounted() {
     this.handleIntro();
     this.updateTargets();
-    window.scrollTo(0, 0);
   },
   watch: {
-    $route() {
+    $route(to, from) {
       this.$nextTick(() => {
+        if (to.name !== from.name) window.scrollTo({ top: 0, behavior: "smooth" });
         this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
       });
     },
