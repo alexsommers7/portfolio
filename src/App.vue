@@ -99,6 +99,7 @@ export default {
   watch: {
     $route(to, from) {
       this.$nextTick(() => {
+        // safari scroll bug - alternative to vue router scrollBehavior
         if (to.name !== from.name) document.body.scrollTop = document.documentElement.scrollTop = 0;
         this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
       });

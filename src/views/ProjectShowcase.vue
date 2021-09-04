@@ -157,12 +157,6 @@ export default {
     },
   },
   mounted() {
-    // gsap.to(window, {
-    //   // fixing weird router bug on safari
-    //   // was snapping to middle of page
-    //   duration: 0.01,
-    //   scrollTo: { x: 0, y: 0 },
-    // });
     this.configureScrollTrigger();
   },
 };
