@@ -23,6 +23,9 @@ export const router = new VueRouter({
     { path: "*", name: "", component: Homepage, meta: { NoLoadIn: true, noScrollArrow: false } },
   ],
   scrollBehavior() {
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+    }
     return { x: 0, y: 0 };
   },
 });
