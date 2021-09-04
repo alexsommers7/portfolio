@@ -14,7 +14,7 @@
     </div>
     <picture>
       <source srcset="../assets/alex-sommers.webp" type="image/webp" />
-      <img class="photo" src="../assets/alex-sommers.png" alt="Alex Sommers | Front-End Web Developer" />
+      <img class="photo" src="../assets/alex-sommers.png" alt="Alex Sommers | Front-End Web Developer" height="373" />
     </picture>
   </section>
 </template>
