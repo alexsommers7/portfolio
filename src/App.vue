@@ -92,7 +92,7 @@ export default {
       this.observerTargets = [...this.$refs.main.querySelectorAll("section.track")];
     },
     fixCrappyScrollBehavior() {
-      console.log("called");
+      // fixing safari scroll jump bug
       this.$refs.main.scrollIntoView();
     },
   },
@@ -103,11 +103,8 @@ export default {
   watch: {
     $route(to, from) {
       const isNewView = to.name !== from.name;
-      // setTimeout(this.fixCrappyScrollBehavior, 250);
-      if (isNewView) this.fixCrappyScrollBehavior();
+      if (isNewView && !to.hash) this.fixCrappyScrollBehavior();
       this.$nextTick(() => {
-        // safari scroll bug - alternative to vue router scrollBehavior
-        if (isNewView) document.body.scrollTop = document.documentElement.scrollTop = 0;
         this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
       });
     },
