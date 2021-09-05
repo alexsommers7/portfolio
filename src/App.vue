@@ -9,11 +9,11 @@
       :class="[seeThroughLoadIn ? 'invisible' : 'visible']"
     ></LoadIn>
     <Nav :onMobile="onMobile"></Nav>
-    <!-- <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0" mode="out-in"> -->
-    <main id="main" ref="main">
-      <router-view></router-view>
-    </main>
-    <!-- </transition> -->
+    <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
+      <main id="main" ref="main">
+        <router-view></router-view>
+      </main>
+    </transition>
     <Sidebar
       :observerTargets="observerTargets"
       :observeSections="observeSections"
@@ -91,6 +91,10 @@ export default {
       this.observeSections = true;
       this.observerTargets = [...this.$refs.main.querySelectorAll("section.track")];
     },
+    fixCrappyScrollBehavior() {
+      console.log("called");
+      this.$refs.main.scrollIntoView();
+    },
   },
   mounted() {
     this.handleIntro();
@@ -98,9 +102,12 @@ export default {
   },
   watch: {
     $route(to, from) {
+      const isNewView = to.name !== from.name;
+      // setTimeout(this.fixCrappyScrollBehavior, 250);
+      if (isNewView) this.fixCrappyScrollBehavior();
       this.$nextTick(() => {
         // safari scroll bug - alternative to vue router scrollBehavior
-        if (to.name !== from.name) document.body.scrollTop = document.documentElement.scrollTop = 0;
+        if (isNewView) document.body.scrollTop = document.documentElement.scrollTop = 0;
         this.$route.name === "Home" ? this.updateTargets() : (this.observeSections = false);
       });
     },
