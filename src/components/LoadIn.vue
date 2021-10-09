@@ -27,26 +27,31 @@ export default {
     onMobile: Boolean,
   },
   mounted() {
-    let introContent = this.$el.querySelectorAll(".wrapper__dot, .wrapper__word");
-    let timeline = gsap.timeline({ onComplete: this.onLoadInFinish });
-    timeline
-      .from(introContent, {
-        duration: 0.75,
-        autoAlpha: 0,
-        y: 150,
-        stagger: 0.2,
-        delay: 0.5,
-        ease: "back.out(1.7)",
-      })
-      .to(".wrapper__dot", { duration: 0.25, autoAlpha: 0 }, "+=.8")
-      .to(introContent, { duration: 0.3, autoAlpha: 0, y: 150, stagger: 0.1 }, "+=0.25")
-      .add(this.onHideLoadIn)
-      .from("nav.navigation", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
-      .from(".sidebar", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
-      .from("#hero", { duration: 0.6, autoAlpha: 0, ease: "expo.in" })
-      .from("#about", { duration: 0.6, autoAlpha: 0, ease: "expo.in" }, "<");
+    document.fonts.ready.then(() => {
+      this.$el.querySelectorAll(".wrapper__word").forEach((el) => (el.style.opacity = "1"));
+      this.beginLoadIn();
+    });
   },
   methods: {
+    beginLoadIn() {
+      let introContent = this.$el.querySelectorAll(".wrapper__dot, .wrapper__word");
+      let timeline = gsap.timeline({ onComplete: this.onLoadInFinish });
+      timeline
+        .from(introContent, {
+          duration: 0.75,
+          autoAlpha: 0,
+          y: 150,
+          stagger: 0.2,
+          ease: "back.out(1.7)",
+        })
+        .to(".wrapper__dot", { duration: 0.25, autoAlpha: 0 }, "+=.8")
+        .to(introContent, { duration: 0.3, autoAlpha: 0, y: 150, stagger: 0.1 }, "+=0.25")
+        .add(this.onHideLoadIn)
+        .from("nav.navigation", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
+        .from(".sidebar", { duration: 0.3, width: 0, autoAlpha: 0, ease: "expo.out" }, "<")
+        .from("#hero", { duration: 0.6, autoAlpha: 0, ease: "expo.in" })
+        .from("#about", { duration: 0.6, autoAlpha: 0, ease: "expo.in" }, "<");
+    },
     onHideLoadIn() {
       this.$emit("onHideLoadIn");
     },
@@ -82,6 +87,10 @@ export default {
         width: auto;
       }
     }
+  }
+
+  &__word {
+    opacity: 0;
   }
 }
 
