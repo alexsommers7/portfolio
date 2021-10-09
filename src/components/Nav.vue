@@ -74,7 +74,6 @@ export default {
 
         // safari orientation change bug fix
         const navEl = vm.$el.querySelector(".navigation");
-        console.log(document.body.clientWidth);
         document.body.clientWidth < 1195
           ? (navEl.style.width = `${document.body.clientWidth}px`)
           : navEl.style.removeProperty("width");
