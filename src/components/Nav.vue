@@ -75,7 +75,10 @@ export default {
     },
     resetNav() {
       this.navList.setAttribute("style", "");
-      if (!this.portraitMode) this.navList.style.width = "100%"; // safari bug fix
+      if (!this.portraitMode) {
+        const windowWidth = document.body.scrollWidth;
+        this.navList.style.width = `${windowWidth}px`; // safari bug fix
+      }
       if (this.nav.classList.contains("open")) this.closeNav();
     },
     toggleNav() {
