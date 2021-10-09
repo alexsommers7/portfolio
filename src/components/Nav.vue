@@ -71,14 +71,16 @@ export default {
       const vm = this;
       window.addEventListener("resize", function() {
         vm.portraitMode = window.matchMedia("(orientation: portrait)").matches;
+
+        // safari orientation change bug fix
+        const navEl = vm.$el.querySelector(".navigation");
+        document.body.clientWidth < 1199
+          ? (navEl.style.width = `${document.body.clientWidth}px`)
+          : navEl.style.removeProperty("width");
       });
     },
     resetNav() {
       this.navList.setAttribute("style", "");
-      if (!this.portraitMode && document.body.scrollWidth < 500) {
-        const windowWidth = document.body.scrollWidth;
-        this.$el.querySelector(".navigation").style.width = `${windowWidth}px`; // safari bug fix
-      }
       if (this.nav.classList.contains("open")) this.closeNav();
     },
     toggleNav() {
