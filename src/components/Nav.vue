@@ -75,6 +75,7 @@ export default {
     },
     resetNav() {
       this.navList.setAttribute("style", "");
+      if (this.portraitMode) this.navList.style.width = "100%"; // safari bug fix
       if (this.nav.classList.contains("open")) this.closeNav();
     },
     toggleNav() {
