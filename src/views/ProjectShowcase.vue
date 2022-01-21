@@ -54,19 +54,6 @@ export default {
     return {
       projects: [
         {
-          title: "AlexSommers.com",
-          description:
-            "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
-          tools: ["Vue.js", "Vue Router", "GSAP", "SCSS", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://lovelyheartsaz.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/portfolio",
-          image: require("@/assets/project-showcase--alex-sommers.png"),
-          imageWebp: require("@/assets/project-showcase--alex-sommers.webp"),
-          alt: "AlexSommers.com displayed on various devices",
-        },
-        {
           title: "Lovely Hearts AZ",
           description:
             "Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.",
@@ -78,6 +65,19 @@ export default {
           image: require("@/assets/project-showcase--lovely-hearts-az.png"),
           imageWebp: require("@/assets/project-showcase--lovely-hearts-az.webp"),
           alt: "Lovely Hearts AZ website displayed on various devices",
+        },
+        {
+          title: "AlexSommers.com",
+          description:
+            "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
+          tools: ["Vue.js", "Vue Router", "GSAP", "SCSS", "Netlify", "Adobe XD"],
+          primaryCTA: "View Demo",
+          primaryLink: "https://lovelyheartsaz.com/",
+          secondaryCTA: "View Code",
+          secondaryLink: "https://github.com/alexsommers7/portfolio",
+          image: require("@/assets/project-showcase--alex-sommers.png"),
+          imageWebp: require("@/assets/project-showcase--alex-sommers.webp"),
+          alt: "AlexSommers.com displayed on various devices",
         },
         {
           title: "J.A Dancik Electric",
@@ -117,19 +117,6 @@ export default {
           image: require("@/assets/project-showcase--vue-shop.png"),
           imageWebp: require("@/assets/project-showcase--vue-shop.webp"),
           alt: "Vue Shop website displayed on various devices",
-        },
-        {
-          title: "Glamorous Bags By Shae",
-          description:
-            "Small business website developed for a local fashion boutique. This business wanted a way to generate leads and provide a digital catalog for their product line. Site passcode: glamour.",
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://glamorousbagsbyshae.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/glamorous-bags-by-shae",
-          image: require("@/assets/project-showcase--glamorous-bags.png"),
-          imageWebp: require("@/assets/project-showcase--glamorous-bags.webp"),
-          alt: "Glamorous Bags website displayed on various devices",
         },
       ],
     };
