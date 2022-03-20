@@ -33,21 +33,21 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
 export default {
-  name: "Nav",
+  name: 'Nav',
   data() {
     return {
       timeline: gsap.timeline(),
-      nav: "",
-      navList: "",
-      portraitMode: window.matchMedia("(orientation: portrait)").matches,
-      mobileNavHeight: this.getCustomProperty("--nav-mobile-height"),
-      desktopNavWidth: this.getCustomProperty("--nav-desktop-width"),
-      scrollbarWidth: this.getCustomProperty("--scrollbar-width"),
+      nav: '',
+      navList: '',
+      portraitMode: window.matchMedia('(orientation: portrait)').matches,
+      mobileNavHeight: this.getCustomProperty('--nav-mobile-height'),
+      desktopNavWidth: this.getCustomProperty('--nav-desktop-width'),
+      scrollbarWidth: this.getCustomProperty('--scrollbar-width'),
     };
   },
   computed: {
@@ -66,66 +66,66 @@ export default {
       return parseInt(getComputedStyle(document.documentElement).getPropertyValue(propertyName));
     },
     init() {
-      this.nav = this.$el.querySelector("nav.navigation");
-      this.navList = this.$el.querySelector(".navigation__list");
+      this.nav = this.$el.querySelector('nav.navigation');
+      this.navList = this.$el.querySelector('.navigation__list');
       const vm = this;
-      window.addEventListener("resize", function() {
-        vm.portraitMode = window.matchMedia("(orientation: portrait)").matches;
+      window.addEventListener('resize', function() {
+        vm.portraitMode = window.matchMedia('(orientation: portrait)').matches;
 
         // safari orientation change bug fix
-        const navEl = vm.$el.querySelector(".navigation");
+        const navEl = vm.$el.querySelector('.navigation');
         document.body.clientWidth < 1195
           ? (navEl.style.width = `${document.body.clientWidth}px`)
-          : navEl.style.removeProperty("width");
+          : navEl.style.removeProperty('width');
       });
     },
     resetNav() {
-      this.navList.setAttribute("style", "");
-      if (this.nav.classList.contains("open")) this.closeNav();
+      this.navList.setAttribute('style', '');
+      if (this.nav.classList.contains('open')) this.closeNav();
     },
     toggleNav() {
-      let nav = this.$el.querySelector("nav");
-      nav.classList.contains("open") ? this.closeNav() : this.openNav();
-      nav.classList.toggle("open");
+      let nav = this.$el.querySelector('nav');
+      nav.classList.contains('open') ? this.closeNav() : this.openNav();
+      nav.classList.toggle('open');
     },
     openNav() {
       this.onMobile
         ? this.timeline.fromTo(
             this.navList,
-            { top: "-100%" },
-            { top: this.mobileNavHeightHalf, duration: 0.4, ease: "power1.out" }
+            { top: '-100%' },
+            { top: this.mobileNavHeightHalf, duration: 0.4, ease: 'power1.out' }
           )
         : this.timeline.fromTo(
             this.navList,
-            { left: "-100%" },
-            { left: this.desktopNavWidthWithScrollbar, duration: 0.4, ease: "circ.out" }
+            { left: '-100%' },
+            { left: this.desktopNavWidthWithScrollbar, duration: 0.4, ease: 'circ.out' }
           );
       this.timeline
         .fromTo(
-          ".navigation__list > li",
+          '.navigation__list > li',
           { opacity: 0 },
           { opacity: 1, delay: 0.2, duration: 0.15, stagger: 0.05 },
-          "<"
+          '<'
         )
         .add(function() {
           // prevent slight twitch on main content
-          document.body.classList.add("no-scroll");
-        }, "<+.3");
+          document.body.classList.add('no-scroll');
+        }, '<+.3');
     },
     closeNav() {
-      this.$el.closest("body").classList.remove("no-scroll");
+      this.$el.closest('body').classList.remove('no-scroll');
       this.onMobile
         ? this.timeline.fromTo(
             this.navList,
             { top: this.mobileNavHeightHalf },
-            { top: "-100%", duration: 0.75, ease: "power4.out" }
+            { top: '-100%', duration: 0.75, ease: 'power4.out' }
           )
         : this.timeline.fromTo(
             this.navList,
             { left: this.desktopNavWidthWithScrollbar },
-            { left: "-100%", duration: 0.5, ease: "circ.out" }
+            { left: '-100%', duration: 0.5, ease: 'circ.out' }
           );
-      this.timeline.fromTo(".navigation__list > li", { opacity: 1 }, { opacity: 0, duration: 0.1 }, "<");
+      this.timeline.fromTo('.navigation__list > li', { opacity: 1 }, { opacity: 0, duration: 0.1 }, '<');
     },
     onNavItemClick(e) {
       e.preventDefault();
@@ -134,8 +134,8 @@ export default {
       }
       this.$nextTick(() => {
         gsap.to(window, {
-          duration: 1.2,
-          ease: "expo.inOut",
+          duration: 0.8,
+          ease: 'expo.inOut',
           scrollTo: e.target.dataset.section ? `#${e.target.dataset.section}` : { x: 0, y: 0 },
         });
         // a bit hacky here, but ...
@@ -146,9 +146,9 @@ export default {
       });
     },
     onLogoClick() {
-      this.$route.path !== "/"
-        ? this.$router.push("/")
-        : gsap.to(window, { duration: 1.2, ease: "expo.inOut", scrollTo: { x: 0, y: 0 } });
+      this.$route.path !== '/'
+        ? this.$router.push('/')
+        : gsap.to(window, { duration: 0.8, ease: 'expo.inOut', scrollTo: { x: 0, y: 0 } });
     },
   },
   mounted() {
@@ -157,7 +157,7 @@ export default {
   watch: {
     onMobile: function(newVal) {
       this.resetNav();
-      this.nav.classList[newVal ? "remove" : "add"]("isDesktop");
+      this.nav.classList[newVal ? 'remove' : 'add']('isDesktop');
     },
     portraitMode: function() {
       this.resetNav();
@@ -167,7 +167,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_transitions";
+@import '@/scss/_transitions';
 
 a.skip-link {
   background: $color-primary;
