@@ -39,63 +39,63 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: "Projects",
+  name: 'Projects',
   data() {
     return {
       projects: [
         {
-          title: "Heritage Assisted Living",
+          title: 'Heritage Assisted Living',
           description:
-            "A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.",
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://heritagephoenix.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/heritage-assisted-living",
-          image: require("@/assets/project-showcase--heritage-assited-living.png"),
-          imageWebp: require("@/assets/project-showcase--heritage-assited-living.webp"),
-          alt: "Heritage Assisted Living website displayed on various devices",
+            'A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',
+          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://heritagephoenix.com/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/heritage-assisted-living',
+          image: require('@/assets/project-showcase--heritage-assited-living.png'),
+          imageWebp: require('@/assets/project-showcase--heritage-assited-living.webp'),
+          alt: 'Heritage Assisted Living website displayed on various devices',
         },
         {
-          title: "Vue Shop",
+          title: 'Vue Shop',
           description:
-            "A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.",
-          tools: ["Vue.js", "SCSS", "Fake Store API", "Foundation", "Babel", "Netlify"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://vue-fake-shop.netlify.app/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/vue-shop",
-          image: require("@/assets/project-showcase--vue-shop.png"),
-          imageWebp: require("@/assets/project-showcase--vue-shop.webp"),
-          alt: "Vue Shop website displayed on various devices",
+            'A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.',
+          tools: ['Vue.js', 'SCSS', 'Fake Store API', 'Foundation', 'Babel', 'Netlify'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://vue-fake-shop.netlify.app/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
+          image: require('@/assets/project-showcase--vue-shop.png'),
+          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
+          alt: 'Vue Shop website displayed on various devices',
         },
         {
-          title: "Lovely Hearts AZ",
+          title: 'Lovely Hearts AZ',
           description:
-            "Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.",
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://lovelyheartsaz.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/lovelyheartsaz",
-          image: require("@/assets/project-showcase--lovely-hearts-az.png"),
-          imageWebp: require("@/assets/project-showcase--lovely-hearts-az.webp"),
-          alt: "Lovely Hearts AZ website displayed on various devices",
+            'Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.',
+          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://lovelyheartsaz.com/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/lovelyheartsaz',
+          image: require('@/assets/project-showcase--lovely-hearts-az.png'),
+          imageWebp: require('@/assets/project-showcase--lovely-hearts-az.webp'),
+          alt: 'Lovely Hearts AZ website displayed on various devices',
         },
       ],
     };
   },
   methods: {
     configureScrollTrigger() {
-      gsap.set("article.project", { y: 100, opacity: 0 });
+      gsap.set('article.project', { y: 100, opacity: 0 });
 
-      ScrollTrigger.batch("article.project", {
-        start: "top 80%",
+      ScrollTrigger.batch('article.project', {
+        start: 'top 85%',
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
@@ -103,11 +103,11 @@ export default {
             y: 0,
             stagger: { each: 0.2 },
             overwrite: true,
-            ease: "expo.out",
+            ease: 'expo.out',
           }),
       });
 
-      ScrollTrigger.addEventListener("refreshInit", () => gsap.set("article.project", { y: 0, opacity: 1 }));
+      ScrollTrigger.addEventListener('refreshInit', () => gsap.set('article.project', { y: 0, opacity: 1 }));
     },
   },
   mounted() {

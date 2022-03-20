@@ -36,33 +36,33 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TextPlugin } from 'gsap/TextPlugin';
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, TextPlugin);
 
 export default {
-  name: "About",
+  name: 'About',
   data() {
     return {
       recentLanguages: [
         {
-          title: "Vue.js",
-          icon: require("@/assets/icons/vue.svg"),
-          alt: "Vue JavaScript Framework",
+          title: 'Vue.js',
+          icon: require('@/assets/icons/vue.svg'),
+          alt: 'Vue JavaScript Framework',
         },
         {
-          title: "Alpine.js",
-          icon: require("@/assets/icons/alpine.svg"),
-          type: "tech",
-          class: "brighten",
-          alt: "Alpine JavaScript Framework",
+          title: 'Alpine.js',
+          icon: require('@/assets/icons/alpine.svg'),
+          type: 'tech',
+          class: 'brighten',
+          alt: 'Alpine JavaScript Framework',
         },
         {
-          title: "GSAP",
-          icon: require("@/assets/icons/gsap.svg"),
-          alt: "Greensock Animation Platform (GSAP)",
+          title: 'GSAP',
+          icon: require('@/assets/icons/gsap.svg'),
+          alt: 'Greensock Animation Platform (GSAP)',
         },
       ],
     };
@@ -71,7 +71,7 @@ export default {
     onAnchorClick(e) {
       gsap.to(window, {
         duration: 1.2,
-        ease: "expo.inOut",
+        ease: 'expo.inOut',
         scrollTo: { y: `#${e.target.dataset.section}`, offsetY: -20 },
       });
       // a bit hacky here, but ...
@@ -82,25 +82,25 @@ export default {
     },
     configureScrollTrigger() {
       const cursor = gsap.fromTo(
-        "#cursor",
+        '#cursor',
         { autoAlpha: 0, x: -10 },
         {
           autoAlpha: 1,
           duration: 0.5,
           repeat: 8,
-          ease: "steps(1)",
+          ease: 'steps(1)',
           onComplete: function() {
-            if (document.getElementById("cursor")) document.getElementById("cursor").style.opacity = "0";
+            if (document.getElementById('cursor')) document.getElementById('cursor').style.opacity = '0';
           },
         }
       );
 
       const tl = gsap.timeline();
-      tl.to(".typewriter-1", {
-        text: { value: "Hey there, " },
+      tl.to('.typewriter-1', {
+        text: { value: 'Hey there, ' },
         duration: 1.15,
         delay: 0.6,
-      }).to(".typewriter-2", {
+      }).to('.typewriter-2', {
         text: { value: "I'm Alex." },
         duration: 1.15,
         delay: 0.4,
@@ -108,14 +108,14 @@ export default {
 
       ScrollTrigger.create({
         animation: tl,
-        trigger: ".typewriter-1",
-        start: "top 75%",
+        trigger: '.typewriter-1',
+        start: 'top 75%',
       });
 
       ScrollTrigger.create({
         animation: cursor,
-        trigger: ".typewriter-1",
-        start: "top 70%",
+        trigger: '.typewriter-1',
+        start: 'top 70%',
       });
     },
   },

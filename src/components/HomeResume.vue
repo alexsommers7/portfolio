@@ -44,64 +44,64 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: "Resume",
+  name: 'Resume',
   data() {
     return {
       jobs: [
         {
           id: 1,
-          jobTitle: "Front-End Web Developer",
-          company: "Retailer Web Services",
-          location: "Scottsdale, AZ",
-          timeframe: "April 2021 - Present",
+          jobTitle: 'Front-End Web Developer',
+          company: 'Retailer Web Services',
+          location: 'Scottsdale, AZ',
+          timeframe: 'April 2021 - Present',
           description:
-            "Work with Vue.js, Alpine.js, JavaScript (ES6), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.",
+            'Work with Vue.js, Alpine.js, JavaScript (ES6), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.',
         },
         {
           id: 2,
-          jobTitle: "Freelance Web Developer",
-          company: "Self-Employed",
-          location: "Tempe, AZ",
-          timeframe: "July 2020 - Present",
+          jobTitle: 'Freelance Web Developer',
+          company: 'Self-Employed',
+          location: 'Tempe, AZ',
+          timeframe: 'July 2020 - Present',
           description:
-            "Work with small business owners to conceptualize, design, and develop static websites. Deploy and maintain sites via GitHub repositories and Netlify continuous integration.",
+            'Work with small business owners to conceptualize, design, and develop static websites. Deploy and maintain sites via GitHub repositories and Netlify continuous integration.',
         },
         {
           id: 3,
-          jobTitle: "Digital Marketing Coordinator",
-          company: "Isagenix",
-          location: "Gilbert, AZ",
-          timeframe: "September 2019 - April 2021",
+          jobTitle: 'Digital Marketing Coordinator',
+          company: 'Isagenix',
+          location: 'Gilbert, AZ',
+          timeframe: 'September 2019 - April 2021',
           description:
-            "Built contemporary, interactive webpages in Sitecore and Salesforce Marketing Cloud with an emphasis on JavaScript, Marketing Cloud Ampscript, CSS, and semantic HTML.",
+            'Built contemporary, interactive webpages in Sitecore and Salesforce Marketing Cloud with an emphasis on JavaScript, Marketing Cloud Ampscript, CSS, and semantic HTML.',
         },
       ],
       schooling: [
         {
           id: 1,
-          title: "B.A. - Marketing",
-          company: "Baldwin Wallace University",
-          location: "Berea, OH",
-          timeframe: "August 2013 - May 2017",
-          description: "Magna cum laude",
+          title: 'B.A. - Marketing',
+          company: 'Baldwin Wallace University',
+          location: 'Berea, OH',
+          timeframe: 'August 2013 - May 2017',
+          description: 'Magna cum laude',
         },
       ],
     };
   },
   methods: {
     configureScrollTrigger() {
-      const items = this.$el.querySelectorAll(".gsap-ul");
+      const items = this.$el.querySelectorAll('.gsap-ul');
 
       items.forEach((item) => {
         ScrollTrigger.create({
           trigger: item,
-          start: "top 80%",
-          onEnter: (self) => self.trigger.classList.add("active"),
+          start: 'top 85%',
+          onEnter: (self) => self.trigger.classList.add('active'),
         });
       });
     },
@@ -141,7 +141,7 @@ export default {
 
         &::before,
         &::after {
-          content: "";
+          content: '';
           position: absolute;
         }
 
@@ -189,7 +189,7 @@ export default {
           margin-bottom: 0.5rem;
 
           &::after {
-            content: "";
+            content: '';
             width: 4rem;
             height: 2px;
             display: block;

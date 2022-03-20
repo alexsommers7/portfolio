@@ -44,89 +44,89 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: "projectShowcase",
+  name: 'projectShowcase',
   data() {
     return {
       projects: [
         {
-          title: "Lovely Hearts AZ",
+          title: 'Lovely Hearts AZ',
           description:
-            "Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.",
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://lovelyheartsaz.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/lovelyheartsaz",
-          image: require("@/assets/project-showcase--lovely-hearts-az.png"),
-          imageWebp: require("@/assets/project-showcase--lovely-hearts-az.webp"),
-          alt: "Lovely Hearts AZ website displayed on various devices",
+            'Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.',
+          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://lovelyheartsaz.com/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/lovelyheartsaz',
+          image: require('@/assets/project-showcase--lovely-hearts-az.png'),
+          imageWebp: require('@/assets/project-showcase--lovely-hearts-az.webp'),
+          alt: 'Lovely Hearts AZ website displayed on various devices',
         },
         {
-          title: "AlexSommers.com",
+          title: 'AlexSommers.com',
           description:
             "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
-          tools: ["Vue.js", "Vue Router", "GSAP", "SCSS", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://lovelyheartsaz.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/portfolio",
-          image: require("@/assets/project-showcase--alex-sommers.png"),
-          imageWebp: require("@/assets/project-showcase--alex-sommers.webp"),
-          alt: "AlexSommers.com displayed on various devices",
+          tools: ['Vue.js', 'Vue Router', 'GSAP', 'SCSS', 'Netlify', 'Adobe XD'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://lovelyheartsaz.com/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/portfolio',
+          image: require('@/assets/project-showcase--alex-sommers.png'),
+          imageWebp: require('@/assets/project-showcase--alex-sommers.webp'),
+          alt: 'AlexSommers.com displayed on various devices',
         },
         {
-          title: "J.A Dancik Electric",
+          title: 'J.A Dancik Electric',
           description:
             'My first "real world" website! This client, a local electrician, wanted to keep the information basic and simply establish a way for current and future customers to contact them.',
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://jadancikelectric.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/ja-dancik-electric",
-          image: require("@/assets/project-showcase--jad-electric.png"),
-          imageWebp: require("@/assets/project-showcase--jad-electric.webp"),
-          alt: "J.A. Dancik Electric website displayed on various devices",
+          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://jadancikelectric.com/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/ja-dancik-electric',
+          image: require('@/assets/project-showcase--jad-electric.png'),
+          imageWebp: require('@/assets/project-showcase--jad-electric.webp'),
+          alt: 'J.A. Dancik Electric website displayed on various devices',
         },
         {
-          title: "Heritage Assisted Living",
+          title: 'Heritage Assisted Living',
           description:
-            "A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.",
-          tools: ["JavaScript", "SCSS", "HTML", "Netlify", "Adobe XD"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://heritagephoenix.com/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/heritage-assisted-living",
-          image: require("@/assets/project-showcase--heritage-assited-living.png"),
-          imageWebp: require("@/assets/project-showcase--heritage-assited-living.webp"),
-          alt: "Heritage Assisted Living website displayed on various devices",
+            'A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',
+          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://heritagephoenix.com/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/heritage-assisted-living',
+          image: require('@/assets/project-showcase--heritage-assited-living.png'),
+          imageWebp: require('@/assets/project-showcase--heritage-assited-living.webp'),
+          alt: 'Heritage Assisted Living website displayed on various devices',
         },
         {
-          title: "Vue Shop",
+          title: 'Vue Shop',
           description:
-            "A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.",
-          tools: ["Vue.js", "SCSS", "Fake Store API", "Foundation", "Babel", "Netlify"],
-          primaryCTA: "View Demo",
-          primaryLink: "https://vue-fake-shop.netlify.app/",
-          secondaryCTA: "View Code",
-          secondaryLink: "https://github.com/alexsommers7/vue-shop",
-          image: require("@/assets/project-showcase--vue-shop.png"),
-          imageWebp: require("@/assets/project-showcase--vue-shop.webp"),
-          alt: "Vue Shop website displayed on various devices",
+            'A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.',
+          tools: ['Vue.js', 'SCSS', 'Fake Store API', 'Foundation', 'Babel', 'Netlify'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://vue-fake-shop.netlify.app/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
+          image: require('@/assets/project-showcase--vue-shop.png'),
+          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
+          alt: 'Vue Shop website displayed on various devices',
         },
       ],
     };
   },
   methods: {
     configureScrollTrigger() {
-      gsap.set(".project-showcase article.project", { y: 100, opacity: 0 });
+      gsap.set('.project-showcase article.project', { y: 100, opacity: 0 });
 
-      ScrollTrigger.batch(".project-showcase article.project", {
-        start: "top 80%",
+      ScrollTrigger.batch('.project-showcase article.project', {
+        start: 'top 85%',
         onEnter: (batch) =>
           gsap.to(batch, {
             opacity: 1,
@@ -134,13 +134,13 @@ export default {
             y: 0,
             stagger: { each: 0.25 },
             overwrite: true,
-            ease: "expo.out",
+            ease: 'expo.out',
           }),
       });
 
-      ScrollTrigger.addEventListener("refreshInit", () => {
-        if (!this.$el.querySelector(".project-showcase article.project")) return;
-        gsap.set(".project-showcase article.project", { y: 0, opacity: 1 });
+      ScrollTrigger.addEventListener('refreshInit', () => {
+        if (!this.$el.querySelector('.project-showcase article.project')) return;
+        gsap.set('.project-showcase article.project', { y: 0, opacity: 1 });
       });
     },
   },

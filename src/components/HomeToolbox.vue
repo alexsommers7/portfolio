@@ -26,119 +26,119 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: "Toolbox",
+  name: 'Toolbox',
   data() {
     return {
-      togglePosition: "left",
-      currentType: "tech",
+      togglePosition: 'left',
+      currentType: 'tech',
       tools: [
         {
-          title: "Vue.js",
-          icon: require("@/assets/icons/vue.svg"),
-          type: "tech",
-          alt: "Vue JavaScript Framework",
+          title: 'Vue.js',
+          icon: require('@/assets/icons/vue.svg'),
+          type: 'tech',
+          alt: 'Vue JavaScript Framework',
         },
         {
-          title: "Alpine.js",
-          icon: require("@/assets/icons/alpine.svg"),
-          type: "tech",
-          class: "brighten",
-          alt: "Alpine JavaScript Framework",
+          title: 'Alpine.js',
+          icon: require('@/assets/icons/alpine.svg'),
+          type: 'tech',
+          class: 'brighten',
+          alt: 'Alpine JavaScript Framework',
         },
         {
-          title: "JavaScript",
-          icon: require("@/assets/icons/javascript.svg"),
-          type: "tech",
-          alt: "JavaScript (ES6)",
+          title: 'JavaScript',
+          icon: require('@/assets/icons/javascript.svg'),
+          type: 'tech',
+          alt: 'JavaScript (ES6)',
         },
         {
-          title: "SCSS",
-          icon: require("@/assets/icons/sass.svg"),
-          type: "tech",
-          alt: "Sassy CSS (SCSS)",
+          title: 'SCSS',
+          icon: require('@/assets/icons/sass.svg'),
+          type: 'tech',
+          alt: 'Sassy CSS (SCSS)',
         },
         {
-          title: "GSAP",
-          icon: require("@/assets/icons/gsap.svg"),
-          type: "tech",
-          alt: "Greensock Animation Platform (GSAP)",
+          title: 'GSAP',
+          icon: require('@/assets/icons/gsap.svg'),
+          type: 'tech',
+          alt: 'Greensock Animation Platform (GSAP)',
         },
         {
-          title: "Foundation",
-          icon: require("@/assets/icons/zurb-foundation.svg"),
-          type: "tech",
-          alt: "Zurb Foundation CSS Framework",
+          title: 'Foundation',
+          icon: require('@/assets/icons/zurb-foundation.svg'),
+          type: 'tech',
+          alt: 'Zurb Foundation CSS Framework',
         },
         {
-          title: "Bootstrap",
-          icon: require("@/assets/icons/bootstrap.svg"),
-          type: "tech",
-          alt: "Bootstrap CSS Framework",
+          title: 'Bootstrap',
+          icon: require('@/assets/icons/bootstrap.svg'),
+          type: 'tech',
+          alt: 'Bootstrap CSS Framework',
         },
         {
-          title: "Ampscript",
-          icon: require("@/assets/icons/marketing-cloud.svg"),
-          type: "tech",
-          alt: "Salesforce Marketing Cloud",
+          title: 'Ampscript',
+          icon: require('@/assets/icons/marketing-cloud.svg'),
+          type: 'tech',
+          alt: 'Salesforce Marketing Cloud',
         },
         {
-          title: "jQuery",
-          icon: require("@/assets/icons/jquery.svg"),
-          type: "tech",
-          alt: "jQuery JavaScipt library",
+          title: 'jQuery',
+          icon: require('@/assets/icons/jquery.svg'),
+          type: 'tech',
+          alt: 'jQuery JavaScipt library',
         },
         {
-          title: "Postman",
-          icon: require("@/assets/icons/postman.svg"),
-          type: "tech",
-          alt: "Postman API Platform",
+          title: 'Postman',
+          icon: require('@/assets/icons/postman.svg'),
+          type: 'tech',
+          alt: 'Postman API Platform',
         },
         {
-          title: "Git",
-          icon: require("@/assets/icons/git.svg"),
-          type: "tech",
-          alt: "Git Version Control",
+          title: 'Git',
+          icon: require('@/assets/icons/git.svg'),
+          type: 'tech',
+          alt: 'Git Version Control',
         },
         {
-          title: "NPM",
-          icon: require("@/assets/icons/npm.svg"),
-          type: "tech",
-          alt: "Node Package Manager (NPM)",
+          title: 'NPM',
+          icon: require('@/assets/icons/npm.svg'),
+          type: 'tech',
+          alt: 'Node Package Manager (NPM)',
         },
         {
-          title: "XD",
-          icon: require("@/assets/icons/xd.svg"),
-          type: "design",
-          alt: "Adobe XD",
+          title: 'XD',
+          icon: require('@/assets/icons/xd.svg'),
+          type: 'design',
+          alt: 'Adobe XD',
         },
         {
-          title: "Figma",
-          icon: require("@/assets/icons/figma.svg"),
-          type: "design",
-          alt: "Figma Design Software",
+          title: 'Figma',
+          icon: require('@/assets/icons/figma.svg'),
+          type: 'design',
+          alt: 'Figma Design Software',
         },
         {
-          title: "Photoshop",
-          icon: require("@/assets/icons/photoshop.svg"),
-          type: "design",
-          alt: "Adobe Photoshop",
+          title: 'Photoshop',
+          icon: require('@/assets/icons/photoshop.svg'),
+          type: 'design',
+          alt: 'Adobe Photoshop',
         },
         {
-          title: "Illustrator",
-          icon: require("@/assets/icons/illustrator.svg"),
-          type: "design",
-          alt: "Adobe Illustrator",
+          title: 'Illustrator',
+          icon: require('@/assets/icons/illustrator.svg'),
+          type: 'design',
+          alt: 'Adobe Illustrator',
         },
         {
-          title: "Lightroom",
-          icon: require("@/assets/icons/lightroom.svg"),
-          type: "design",
-          alt: "Adobe Lightroom",
+          title: 'Lightroom',
+          icon: require('@/assets/icons/lightroom.svg'),
+          type: 'design',
+          alt: 'Adobe Lightroom',
         },
       ],
     };
@@ -149,23 +149,23 @@ export default {
     },
   },
   methods: {
-    toggleButton(event, forceTo = "left") {
+    toggleButton(event, forceTo = 'left') {
       let direction = event ? event.target.dataset.toggle : forceTo;
       if (direction == this.togglePosition) return;
-      this.$el.querySelectorAll(".toolbox__toggle button").forEach((btn) => btn.classList.toggle("active"));
-      this.$el.querySelector(".buttons").classList = `buttons ${direction}`;
-      this.currentType = direction === "left" ? "tech" : "design";
+      this.$el.querySelectorAll('.toolbox__toggle button').forEach((btn) => btn.classList.toggle('active'));
+      this.$el.querySelector('.buttons').classList = `buttons ${direction}`;
+      this.currentType = direction === 'left' ? 'tech' : 'design';
       this.togglePosition = direction;
     },
     calculateIconsHeight() {
       // if not on mobile, keep this element at initial height when toggled to avoid layout shift
-      let toolsEl = this.$el.querySelector(".tools");
+      let toolsEl = this.$el.querySelector('.tools');
       if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200) {
-        toolsEl.style.height = "auto";
+        toolsEl.style.height = 'auto';
         return;
       }
-      this.toggleButton(null, "left");
-      toolsEl.style.height = "auto";
+      this.toggleButton(null, 'left');
+      toolsEl.style.height = 'auto';
       setTimeout(function() {
         // slight pause to let window finish resizing - was being inconsistent
         let height = toolsEl.getBoundingClientRect().height;
@@ -173,22 +173,23 @@ export default {
       }, 800);
     },
     configureScrollTrigger() {
-      gsap.to(".toolbox .tools", {
+      gsap.to('.toolbox .tools', {
         scrollTrigger: {
-          trigger: ".toolbox .tools",
-          start: "top 80%",
+          // markers: true,
+          trigger: '.toolbox .tools',
+          start: 'top 90%',
         },
         opacity: 1,
         y: 0,
         duration: 0.8,
-        ease: "expo.out",
+        ease: 'expo.out',
       });
     },
   },
   mounted() {
     this.calculateIconsHeight();
     this.configureScrollTrigger();
-    window.addEventListener("resize", this.calculateIconsHeight);
+    window.addEventListener('resize', this.calculateIconsHeight);
   },
 };
 </script>
@@ -211,7 +212,7 @@ export default {
       padding: 0 4px;
 
       &::after {
-        content: "";
+        content: '';
         transition: transform 0.2s ease-in-out;
         will-change: transform;
         width: Min(8rem, 50%);
