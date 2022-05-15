@@ -12,7 +12,7 @@
             <img class="photo" :src="project.image" :alt="project.alt" />
           </picture>
           <p class="title">{{ project.title }}</p>
-          <p>{{ project.description }}</p>
+          <p class="description">{{ project.description }}</p>
           <ul class="tools">
             <li v-for="tool in project.tools" :key="tool">{{ tool }}</li>
           </ul>
@@ -72,7 +72,7 @@ export default {
             "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
           tools: ['Vue.js', 'Vue Router', 'GSAP', 'SCSS', 'Netlify', 'Adobe XD'],
           primaryCTA: 'View Demo',
-          primaryLink: 'https://lovelyheartsaz.com/',
+          primaryLink: 'https://alexsommers.com/',
           secondaryCTA: 'View Code',
           secondaryLink: 'https://github.com/alexsommers7/portfolio',
           image: require('@/assets/project-showcase--alex-sommers.png'),
@@ -91,6 +91,19 @@ export default {
           image: require('@/assets/project-showcase--jad-electric.png'),
           imageWebp: require('@/assets/project-showcase--jad-electric.webp'),
           alt: 'J.A. Dancik Electric website displayed on various devices',
+        },
+        {
+          title: 'StorePI',
+          description:
+            'An open-source REST API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Custom documentation is in progress.',
+          tools: ['Node', 'Express', 'MongoDB', 'Mongoose', 'Heroku'],
+          primaryCTA: 'View Docs',
+          primaryLink: 'https://documenter.getpostman.com/view/12907395/UyxjF694',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/StorePI',
+          image: require('@/assets/project-showcase--storepi.png'),
+          imageWebp: require('@/assets/project-showcase--storepi.webp'),
+          alt: 'StorePI documentation displayed on various devices',
         },
         {
           title: 'Heritage Assisted Living',

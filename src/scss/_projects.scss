@@ -20,6 +20,8 @@
       border-radius: $design-border-radius-default;
       width: 480px;
       max-width: 100%;
+      display: flex;
+      flex-direction: column;
 
       @include respond(desk-medium) {
         padding: 2rem;
@@ -40,11 +42,16 @@
         line-height: 1.2;
       }
 
+      .description {
+        flex-grow: 1;
+        margin-bottom: 1.25rem;
+      }
+
       .tools {
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        margin: 1.3rem 0 0 -0.5rem; // acct for margin of children
+        margin-left: -0.5rem; // acct for margin of children
 
         li {
           padding: 0.5rem 1rem;

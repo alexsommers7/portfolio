@@ -10,7 +10,7 @@
           <img class="photo" :src="project.image" :alt="project.alt" loading="lazy" width="333" height="285" />
         </picture>
         <p class="title">{{ project.title }}</p>
-        <p>{{ project.description }}</p>
+        <p class="description">{{ project.description }}</p>
         <ul class="tools">
           <li v-for="tool in project.tools" :key="tool">{{ tool }}</li>
         </ul>
@@ -49,6 +49,19 @@ export default {
     return {
       projects: [
         {
+          title: 'StorePI',
+          description:
+            'An open-source REST API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Custom documentation is in progress.',
+          tools: ['Node', 'Express', 'MongoDB', 'Mongoose', 'Heroku'],
+          primaryCTA: 'View Docs',
+          primaryLink: 'https://documenter.getpostman.com/view/12907395/UyxjF694',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/StorePI',
+          image: require('@/assets/project-showcase--storepi.png'),
+          imageWebp: require('@/assets/project-showcase--storepi.webp'),
+          alt: 'StorePI documentation displayed on various devices',
+        },
+        {
           title: 'Heritage Assisted Living',
           description:
             'A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',
@@ -60,19 +73,6 @@ export default {
           image: require('@/assets/project-showcase--heritage-assited-living.png'),
           imageWebp: require('@/assets/project-showcase--heritage-assited-living.webp'),
           alt: 'Heritage Assisted Living website displayed on various devices',
-        },
-        {
-          title: 'Vue Shop',
-          description:
-            'A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.',
-          tools: ['Vue.js', 'SCSS', 'Fake Store API', 'Foundation', 'Babel', 'Netlify'],
-          primaryCTA: 'View Demo',
-          primaryLink: 'https://vue-fake-shop.netlify.app/',
-          secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
-          image: require('@/assets/project-showcase--vue-shop.png'),
-          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
-          alt: 'Vue Shop website displayed on various devices',
         },
         {
           title: 'Lovely Hearts AZ',
