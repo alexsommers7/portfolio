@@ -54,19 +54,6 @@ export default {
     return {
       projects: [
         {
-          title: 'Lovely Hearts AZ',
-          description:
-            'Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.',
-          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
-          primaryCTA: 'View Demo',
-          primaryLink: 'https://lovelyheartsaz.com/',
-          secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/lovelyheartsaz',
-          image: require('@/assets/project-showcase--lovely-hearts-az.png'),
-          imageWebp: require('@/assets/project-showcase--lovely-hearts-az.webp'),
-          alt: 'Lovely Hearts AZ website displayed on various devices',
-        },
-        {
           title: 'AlexSommers.com',
           description:
             "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
@@ -78,6 +65,19 @@ export default {
           image: require('@/assets/project-showcase--alex-sommers.png'),
           imageWebp: require('@/assets/project-showcase--alex-sommers.webp'),
           alt: 'AlexSommers.com displayed on various devices',
+        },
+        {
+          title: 'Vue Shop',
+          description:
+            'A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.',
+          tools: ['Vue.js', 'SCSS', 'Fake Store API', 'Foundation', 'Babel', 'Netlify'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://vue-fake-shop.netlify.app/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
+          image: require('@/assets/project-showcase--vue-shop.png'),
+          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
+          alt: 'Vue Shop website displayed on various devices',
         },
         {
           title: 'J.A Dancik Electric',
@@ -119,17 +119,17 @@ export default {
           alt: 'Heritage Assisted Living website displayed on various devices',
         },
         {
-          title: 'Vue Shop',
+          title: 'Lovely Hearts AZ',
           description:
-            'A mock landing page for a shop, built with Vue.js. Features sorting, filtering, and cart functionality. Product and category data is fetched from a fake store API endpoint.',
-          tools: ['Vue.js', 'SCSS', 'Fake Store API', 'Foundation', 'Babel', 'Netlify'],
+            'Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.',
+          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
           primaryCTA: 'View Demo',
-          primaryLink: 'https://vue-fake-shop.netlify.app/',
+          primaryLink: 'https://lovelyheartsaz.com/',
           secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
-          image: require('@/assets/project-showcase--vue-shop.png'),
-          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
-          alt: 'Vue Shop website displayed on various devices',
+          secondaryLink: 'https://github.com/alexsommers7/lovelyheartsaz',
+          image: require('@/assets/project-showcase--lovely-hearts-az.png'),
+          imageWebp: require('@/assets/project-showcase--lovely-hearts-az.webp'),
+          alt: 'Lovely Hearts AZ website displayed on various devices',
         },
       ],
     };
