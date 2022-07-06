@@ -53,16 +53,17 @@ export default {
           alt: 'Vue JavaScript Framework',
         },
         {
+          title: 'Quasar',
+          icon: require('@/assets/icons/quasar.svg'),
+          type: 'tech',
+          alt: 'Quasar Vue Framework',
+        },
+        {
           title: 'Alpine.js',
           icon: require('@/assets/icons/alpine.svg'),
           type: 'tech',
           class: 'brighten',
           alt: 'Alpine JavaScript Framework',
-        },
-        {
-          title: 'GSAP',
-          icon: require('@/assets/icons/gsap.svg'),
-          alt: 'Greensock Animation Platform (GSAP)',
         },
       ],
     };

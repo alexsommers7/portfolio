@@ -62,6 +62,19 @@ export default {
           alt: 'StorePI documentation displayed on various devices',
         },
         {
+          title: 'Vue Shop',
+          description:
+            'A mock ecommerce landing page that demonstrates the capabilities of StorePI. Features sorting, filtering, and cart functionality with more to come.',
+          tools: ['Vue 3', 'Pinia', 'Quasar', 'StorePI', 'SCSS', 'Netlify'],
+          primaryCTA: 'View Demo',
+          primaryLink: 'https://vue-fake-shop.netlify.app/',
+          secondaryCTA: 'View Code',
+          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
+          image: require('@/assets/project-showcase--vue-shop.png'),
+          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
+          alt: 'Vue Shop website displayed on various devices',
+        },
+        {
           title: 'Heritage Assisted Living',
           description:
             'A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',

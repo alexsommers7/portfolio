@@ -44,6 +44,18 @@ export default {
           alt: 'Vue JavaScript Framework',
         },
         {
+          title: 'Pinia',
+          icon: require('@/assets/icons/pinia.svg'),
+          type: 'tech',
+          alt: 'Pinia State Management Library',
+        },
+        {
+          title: 'Quasar',
+          icon: require('@/assets/icons/quasar.svg'),
+          type: 'tech',
+          alt: 'Quasar Vue Framework',
+        },
+        {
           title: 'Alpine.js',
           icon: require('@/assets/icons/alpine.svg'),
           type: 'tech',
