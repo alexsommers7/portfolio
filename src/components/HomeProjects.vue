@@ -51,7 +51,7 @@ export default {
         {
           title: 'StorePI',
           description:
-            'An open-source REST API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Custom documentation is in progress.',
+            'An open-source REST API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Features product, user, cart, and authentication resources plus more.',
           tools: ['Node', 'Express', 'MongoDB', 'Mongoose', 'Heroku'],
           primaryCTA: 'View Docs',
           primaryLink: 'https://documenter.getpostman.com/view/12907395/UyxjF694',
@@ -64,7 +64,7 @@ export default {
         {
           title: 'Vue Shop',
           description:
-            'A mock ecommerce landing page that demonstrates the capabilities of StorePI. Features sorting, filtering, and cart functionality with more to come.',
+            'A simple ecommerce landing page that helps visualize some of the capabilities of StorePI. Features sorting, filtering, and basic cart functionality.',
           tools: ['Vue 3', 'Pinia', 'Quasar', 'StorePI', 'SCSS', 'Netlify'],
           primaryCTA: 'View Demo',
           primaryLink: 'https://vue-fake-shop.netlify.app/',
