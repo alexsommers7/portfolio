@@ -67,6 +67,7 @@ img {
 
 section {
   padding: 4rem 1rem;
+  position: relative;
 
   @include respond(desk-small) {
     padding: 5rem 2rem;
@@ -75,10 +76,6 @@ section {
   @include respond(desk-large) {
     max-width: 80%;
     margin: auto;
-  }
-
-  &:not(#load-in) {
-    position: relative;
   }
 
   &.full-width {

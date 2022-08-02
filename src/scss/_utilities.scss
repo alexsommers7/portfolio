@@ -20,22 +20,6 @@
 .no-scroll {
   overflow: hidden;
 }
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-.invisible {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-}
-.visible {
-  opacity: 1;
-  visibility: visible;
-  position: static;
-}
 .color-primary {
   color: $color-primary;
   font-weight: 500;

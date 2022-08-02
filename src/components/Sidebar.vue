@@ -127,21 +127,21 @@
             </svg>
           </button>
         </p>
-        <p v-else>{{ this.$route.name || " " }}</p>
+        <p v-else>{{ this.$route.name || ' ' }}</p>
       </transition>
     </div>
   </aside>
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { TextPlugin } from "gsap/TextPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: "Sidebar",
+  name: 'Sidebar',
   data() {
     return {};
   },
@@ -153,29 +153,29 @@ export default {
   },
   methods: {
     updateText(triggerObj) {
-      let textEl = this.$el.querySelector(".current-section p");
+      let textEl = this.$el.querySelector('.current-section p');
       gsap.to(textEl, {
         duration: 0.75,
         text: {
           value: `${triggerObj.trigger.dataset.sidebar}`,
           padSpace: true,
         },
-        ease: "power1.out",
+        ease: 'power1.out',
       });
     },
     configureScrollTrigger() {
       if (!this.observeSections) {
-        if (ScrollTrigger.getById("sidebar")) ScrollTrigger.getById("sidebar").kill(true);
-        return (this.$el.querySelector(".current-section p").innerText = this.$route.name);
+        if (ScrollTrigger.getById('sidebar')) ScrollTrigger.getById('sidebar').kill(true);
+        return (this.$el.querySelector('.current-section p').innerText = this.$route.name);
       }
 
       this.observerTargets.forEach((section) => {
         ScrollTrigger.create({
-          id: "sidebar",
+          id: 'sidebar',
           trigger: section,
-          start: "top 55%",
-          end: "center 20%",
-          toggleActions: "play restart play reverse",
+          start: 'top 55%',
+          end: 'center 20%',
+          toggleActions: 'play restart play reverse',
           onEnter: (self) => {
             if (this.observeSections) {
               this.updateText(self);
@@ -190,7 +190,7 @@ export default {
     onAnchorClick(e) {
       gsap.to(window, {
         duration: 1.2,
-        ease: "expo.inOut",
+        ease: 'expo.inOut',
         scrollTo: `#${e.target.dataset.section}`,
       });
     },
@@ -212,7 +212,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.loading .sidebar,
 .no-scroll .sidebar {
   // prevent slight jump when scrollbar goes in/out
   margin-right: var(--scrollbar-width);
