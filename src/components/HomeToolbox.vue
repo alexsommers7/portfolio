@@ -93,34 +93,10 @@ export default {
           alt: 'Bootstrap CSS Framework',
         },
         {
-          title: 'Ampscript',
-          icon: require('@/assets/icons/marketing-cloud.svg'),
-          type: 'tech',
-          alt: 'Salesforce Marketing Cloud',
-        },
-        {
-          title: 'jQuery',
-          icon: require('@/assets/icons/jquery.svg'),
-          type: 'tech',
-          alt: 'jQuery JavaScipt library',
-        },
-        {
-          title: 'Postman',
-          icon: require('@/assets/icons/postman.svg'),
-          type: 'tech',
-          alt: 'Postman API Platform',
-        },
-        {
           title: 'Git',
           icon: require('@/assets/icons/git.svg'),
           type: 'tech',
           alt: 'Git Version Control',
-        },
-        {
-          title: 'NPM',
-          icon: require('@/assets/icons/npm.svg'),
-          type: 'tech',
-          alt: 'Node Package Manager (NPM)',
         },
         {
           title: 'XD',
