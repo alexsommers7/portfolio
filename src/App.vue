@@ -36,16 +36,6 @@ export default {
     };
   },
   methods: {
-    setOutlineFocus() {
-      // only outline focus if user is tabbing
-      let b = document.body;
-      b.addEventListener('mousedown', function() {
-        b.classList.add('using-mouse');
-      });
-      b.addEventListener('keydown', function() {
-        b.classList.remove('using-mouse');
-      });
-    },
     checkScreenSize() {
       this.onMobile = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200;
     },
@@ -59,7 +49,6 @@ export default {
     },
   },
   mounted() {
-    this.setOutlineFocus();
     this.checkScreenSize();
     window.addEventListener('resize', this.checkScreenSize);
     this.updateTargets();

@@ -30,10 +30,6 @@ body {
   &::-webkit-scrollbar-thumb {
     background-color: $color-text-light;
   }
-
-  &.using-mouse .tab-focus {
-    outline: none;
-  }
 }
 
 body * {
@@ -83,14 +79,20 @@ section {
   }
 }
 
-// Zurb Foundation overrides
 .row {
   max-width: 1920px;
 }
+
 a:hover,
 a:active,
 a:focus {
   color: $color-text-light;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 // Layout
