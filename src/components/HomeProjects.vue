@@ -39,56 +39,18 @@
 </template>
 
 <script>
+import projects from '@/utils/projects';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'Projects',
-  data() {
-    return {
-      projects: [
-        {
-          title: 'StorePI',
-          description:
-            'An open-source REST API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Features product, user, cart, and authentication resources plus more.',
-          tools: ['Node', 'Express', 'MongoDB', 'Mongoose', 'Heroku'],
-          primaryCTA: 'View Docs',
-          primaryLink: 'https://documenter.getpostman.com/view/12907395/UyxjF694',
-          secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/StorePI',
-          image: require('@/assets/project-showcase--storepi.png'),
-          imageWebp: require('@/assets/project-showcase--storepi.webp'),
-          alt: 'StorePI documentation displayed on various devices',
-        },
-        {
-          title: 'Vue Shop',
-          description:
-            'A simple ecommerce landing page that helps visualize some of the capabilities of StorePI. Features sorting, filtering, and basic cart functionality.',
-          tools: ['Vue 3', 'Pinia', 'Quasar', 'StorePI', 'SCSS', 'Netlify'],
-          primaryCTA: 'View Demo',
-          primaryLink: 'https://vue-fake-shop.netlify.app/',
-          secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/vue-shop',
-          image: require('@/assets/project-showcase--vue-shop.png'),
-          imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
-          alt: 'Vue Shop website displayed on various devices',
-        },
-        {
-          title: 'Lovely Hearts AZ',
-          description:
-            'Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.',
-          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
-          primaryCTA: 'View Demo',
-          primaryLink: 'https://lovelyheartsaz.com/',
-          secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/lovelyheartsaz',
-          image: require('@/assets/project-showcase--lovely-hearts-az.png'),
-          imageWebp: require('@/assets/project-showcase--lovely-hearts-az.webp'),
-          alt: 'Lovely Hearts AZ website displayed on various devices',
-        },
-      ],
-    };
+  computed: {
+    projects: function() {
+      return projects.filter((project) => project.showOnHomePage);
+    },
   },
   methods: {
     configureScrollTrigger() {
