@@ -75,19 +75,6 @@ export default {
           alt: 'Vue Shop website displayed on various devices',
         },
         {
-          title: 'Heritage Assisted Living',
-          description:
-            'A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',
-          tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
-          primaryCTA: 'View Demo',
-          primaryLink: 'https://heritagephoenix.com/',
-          secondaryCTA: 'View Code',
-          secondaryLink: 'https://github.com/alexsommers7/heritage-assisted-living',
-          image: require('@/assets/project-showcase--heritage-assited-living.png'),
-          imageWebp: require('@/assets/project-showcase--heritage-assited-living.webp'),
-          alt: 'Heritage Assisted Living website displayed on various devices',
-        },
-        {
           title: 'Lovely Hearts AZ',
           description:
             'Website for a local in-home care provider who was looking for a way to provide a high-level overview of their services, as well as provide a method of communication for prospective customers.',

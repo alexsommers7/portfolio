@@ -95,10 +95,10 @@ export default {
         {
           title: 'Heritage Assisted Living',
           description:
-            'A website for a local Assisted Living Facility. The owners of this business were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',
+            'A website for a local Assisted Living Facility that has since sold and rebranded. The owners were looking for a way to tell their story in a visual manner as well as help in establishing their digital footprint.',
           tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
           primaryCTA: 'View Demo',
-          primaryLink: 'https://heritagephoenix.com/',
+          primaryLink: 'https://heritage-az.netlify.app/',
           secondaryCTA: 'View Code',
           secondaryLink: 'https://github.com/alexsommers7/heritage-assisted-living',
           image: require('@/assets/project-showcase--heritage-assited-living.png'),
