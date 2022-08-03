@@ -16,15 +16,15 @@
     </div>
     <div class="about__lately">
       <h3 class="heading heading--4">What I've Been Building With Lately</h3>
-      <ul class="languages">
-        <li v-for="lang in recentLanguages" :key="lang.title">
+      <ul class="tools">
+        <li v-for="tool in recentTools" :key="tool.title">
           <div>
             <img
-              :src="lang.icon"
-              :alt="`${lang.alt ? lang.alt : lang.title} Icon`"
-              :class="`${lang.class ? lang.class : ''}`"
+              :src="tool.icon"
+              :alt="`${tool.alt ? tool.alt : tool.title} Icon`"
+              :class="`${tool.class ? tool.class : ''}`"
             />
-            <p>{{ lang.title }}</p>
+            <p>{{ tool.title }}</p>
           </div>
         </li>
       </ul>
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import tools from '@/utils/tools';
+
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -44,29 +46,10 @@ gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, TextPlugin);
 
 export default {
   name: 'About',
-  data() {
-    return {
-      recentLanguages: [
-        {
-          title: 'Vue.js',
-          icon: require('@/assets/icons/vue.svg'),
-          alt: 'Vue JavaScript Framework',
-        },
-        {
-          title: 'Quasar',
-          icon: require('@/assets/icons/quasar.svg'),
-          type: 'tech',
-          alt: 'Quasar Vue Framework',
-        },
-        {
-          title: 'Alpine.js',
-          icon: require('@/assets/icons/alpine.svg'),
-          type: 'tech',
-          class: 'brighten',
-          alt: 'Alpine JavaScript Framework',
-        },
-      ],
-    };
+  computed: {
+    recentTools: function() {
+      return tools.filter((tool) => tool.usingLately);
+    },
   },
   methods: {
     onAnchorClick(e) {
@@ -166,7 +149,7 @@ export default {
     }
 
     .heading,
-    .languages {
+    .tools {
       width: 100%;
     }
 
@@ -190,7 +173,7 @@ export default {
       }
     }
 
-    .languages {
+    .tools {
       list-style: none;
       display: flex;
       justify-content: center;

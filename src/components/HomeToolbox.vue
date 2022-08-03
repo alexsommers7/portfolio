@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import tools from '@/utils/tools';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -36,104 +38,11 @@ export default {
     return {
       togglePosition: 'left',
       currentType: 'tech',
-      tools: [
-        {
-          title: 'Vue.js',
-          icon: require('@/assets/icons/vue.svg'),
-          type: 'tech',
-          alt: 'Vue JavaScript Framework',
-        },
-        {
-          title: 'Pinia',
-          icon: require('@/assets/icons/pinia.svg'),
-          type: 'tech',
-          alt: 'Pinia State Management Library',
-        },
-        {
-          title: 'Quasar',
-          icon: require('@/assets/icons/quasar.svg'),
-          type: 'tech',
-          alt: 'Quasar Vue Framework',
-        },
-        {
-          title: 'Alpine.js',
-          icon: require('@/assets/icons/alpine.svg'),
-          type: 'tech',
-          class: 'brighten',
-          alt: 'Alpine JavaScript Framework',
-        },
-        {
-          title: 'JavaScript',
-          icon: require('@/assets/icons/javascript.svg'),
-          type: 'tech',
-          alt: 'JavaScript (ES6)',
-        },
-        {
-          title: 'SCSS',
-          icon: require('@/assets/icons/sass.svg'),
-          type: 'tech',
-          alt: 'Sassy CSS (SCSS)',
-        },
-        {
-          title: 'GSAP',
-          icon: require('@/assets/icons/gsap.svg'),
-          type: 'tech',
-          alt: 'Greensock Animation Platform (GSAP)',
-        },
-        {
-          title: 'Foundation',
-          icon: require('@/assets/icons/zurb-foundation.svg'),
-          type: 'tech',
-          alt: 'Zurb Foundation CSS Framework',
-        },
-        {
-          title: 'Bootstrap',
-          icon: require('@/assets/icons/bootstrap.svg'),
-          type: 'tech',
-          alt: 'Bootstrap CSS Framework',
-        },
-        {
-          title: 'Git',
-          icon: require('@/assets/icons/git.svg'),
-          type: 'tech',
-          alt: 'Git Version Control',
-        },
-        {
-          title: 'XD',
-          icon: require('@/assets/icons/xd.svg'),
-          type: 'design',
-          alt: 'Adobe XD',
-        },
-        {
-          title: 'Figma',
-          icon: require('@/assets/icons/figma.svg'),
-          type: 'design',
-          alt: 'Figma Design Software',
-        },
-        {
-          title: 'Photoshop',
-          icon: require('@/assets/icons/photoshop.svg'),
-          type: 'design',
-          alt: 'Adobe Photoshop',
-        },
-        {
-          title: 'Illustrator',
-          icon: require('@/assets/icons/illustrator.svg'),
-          type: 'design',
-          alt: 'Adobe Illustrator',
-        },
-        {
-          title: 'Lightroom',
-          icon: require('@/assets/icons/lightroom.svg'),
-          type: 'design',
-          alt: 'Adobe Lightroom',
-        },
-      ],
     };
   },
   computed: {
     toolsToShow: function() {
-      return this.tools.filter((tool) => tool.type === this.currentType);
+      return tools.filter((tool) => tool.type === this.currentType);
     },
   },
   methods: {
