@@ -13,6 +13,12 @@
         In both freelance and professional settings, I harness the power of modern web technologies to create
         interactive, accessible user experiences.
       </p>
+      <p>
+        Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an Arizona-based
+        company who provides digital marketing solutions to thousands of independent retailers across North America.
+        There, I work daily on the front end of our in-house CMS, as well as the platform codebase that powers each
+        retailer's website.
+      </p>
     </div>
     <div class="about__lately">
       <h3 class="heading heading--4">What I've Been Building With Lately</h3>
