@@ -15,9 +15,9 @@
       </p>
       <p>
         Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an Arizona-based
-        company who provides digital marketing solutions to thousands of independent retailers across North America.
-        There, I work daily on the front end of our in-house CMS, as well as the platform codebase that powers each
-        retailer's website.
+        company who provides digital marketing solutions to 2700+ of independent retailers across North America. There,
+        I work on the front end of products that are interacted with by thousands of users daily. These include our
+        in-house headless CMS, as well as the platform that consumes the CMS API to power each retailer's website.
       </p>
     </div>
     <div class="about__lately">
@@ -118,9 +118,9 @@ export default {
 <style scoped lang="scss">
 .about {
   margin-top: 3rem;
-  max-width: 1350px;
+  max-width: 1600px;
 
-  @include respond(desk-small) {
+  @include respond(desk-large) {
     margin-top: 0;
     display: flex;
     flex-wrap: wrap;
@@ -129,7 +129,7 @@ export default {
 
   &__intro,
   &__lately {
-    @include respond(desk-small) {
+    @include respond(desk-large) {
       flex-basis: 50%;
     }
   }
@@ -137,7 +137,7 @@ export default {
   &__intro {
     padding: 0 1rem;
 
-    @include respond(desk-small) {
+    @include respond(desk-large) {
       flex: 2 0 45%;
       padding: 1rem 3rem 1rem 1rem;
     }
@@ -148,7 +148,7 @@ export default {
     flex-wrap: wrap;
     justify-content: center;
 
-    @include respond(desk-small) {
+    @include respond(desk-large) {
       flex: 1 0 500px;
       border-left: 2px solid $color-background-light;
       padding: 1rem 2rem;
@@ -163,7 +163,7 @@ export default {
       text-align: center;
       margin-top: 4rem;
 
-      @include respond(desk-small) {
+      @include respond(desk-large) {
         margin-top: 0;
       }
     }
@@ -174,7 +174,7 @@ export default {
       width: 75%;
       display: block;
 
-      @include respond(desk-small) {
+      @include respond(desk-large) {
         margin-top: 3px;
       }
     }
@@ -184,7 +184,11 @@ export default {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 1.75rem 0 2.25rem;
+      margin: 1.75rem 0 1.75rem;
+
+      @include respond(desk-large) {
+        margin: 1.75rem 0 0;
+      }
 
       li {
         margin: 0.5rem;
