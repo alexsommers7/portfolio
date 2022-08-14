@@ -187,7 +187,7 @@ export default {
       margin: 1.75rem 0 1.75rem;
 
       @include respond(desk-large) {
-        margin: 1.75rem 0 0;
+        margin: 0.5rem 0 0;
       }
 
       li {
