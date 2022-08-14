@@ -15,7 +15,7 @@
       </p>
       <p>
         Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an Arizona-based
-        company who provides digital marketing solutions to 2700+ independent retailers across North America. There, I
+        company who provides digital marketing solutions to 2,700+ independent retailers across North America. There, I
         work on the front end of products that are interacted with by thousands of users daily. These include our
         headless CMS, as well as the platform that consumes the CMS API to power each retailer's website.
       </p>
