@@ -4,12 +4,8 @@
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
       <h2 class="heading heading--2">Front-End Web Developer</h2>
       <div class="intro__buttons">
-        <button class="btn btn--primary" data-section="projects" @click="onAnchorClick">
-          <strong data-section="projects" @click="onAnchorClick">My Work</strong>
-        </button>
-        <button class="btn btn--secondary" data-section="contact" @click="onAnchorClick">
-          <strong data-section="contact" @click="onAnchorClick">Contact Me</strong>
-        </button>
+        <AnchorButton classes="btn--primary" section="projects" content="My Work" />
+        <AnchorButton classes="btn--secondary" section="contact" content="Contact Me" />
       </div>
     </div>
     <picture>
@@ -20,24 +16,29 @@
 </template>
 
 <script>
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { gsap } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
+import AnchorButton from '@/components/buttons/AnchorButton';
+
 export default {
-  name: "Hero",
+  name: 'Hero',
   data() {
     return {};
   },
   methods: {
     onAnchorClick(e) {
-      gsap.to(window, { duration: 1.2, ease: "expo.inOut", scrollTo: `#${e.target.dataset.section}` });
+      gsap.to(window, { duration: 1.2, ease: 'expo.inOut', scrollTo: `#${e.target.dataset.section}` });
       // a bit hacky here, but ...
       // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
       setTimeout(function() {
         window.location = `#${e.target.dataset.section}`;
       }, 500);
     },
+  },
+  components: {
+    AnchorButton,
   },
 };
 </script>
@@ -119,7 +120,7 @@ section.hero {
     margin: auto;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       width: 100%;
       height: 20%;

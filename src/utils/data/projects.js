@@ -1,4 +1,4 @@
-const projects = [
+export const projects = [
   {
     title: 'StorePI',
     description:
@@ -84,5 +84,3 @@ const projects = [
     showOnHomePage: false,
   },
 ];
-
-export default projects;

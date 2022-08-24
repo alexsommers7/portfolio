@@ -12,15 +12,15 @@
 </template>
 
 <script>
-import Hero from "@/components/HomeHero";
-import About from "@/components/HomeAbout";
-import Projects from "@/components/HomeProjects";
-import Resume from "@/components/HomeResume";
-import Toolbox from "@/components/HomeToolbox";
-import Contact from "@/components/HomeContact";
+import Hero from '@/components/HomeHero';
+import About from '@/components/HomeAbout';
+import Projects from '@/components/HomeProjects';
+import Resume from '@/components/HomeResume';
+import Toolbox from '@/components/HomeToolbox';
+import Contact from '@/components/HomeContact';
 
 export default {
-  name: "Home",
+  name: 'Home',
   data() {
     return {};
   },

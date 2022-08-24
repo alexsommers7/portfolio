@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import tools from '@/utils/tools';
+import { tools } from '@/utils/data/tools';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

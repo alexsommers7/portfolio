@@ -34,21 +34,19 @@
           </div>
         </li>
       </ul>
-      <button class="btn btn--secondary" data-section="toolbox" @click="onAnchorClick">
-        <strong data-section="toolbox" @click="onAnchorClick">See What's in My Toolbox</strong>
-      </button>
+      <AnchorButton classes="btn--secondary" section="toolbox" content="See What's in My Toolbox" />
     </div>
   </section>
 </template>
 
 <script>
-import tools from '@/utils/tools';
+import { tools } from '@/utils/data/tools';
+import AnchorButton from '@/components/buttons/AnchorButton';
 
 import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-gsap.registerPlugin(ScrollToPlugin, ScrollTrigger, TextPlugin);
+gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
 export default {
   name: 'About',
@@ -58,18 +56,6 @@ export default {
     },
   },
   methods: {
-    onAnchorClick(e) {
-      gsap.to(window, {
-        duration: 1.2,
-        ease: 'expo.inOut',
-        scrollTo: { y: `#${e.target.dataset.section}`, offsetY: -20 },
-      });
-      // a bit hacky here, but ...
-      // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
-      setTimeout(function() {
-        window.location = `#${e.target.dataset.section}`;
-      }, 500);
-    },
     configureScrollTrigger() {
       const cursor = gsap.fromTo(
         '#cursor',
@@ -111,6 +97,9 @@ export default {
   },
   mounted() {
     this.configureScrollTrigger();
+  },
+  components: {
+    AnchorButton,
   },
 };
 </script>

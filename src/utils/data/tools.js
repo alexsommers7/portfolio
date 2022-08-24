@@ -1,4 +1,4 @@
-const tools = [
+export const tools = [
   {
     title: 'Vue.js',
     icon: require('@/assets/icons/vue.svg'),
@@ -106,5 +106,3 @@ const tools = [
     usingLately: false,
   },
 ];
-
-export default tools;

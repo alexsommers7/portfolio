@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import projects from '@/utils/projects';
+import { projects } from '@/utils/data/projects';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

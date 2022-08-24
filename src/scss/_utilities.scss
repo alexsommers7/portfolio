@@ -39,6 +39,9 @@
     top: 0;
   }
 }
+.pointer-none {
+  pointer-events: none;
+}
 .brighten {
   filter: brightness(1.6);
 }
