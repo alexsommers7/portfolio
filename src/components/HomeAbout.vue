@@ -23,16 +23,11 @@
     <div class="about__lately">
       <h3 class="heading heading--4">What I've Been Building With Lately</h3>
       <ul class="tools">
-        <li v-for="tool in recentTools" :key="tool.title">
-          <div>
-            <img
-              :src="tool.icon"
-              :alt="`${tool.alt ? tool.alt : tool.title} Icon`"
-              :class="`${tool.class ? tool.class : ''}`"
-            />
-            <p>{{ tool.title }}</p>
-          </div>
-        </li>
+        <template v-for="tool in recentTools">
+          <li :key="tool.title" class="tool__card">
+            <ToolCard :tool="tool" />
+          </li>
+        </template>
       </ul>
       <AnchorButton classes="btn--secondary" section="toolbox" content="See What's in My Toolbox" />
     </div>
@@ -42,6 +37,7 @@
 <script>
 import { tools } from '@/utils/data/tools';
 import AnchorButton from '@/components/buttons/AnchorButton';
+import ToolCard from '@/components/cards/ToolCard';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -100,11 +96,12 @@ export default {
   },
   components: {
     AnchorButton,
+    ToolCard,
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .about {
   margin-top: 3rem;
   max-width: 1600px;
@@ -177,36 +174,6 @@ export default {
 
       @include respond(desk-large) {
         margin: 0.5rem 0 0;
-      }
-
-      li {
-        margin: 0.5rem;
-        padding: 1rem;
-        width: 8rem;
-        height: 8rem;
-        flex: 0 0 8rem;
-        background-color: $color-background-light;
-        text-align: center;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: $design-border-radius-default;
-
-        div {
-          img {
-            width: 3.5rem;
-            height: 3.5rem;
-            display: block;
-            margin: auto;
-          }
-
-          p {
-            margin-bottom: 0;
-            margin-top: 1rem;
-            line-height: 1;
-          }
-        }
       }
     }
   }

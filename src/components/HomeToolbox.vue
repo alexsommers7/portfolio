@@ -10,23 +10,18 @@
       </div>
     </div>
     <transition-group name="list" tag="ul" class="tools" mode="out-in">
-      <li v-for="tool in toolsToShow" :key="tool.title" class="list-item">
-        <div>
-          <img
-            :src="tool.icon"
-            :alt="`${tool.alt ? tool.alt : tool.title} Icon`"
-            :class="`${tool.class ? tool.class : ''}`"
-            loading="lazy"
-          />
-          <p>{{ tool.title }}</p>
-        </div>
-      </li>
+      <template v-for="tool in toolsToShow">
+        <li :key="tool.title" class="tool__card list-item">
+          <ToolCard :tool="tool" />
+        </li>
+      </template>
     </transition-group>
   </section>
 </template>
 
 <script>
 import { tools } from '@/utils/data/tools';
+import ToolCard from '@/components/cards/ToolCard';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -87,6 +82,9 @@ export default {
     this.calculateIconsHeight();
     this.configureScrollTrigger();
     window.addEventListener('resize', this.calculateIconsHeight);
+  },
+  components: {
+    ToolCard,
   },
 };
 </script>
@@ -161,35 +159,6 @@ export default {
     max-width: 1000px;
     opacity: 0;
     transform: translateY(50px);
-
-    li {
-      margin: 0.5rem;
-      padding: 1rem;
-      width: 8rem;
-      height: 8rem;
-      flex: 0 0 8rem;
-      background-color: $color-background-light;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: $design-border-radius-default;
-
-      div {
-        img {
-          width: 3.5rem;
-          height: 3.5rem;
-          display: block;
-          margin: auto;
-        }
-
-        p {
-          margin-bottom: 0;
-          margin-top: 1rem;
-          line-height: 1;
-        }
-      }
-    }
   }
 }
 </style>
