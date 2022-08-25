@@ -15,22 +15,18 @@
           <li v-for="tool in project.tools" :key="tool">{{ tool }}</li>
         </ul>
         <div class="btns">
-          <a
-            :href="project.primaryLink"
-            class="btn btn--primary"
-            target="_blank"
-            rel="noopener"
-            :aria-label="`${project.primaryCTA} for ${project.title}`"
-            >{{ project.primaryCTA }}</a
-          >
-          <a
-            :href="project.secondaryLink"
-            class="btn btn--secondary"
-            target="_blank"
-            rel="noopener"
-            :aria-label="`${project.secondaryCTA} for ${project.title}`"
-            >{{ project.secondaryCTA }}</a
-          >
+          <ExternalLink
+            :targetLink="project.primaryLink"
+            classes="btn--primary"
+            :ariaLabel="`${project.primaryCTA} for ${project.title}`"
+            :content="project.primaryCTA"
+          />
+          <ExternalLink
+            :targetLink="project.secondaryLink"
+            classes="btn--secondary"
+            :ariaLabel="`${project.secondaryCTA} for ${project.title}`"
+            :content="project.secondaryCTA"
+          />
         </div>
       </article>
     </div>
@@ -40,6 +36,7 @@
 
 <script>
 import { projects } from '@/utils/data/projects';
+import ExternalLink from '@/components/buttons/ExternalLink';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -74,6 +71,9 @@ export default {
   },
   mounted() {
     this.configureScrollTrigger();
+  },
+  components: {
+    ExternalLink,
   },
 };
 </script>
