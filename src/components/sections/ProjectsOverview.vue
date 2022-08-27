@@ -21,7 +21,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  name: 'Projects',
+  name: 'ProjectsOverview',
   computed: {
     projects: function() {
       return projects.filter((project) => project.showOnHomePage);
