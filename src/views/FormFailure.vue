@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "formFailure",
+  name: 'formFailure',
 };
 </script>
 

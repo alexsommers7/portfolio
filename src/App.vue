@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import Nav from './components/Nav';
-import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
-import IE from './components/IE';
+import Nav from './components/layout/Nav';
+import Sidebar from './components/layout/Sidebar';
+import Footer from './components/layout/Footer';
+import IE from './components/ie/IE';
 
 export default {
   name: 'App',
