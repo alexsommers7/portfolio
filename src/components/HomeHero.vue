@@ -24,9 +24,6 @@ import AnchorButton from '@/components/buttons/AnchorButton';
 
 export default {
   name: 'Hero',
-  data() {
-    return {};
-  },
   methods: {
     onAnchorClick(e) {
       gsap.to(window, { duration: 1.2, ease: 'expo.inOut', scrollTo: `#${e.target.dataset.section}` });

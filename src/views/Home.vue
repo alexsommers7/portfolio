@@ -21,9 +21,6 @@ import Contact from '@/components/HomeContact';
 
 export default {
   name: 'Home',
-  data() {
-    return {};
-  },
   components: {
     Hero,
     About,

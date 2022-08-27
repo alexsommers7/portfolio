@@ -357,15 +357,12 @@
 
 <script>
 export default {
-  name: "IE",
-  data() {
-    return {};
-  },
+  name: 'IE',
   methods: {
     redirectToEdge() {
-      window.location = "microsoft-edge:" + window.location;
+      window.location = 'microsoft-edge:' + window.location;
       setTimeout(function() {
-        window.location = "https://go.microsoft.com/fwlink/?linkid=2135547";
+        window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
       }, 200);
     },
   },
@@ -373,5 +370,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "@/scss/_ie";
+@import '@/scss/_ie';
 </style>

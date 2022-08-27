@@ -134,9 +134,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'Sidebar',
-  data() {
-    return {};
-  },
   props: {
     observeSections: Boolean,
     observerTargets: Array,
