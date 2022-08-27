@@ -1,8 +1,7 @@
 <template>
   <section class="track projects full-width" data-sidebar="Projects">
     <span class="anchor-span" id="projects"></span>
-    <h3 class="heading heading--3 hide-for-large">PROJECTS</h3>
-    <h4 class="heading heading--4 heading--section">Interfaces for the Modern World</h4>
+    <SectionHeading main="PROJECTS" secondary="Interfaces for the Modern World" />
     <div class="project-group" ref="projects">
       <template v-for="project in projects">
         <ProjectCard :project="project" :key="project.title" />
@@ -15,6 +14,7 @@
 <script>
 import { projects } from '@/utils/data/projects';
 import ProjectCard from '@/components/cards/ProjectCard';
+import SectionHeading from '@/components/headings/SectionHeading';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -52,6 +52,7 @@ export default {
   },
   components: {
     ProjectCard,
+    SectionHeading,
   },
 };
 </script>

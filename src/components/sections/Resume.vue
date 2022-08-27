@@ -1,8 +1,8 @@
 <template>
   <section class="track resume full-width" data-sidebar="Resume">
     <span class="anchor-span" id="resume"></span>
-    <h3 class="heading heading--3 hide-for-large">RESUME</h3>
-    <h4 class="heading heading--4 heading--section">Digital Marketing to Web Development</h4>
+    <SectionHeading main="RESUME" secondary="Digital Marketing to Web Development" />
+
     <div class="resume__content">
       <div>
         <h5 class="resume__heading"><strong>Experience</strong></h5>
@@ -49,6 +49,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { jobs } from '@/utils/data/jobs';
 import { education } from '@/utils/data/education';
+import SectionHeading from '@/components/headings/SectionHeading';
 
 export default {
   name: 'Resume',
@@ -75,6 +76,9 @@ export default {
   },
   mounted() {
     this.configureScrollTrigger();
+  },
+  components: {
+    SectionHeading,
   },
 };
 </script>

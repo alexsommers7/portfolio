@@ -1,8 +1,8 @@
 <template>
   <section class="track" data-sidebar="Contact">
     <span class="anchor-span" id="contact"></span>
-    <h3 class="heading heading--3 hide-for-large">CONTACT</h3>
-    <h4 class="heading heading--4 heading--section">In Need of a Developer? Let's Chat</h4>
+    <SectionHeading main="CONTACT" secondary="In Need of a Developer? Let's Chat" />
+
     <form
       name="contact"
       class="form"
@@ -32,6 +32,7 @@
 
 <script>
 import axios from 'axios';
+import SectionHeading from '@/components/headings/SectionHeading';
 
 export default {
   name: 'Contact',
@@ -63,6 +64,9 @@ export default {
           this.$router.push('error');
         });
     },
+  },
+  components: {
+    SectionHeading,
   },
 };
 </script>

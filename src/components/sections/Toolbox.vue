@@ -1,8 +1,8 @@
 <template>
   <section class="track toolbox" data-sidebar="Toolbox">
     <span class="anchor-span" id="toolbox"></span>
-    <h3 class="heading heading--3 hide-for-large">TOOLBOX</h3>
-    <h4 class="heading heading--4 heading--section">Modern Technology, Efficient Workflow</h4>
+    <SectionHeading main="TOOLBOX" secondary="Modern Technology, Efficient Workflow" />
+
     <div class="toolbox__toggle">
       <div class="buttons">
         <button class="btn active" data-toggle="left" @click="toggleButton">Tech</button>
@@ -20,12 +20,12 @@
 </template>
 
 <script>
-import { tools } from '@/utils/data/tools';
-import ToolCard from '@/components/cards/ToolCard';
-
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
+import { tools } from '@/utils/data/tools';
+import ToolCard from '@/components/cards/ToolCard';
+import SectionHeading from '@/components/headings/SectionHeading';
 
 export default {
   name: 'Toolbox',
@@ -85,6 +85,7 @@ export default {
   },
   components: {
     ToolCard,
+    SectionHeading,
   },
 };
 </script>
