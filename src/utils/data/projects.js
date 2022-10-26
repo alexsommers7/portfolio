@@ -3,9 +3,9 @@ export const projects = [
     title: 'StorePI',
     description:
       'An open-source REST API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Features product, user, cart, and authentication resources plus more.',
-    tools: ['Node', 'Express', 'MongoDB', 'Mongoose', 'Heroku'],
+    tools: ['MongoDB', 'Express', 'React', 'Node', 'Mongoose', 'Chakra UI'],
     primaryCTA: 'View Docs',
-    primaryLink: 'https://documenter.getpostman.com/view/12907395/UyxjF694',
+    primaryLink: 'https://storepi-docs.netlify.app/docs',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/StorePI',
     image: require('@/assets/project-showcase--storepi.png'),

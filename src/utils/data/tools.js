@@ -1,10 +1,24 @@
 export const tools = [
   {
+    title: 'React',
+    icon: require('@/assets/icons/react.svg'),
+    type: 'tech',
+    alt: 'React JavaScript Library',
+    usingLately: true,
+  },
+  {
+    title: 'Chakra UI',
+    icon: require('@/assets/icons/chakra.svg'),
+    type: 'tech',
+    alt: 'Chakra UI Library',
+    usingLately: true,
+  },
+  {
     title: 'Vue.js',
     icon: require('@/assets/icons/vue.svg'),
     type: 'tech',
     alt: 'Vue JavaScript Framework',
-    usingLately: true,
+    usingLately: false,
   },
   {
     title: 'Pinia',
@@ -18,7 +32,7 @@ export const tools = [
     icon: require('@/assets/icons/quasar.svg'),
     type: 'tech',
     alt: 'Quasar Vue Framework',
-    usingLately: true,
+    usingLately: false,
   },
   {
     title: 'Alpine.js',
