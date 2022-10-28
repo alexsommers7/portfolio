@@ -15,17 +15,13 @@
     article {
       background-color: $color-background-light;
       border-top: 2px solid $color-primary;
-      padding: 2rem 1rem;
+      padding: 2rem;
       margin: 0 auto;
       border-radius: $design-border-radius-default;
       width: 480px;
       max-width: 100%;
       display: flex;
       flex-direction: column;
-
-      @include respond(desk-medium) {
-        padding: 2rem;
-      }
 
       img {
         max-width: 80%;
