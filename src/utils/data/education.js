@@ -5,6 +5,6 @@ export const education = [
     company: 'Baldwin Wallace University',
     location: 'Berea, OH',
     timeframe: 'August 2013 - May 2017',
-    description: 'Magna cum laude',
+    description: 'magna cum laude',
   },
 ];
