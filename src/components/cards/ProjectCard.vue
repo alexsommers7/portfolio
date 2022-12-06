@@ -15,6 +15,7 @@
         classes="btn--primary"
         :ariaLabel="`${project.primaryCTA} for ${project.title}`"
         :content="project.primaryCTA"
+        v-show="project.title !== 'AlexSommers.com'"
       />
       <ExternalLink
         :targetLink="project.secondaryLink"
