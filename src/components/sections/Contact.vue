@@ -116,6 +116,7 @@ export default {
       outline: none;
       font-size: 1rem;
       padding: 0;
+      max-width: 100%;
 
       &:focus + label,
       &:not(:placeholder-shown) + label {
