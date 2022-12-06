@@ -5,7 +5,7 @@
 
     <div class="toolbox__toggle">
       <div class="buttons">
-        <button class="btn active" data-toggle="left" @click="toggleButton">Tech</button>
+        <button class="btn active" data-toggle="left" @click="toggleButton">Dev</button>
         <button class="btn" data-toggle="right" @click="toggleButton">Design</button>
       </div>
     </div>
@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       togglePosition: 'left',
-      currentType: 'tech',
+      currentType: 'dev',
     };
   },
   computed: {
@@ -46,7 +46,7 @@ export default {
       if (direction == this.togglePosition) return;
       this.$el.querySelectorAll('.toolbox__toggle button').forEach((btn) => btn.classList.toggle('active'));
       this.$el.querySelector('.buttons').classList = `buttons ${direction}`;
-      this.currentType = direction === 'left' ? 'tech' : 'design';
+      this.currentType = direction === 'left' ? 'dev' : 'design';
       this.togglePosition = direction;
     },
     calculateIconsHeight() {
