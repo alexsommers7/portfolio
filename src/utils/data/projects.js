@@ -72,10 +72,10 @@ export const projects = [
   {
     title: 'J.A Dancik Electric',
     description:
-      'My first "real world" website! This client, a local electrician, wanted to keep the information basic and simply establish a way for current and future customers to contact them.',
+      'My first "real world" website for a since-closed business. This client, a local electrician, wanted to keep the information basic and simply establish a way for current and future customers to contact them.',
     tools: ['JavaScript', 'SCSS', 'HTML', 'Netlify', 'Adobe XD'],
     primaryCTA: 'View Demo',
-    primaryLink: 'https://jadancikelectric.com/',
+    primaryLink: 'https://ja-dancik-electric.netlify.app/',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/ja-dancik-electric',
     image: require('@/assets/project-showcase--jad-electric.png'),
