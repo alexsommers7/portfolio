@@ -28,20 +28,6 @@ export const tools = [
     usingLately: false,
   },
   {
-    title: 'Pinia',
-    icon: require('@/assets/icons/pinia.svg'),
-    type: 'dev',
-    alt: 'Pinia State Management Library',
-    usingLately: false,
-  },
-  {
-    title: 'Quasar',
-    icon: require('@/assets/icons/quasar.svg'),
-    type: 'dev',
-    alt: 'Quasar Vue Framework',
-    usingLately: false,
-  },
-  {
     title: 'Alpine.js',
     icon: require('@/assets/icons/alpine.svg'),
     type: 'dev',
@@ -68,27 +54,6 @@ export const tools = [
     icon: require('@/assets/icons/gsap.svg'),
     type: 'dev',
     alt: 'Greensock Animation Platform (GSAP)',
-    usingLately: false,
-  },
-  {
-    title: 'Foundation',
-    icon: require('@/assets/icons/zurb-foundation.svg'),
-    type: 'dev',
-    alt: 'Zurb Foundation CSS Framework',
-    usingLately: false,
-  },
-  {
-    title: 'Bootstrap',
-    icon: require('@/assets/icons/bootstrap.svg'),
-    type: 'dev',
-    alt: 'Bootstrap CSS Framework',
-    usingLately: false,
-  },
-  {
-    title: 'Git',
-    icon: require('@/assets/icons/git.svg'),
-    type: 'dev',
-    alt: 'Git Version Control',
     usingLately: false,
   },
   {
