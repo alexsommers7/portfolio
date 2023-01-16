@@ -1,5 +1,12 @@
 export const tools = [
   {
+    title: 'TypeScript',
+    icon: require('@/assets/icons/typescript.svg'),
+    type: 'dev',
+    alt: 'TypeScript Programming Language',
+    usingLately: true,
+  },
+  {
     title: 'React',
     icon: require('@/assets/icons/react.svg'),
     type: 'dev',
@@ -40,7 +47,7 @@ export const tools = [
     type: 'dev',
     class: 'brighten',
     alt: 'Alpine JavaScript Framework',
-    usingLately: true,
+    usingLately: false,
   },
   {
     title: 'JavaScript',
