@@ -1,8 +1,17 @@
 <template>
   <aside class="sidebar">
     <div class="mail">
-      <a href="mailto:alex@alexsommers.com" class="flex-center" aria-label="Send Email to Alex Sommers"
-        ><svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;">
+      <a
+        href="mailto:alex@alexsommers.com"
+        class="flex-center"
+        aria-label="Send Email to Alex Sommers"
+        ><svg
+          version="1.1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512 512"
+          style="enable-background:new 0 0 512 512;"
+        >
           <g>
             <g>
               <path
@@ -39,8 +48,20 @@
       </a>
     </div>
     <div class="social">
-      <a href="https://github.com/alexsommers7" target="_blank" rel="noopener" aria-label="Link to Github Profile">
-        <svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" id="github" style="enable-background:new 0 0 512 512;">
+      <a
+        href="https://github.com/alexsommers7"
+        target="_blank"
+        rel="noopener"
+        aria-label="Link to Github Profile"
+      >
+        <svg
+          version="1.1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 512 512"
+          id="github"
+          style="enable-background:new 0 0 512 512;"
+        >
           <g>
             <g>
               <path
@@ -65,7 +86,12 @@
         rel="noopener"
         aria-label="Link to LinkedIn Profile"
       >
-        <svg version="1.1" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+        <svg
+          version="1.1"
+          viewBox="0 0 512 512"
+          style="enable-background:new 0 0 512 512;"
+          xml:space="preserve"
+        >
           <g>
             <g>
               <rect y="160" width="114.496" height="352" />
@@ -88,14 +114,17 @@
         </svg>
         <p>LinkedIn</p>
       </a>
-      <a
-        href="https://1drv.ms/b/s!AiAYyw3Db586oM0HV8ltjr73J9OFxQ"
-        aria-label="Link to Download Resume"
-        target="_blank"
-        rel="noopener"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" id="resume" viewBox="0 0 24 24" class="icon-document">
-          <path class="primary" d="M6 2h6v6c0 1.1.9 2 2 2h6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2z" />
+      <a :href="resumeLink" aria-label="Link to Download Resume" target="_blank" rel="noopener">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          id="resume"
+          viewBox="0 0 24 24"
+          class="icon-document"
+        >
+          <path
+            class="primary"
+            d="M6 2h6v6c0 1.1.9 2 2 2h6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.1.9-2 2-2z"
+          />
           <polygon class="secondary" points="14 2 20 8 14 8" />
         </svg>
         <p>Resume</p>
@@ -104,8 +133,19 @@
     <div class="current-section">
       <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
         <p v-if="!noScrollArrow">
-          <button aria-label="Go to Main Content" data-section="about" class="btn" @click="onAnchorClick">
-            <svg version="1.1" x="0px" y="0px" viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;">
+          <button
+            aria-label="Go to Main Content"
+            data-section="about"
+            class="btn"
+            @click="onAnchorClick"
+          >
+            <svg
+              version="1.1"
+              x="0px"
+              y="0px"
+              viewBox="0 0 54 54"
+              style="enable-background:new 0 0 54 54;"
+            >
               <g>
                 <path
                   d="M27,0C12.112,0,0,12.112,0,27s12.112,27,27,27s27-12.112,27-27S41.888,0,27,0z M27,52C13.215,52,2,40.785,2,27
@@ -129,11 +169,17 @@
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { resumeLink } from '@/utils/data/jobs';
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'Sidebar',
+  data() {
+    return {
+      resumeLink,
+    };
+  },
   props: {
     observeSections: Boolean,
     observerTargets: Array,

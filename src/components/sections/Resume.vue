@@ -29,11 +29,7 @@
             <p class="description">{{ school.description }}</p>
           </li>
           <li class="gsap-li" style="transition-delay: .6s">
-            <a
-              href="https://1drv.ms/b/s!AiAYyw3Db586oM0HV8ltjr73J9OFxQ"
-              target="_blank"
-              rel="noopener"
-              class="btn btn--primary"
+            <a :href="resumeLink" target="_blank" rel="noopener" class="btn btn--primary"
               >Download Full Resume
             </a>
           </li>
@@ -50,9 +46,15 @@ gsap.registerPlugin(ScrollTrigger);
 import { jobs } from '@/utils/data/jobs';
 import { education } from '@/utils/data/education';
 import SectionHeading from '@/components/headings/SectionHeading';
+import { resumeLink } from '@/utils/data/jobs';
 
 export default {
   name: 'Resume',
+  data() {
+    return {
+      resumeLink,
+    };
+  },
   computed: {
     jobs: function() {
       return [...jobs];

@@ -27,3 +27,5 @@ export const jobs = [
       'Built contemporary, interactive webpages in Sitecore and Salesforce Marketing Cloud with an emphasis on JavaScript, Marketing Cloud Ampscript, CSS, and semantic HTML.',
   },
 ];
+
+export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oM0jGfCKkbXw03PNRg?e=ugiNJb';
