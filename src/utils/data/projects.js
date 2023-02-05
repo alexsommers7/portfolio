@@ -2,8 +2,17 @@ export const projects = [
   {
     title: 'StorePI',
     description:
-      'An open-source API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Features product, user, cart, and authentication resources plus more.',
-    tools: ['React', 'Typescript', 'Chakra UI', 'Node', 'MongoDB', 'Mongoose', 'Express', 'GraphQL'],
+      'An open-source REST and GraphQL API that was created for use in e-commerce prototyping and Front-End Developer talent evaluations. Features product, user, cart, and authentication resources plus more.',
+    tools: [
+      'React',
+      'Typescript',
+      'Chakra UI',
+      'Node',
+      'MongoDB',
+      'Mongoose',
+      'Express',
+      'GraphQL',
+    ],
     primaryCTA: 'View Docs',
     primaryLink: 'https://storepi.herokuapp.com/docs',
     secondaryCTA: 'View Code',
