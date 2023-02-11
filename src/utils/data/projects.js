@@ -14,7 +14,7 @@ export const projects = [
       'GraphQL',
     ],
     primaryCTA: 'View Docs',
-    primaryLink: 'https://storepi.herokuapp.com/docs',
+    primaryLink: 'https://storepi.herokuapp.com',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/StorePI',
     image: require('@/assets/project-showcase--storepi.png'),
