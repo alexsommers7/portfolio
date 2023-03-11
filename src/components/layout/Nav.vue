@@ -17,16 +17,36 @@
         <polygon class="st4" points="62.5,81.47 84.1,57.75 40.9,57.75 " />
         <line class="st4" x1="62.5" y1="24.62" x2="62.5" y2="81.01" />
       </svg>
-      <button class="navigation__toggle tab-focus" aria-label="Toggle Navigation" @click="toggleNav">
+      <button
+        class="navigation__toggle tab-focus"
+        aria-label="Toggle Navigation"
+        @click="toggleNav"
+      >
         <span class="navigation__hamburger navigation__hamburger--1"></span>
         <span class="navigation__hamburger navigation__hamburger--2"></span>
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
       <ul class="navigation__list" @click="toggleNav">
-        <li><button data-path="/" data-section="about" class="btn" @click="onNavItemClick">ABOUT</button></li>
-        <li><button data-path="/" data-section="projects" class="btn" @click="onNavItemClick">PROJECTS</button></li>
-        <li><button data-path="/" data-section="resume" class="btn" @click="onNavItemClick">RESUME</button></li>
-        <li><button data-path="/" data-section="contact" class="btn" @click="onNavItemClick">CONTACT</button></li>
+        <li>
+          <button data-path="/" data-section="about" class="btn" @click="onNavItemClick">
+            ABOUT
+          </button>
+        </li>
+        <li>
+          <button data-path="/" data-section="projects" class="btn" @click="onNavItemClick">
+            PROJECTS
+          </button>
+        </li>
+        <li>
+          <button data-path="/" data-section="resume" class="btn" @click="onNavItemClick">
+            RESUME
+          </button>
+        </li>
+        <li>
+          <button data-path="/" data-section="contact" class="btn" @click="onNavItemClick">
+            CONTACT
+          </button>
+        </li>
       </ul>
     </nav>
   </header>
@@ -125,7 +145,12 @@ export default {
             { left: this.desktopNavWidthWithScrollbar },
             { left: '-100%', duration: 0.5, ease: 'circ.out' }
           );
-      this.timeline.fromTo('.navigation__list > li', { opacity: 1 }, { opacity: 0, duration: 0.1 }, '<');
+      this.timeline.fromTo(
+        '.navigation__list > li',
+        { opacity: 1 },
+        { opacity: 0, duration: 0.1 },
+        '<'
+      );
     },
     onNavItemClick(e) {
       e.preventDefault();
@@ -401,7 +426,12 @@ header {
         width: 100%;
         height: 100%;
         display: inline-block;
-        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-primary 50%);
+        background-image: linear-gradient(
+          120deg,
+          transparent 0%,
+          transparent 50%,
+          $color-primary 50%
+        );
         background-size: 230%;
         background-color: transparent;
         transition: all 0.5s;

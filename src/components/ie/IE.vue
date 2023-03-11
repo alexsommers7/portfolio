@@ -4,8 +4,9 @@
       <div class="modal__text">
         <p class="modal__heading"><strong>IE had a good run, but its time is up.</strong></p>
         <p>
-          The Internet Explorer 11 desktop application will be retired and go out of support on June 15, 2022, for
-          certain versions of Windows 10. In light of this, AlexSommers.com does not work on this browser.
+          The Internet Explorer 11 desktop application will be retired and go out of support on June
+          15, 2022, for certain versions of Windows 10. In light of this, AlexSommers.com does not
+          work on this browser.
         </p>
         <p>Please download one of these alternatives to proceed:</p>
         <div class="modal__downloads">
@@ -130,7 +131,12 @@
           </div>
           <div class="download">
             <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">
-              <svg xmlns="http://www.w3.org/2000/svg" width="2491" height="2500" viewBox="0 0 435.816 437.46">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="2491"
+                height="2500"
+                viewBox="0 0 435.816 437.46"
+              >
                 <path
                   d="M217.341.039s128.478-5.783 196.57 123.337H206.416s-39.188-1.289-72.593 46.255c-9.634 19.916-19.91 40.473-8.349 80.937C108.773 222.309 36.823 97.04 36.823 97.04S87.578 5.176 217.341.039z"
                   fill="#c6352e"
@@ -197,7 +203,13 @@
                   <stop offset=".534" stop-color="#ff3647" />
                   <stop offset=".705" stop-color="#e31587" />
                 </linearGradient>
-                <radialGradient id="b" cx="67.813" cy="8.879" gradientUnits="userSpaceOnUse" r="80.797">
+                <radialGradient
+                  id="b"
+                  cx="67.813"
+                  cy="8.879"
+                  gradientUnits="userSpaceOnUse"
+                  r="80.797"
+                >
                   <stop offset=".129" stop-color="#ffbd4f" />
                   <stop offset=".186" stop-color="#ffac31" />
                   <stop offset=".247" stop-color="#ff9d17" />
@@ -208,20 +220,38 @@
                   <stop offset=".782" stop-color="#eb0878" />
                   <stop offset=".86" stop-color="#e50080" />
                 </radialGradient>
-                <radialGradient id="c" cx="38.289" cy="41.911" gradientUnits="userSpaceOnUse" r="80.797">
+                <radialGradient
+                  id="c"
+                  cx="38.289"
+                  cy="41.911"
+                  gradientUnits="userSpaceOnUse"
+                  r="80.797"
+                >
                   <stop offset=".3" stop-color="#960e18" />
                   <stop offset=".351" stop-color="#b11927" stop-opacity=".74" />
                   <stop offset=".435" stop-color="#db293d" stop-opacity=".343" />
                   <stop offset=".497" stop-color="#f5334b" stop-opacity=".094" />
                   <stop offset=".53" stop-color="#ff3750" stop-opacity="0" />
                 </radialGradient>
-                <radialGradient id="d" cx="48.03" cy="-9.457" gradientUnits="userSpaceOnUse" r="58.534">
+                <radialGradient
+                  id="d"
+                  cx="48.03"
+                  cy="-9.457"
+                  gradientUnits="userSpaceOnUse"
+                  r="58.534"
+                >
                   <stop offset=".132" stop-color="#fff44f" />
                   <stop offset=".252" stop-color="#ffdc3e" />
                   <stop offset=".506" stop-color="#ff9d12" />
                   <stop offset=".526" stop-color="#ff980e" />
                 </radialGradient>
-                <radialGradient id="e" cx="29.352" cy="63.016" gradientUnits="userSpaceOnUse" r="38.471">
+                <radialGradient
+                  id="e"
+                  cx="29.352"
+                  cy="63.016"
+                  gradientUnits="userSpaceOnUse"
+                  r="38.471"
+                >
                   <stop offset=".353" stop-color="#3a8ee6" />
                   <stop offset=".472" stop-color="#5c79f0" />
                   <stop offset=".669" stop-color="#9059ff" />
@@ -240,7 +270,13 @@
                   <stop offset=".747" stop-color="#7716a8" stop-opacity=".45" />
                   <stop offset=".975" stop-color="#6e008b" stop-opacity=".6" />
                 </radialGradient>
-                <radialGradient id="g" cx="37.269" cy="5.573" gradientUnits="userSpaceOnUse" r="27.676">
+                <radialGradient
+                  id="g"
+                  cx="37.269"
+                  cy="5.573"
+                  gradientUnits="userSpaceOnUse"
+                  r="27.676"
+                >
                   <stop offset="0" stop-color="#ffe226" />
                   <stop offset=".121" stop-color="#ffdb27" />
                   <stop offset=".295" stop-color="#ffc82a" />
@@ -248,7 +284,13 @@
                   <stop offset=".732" stop-color="#ff7e37" />
                   <stop offset=".792" stop-color="#ff7139" />
                 </radialGradient>
-                <radialGradient id="h" cx="59.023" cy="-11.981" gradientUnits="userSpaceOnUse" r="118.081">
+                <radialGradient
+                  id="h"
+                  cx="59.023"
+                  cy="-11.981"
+                  gradientUnits="userSpaceOnUse"
+                  r="118.081"
+                >
                   <stop offset=".113" stop-color="#fff44f" />
                   <stop offset=".456" stop-color="#ff980e" />
                   <stop offset=".622" stop-color="#ff5634" />
@@ -272,14 +314,26 @@
                   <stop offset=".57" stop-color="#ff3647" />
                   <stop offset=".737" stop-color="#e31587" />
                 </radialGradient>
-                <radialGradient id="j" cx="36.617" cy="15.824" gradientUnits="userSpaceOnUse" r="73.72">
+                <radialGradient
+                  id="j"
+                  cx="36.617"
+                  cy="15.824"
+                  gradientUnits="userSpaceOnUse"
+                  r="73.72"
+                >
                   <stop offset=".137" stop-color="#fff44f" />
                   <stop offset=".48" stop-color="#ff980e" />
                   <stop offset=".592" stop-color="#ff5634" />
                   <stop offset=".655" stop-color="#ff3647" />
                   <stop offset=".904" stop-color="#e31587" />
                 </radialGradient>
-                <radialGradient id="k" cx="56.077" cy="20.139" gradientUnits="userSpaceOnUse" r="80.686">
+                <radialGradient
+                  id="k"
+                  cx="56.077"
+                  cy="20.139"
+                  gradientUnits="userSpaceOnUse"
+                  r="80.686"
+                >
                   <stop offset=".094" stop-color="#fff44f" />
                   <stop offset=".231" stop-color="#ffe141" />
                   <stop offset=".509" stop-color="#ffaf1e" />

@@ -31,7 +31,11 @@ export default {
   name: 'Hero',
   methods: {
     onAnchorClick(e) {
-      gsap.to(window, { duration: 1.2, ease: 'expo.inOut', scrollTo: `#${e.target.dataset.section}` });
+      gsap.to(window, {
+        duration: 1.2,
+        ease: 'expo.inOut',
+        scrollTo: `#${e.target.dataset.section}`,
+      });
       // a bit hacky here, but ...
       // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
       setTimeout(function() {

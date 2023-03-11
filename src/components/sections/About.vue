@@ -8,16 +8,20 @@
         <strong class="about__heading typewriter-2"></strong>
         <span class="about__heading" id="cursor">|</span>
       </p>
-      <p>I'm a <span class="color-primary">Front-End Web Developer</span> based out of Tempe, Arizona.</p>
       <p>
-        In both freelance and professional settings, I harness the power of modern web technologies to create
-        interactive, accessible user experiences.
+        I'm a <span class="color-primary">Front-End Web Developer</span> based out of Tempe,
+        Arizona.
       </p>
       <p>
-        Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an Arizona-based
-        company who provides digital marketing solutions to 2,700+ independent retailers across North America. There, I
-        work on the front end of products that are interacted with by thousands of users daily. These include our
-        proprietary CMS, as well as the platform that consumes the CMS API to power each retailer's website.
+        In both freelance and professional settings, I harness the power of modern web technologies
+        to create interactive, accessible user experiences.
+      </p>
+      <p>
+        Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an
+        Arizona-based company who provides digital marketing solutions to 2,700+ independent
+        retailers across North America. There, I work on the front end of products that are
+        interacted with by thousands of users daily. These include our proprietary CMS, as well as
+        the platform that consumes the CMS API to power each retailer's website.
       </p>
     </div>
     <div class="about__lately">
@@ -62,7 +66,8 @@ export default {
           repeat: 8,
           ease: 'steps(1)',
           onComplete: function() {
-            if (document.getElementById('cursor')) document.getElementById('cursor').style.opacity = '0';
+            if (document.getElementById('cursor'))
+              document.getElementById('cursor').style.opacity = '0';
           },
         }
       );

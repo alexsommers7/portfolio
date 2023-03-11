@@ -7,7 +7,9 @@
         <ProjectCard :project="project" :key="project.title" />
       </template>
     </div>
-    <router-link to="/project-showcase" class="btn btn--secondary cta">View All Projects </router-link>
+    <router-link to="/project-showcase" class="btn btn--secondary cta"
+      >View All Projects
+    </router-link>
   </section>
 </template>
 
@@ -44,7 +46,9 @@ export default {
           }),
       });
 
-      ScrollTrigger.addEventListener('refreshInit', () => gsap.set('article.project', { y: 0, opacity: 1 }));
+      ScrollTrigger.addEventListener('refreshInit', () =>
+        gsap.set('article.project', { y: 0, opacity: 1 })
+      );
     },
   },
   mounted() {

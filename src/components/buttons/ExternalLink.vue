@@ -1,5 +1,12 @@
 <template>
-  <a :href="targetLink" class="btn" :class="classes" target="_blank" rel="noopener" :aria-label="ariaLabel">
+  <a
+    :href="targetLink"
+    class="btn"
+    :class="classes"
+    target="_blank"
+    rel="noopener"
+    :aria-label="ariaLabel"
+  >
     {{ content }}
   </a>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <section class="track toolbox" data-sidebar="Toolbox">
     <span class="anchor-span" id="toolbox"></span>
-    <SectionHeading main="TOOLBOX" secondary="Modern Technology, Efficient Workflow" />
+    <SectionHeading main="TOOLBOX" secondary="Front-End Focused With Back-End Chops" />
 
     <div class="toolbox__toggle">
       <div class="buttons">
@@ -44,7 +44,9 @@ export default {
     toggleButton(event, forceTo = 'left') {
       let direction = event ? event.target.dataset.toggle : forceTo;
       if (direction == this.togglePosition) return;
-      this.$el.querySelectorAll('.toolbox__toggle button').forEach((btn) => btn.classList.toggle('active'));
+      this.$el
+        .querySelectorAll('.toolbox__toggle button')
+        .forEach((btn) => btn.classList.toggle('active'));
       this.$el.querySelector('.buttons').classList = `buttons ${direction}`;
       this.currentType = direction === 'left' ? 'dev' : 'design';
       this.togglePosition = direction;
