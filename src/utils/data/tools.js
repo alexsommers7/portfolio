@@ -42,7 +42,7 @@ export const tools = [
     title: 'JavaScript',
     icon: require('@/assets/icons/javascript.svg'),
     type: 'dev',
-    alt: 'JavaScript (ES6)',
+    alt: 'JavaScript (ES6+)',
     usingLately: false,
   },
   {

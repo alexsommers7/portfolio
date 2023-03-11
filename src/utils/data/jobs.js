@@ -6,7 +6,7 @@ export const jobs = [
     location: 'Remote',
     timeframe: 'April 2021 - Present',
     description:
-      'Work with Vue.js, Alpine.js, JavaScript (ES6), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.',
+      'Work with Vue.js, Alpine.js, JavaScript (ES6+), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.',
   },
   {
     id: 2,
