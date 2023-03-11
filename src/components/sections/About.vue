@@ -9,12 +9,12 @@
         <span class="about__heading" id="cursor">|</span>
       </p>
       <p>
-        I'm a <span class="color-primary">Front-End Web Developer</span> based out of Chandler,
-        Arizona.
+        I'm a <span class="color-primary">Full Stack Javascript Developer</span> based out of
+        Chandler, Arizona.
       </p>
       <p>
         In both freelance and professional settings, I harness the power of modern web technologies
-        to create interactive, accessible user experiences.
+        to create interactive, accessible user experiences with an emphasis on the fundamentals.
       </p>
       <p>
         Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an

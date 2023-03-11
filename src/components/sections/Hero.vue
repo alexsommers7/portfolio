@@ -2,7 +2,7 @@
   <section class="hero full-width" id="hero">
     <div class="intro">
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
-      <h2 class="heading heading--2">Front-End Web Developer</h2>
+      <h2 class="heading heading--2">Full-Stack Javascript Developer</h2>
       <div class="intro__buttons">
         <AnchorButton classes="btn--primary" section="projects" content="My Work" />
         <AnchorButton classes="btn--secondary" section="contact" content="Contact Me" />
@@ -13,7 +13,7 @@
       <img
         class="photo"
         src="../../assets/alex-sommers.png"
-        alt="Alex Sommers | Front-End Web Developer"
+        alt="Alex Sommers | Full-Stack Javascript Developer"
         height="373"
       />
     </picture>
