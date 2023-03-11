@@ -12,7 +12,7 @@ export const jobs = [
     id: 2,
     jobTitle: 'Freelance Web Developer',
     company: 'Self-Employed',
-    location: 'Tempe, AZ',
+    location: 'Chandler, AZ',
     timeframe: 'July 2020 - Present',
     description:
       'Work with small business owners to conceptualize, design, and develop static websites. Deploy and maintain sites via GitHub repositories and Netlify continuous integration.',

@@ -9,7 +9,7 @@
         <span class="about__heading" id="cursor">|</span>
       </p>
       <p>
-        I'm a <span class="color-primary">Front-End Web Developer</span> based out of Tempe,
+        I'm a <span class="color-primary">Front-End Web Developer</span> based out of Chandler,
         Arizona.
       </p>
       <p>
