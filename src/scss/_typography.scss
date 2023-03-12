@@ -12,6 +12,7 @@
   display: inline-block;
   border: 1px solid $color-primary;
   border-radius: $design-border-radius-default;
+  white-space: nowrap;
   cursor: pointer;
 
   &--primary {
