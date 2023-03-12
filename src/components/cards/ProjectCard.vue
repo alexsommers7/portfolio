@@ -22,14 +22,17 @@
         classes="btn--primary"
         :ariaLabel="`${project.primaryCTA} for ${project.title}`"
         :content="project.primaryCTA"
-        v-show="project.title !== 'AlexSommers.com'"
+        v-show="project.primaryCTA"
       />
       <ExternalLink
         :targetLink="project.secondaryLink"
         classes="btn--secondary"
         :ariaLabel="`${project.secondaryCTA} for ${project.title}`"
         :content="project.secondaryCTA"
+        v-show="project.secondaryCTA"
       />
+
+      <p v-show="!project.openSource"><em>Not open source, but happy to discuss</em></p>
     </div>
   </article>
 </template>

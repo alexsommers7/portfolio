@@ -40,6 +40,7 @@ export default {
       height: 3.5rem;
       display: block;
       margin: auto;
+      object-fit: contain;
     }
 
     p {

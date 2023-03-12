@@ -24,9 +24,11 @@
       flex-direction: column;
 
       img {
-        max-width: 80%;
         display: block;
-        margin: auto;
+        margin: 1.5rem auto;
+        width: 100%;
+        border-radius: $design-border-radius-default;
+        object-fit: cover;
       }
 
       .title {

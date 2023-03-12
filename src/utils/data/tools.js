@@ -60,6 +60,13 @@ export const tools = [
     usingLately: false,
   },
   {
+    title: 'Puppeteer',
+    icon: require('@/assets/icons/puppeteer.png'),
+    type: 'dev',
+    alt: 'Puppeteer Node JS Library',
+    usingLately: false,
+  },
+  {
     title: 'Node.js',
     icon: require('@/assets/icons/node.svg'),
     type: 'dev',
