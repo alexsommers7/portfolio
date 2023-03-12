@@ -321,7 +321,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     padding: 0.5rem 0;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
   }
 
   .mail {

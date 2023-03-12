@@ -113,18 +113,18 @@ export default {
         ? this.timeline.fromTo(
             this.navList,
             { top: '-100%' },
-            { top: this.mobileNavHeightHalf, duration: 0.4, ease: 'power1.out' }
+            { top: this.mobileNavHeightHalf, duration: 0.25, ease: 'power1.out' }
           )
         : this.timeline.fromTo(
             this.navList,
             { left: '-100%' },
-            { left: this.desktopNavWidthWithScrollbar, duration: 0.4, ease: 'circ.out' }
+            { left: this.desktopNavWidthWithScrollbar, duration: 0.25, ease: 'circ.out' }
           );
       this.timeline
         .fromTo(
           '.navigation__list > li',
           { opacity: 0 },
-          { opacity: 1, delay: 0.2, duration: 0.15, stagger: 0.05 },
+          { opacity: 1, delay: 0.15, duration: 0.15, stagger: 0.05 },
           '<'
         )
         .add(function() {
@@ -138,12 +138,12 @@ export default {
         ? this.timeline.fromTo(
             this.navList,
             { top: this.mobileNavHeightHalf },
-            { top: '-100%', duration: 0.75, ease: 'power4.out' }
+            { top: '-100%', duration: 0.5, ease: 'power4.out' }
           )
         : this.timeline.fromTo(
             this.navList,
             { left: this.desktopNavWidthWithScrollbar },
-            { left: '-100%', duration: 0.5, ease: 'circ.out' }
+            { left: '-100%', duration: 0.25, ease: 'circ.out' }
           );
       this.timeline.fromTo(
         '.navigation__list > li',
@@ -239,7 +239,7 @@ header {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  transition: background-color 0.25s 0.25s ease;
+  transition: background-color 0.25s 0.175s ease;
   transform: none;
 
   @include respond(desk-small) {
@@ -327,7 +327,7 @@ header {
   }
 
   &__hamburger {
-    transition: transform 0.8s cubic-bezier(0.06, 0.975, 0.195, 0.985), width 0.3s;
+    transition: transform 0.8s cubic-bezier(0.06, 1.285, 0.195, 0.985), width 0.3s;
     position: absolute;
     height: 2px;
     background-color: $color-primary;
