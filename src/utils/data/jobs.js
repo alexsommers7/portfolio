@@ -15,7 +15,7 @@ export const jobs = [
     location: 'Chandler, AZ',
     timeframe: 'July 2020 - Present',
     description:
-      'Work with small business owners to conceptualize, design, and develop static websites. Deploy and maintain sites via GitHub repositories and Netlify continuous integration.',
+      'Work with small business owners to conceptualize, design, develop, deploy, and maintain custom websites that enhance their business.',
   },
   {
     id: 3,
