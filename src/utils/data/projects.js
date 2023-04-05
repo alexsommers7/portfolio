@@ -26,7 +26,7 @@ export const projects = [
   {
     title: 'Real Estate Scraper',
     description:
-      'A web scraper created for a real estate attorney client. Features a GUI for running scrapes and viewing past scrape results, IP proxy rotation, email alerts, spreadsheet manipulation, and more.',
+      'A web scraper created for a real estate attorney client. Features a GUI for running scrapes and viewing past scrape results, real-time job tracking, IP proxy rotation, email alerts, and more.',
     tools: [
       'React',
       'Typescript',
@@ -34,9 +34,9 @@ export const projects = [
       'Node',
       'Express',
       'Puppeteer',
+      'WebSocket',
       'AWS S3',
       'SendGrid',
-      'ScrapeOps',
       'Heroku',
     ],
     primaryCTA: '',
