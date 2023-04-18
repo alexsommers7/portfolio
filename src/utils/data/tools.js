@@ -21,7 +21,7 @@ export const tools = [
     icon: require('@/assets/icons/chakra.svg'),
     type: 'dev',
     alt: 'Chakra UI Library',
-    usingLately: true,
+    usingLately: false,
   },
   {
     title: 'Vue.js',
@@ -37,6 +37,14 @@ export const tools = [
     class: 'brighten',
     alt: 'Alpine JavaScript Framework',
     usingLately: false,
+  },
+  {
+    title: 'Next.js',
+    icon: require('@/assets/icons/next-js.svg'),
+    type: 'dev',
+    class: 'brighten',
+    alt: 'Next.js React Framework',
+    usingLately: true,
   },
   {
     title: 'JavaScript',
@@ -81,13 +89,13 @@ export const tools = [
     alt: 'Express Node JS Framework',
     usingLately: false,
   },
-  {
-    title: 'MongoDB',
-    icon: require('@/assets/icons/mongodb.svg'),
-    type: 'dev',
-    alt: 'MongoDB Database Platform',
-    usingLately: false,
-  },
+  // {
+  //   title: 'MongoDB',
+  //   icon: require('@/assets/icons/mongodb.svg'),
+  //   type: 'dev',
+  //   alt: 'MongoDB Database Platform',
+  //   usingLately: false,
+  // },
   {
     title: 'XD',
     icon: require('@/assets/icons/xd.svg'),

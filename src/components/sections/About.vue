@@ -17,11 +17,9 @@
         to create interactive, accessible user experiences with an emphasis on the fundamentals.
       </p>
       <p>
-        Currently, I work remotely for <span class="color-primary">Retailer Web Services</span> - an
+        Currently, I work for <span class="color-primary">Retailer Web Services</span> - an
         Arizona-based company who provides digital marketing solutions to 2,700+ independent
-        retailers across North America. There, I work on the front end of products that are
-        interacted with by thousands of users daily. These include our proprietary CMS, as well as
-        the platform that consumes the CMS API to power each retailer's website.
+        retailers across North America.
       </p>
     </div>
     <div class="about__lately">
