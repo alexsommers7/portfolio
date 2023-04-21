@@ -107,7 +107,7 @@ export default {
 <style lang="scss">
 .about {
   margin-top: 3rem;
-  max-width: 1600px;
+  max-width: 1100px;
 
   @include respond(desk-large) {
     margin-top: 0;
