@@ -237,7 +237,8 @@ header {
   padding: 0 1rem 0 0.25rem; // less on left to align logo
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */ /* Uncomment and remove next line if showing logo */
+  justify-content: flex-end;
   overflow: hidden;
   transition: background-color 0.25s 0.175s ease;
   transform: none;
@@ -296,6 +297,7 @@ header {
   &__logo {
     height: 80%;
     width: auto;
+    display: none; // hide for now
 
     @include respond(desk-small) {
       display: none;
