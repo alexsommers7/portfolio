@@ -5,7 +5,7 @@
       <About></About>
       <Projects></Projects>
       <Resume></Resume>
-      <Toolbox></Toolbox>
+      <!-- <Toolbox></Toolbox> -->
       <Contact></Contact>
     </div>
   </transition>
@@ -16,7 +16,7 @@ import Hero from '@/components/sections/Hero';
 import About from '@/components/sections/About';
 import Projects from '@/components/sections/ProjectsOverview';
 import Resume from '@/components/sections/Resume';
-import Toolbox from '@/components/sections/Toolbox';
+// import Toolbox from '@/components/sections/Toolbox';
 import Contact from '@/components/sections/Contact';
 
 export default {
@@ -26,7 +26,7 @@ export default {
     About,
     Projects,
     Resume,
-    Toolbox,
+    // Toolbox,
     Contact,
   },
 };

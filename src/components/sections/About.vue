@@ -22,7 +22,7 @@
         retailers across North America.
       </p>
     </div>
-    <div class="about__lately">
+    <!-- <div class="about__lately">
       <h3 class="heading heading--4">What I've Been Building With Lately</h3>
       <ul class="tools">
         <template v-for="tool in recentTools">
@@ -32,14 +32,14 @@
         </template>
       </ul>
       <AnchorButton classes="btn--secondary" section="toolbox" content="See What's in My Toolbox" />
-    </div>
+    </div> -->
   </section>
 </template>
 
 <script>
 import { tools } from '@/utils/data/tools';
-import AnchorButton from '@/components/buttons/AnchorButton';
-import ToolCard from '@/components/cards/ToolCard';
+// import AnchorButton from '@/components/buttons/AnchorButton';
+// import ToolCard from '@/components/cards/ToolCard';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -98,8 +98,8 @@ export default {
     this.configureScrollTrigger();
   },
   components: {
-    AnchorButton,
-    ToolCard,
+    // AnchorButton,
+    // ToolCard,
   },
 };
 </script>
