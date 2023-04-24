@@ -19,7 +19,7 @@ export const jobs = [
   },
   {
     id: 3,
-    jobTitle: 'Digital Marketing Coordinator',
+    jobTitle: 'Digital Marketing Developer',
     company: 'Isagenix',
     location: 'Gilbert, AZ',
     timeframe: 'September 2019 - April 2021',
@@ -28,4 +28,4 @@ export const jobs = [
   },
 ];
 
-export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oM1A7f9Csmvw3Ki8Wg?e=LaU5vi';
+export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oM1IWyRqsYDXZ0hBwg?e=FbW5b9';
