@@ -1,7 +1,7 @@
 <template>
   <section class="track resume full-width" data-sidebar="Resume">
     <span class="anchor-span" id="resume"></span>
-    <SectionHeading main="RESUME" secondary="Years of Professional Development Experience" />
+    <SectionHeading main="RESUME" secondary="Professional and Freelance Experience" />
 
     <div class="resume__content">
       <div>

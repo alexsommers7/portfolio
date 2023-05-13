@@ -9,17 +9,14 @@
         <span class="about__heading" id="cursor">|</span>
       </p>
       <p>
-        I'm a <span class="color-primary">Full Stack Javascript Developer</span> based out of
+        I'm a <span class="color-primary">Full-Stack JavaScript Developer</span> based out of
         Chandler, Arizona.
       </p>
       <p>
-        In both freelance and professional settings, I harness the power of modern web technologies
-        to create interactive, accessible user experiences with an emphasis on the fundamentals.
-      </p>
-      <p>
-        Currently, I work for <span class="color-primary">Retailer Web Services</span> - an
-        Arizona-based company who provides digital marketing solutions to 2,700+ independent
-        retailers across North America.
+        Currently working full-time in the E-Commerce industry. Passionate about all things
+        JavaScript, with an emphasis on staying up to date. Experienced in building sites from
+        scratch with no frameworks/libraries, and just as experienced in doing the same using the
+        latest technologies and abstractions. Avid WCAG follower.
       </p>
     </div>
     <!-- <div class="about__lately">
