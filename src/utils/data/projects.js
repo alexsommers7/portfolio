@@ -36,7 +36,7 @@ export const projects = [
       'Puppeteer',
       'WebSocket',
       'AWS S3',
-      'SendGrid',
+      'SendGrid API',
       'Heroku',
     ],
     primaryCTA: '',
