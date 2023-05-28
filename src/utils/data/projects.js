@@ -12,6 +12,7 @@ export const projects = [
       'Mongoose',
       'Express',
       'GraphQL',
+      'Heroku',
     ],
     primaryCTA: 'View Docs',
     primaryLink: 'https://storepi.herokuapp.com',
