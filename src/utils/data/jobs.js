@@ -6,7 +6,7 @@ export const jobs = [
     location: 'Remote',
     timeframe: 'April 2021 - Present',
     description:
-      'Work with Vue.js, Alpine.js, JavaScript (ES6+), CSS, and HTML to build, maintain, and continually improve large scale, internal web platforms as a member of a scrum team.',
+      'Develop and maintain large-scale, internal and external web platforms as a part of a scrum team using Vue, Alpine.js, Javascript, CSS, and semantic HTML.',
   },
   {
     id: 2,
@@ -15,17 +15,17 @@ export const jobs = [
     location: 'Chandler, AZ',
     timeframe: 'July 2020 - Present',
     description:
-      'Work with small business owners to conceptualize, design, develop, deploy, and maintain custom websites that enhance their business.',
+      'Partner with various businesses to design and develop custom websites, ranging from static sites to dynamic, full-stack applications.',
   },
   {
     id: 3,
-    jobTitle: 'Digital Marketing Developer',
+    jobTitle: 'Digital Developer',
     company: 'Isagenix',
     location: 'Gilbert, AZ',
     timeframe: 'September 2019 - April 2021',
     description:
-      'Built contemporary, interactive webpages in Sitecore and Salesforce Marketing Cloud with an emphasis on JavaScript, Marketing Cloud Ampscript, CSS, and semantic HTML.',
+      'Designed and developed interactive webpages for Isagenix.com in 26 global markets and 16 languages using HTML, CSS/Zurb Foundation, and JavaScript.',
   },
 ];
 
-export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oPog80Gb77xR4uCr3A?e=R6ciQ7';
+export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oPomGSKkLrzpxA8rAQ?e=ph4oUL';

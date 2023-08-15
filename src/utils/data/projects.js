@@ -80,21 +80,6 @@ export const projects = [
     showOnHomePage: false,
     openSource: true,
   },
-  // {
-  //   title: 'Vue Shop',
-  //   description:
-  //     'A simple ecommerce landing page that helps visualize some of the capabilities of StorePI. Features sorting, filtering, and basic cart functionality.',
-  //   tools: ['Vue 3', 'Pinia', 'Quasar', 'StorePI', 'SCSS', 'Netlify'],
-  //   primaryCTA: 'View Demo',
-  //   primaryLink: 'https://vue-fake-shop.netlify.app/',
-  //   secondaryCTA: 'View Code',
-  //   secondaryLink: 'https://github.com/alexsommers7/vue-shop',
-  //   image: require('@/assets/project-showcase--vue-shop.png'),
-  //   imageWebp: require('@/assets/project-showcase--vue-shop.webp'),
-  //   alt: 'Vue Shop interface',
-  //   showOnHomePage: false,
-  //   openSource: true,
-  // },
   {
     title: 'Lovely Hearts AZ',
     description:
