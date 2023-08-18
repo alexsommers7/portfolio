@@ -3,15 +3,9 @@ export const projects = [
     title: 'StorePI',
     description:
       'An open-source REST and GraphQL API that was created for use in e-commerce prototyping and Front-End talent evaluations. Features product, user, and authentication resources plus more.',
-    tools: [
-      'Next.js',
-      'Typescript',
-      'Tailwind',
-      'Supabase',
-      'Vercel'
-    ],
+    tools: ['Next.js', 'Typescript', 'Tailwind', 'Supabase', 'Vercel'],
     primaryCTA: 'View Docs',
-    primaryLink: 'https://storepi.vercel.app/docs',
+    primaryLink: 'https://storepi.vercel.app/docs/introduction',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/store-pi',
     image: require('@/assets/project-showcase--storepi.png'),
