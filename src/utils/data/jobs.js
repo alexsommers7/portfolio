@@ -28,4 +28,4 @@ export const jobs = [
   },
 ];
 
-export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oPomGSKkLrzpxA8rAQ?e=ph4oUL';
+export const resumeLink = 'https://1drv.ms/b/s!AiAYyw3Db586oPo5N1xLrNJ3qTffHQ?e=WuXhu3';

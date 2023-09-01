@@ -17,7 +17,7 @@ export const projects = [
   {
     title: 'Real Estate Scraper',
     description:
-      'A web scraper created for a real estate attorney client. Features a GUI for running scrapes and viewing past scrape results, real-time job tracking, IP proxy rotation, email alerts, and more.',
+      'A bespoke web scraper created for a real estate attorney client. Features a GUI for running scrapes and viewing past scrape results, real-time job tracking, IP proxy rotation, email alerts, and more.',
     tools: [
       'React',
       'Typescript',
