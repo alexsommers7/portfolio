@@ -3,7 +3,7 @@ export const projects = [
     title: 'StorePI',
     description:
       'An open-source API that was created for use in e-commerce prototyping and Front-End talent evaluations. Features product, user, and authentication resources plus more.',
-    tools: ['Next.js', 'Typescript', 'Tailwind', 'Supabase', 'Vercel'],
+    tools: ['Next.js', 'TypeScript', 'Tailwind', 'Supabase', 'Vercel'],
     primaryCTA: 'View Docs',
     primaryLink: 'https://storepi.vercel.app/docs/introduction',
     secondaryCTA: 'View Code',
@@ -20,7 +20,7 @@ export const projects = [
       'A bespoke web scraper created for a real estate attorney. Features a GUI for running scrapes and viewing past scrape results, real-time tracking, IP proxy rotation, authentication, email alerts, and more.',
     tools: [
       'React',
-      'Typescript',
+      'TypeScript',
       'MUI',
       'Node',
       'Express',
