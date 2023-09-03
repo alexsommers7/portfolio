@@ -28,6 +28,7 @@ export const projects = [
       'Puppeteer',
       'WebSocket',
       'AWS S3',
+      'JWT',
       'SendGrid API',
       'Heroku',
     ],
