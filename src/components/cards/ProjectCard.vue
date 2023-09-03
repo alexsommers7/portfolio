@@ -26,7 +26,7 @@
       />
 
       <p v-show="!project.openSource">
-        <em>Behind a login and non open source, but happy to demo and discuss</em>
+        <em>Behind a login and not open source, but happy to demo and discuss</em>
       </p>
     </div>
   </article>
