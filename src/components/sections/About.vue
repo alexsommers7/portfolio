@@ -14,9 +14,9 @@
       </p>
       <p>
         Currently working full-time in the E-Commerce industry. Passionate about all things
-        JavaScript, with an emphasis on staying up to date. Experienced in building sites from
-        scratch with no frameworks/libraries, and just as experienced in doing the same using the
-        latest technologies and abstractions. Avid WCAG follower.
+        JavaScript. Experienced in building sites from scratch with no frameworks/libraries, and
+        just as experienced in doing the same using the latest technologies and abstractions. Avid
+        WCAG follower.
       </p>
     </div>
     <!-- <div class="about__lately">
