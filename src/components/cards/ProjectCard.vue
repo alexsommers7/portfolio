@@ -25,7 +25,7 @@
         v-show="project.secondaryCTA"
       />
 
-      <p v-show="!project.openSource"><em>Not open source, but happy to discuss</em></p>
+      <p v-show="!project.openSource"><em>Not open source or public-facing, but happy to discuss</em></p>
     </div>
   </article>
 </template>
