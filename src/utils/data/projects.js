@@ -17,13 +17,14 @@ export const projects = [
   {
     title: 'Real Estate Scraper',
     description:
-      'A bespoke web scraper created for a real estate attorney client. Features a GUI for running scrapes and viewing past scrape results, real-time job tracking, IP proxy rotation, email alerts, and more.',
+      'A bespoke web scraper created for a real estate attorney. Features a GUI for running scrapes and viewing past scrape results, real-time tracking, IP proxy rotation, authentication, email alerts, and more.',
     tools: [
       'React',
       'Typescript',
       'MUI',
       'Node',
       'Express',
+      'SQLite',
       'Puppeteer',
       'WebSocket',
       'AWS S3',
