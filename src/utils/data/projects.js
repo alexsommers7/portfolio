@@ -24,7 +24,7 @@ export const projects = [
       'MUI',
       'Node',
       'Express',
-      'SQLite',
+      'PostgreSQL',
       'Puppeteer',
       'WebSocket',
       'AWS S3',
