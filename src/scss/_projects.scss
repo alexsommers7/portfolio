@@ -28,7 +28,7 @@
         margin: 1.5rem auto;
         width: 100%;
         border-radius: $design-border-radius-default;
-        object-fit: cover;
+        aspect-ratio: 160 / 87;
       }
 
       .title {
