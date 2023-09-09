@@ -1,11 +1,5 @@
 <template>
-  <button
-    class="btn"
-    :class="classes"
-    :type="type"
-    :data-section="section"
-    v-on:click="onAnchorClick"
-  >
+  <button class="btn" :class="classes" :type="type" :data-section="section" @click="onAnchorClick">
     <strong class="pointer-none">{{ content }}</strong>
   </button>
 </template>

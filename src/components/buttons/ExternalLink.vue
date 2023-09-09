@@ -4,7 +4,7 @@
     class="btn"
     :class="classes"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     :aria-label="ariaLabel"
   >
     {{ content }}
@@ -13,6 +13,7 @@
       class="icon"
       viewBox="0 0 24 24"
       alt="Opens in external window"
+      aria-hidden="true"
     >
       <path
         class="primary"

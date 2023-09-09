@@ -12,24 +12,24 @@
 </template>
 
 <script>
-import Hero from '@/components/sections/Hero.vue';
-import About from '@/components/sections/About.vue';
-import Projects from '@/components/sections/ProjectsOverview.vue';
-import Resume from '@/components/sections/Resume.vue';
-// import Toolbox from '@/components/sections/Toolbox.vue';
-import Contact from '@/components/sections/Contact.vue';
+  import Hero from '@/components/sections/Hero.vue';
+  import About from '@/components/sections/About.vue';
+  import Projects from '@/components/sections/ProjectsOverview.vue';
+  import Resume from '@/components/sections/Resume.vue';
+  // import Toolbox from '@/components/sections/Toolbox.vue';
+  import Contact from '@/components/sections/Contact.vue';
 
-export default {
-  name: 'Home',
-  components: {
-    Hero,
-    About,
-    Projects,
-    Resume,
-    // Toolbox,
-    Contact,
-  },
-};
+  export default {
+    name: 'Home',
+    components: {
+      Hero,
+      About,
+      Projects,
+      Resume,
+      // Toolbox,
+      Contact,
+    },
+  };
 </script>
 
 <style scoped lang="scss"></style>

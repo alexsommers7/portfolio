@@ -1,7 +1,7 @@
 <template>
   <section class="track toolbox" data-sidebar="Toolbox">
     <span class="anchor-span" id="toolbox"></span>
-    <SectionHeading main="TOOLBOX" secondary="Front-End Focused With Back-End Chops" />
+    <SectionHeading mainTitle="TOOLBOX" secondaryTitle="Front-End Focused With Back-End Chops" />
 
     <div class="toolbox__toggle">
       <div class="buttons">
@@ -20,148 +20,148 @@
 </template>
 
 <script>
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-import { tools } from '@/utils/data/tools';
-import ToolCard from '@/components/cards/ToolCard.vue';
-import SectionHeading from '@/components/headings/SectionHeading.vue';
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+  import { tools } from '@/utils/data/tools';
+  import ToolCard from '@/components/cards/ToolCard.vue';
+  import SectionHeading from '@/components/headings/SectionHeading.vue';
 
-export default {
-  name: 'Toolbox',
-  data() {
-    return {
-      togglePosition: 'left',
-      currentType: 'dev',
-    };
-  },
-  computed: {
-    toolsToShow: function() {
-      return tools.filter((tool) => tool.type === this.currentType);
+  export default {
+    name: 'Toolbox',
+    data() {
+      return {
+        togglePosition: 'left',
+        currentType: 'dev',
+      };
     },
-  },
-  methods: {
-    toggleButton(event, forceTo = 'left') {
-      let direction = event ? event.target.dataset.toggle : forceTo;
-      if (direction == this.togglePosition) return;
-      this.$el
-        .querySelectorAll('.toolbox__toggle button')
-        .forEach((btn) => btn.classList.toggle('active'));
-      this.$el.querySelector('.buttons').classList = `buttons ${direction}`;
-      this.currentType = direction === 'left' ? 'dev' : 'design';
-      this.togglePosition = direction;
+    computed: {
+      toolsToShow: function () {
+        return tools.filter(tool => tool.type === this.currentType);
+      },
     },
-    calculateIconsHeight() {
-      // if not on mobile, keep this element at initial height when toggled to avoid layout shift
-      let toolsEl = this.$el.querySelector('.tools');
-      if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200) {
+    methods: {
+      toggleButton(event, forceTo = 'left') {
+        let direction = event ? event.target.dataset.toggle : forceTo;
+        if (direction == this.togglePosition) return;
+        this.$el
+          .querySelectorAll('.toolbox__toggle button')
+          .forEach(btn => btn.classList.toggle('active'));
+        this.$el.querySelector('.buttons').classList = `buttons ${direction}`;
+        this.currentType = direction === 'left' ? 'dev' : 'design';
+        this.togglePosition = direction;
+      },
+      calculateIconsHeight() {
+        // if not on mobile, keep this element at initial height when toggled to avoid layout shift
+        let toolsEl = this.$el.querySelector('.tools');
+        if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200) {
+          toolsEl.style.height = 'auto';
+          return;
+        }
+        this.toggleButton(null, 'left');
         toolsEl.style.height = 'auto';
-        return;
-      }
-      this.toggleButton(null, 'left');
-      toolsEl.style.height = 'auto';
-      setTimeout(function() {
-        // slight pause to let window finish resizing - was being inconsistent
-        let height = toolsEl.getBoundingClientRect().height;
-        toolsEl.style.height = `${height}px`;
-      }, 800);
+        setTimeout(function () {
+          // slight pause to let window finish resizing - was being inconsistent
+          let height = toolsEl.getBoundingClientRect().height;
+          toolsEl.style.height = `${height}px`;
+        }, 800);
+      },
+      configureScrollTrigger() {
+        gsap.to('.toolbox .tools', {
+          scrollTrigger: {
+            // markers: true,
+            trigger: '.toolbox .tools',
+            start: 'top 90%',
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'expo.out',
+        });
+      },
     },
-    configureScrollTrigger() {
-      gsap.to('.toolbox .tools', {
-        scrollTrigger: {
-          // markers: true,
-          trigger: '.toolbox .tools',
-          start: 'top 90%',
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'expo.out',
-      });
+    mounted() {
+      this.calculateIconsHeight();
+      this.configureScrollTrigger();
+      window.addEventListener('resize', this.calculateIconsHeight);
     },
-  },
-  mounted() {
-    this.calculateIconsHeight();
-    this.configureScrollTrigger();
-    window.addEventListener('resize', this.calculateIconsHeight);
-  },
-  components: {
-    ToolCard,
-    SectionHeading,
-  },
-};
+    components: {
+      ToolCard,
+      SectionHeading,
+    },
+  };
 </script>
 
 <style scoped lang="scss">
-.toolbox {
-  &__toggle {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem auto;
+  .toolbox {
+    &__toggle {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-items: center;
+      margin: 3rem auto;
 
-    .buttons {
-      background-color: $color-background-light;
-      width: Min(16rem, 100%);
-      border-radius: 100px;
-      position: relative;
-      padding: 0 4px;
-
-      &::after {
-        content: '';
-        transition: transform 0.2s ease-in-out;
-        will-change: transform;
-        width: Min(8rem, 50%);
-        height: calc(100% - 8px);
-        position: absolute;
-        left: 0;
-        top: 4px;
-        transform: translateX(4px);
-        display: block;
+      .buttons {
+        background-color: $color-background-light;
+        width: Min(16rem, 100%);
         border-radius: 100px;
-        background-image: linear-gradient(90deg, $color-primary, $color-primary);
-        cursor: pointer;
-      }
+        position: relative;
+        padding: 0 4px;
 
-      &.right::after {
-        transform: translateX(calc(100% - 4px));
-      }
+        &::after {
+          content: '';
+          transition: transform 0.2s ease-in-out;
+          will-change: transform;
+          width: Min(8rem, 50%);
+          height: calc(100% - 8px);
+          position: absolute;
+          left: 0;
+          top: 4px;
+          transform: translateX(4px);
+          display: block;
+          border-radius: 100px;
+          background-image: linear-gradient(90deg, $color-primary, $color-primary);
+          cursor: pointer;
+        }
 
-      button {
-        appearance: none;
-        border-radius: 100px;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-        color: $color-primary;
-        width: 50%;
-        height: 100%;
-        padding: 1rem;
-        font-size: 1.2rem;
-        font-weight: 500;
-        text-transform: none;
-        z-index: 10;
-        line-height: 1;
-        transition: color 0.2s ease-in-out;
+        &.right::after {
+          transform: translateX(calc(100% - 4px));
+        }
 
-        &.active {
-          color: $color-text-dark;
+        button {
+          appearance: none;
+          border-radius: 100px;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          color: $color-primary;
+          width: 50%;
+          height: 100%;
+          padding: 1rem;
+          font-size: 1.2rem;
+          font-weight: 500;
+          text-transform: none;
+          z-index: 10;
+          line-height: 1;
+          transition: color 0.2s ease-in-out;
+
+          &.active {
+            color: $color-text-dark;
+          }
         }
       }
     }
-  }
 
-  .tools {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 2rem auto;
-    max-width: 1000px;
-    opacity: 0;
-    transform: translateY(50px);
+    .tools {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem auto;
+      max-width: 1000px;
+      opacity: 0;
+      transform: translateY(50px);
+    }
   }
-}
 </style>

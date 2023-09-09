@@ -4,23 +4,28 @@
       <source :srcset="project.imageWebp" type="image/webp" />
       <img class="photo" :src="project.image" :alt="project.alt" width="333" height="285" />
     </picture>
+
     <p class="title">{{ project.title }}</p>
+
     <p class="description">{{ project.description }}</p>
+
     <ul class="tools">
       <li v-for="tool in project.tools" :key="tool">{{ tool }}</li>
     </ul>
+
     <div class="btns">
       <ExternalLink
         :targetLink="project.primaryLink"
         classes="btn--primary"
-        :ariaLabel="`${project.primaryCTA} for ${project.title}`"
+        :ariaLabel="getAriaLabel(project, project.primaryCTA)"
         :content="project.primaryCTA"
         v-if="project.primaryCTA"
       />
+
       <ExternalLink
         :targetLink="project.secondaryLink"
         classes="btn--secondary"
-        :ariaLabel="`${project.secondaryCTA} for ${project.title}`"
+        :ariaLabel="getAriaLabel(project, project.secondaryCTA)"
         :content="project.secondaryCTA"
         v-if="project.secondaryCTA"
       />
@@ -33,19 +38,24 @@
 </template>
 
 <script>
-import ExternalLink from '@/components/buttons/ExternalLink.vue';
+  import ExternalLink from '@/components/buttons/ExternalLink.vue';
 
-export default {
-  name: 'ProjectCard',
-  props: {
-    classes: {
-      type: String,
-      default: '',
+  export default {
+    name: 'ProjectCard',
+    props: {
+      classes: {
+        type: String,
+        default: '',
+      },
+      project: Object,
     },
-    project: Object,
-  },
-  components: {
-    ExternalLink,
-  },
-};
+    methods: {
+      getAriaLabel(project, cta) {
+        return `${cta} for ${project.title}`;
+      },
+    },
+    components: {
+      ExternalLink,
+    },
+  };
 </script>

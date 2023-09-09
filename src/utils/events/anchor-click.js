@@ -15,7 +15,7 @@ export function onAnchorClick({ target }) {
   });
   // a bit hacky here, but ...
   // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
-  setTimeout(function() {
+  setTimeout(() => {
     window.location = `#${section}`;
   }, 500);
 }

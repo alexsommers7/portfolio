@@ -11,7 +11,11 @@
         <p>Please download one of these alternatives to proceed:</p>
         <div class="modal__downloads">
           <div class="download">
-            <a href="https://www.microsoft.com/en-us/edge" target="_blank" rel="noopener">
+            <a
+              href="https://www.microsoft.com/en-us/edge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
                 height="2500"
                 width="2500"
@@ -130,7 +134,7 @@
             >
           </div>
           <div class="download">
-            <a href="https://www.google.com/chrome/" target="_blank" rel="noopener">
+            <a href="https://www.google.com/chrome/" target="_blank" rel="noopener noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2491"
@@ -186,7 +190,11 @@
             >
           </div>
           <div class="download">
-            <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="noopener">
+            <a
+              href="https://www.mozilla.org/en-US/firefox/new/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <svg
                 viewBox="-4.502953659537916 -1.816370980454367 85.1080168931947 83.43087708452362"
                 xmlns="http://www.w3.org/2000/svg"
@@ -410,19 +418,19 @@
 </template>
 
 <script>
-export default {
-  name: 'IE',
-  methods: {
-    redirectToEdge() {
-      window.location = 'microsoft-edge:' + window.location;
-      setTimeout(function() {
-        window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
-      }, 200);
+  export default {
+    name: 'IE',
+    methods: {
+      redirectToEdge() {
+        window.location = 'microsoft-edge:' + window.location;
+        setTimeout(function () {
+          window.location = 'https://go.microsoft.com/fwlink/?linkid=2135547';
+        }, 200);
+      },
     },
-  },
-};
+  };
 </script>
 
 <style scoped lang="scss">
-@import '@/scss/_ie';
+  @import '@/scss/_ie';
 </style>

@@ -30,7 +30,9 @@
   opacity: 1;
 }
 .list-item {
-  transition: transform 0.45s, opacity 0.3s;
+  transition:
+    transform 0.45s,
+    opacity 0.3s;
 }
 .list-enter,
 .list-leave-to {
@@ -42,5 +44,7 @@
   opacity: 0;
 }
 .list-move {
-  transition: transform 1s, opacity 0.3s;
+  transition:
+    transform 1s,
+    opacity 0.3s;
 }

@@ -13,27 +13,27 @@
 </template>
 
 <script>
-export default {
-  name: 'formFailure',
-};
+  export default {
+    name: 'formFailure',
+  };
 </script>
 
 <style scoped lang="scss">
-.wrapper {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  .wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-  h1,
-  h2 {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
+    h1,
+    h2 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
 
-  h2 {
-    font-weight: 400;
+    h2 {
+      font-weight: 400;
+    }
   }
-}
 </style>

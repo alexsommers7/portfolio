@@ -1,7 +1,7 @@
 <template>
   <section class="track" data-sidebar="Contact">
     <span class="anchor-span" id="contact"></span>
-    <SectionHeading main="CONTACT" secondary="In Need of a Developer? Let's Chat" />
+    <SectionHeading mainTitle="CONTACT" secondaryTitle="In Need of a Developer? Let's Chat" />
 
     <form
       name="contact"
@@ -51,128 +51,131 @@
 </template>
 
 <script>
-import axios from 'axios';
-import SectionHeading from '@/components/headings/SectionHeading.vue';
+  import axios from 'axios';
+  import SectionHeading from '@/components/headings/SectionHeading.vue';
 
-export default {
-  name: 'Contact',
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        message: '',
-      },
-    };
-  },
-  methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-        .join('&');
-    },
-    formSubmit() {
-      const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  export default {
+    name: 'Contact',
+    data() {
+      return {
+        form: {
+          name: '',
+          email: '',
+          message: '',
+        },
       };
-      axios
-        .post('/', this.encode({ 'form-name': 'contact', ...this.form }), axiosConfig)
-        .then(() => {
-          this.$router.push('thanks');
-        })
-        .catch(() => {
-          this.$router.push('error');
-        });
     },
-  },
-  components: {
-    SectionHeading,
-  },
-};
+    methods: {
+      encode(data) {
+        return Object.keys(data)
+          .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+          .join('&');
+      },
+      formSubmit() {
+        const axiosConfig = {
+          header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        };
+        axios
+          .post('/', this.encode({ 'form-name': 'contact', ...this.form }), axiosConfig)
+          .then(() => {
+            this.$router.push('thanks');
+          })
+          .catch(() => {
+            this.$router.push('error');
+          });
+      },
+    },
+    components: {
+      SectionHeading,
+    },
+  };
 </script>
 
 <style scoped lang="scss">
-.form {
-  max-width: 800px;
-  margin: 4rem auto;
-  display: flex;
-  flex-direction: column;
-  background-color: $color-background-light;
-  padding: 2rem 2rem 1rem;
-  border-radius: $design-border-radius-default;
+  .form {
+    max-width: 800px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-background-light;
+    padding: 2rem 2rem 1rem;
+    border-radius: $design-border-radius-default;
 
-  &__field {
-    margin: 2rem 0;
-    width: 100%;
-    position: relative;
-
-    input,
-    textarea {
-      margin: 0 0 1rem;
-      color: $color-text-light;
-      background-color: transparent;
-      border: none;
-      border-bottom: 1px solid $color-primary;
-      appearance: none; // safari rounds inputs by default
-      border-radius: 0;
-
-      &:focus-visible {
-        outline: none;
-      }
-    }
-
-    input,
-    label,
-    textarea {
-      font-family: $font-family-main;
-      display: block;
+    &__field {
+      margin: 2rem 0;
       width: 100%;
-      transition: top 0.3s ease, color 0.3s ease, font-size 0.3s ease;
-    }
+      position: relative;
 
-    input,
-    textarea {
-      z-index: 1;
-      outline: none;
-      font-size: 1rem;
-      padding: 0;
-      max-width: 100%;
+      input,
+      textarea {
+        margin: 0 0 1rem;
+        color: $color-text-light;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid $color-primary;
+        appearance: none; // safari rounds inputs by default
+        border-radius: 0;
 
-      &:focus + label,
-      &:not(:placeholder-shown) + label {
-        top: -33px;
-        font-size: 1.2rem;
-        color: $color-primary;
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      input,
+      label,
+      textarea {
+        font-family: $font-family-main;
+        display: block;
+        width: 100%;
+        transition:
+          top 0.3s ease,
+          color 0.3s ease,
+          font-size 0.3s ease;
+      }
+
+      input,
+      textarea {
+        z-index: 1;
+        outline: none;
+        font-size: 1rem;
+        padding: 0;
+        max-width: 100%;
+
+        &:focus + label,
+        &:not(:placeholder-shown) + label {
+          top: -33px;
+          font-size: 1.2rem;
+          color: $color-primary;
+        }
+      }
+
+      input {
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          box-shadow: 0 0 0 30px $color-background-light inset !important;
+          -webkit-box-shadow: 0 0 0 30px $color-background-light inset !important;
+          -webkit-text-fill-color: $color-text-light !important;
+          background-color: $color-background-light !important;
+          background-clip: content-box !important;
+        }
+      }
+
+      label {
+        color: $color-text-light;
+        pointer-events: none;
+        position: absolute;
+        top: -12px;
+        left: 1px;
+        z-index: 2;
+        font-size: 1.4rem;
       }
     }
 
-    input {
-      &:-webkit-autofill,
-      &:-webkit-autofill:hover,
-      &:-webkit-autofill:focus,
-      &:-webkit-autofill:active {
-        box-shadow: 0 0 0 30px $color-background-light inset !important;
-        -webkit-box-shadow: 0 0 0 30px $color-background-light inset !important;
-        -webkit-text-fill-color: $color-text-light !important;
-        background-color: $color-background-light !important;
-        background-clip: content-box !important;
-      }
-    }
-
-    label {
-      color: $color-text-light;
-      pointer-events: none;
-      position: absolute;
-      top: -12px;
-      left: 1px;
-      z-index: 2;
-      font-size: 1.4rem;
+    button {
+      max-width: 10rem;
+      margin: 2rem auto;
     }
   }
-
-  button {
-    max-width: 10rem;
-    margin: 2rem auto;
-  }
-}
 </style>
