@@ -1,6 +1,7 @@
 <template>
   <section class="track" data-sidebar="Contact">
     <span class="anchor-span" id="contact"></span>
+
     <SectionHeading mainTitle="CONTACT" secondaryTitle="In Need of a Developer? Let's Chat" />
 
     <form
@@ -13,6 +14,7 @@
       @submit.prevent="formSubmit"
     >
       <input type="hidden" name="form-name" value="contact" />
+
       <div class="form__field">
         <input
           type="text"
@@ -22,8 +24,10 @@
           required="true"
           placeholder=" "
         />
+
         <label for="name">Name</label>
       </div>
+
       <div class="form__field">
         <input
           type="email"
@@ -33,8 +37,10 @@
           required="true"
           placeholder=" "
         />
+
         <label for="email">Email</label>
       </div>
+
       <div class="form__field">
         <textarea
           id="message"
@@ -43,8 +49,10 @@
           required="true"
           placeholder=" "
         ></textarea>
+
         <label for="message">Message</label>
       </div>
+
       <button class="btn btn--secondary" type="submit">Send</button>
     </form>
   </section>

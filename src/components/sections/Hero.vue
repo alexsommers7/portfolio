@@ -2,14 +2,18 @@
   <section class="hero full-width" id="hero">
     <div class="intro">
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
+
       <h2 class="heading heading--2">Full-Stack Javascript Developer</h2>
+
       <div class="intro__buttons">
         <AnchorButton classes="btn--primary" section="projects" content="My Work" />
         <AnchorButton classes="btn--secondary" section="contact" content="Contact Me" />
       </div>
     </div>
+
     <picture>
       <source srcset="../../assets/alex-sommers.webp" type="image/webp" />
+
       <img
         class="photo"
         src="../../assets/alex-sommers.png"

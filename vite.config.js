@@ -1,9 +1,10 @@
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue2'; // for vue 2.7
+import { createSvgPlugin } from 'vite-plugin-vue2-svg';
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(), createSvgPlugin()],
   server: {
     port: 8080, // vite uses 5173 by default
   },

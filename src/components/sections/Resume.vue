@@ -1,33 +1,44 @@
 <template>
   <section class="track resume full-width" data-sidebar="Resume">
     <span class="anchor-span" id="resume"></span>
+
     <SectionHeading mainTitle="RESUME" secondaryTitle="Professional and Freelance Experience" />
 
     <div class="resume__content">
       <div>
         <h5 class="resume__heading"><strong>Experience</strong></h5>
+
         <ul class="gsap-ul">
           <li v-for="job in jobs" :key="job.id">
             <h5 class="title">{{ job.jobTitle }}</h5>
+
             <p class="company">{{ job.company }} | {{ job.location }}</p>
+
             <p class="timeframe">
               <em>{{ job.timeframe }}</em>
             </p>
+
             <p class="description">{{ job.description }}</p>
           </li>
         </ul>
       </div>
+
       <div>
         <h5 class="resume__heading"><strong>Education</strong></h5>
+
         <ul class="gsap-ul">
           <li v-for="school in education" :key="school.id">
             <h5 class="title">{{ school.title }}</h5>
+
             <p class="company">{{ school.company }} | {{ school.location }}</p>
+
             <p class="timeframe">
               <em>{{ school.timeframe }}</em>
             </p>
+
             <p class="description">{{ school.description }}</p>
           </li>
+
           <li class="gsap-li" style="transition-delay: 0.6s">
             <a :href="resumeLink" target="_blank" rel="noopener noreferrer" class="btn btn--primary"
               >Download Full Resume

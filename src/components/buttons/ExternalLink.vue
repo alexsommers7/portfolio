@@ -8,66 +8,56 @@
     :aria-label="ariaLabel"
   >
     {{ content }}
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="icon"
-      viewBox="0 0 24 24"
-      alt="Opens in external window"
-      aria-hidden="true"
-    >
-      <path
-        class="primary"
-        d="M12 8a1 1 0 0 1-1 1H5v10h10v-6a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9c0-1.1.9-2 2-2h6a1 1 0 0 1 1 1z"
-      />
-      <path
-        class="secondary"
-        d="M19 6.41L8.7 16.71a1 1 0 1 1-1.4-1.42L17.58 5H14a1 1 0 0 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0V6.41z"
-      />
-    </svg>
+    <IconExternalWindow />
   </a>
 </template>
 
 <script>
-export default {
-  name: 'ExternalLink',
-  props: {
-    classes: {
-      type: String,
-      default: '',
+  import IconExternalWindow from '@/assets/icons/external-window.svg';
+
+  export default {
+    name: 'ExternalLink',
+    props: {
+      classes: {
+        type: String,
+        default: '',
+      },
+      content: {
+        type: String,
+        default: '',
+      },
+      type: {
+        type: String,
+        default: 'button',
+      },
+      targetLink: {
+        type: String,
+        default: '#',
+      },
+      ariaLabel: {
+        type: String,
+        default: '',
+      },
     },
-    content: {
-      type: String,
-      default: '',
+    components: {
+      IconExternalWindow,
     },
-    type: {
-      type: String,
-      default: 'button',
-    },
-    targetLink: {
-      type: String,
-      default: '#',
-    },
-    ariaLabel: {
-      type: String,
-      default: '',
-    },
-  },
-};
+  };
 </script>
 
 <style scoped lang="scss">
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 
-  .icon {
-    width: auto;
-    height: 1.1rem;
-    margin: 0 0 2px 0.25rem;
-    object-fit: unset;
-    fill: currentColor;
+    svg {
+      width: auto;
+      height: 1.1rem;
+      margin: 0 0 2px 0.25rem;
+      object-fit: unset;
+      fill: currentColor;
+    }
   }
-}
 </style>

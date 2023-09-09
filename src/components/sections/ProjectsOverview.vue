@@ -1,12 +1,15 @@
 <template>
   <section class="track projects full-width" data-sidebar="Projects">
     <span class="anchor-span" id="projects"></span>
+
     <SectionHeading mainTitle="PROJECTS" secondaryTitle="Interfaces for the Modern World" />
+
     <div class="project-group" ref="projects">
       <template v-for="project in projects">
         <ProjectCard :project="project" :key="project.title" />
       </template>
     </div>
+
     <router-link to="/project-showcase" class="btn btn--secondary cta"
       >View All Projects
     </router-link>

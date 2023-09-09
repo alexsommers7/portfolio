@@ -1,17 +1,21 @@
 <template>
   <section class="track about" data-sidebar="About">
     <span class="anchor-span" id="about"></span>
+
     <div class="about__intro">
       <h3 class="heading heading--3 hide-for-large">ABOUT ME</h3>
+
       <p>
         <strong class="about__heading typewriter-1"></strong>
         <strong class="about__heading typewriter-2"></strong>
         <span class="about__heading" id="cursor">|</span>
       </p>
+
       <p>
         I'm a <span class="color-primary">Full-Stack JavaScript Developer</span> based out of
         Chandler, Arizona.
       </p>
+
       <p>
         Currently working full-time in the E-Commerce industry. Passionate about all things
         JavaScript. Experienced in building sites from scratch with no frameworks/libraries, and
@@ -19,6 +23,7 @@
         WCAG follower.
       </p>
     </div>
+
     <!-- <div class="about__lately">
       <h3 class="heading heading--4">What I've Been Building With Lately</h3>
       <ul class="tools">

@@ -6,6 +6,7 @@
       :class="tool.class"
       loading="lazy"
     />
+
     <p>{{ tool.title }}</p>
   </div>
 </template>

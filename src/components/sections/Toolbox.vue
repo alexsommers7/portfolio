@@ -1,6 +1,7 @@
 <template>
   <section class="track toolbox" data-sidebar="Toolbox">
     <span class="anchor-span" id="toolbox"></span>
+
     <SectionHeading mainTitle="TOOLBOX" secondaryTitle="Front-End Focused With Back-End Chops" />
 
     <div class="toolbox__toggle">
@@ -9,6 +10,7 @@
         <button class="btn" data-toggle="right" @click="toggleButton">Design</button>
       </div>
     </div>
+
     <transition-group name="list" tag="ul" class="tools" mode="out-in">
       <template v-for="tool in toolsToShow">
         <li :key="tool.title" class="tool__card list-item">
