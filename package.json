@@ -26,7 +26,8 @@
     "vite": "^4.4.9"
   },
   "engines": {
-    "node": "^16.14.0"
+    "node": "^16.14.0",
+    "npm": "^8.3.0"
   },
   "eslintConfig": {
     "root": true,
