@@ -19,7 +19,7 @@ export const jobs = [
   },
   {
     id: 3,
-    jobTitle: 'Digital Marketing Developer',
+    jobTitle: 'Digital Developer',
     company: 'Isagenix',
     location: 'Gilbert, AZ',
     timeframe: 'September 2019 - April 2021',
