@@ -15,17 +15,17 @@
         classes="btn--primary"
         :ariaLabel="`${project.primaryCTA} for ${project.title}`"
         :content="project.primaryCTA"
-        v-show="project.primaryCTA"
+        v-if="project.primaryCTA"
       />
       <ExternalLink
         :targetLink="project.secondaryLink"
         classes="btn--secondary"
         :ariaLabel="`${project.secondaryCTA} for ${project.title}`"
         :content="project.secondaryCTA"
-        v-show="project.secondaryCTA"
+        v-if="project.secondaryCTA"
       />
 
-      <p v-show="!project.openSource">
+      <p v-if="!project.openSource">
         <em>Behind a login and not open source, but happy to demo and discuss</em>
       </p>
     </div>
