@@ -59,7 +59,7 @@ export const projects = [
     title: 'AlexSommers.com',
     description:
       "This bad boy right here! I built it as a one-stop-shop to house my work, resume, and contact information. What's more, it's a way to document my journey and share it with others.",
-    tools: ['Vue.js', 'Vue Router', 'GSAP', 'SCSS', 'Netlify', 'Adobe XD'],
+    tools: ['Vue.js', 'Vue Router', 'Vite', 'GSAP', 'SCSS', 'Netlify', 'Adobe XD'],
     primaryCTA: 'View Demo',
     primaryLink: 'https://alexsommers.com/',
     secondaryCTA: 'View Code',
