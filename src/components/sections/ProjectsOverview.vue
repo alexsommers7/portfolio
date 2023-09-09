@@ -15,8 +15,8 @@
 
 <script>
 import { projects } from '@/utils/data/projects';
-import ProjectCard from '@/components/cards/ProjectCard';
-import SectionHeading from '@/components/headings/SectionHeading';
+import ProjectCard from '@/components/cards/ProjectCard.vue';
+import SectionHeading from '@/components/headings/SectionHeading.vue';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -25,7 +25,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   name: 'ProjectsOverview',
   computed: {
-    projects: function() {
+    projects: function () {
       return projects.filter((project) => project.showOnHomePage);
     },
   },

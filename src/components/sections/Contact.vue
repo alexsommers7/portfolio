@@ -52,7 +52,7 @@
 
 <script>
 import axios from 'axios';
-import SectionHeading from '@/components/headings/SectionHeading';
+import SectionHeading from '@/components/headings/SectionHeading.vue';
 
 export default {
   name: 'Contact',

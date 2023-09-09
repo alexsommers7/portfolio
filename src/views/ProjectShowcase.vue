@@ -17,7 +17,7 @@
 
 <script>
 import { projects } from '@/utils/data/projects';
-import ProjectCard from '@/components/cards/ProjectCard';
+import ProjectCard from '@/components/cards/ProjectCard.vue';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,7 +26,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   name: 'projectShowcase',
   computed: {
-    projects: function() {
+    projects: function () {
       return [...projects];
     },
   },

@@ -25,7 +25,7 @@ import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollToPlugin);
 
-import AnchorButton from '@/components/buttons/AnchorButton';
+import AnchorButton from '@/components/buttons/AnchorButton.vue';
 
 export default {
   name: 'Hero',
@@ -38,7 +38,7 @@ export default {
       });
       // a bit hacky here, but ...
       // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
-      setTimeout(function() {
+      setTimeout(function () {
         window.location = `#${e.target.dataset.section}`;
       }, 500);
     },

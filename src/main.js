@@ -3,8 +3,8 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import Homepage from './views/Home.vue';
 import Projects from './views/ProjectShowcase.vue';
-import formSuccess from './views/FormSuccess';
-import formFailure from './views/FormFailure';
+import formSuccess from './views/FormSuccess.vue';
+import formFailure from './views/FormFailure.vue';
 
 Vue.use(VueRouter);
 

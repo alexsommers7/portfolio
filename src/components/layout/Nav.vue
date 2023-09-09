@@ -9,7 +9,7 @@
         viewBox="0 0 125 105.4"
         data-section="top"
         @click="onLogoClick"
-        style="enable-background:new 0 0 125 105.4;"
+        style="enable-background: new 0 0 125 105.4"
       >
         <polygon class="st4" points="62.5,4.47 23.46,47.34 101.54,47.34 " />
         <polygon class="st4" points="62.5,100.62 101.54,57.75 23.46,57.75 " />
@@ -71,10 +71,10 @@ export default {
     };
   },
   computed: {
-    mobileNavHeightHalf: function() {
+    mobileNavHeightHalf: function () {
       return `${this.mobileNavHeight / 2}px`;
     },
-    desktopNavWidthWithScrollbar: function() {
+    desktopNavWidthWithScrollbar: function () {
       return `${this.desktopNavWidth - this.scrollbarWidth}px`;
     },
   },
@@ -89,7 +89,7 @@ export default {
       this.nav = this.$el.querySelector('nav.navigation');
       this.navList = this.$el.querySelector('.navigation__list');
       const vm = this;
-      window.addEventListener('resize', function() {
+      window.addEventListener('resize', function () {
         vm.portraitMode = window.matchMedia('(orientation: portrait)').matches;
 
         // safari orientation change bug fix
@@ -127,7 +127,7 @@ export default {
           { opacity: 1, delay: 0.15, duration: 0.15, stagger: 0.05 },
           '<'
         )
-        .add(function() {
+        .add(function () {
           // prevent slight twitch on main content
           document.body.classList.add('no-scroll');
         }, '<+.3');
@@ -165,7 +165,7 @@ export default {
         });
         // a bit hacky here, but ...
         // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
-        setTimeout(function() {
+        setTimeout(function () {
           window.location = `#${e.target.dataset.section}`;
         }, 500);
       });
@@ -180,11 +180,11 @@ export default {
     this.init();
   },
   watch: {
-    onMobile: function(newVal) {
+    onMobile: function (newVal) {
       this.resetNav();
       this.nav.classList[newVal ? 'remove' : 'add']('isDesktop');
     },
-    portraitMode: function() {
+    portraitMode: function () {
       this.resetNav();
     },
   },
@@ -192,8 +192,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '@/scss/_transitions';
-
 a.skip-link {
   background: $color-primary;
   color: $color-text-dark;

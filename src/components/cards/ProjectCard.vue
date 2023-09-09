@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import ExternalLink from '@/components/buttons/ExternalLink';
+import ExternalLink from '@/components/buttons/ExternalLink.vue';
 
 export default {
   name: 'ProjectCard',

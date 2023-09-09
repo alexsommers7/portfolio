@@ -20,10 +20,10 @@
 </template>
 
 <script>
-import Nav from './components/layout/Nav';
-import Sidebar from './components/layout/Sidebar';
-import Footer from './components/layout/Footer';
-import IE from './components/ie/IE';
+import Nav from '@/components/layout/Nav.vue';
+import Sidebar from '@/components/layout/Sidebar.vue';
+import Footer from '@/components/layout/Footer.vue';
+import IE from '@/components/ie/IE.vue';
 
 export default {
   name: 'App',
@@ -70,7 +70,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-@import './scss/main';
-</style>

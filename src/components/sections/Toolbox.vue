@@ -24,8 +24,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { tools } from '@/utils/data/tools';
-import ToolCard from '@/components/cards/ToolCard';
-import SectionHeading from '@/components/headings/SectionHeading';
+import ToolCard from '@/components/cards/ToolCard.vue';
+import SectionHeading from '@/components/headings/SectionHeading.vue';
 
 export default {
   name: 'Toolbox',

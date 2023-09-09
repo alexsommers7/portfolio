@@ -35,8 +35,8 @@
 
 <script>
 import { tools } from '@/utils/data/tools';
-// import AnchorButton from '@/components/buttons/AnchorButton';
-// import ToolCard from '@/components/cards/ToolCard';
+// import AnchorButton from '@/components/buttons/AnchorButton.vue';
+// import ToolCard from '@/components/cards/ToolCard.vue';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -46,7 +46,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 export default {
   name: 'About',
   computed: {
-    recentTools: function() {
+    recentTools: function () {
       return tools.filter((tool) => tool.usingLately);
     },
   },
@@ -60,7 +60,7 @@ export default {
           duration: 0.5,
           repeat: 8,
           ease: 'steps(1)',
-          onComplete: function() {
+          onComplete: function () {
             if (document.getElementById('cursor'))
               document.getElementById('cursor').style.opacity = '0';
           },

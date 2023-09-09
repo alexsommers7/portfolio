@@ -1,3 +1,16 @@
+import storepiImagePng from '@/assets/project-showcase--storepi.png';
+import storepiImageWebp from '@/assets/project-showcase--storepi.webp';
+import scraperImagePng from '@/assets/project-showcase--real-estate-scraper.png';
+import scraperImageWebp from '@/assets/project-showcase--real-estate-scraper.webp';
+import alexSommersImagePng from '@/assets/project-showcase--alex-sommers.png';
+import alexSommersImageWebp from '@/assets/project-showcase--alex-sommers.webp';
+import heritageImagePng from '@/assets/project-showcase--heritage-assited-living.png';
+import heritageImageWebp from '@/assets/project-showcase--heritage-assited-living.webp';
+import lovelyHeartsImagePng from '@/assets/project-showcase--lovely-hearts-az.png';
+import lovelyHeartsImageWebp from '@/assets/project-showcase--lovely-hearts-az.webp';
+import jadImagePng from '@/assets/project-showcase--jad-electric.png';
+import jadImageWebp from '@/assets/project-showcase--jad-electric.webp';
+
 export const projects = [
   {
     title: 'StorePI',
@@ -8,8 +21,8 @@ export const projects = [
     primaryLink: 'https://storepi.vercel.app/docs/introduction',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/store-pi',
-    image: require('@/assets/project-showcase--storepi.png'),
-    imageWebp: require('@/assets/project-showcase--storepi.webp'),
+    image: storepiImagePng,
+    imageWebp: storepiImageWebp,
     alt: 'StorePI documentation interface',
     showOnHomePage: true,
     openSource: true,
@@ -36,8 +49,8 @@ export const projects = [
     primaryLink: '',
     secondaryCTA: '',
     secondaryLink: '',
-    image: require('@/assets/project-showcase--real-estate-scraper.png'),
-    imageWebp: require('@/assets/project-showcase--real-estate-scraper.webp'),
+    image: scraperImagePng,
+    imageWebp: scraperImageWebp,
     alt: 'Real Estate Scraper interface',
     showOnHomePage: true,
     openSource: false,
@@ -51,8 +64,8 @@ export const projects = [
     primaryLink: 'https://alexsommers.com/',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/portfolio',
-    image: require('@/assets/project-showcase--alex-sommers.png'),
-    imageWebp: require('@/assets/project-showcase--alex-sommers.webp'),
+    image: alexSommersImagePng,
+    imageWebp: alexSommersImageWebp,
     alt: 'AlexSommers.com interface',
     showOnHomePage: false,
     openSource: true,
@@ -66,8 +79,8 @@ export const projects = [
     primaryLink: 'https://heritage-az.netlify.app/',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/heritage-assisted-living',
-    image: require('@/assets/project-showcase--heritage-assited-living.png'),
-    imageWebp: require('@/assets/project-showcase--heritage-assited-living.webp'),
+    image: heritageImagePng,
+    imageWebp: heritageImageWebp,
     alt: 'Heritage Assisted Living interface',
     showOnHomePage: false,
     openSource: true,
@@ -81,8 +94,8 @@ export const projects = [
     primaryLink: 'https://lovelyheartsaz.com/',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/lovelyheartsaz',
-    image: require('@/assets/project-showcase--lovely-hearts-az.png'),
-    imageWebp: require('@/assets/project-showcase--lovely-hearts-az.webp'),
+    image: lovelyHeartsImagePng,
+    imageWebp: lovelyHeartsImageWebp,
     alt: 'Lovely Hearts AZ interface',
     showOnHomePage: true,
     openSource: true,
@@ -96,8 +109,8 @@ export const projects = [
     primaryLink: 'https://ja-dancik-electric.netlify.app/',
     secondaryCTA: 'View Code',
     secondaryLink: 'https://github.com/alexsommers7/ja-dancik-electric',
-    image: require('@/assets/project-showcase--jad-electric.png'),
-    imageWebp: require('@/assets/project-showcase--jad-electric.webp'),
+    image: jadImagePng,
+    imageWebp: jadImageWebp,
     alt: 'J.A. Dancik Electric interface',
     showOnHomePage: false,
     openSource: true,
