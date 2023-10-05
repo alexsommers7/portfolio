@@ -30,7 +30,7 @@
         v-if="project.secondaryCTA"
       />
 
-      <p v-if="!project.openSource">
+      <p v-if="!project.openSource" class="private">
         <em>Behind a login and not open source, but happy to demo and discuss</em>
       </p>
     </div>
@@ -59,3 +59,10 @@
     },
   };
 </script>
+
+<style scoped>
+  .private {
+    margin-bottom: 0;
+    line-height: 1.25;
+  }
+</style>
