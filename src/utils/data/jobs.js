@@ -4,7 +4,7 @@ export const jobs = [
     jobTitle: 'Front-End Web Developer',
     company: 'Retailer Web Services',
     location: 'Remote',
-    timeframe: 'April 2021 - Present',
+    timeframe: 'April 2021 - October 2023',
     description:
       'Develop and maintain large-scale, internal and external web platforms as a part of a scrum team using Vue, Alpine.js, Javascript, CSS, and semantic HTML.',
   },
