@@ -187,9 +187,10 @@
         }
 
         &.active {
-          // only need to edit these 2 variables to adjust timing
+          // only need to edit these variables to adjust timing/job count
           $before-interval: 0.3;
           $after-interval: 1;
+          $num-jobs: 4;
 
           li {
             &::before {
@@ -206,30 +207,16 @@
               transition-delay: ($before-interval + 0s);
             }
 
-            &:nth-child(2) {
-              &::before {
-                transition-delay: ($before-interval + $after-interval + 0s);
-              }
-              &::after {
-                transition-delay: (($before-interval * 2) + $after-interval + 0s);
-              }
-            }
-
-            &:nth-child(3) {
-              &::before {
-                transition-delay: (($before-interval * 2) + ($after-interval * 2) + 0s);
-              }
-              &::after {
-                transition-delay: (($before-interval * 3) + ($after-interval * 2) + 0s);
-              }
-            }
-
-            &:nth-child(4) {
-              &::before {
-                transition-delay: (($before-interval * 3) + ($after-interval * 3) + 0s);
-              }
-              &::after {
-                transition-delay: (($before-interval * 4) + ($after-interval * 3) + 0s);
+            @for $i from 2 through $num-jobs {
+              &:nth-child(#{$i}) {
+                &::before {
+                  transition-delay: (
+                    ($before-interval * ($i - 1)) + ($after-interval * ($i - 1)) + 0s
+                  );
+                }
+                &::after {
+                  transition-delay: (($before-interval * $i) + ($after-interval * ($i - 1)) + 0s);
+                }
               }
             }
           }
