@@ -1,6 +1,15 @@
 export const jobs = [
   {
     id: 1,
+    jobTitle: 'Sr. UI/UX Developer',
+    company: `O'Reilly Auto Parts`,
+    location: 'Remote',
+    timeframe: 'October 2023 - Present',
+    description:
+      'Use Vue.js to create and manage various internal applications and libraries to support business-critical applications.',
+  },
+  {
+    id: 2,
     jobTitle: 'Front-End Web Developer',
     company: 'Retailer Web Services',
     location: 'Remote',
@@ -9,7 +18,7 @@ export const jobs = [
       'Develop and maintain large-scale, internal and external web platforms as a part of a scrum team using Vue, Alpine.js, Javascript, CSS, and semantic HTML.',
   },
   {
-    id: 2,
+    id: 3,
     jobTitle: 'Freelance Web Developer',
     company: 'Self-Employed',
     location: 'Chandler, AZ',
@@ -18,7 +27,7 @@ export const jobs = [
       'Partner with various businesses to design and develop custom websites, ranging from static sites to dynamic, full-stack applications.',
   },
   {
-    id: 3,
+    id: 4,
     jobTitle: 'Digital Developer',
     company: 'Isagenix',
     location: 'Gilbert, AZ',
