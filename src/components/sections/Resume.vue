@@ -223,6 +223,15 @@
                 transition-delay: (($before-interval * 3) + ($after-interval * 2) + 0s);
               }
             }
+
+            &:nth-child(4) {
+              &::before {
+                transition-delay: (($before-interval * 3) + ($after-interval * 3) + 0s);
+              }
+              &::after {
+                transition-delay: (($before-interval * 4) + ($after-interval * 3) + 0s);
+              }
+            }
           }
         }
       }
