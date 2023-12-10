@@ -22,26 +22,10 @@
         technologies and abstractions. Avid WCAG follower.
       </p>
     </div>
-
-    <!-- <div class="about__lately">
-      <h3 class="heading heading--4">What I've Been Building With Lately</h3>
-      <ul class="tools">
-        <template v-for="tool in recentTools">
-          <li :key="tool.title" class="tool__card">
-            <ToolCard :tool="tool" />
-          </li>
-        </template>
-      </ul>
-      <AnchorButton classes="btn--secondary" section="toolbox" content="See What's in My Toolbox" />
-    </div> -->
   </section>
 </template>
 
 <script>
-  import { tools } from '@/utils/data/tools';
-  // import AnchorButton from '@/components/buttons/AnchorButton.vue';
-  // import ToolCard from '@/components/cards/ToolCard.vue';
-
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import { TextPlugin } from 'gsap/TextPlugin';
@@ -49,11 +33,6 @@
 
   export default {
     name: 'About',
-    computed: {
-      recentTools: function () {
-        return tools.filter(tool => tool.usingLately);
-      },
-    },
     methods: {
       configureScrollTrigger() {
         const cursor = gsap.fromTo(
@@ -98,10 +77,6 @@
     mounted() {
       this.configureScrollTrigger();
     },
-    components: {
-      // AnchorButton,
-      // ToolCard,
-    },
   };
 </script>
 
@@ -144,8 +119,7 @@
         padding: 1rem 2rem;
       }
 
-      .heading,
-      .tools {
+      .heading {
         width: 100%;
       }
 
@@ -166,18 +140,6 @@
 
         @include respond(desk-large) {
           margin-top: 3px;
-        }
-      }
-
-      .tools {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin: 1.75rem 0 1.75rem;
-
-        @include respond(desk-large) {
-          margin: 0.5rem 0 0;
         }
       }
     }

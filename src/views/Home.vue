@@ -5,7 +5,6 @@
       <About></About>
       <Projects></Projects>
       <Resume></Resume>
-      <!-- <Toolbox></Toolbox> -->
       <Contact></Contact>
     </div>
   </transition>
@@ -16,7 +15,6 @@
   import About from '@/components/sections/About.vue';
   import Projects from '@/components/sections/ProjectsOverview.vue';
   import Resume from '@/components/sections/Resume.vue';
-  // import Toolbox from '@/components/sections/Toolbox.vue';
   import Contact from '@/components/sections/Contact.vue';
 
   export default {
@@ -26,7 +24,6 @@
       About,
       Projects,
       Resume,
-      // Toolbox,
       Contact,
     },
   };
