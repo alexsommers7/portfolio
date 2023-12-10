@@ -7,7 +7,7 @@
         rel="noopener noreferrer"
         aria-label="Link to Github Profile"
       >
-        <IconGithub />
+        <Icon name="github" />
       </a>
 
       <a
@@ -16,7 +16,7 @@
         rel="noopener noreferrer"
         aria-label="Link to LinkedIn Profile"
       >
-        <IconLinkedin />
+        <Icon name="linkedin" />
       </a>
 
       <a
@@ -25,7 +25,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <IconDocument />
+        <Icon name="document" />
       </a>
     </div>
 
@@ -35,9 +35,6 @@
 
 <script>
   import { resumeLink } from '@/utils/data/jobs';
-  import IconGithub from '@/assets/icons/github.svg';
-  import IconLinkedin from '@/assets/icons/linkedin.svg';
-  import IconDocument from '@/assets/icons/document.svg';
 
   export default {
     name: 'Footer',
@@ -46,11 +43,6 @@
         currentYear: new Date().getFullYear(),
         resumeLink,
       };
-    },
-    components: {
-      IconGithub,
-      IconLinkedin,
-      IconDocument,
     },
   };
 </script>

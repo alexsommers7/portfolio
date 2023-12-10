@@ -5,8 +5,10 @@ import Homepage from './views/Home.vue';
 import Projects from './views/ProjectShowcase.vue';
 import formSuccess from './views/FormSuccess.vue';
 import formFailure from './views/FormFailure.vue';
+import icon from './components/Icon.vue';
 
 const app = createApp(App);
+app.component('Icon', icon);
 
 const router = createRouter({
   routes: [

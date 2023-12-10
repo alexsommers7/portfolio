@@ -8,13 +8,11 @@
     :aria-label="ariaLabel"
   >
     {{ content }}
-    <IconExternalWindow />
+    <Icon name="external-window" />
   </a>
 </template>
 
 <script>
-  import IconExternalWindow from '@/assets/icons/external-window.svg';
-
   export default {
     name: 'ExternalLink',
     props: {
@@ -38,9 +36,6 @@
         type: String,
         default: '',
       },
-    },
-    components: {
-      IconExternalWindow,
     },
   };
 </script>

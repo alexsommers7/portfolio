@@ -6,7 +6,7 @@
         class="flex-center"
         aria-label="Send Email to Alex Sommers"
       >
-        <IconMail />
+        <Icon name="mail" />
         <p>Email</p>
       </a>
     </div>
@@ -18,7 +18,7 @@
         rel="noopener noreferrer"
         aria-label="Link to Github Profile"
       >
-        <IconGithub />
+        <Icon name="github" />
         <p>Github</p>
       </a>
 
@@ -28,7 +28,7 @@
         rel="noopener noreferrer"
         aria-label="Link to LinkedIn Profile"
       >
-        <IconLinkedin />
+        <Icon name="linkedin" />
         <p>LinkedIn</p>
       </a>
 
@@ -38,7 +38,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <IconDocument />
+        <Icon name="document" />
         <p>Resume</p>
       </a>
     </div>
@@ -52,7 +52,7 @@
             class="btn"
             @click="onAnchorClick"
           >
-            <IconDownArrow />
+            <Icon name="down-arrow" />
           </button>
         </p>
 
@@ -67,11 +67,6 @@
   import { TextPlugin } from 'gsap/TextPlugin';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import { resumeLink } from '@/utils/data/jobs';
-  import IconMail from '@/assets/icons/mail.svg';
-  import IconGithub from '@/assets/icons/github.svg';
-  import IconLinkedin from '@/assets/icons/linkedin.svg';
-  import IconDocument from '@/assets/icons/document.svg';
-  import IconDownArrow from '@/assets/icons/down-arrow.svg';
 
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -145,13 +140,6 @@
       onMobile: function (newVal) {
         if (!newVal) this.configureScrollTrigger();
       },
-    },
-    components: {
-      IconMail,
-      IconGithub,
-      IconLinkedin,
-      IconDocument,
-      IconDownArrow,
     },
   };
 </script>
