@@ -1,31 +1,41 @@
+<script setup>
+  import { resumeLink } from '@/utils/data/jobs';
+  const currentYear = new Date().getFullYear();
+
+  const footerLinks = [
+    {
+      name: 'Github',
+      url: 'https://github.com/alexsommers7',
+      icon: 'github',
+      label: 'Visit Github Profile',
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/alex-sommers-15561a10a/',
+      icon: 'linkedin',
+      label: 'Visit LinkedIn Profile',
+    },
+    {
+      name: 'Resume',
+      url: resumeLink,
+      icon: 'document',
+      label: 'View Resume',
+    },
+  ];
+</script>
+
 <template>
   <footer class="flex-center">
     <div class="hide-for-large icons">
       <a
-        href="https://github.com/alexsommers7"
+        v-for="link in footerLinks"
+        :key="link.name"
+        :href="link.url"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Link to Github Profile"
+        :aria-label="link.label"
       >
-        <Icon name="github" />
-      </a>
-
-      <a
-        href="https://www.linkedin.com/in/alex-sommers-15561a10a/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to LinkedIn Profile"
-      >
-        <Icon name="linkedin" />
-      </a>
-
-      <a
-        :href="resumeLink"
-        aria-label="Link to Download Resume"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon name="document" />
+        <Icon aria-hidden="true" :name="link.icon" />
       </a>
     </div>
 
@@ -33,23 +43,10 @@
   </footer>
 </template>
 
-<script>
-  import { resumeLink } from '@/utils/data/jobs';
-
-  export default {
-    name: 'Footer',
-    data() {
-      return {
-        currentYear: new Date().getFullYear(),
-        resumeLink,
-      };
-    },
-  };
-</script>
-
 <style scoped lang="scss">
   footer {
     background-color: $color-background-light;
+    color: $color-text-light;
     flex-wrap: wrap;
     padding: 1rem;
 

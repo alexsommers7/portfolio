@@ -1,3 +1,104 @@
+<script setup>
+  import { ref, watch, inject } from 'vue';
+  import { useRoute } from 'vue-router';
+  import { gsap } from 'gsap';
+  import { TextPlugin } from 'gsap/TextPlugin';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { resumeLink } from '@/utils/data/jobs';
+
+  const route = useRoute();
+
+  const currentSectionEl = ref(null);
+
+  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(ScrollTrigger);
+
+  const onMobile = inject('onMobile');
+
+  const props = defineProps({
+    observeSections: Boolean,
+    observerTargets: Array,
+    noScrollArrow: Boolean,
+  });
+
+  const updateText = triggerObj => {
+    const textEl = currentSectionEl.value.querySelector('p');
+
+    gsap.to(textEl, {
+      duration: 0.75,
+      text: {
+        value: `${triggerObj.trigger.dataset.sidebar}`,
+        padSpace: true,
+      },
+      ease: 'power1.out',
+    });
+  };
+
+  const configureScrollTrigger = () => {
+    if (!props.observeSections) {
+      if (ScrollTrigger.getById('sidebar')) {
+        ScrollTrigger.getById('sidebar').kill(true);
+      }
+
+      return (currentSectionEl.value.querySelector('p').innerText = route.name);
+    }
+
+    props.observerTargets.forEach(section => {
+      ScrollTrigger.create({
+        id: 'sidebar',
+        trigger: section,
+        start: 'top 55%',
+        end: 'center 20%',
+        toggleActions: 'play restart play reverse',
+        onEnter: self => {
+          if (props.observeSections) {
+            updateText(self);
+          }
+        },
+        onEnterBack: self => {
+          if (props.observeSections) {
+            updateText(self);
+          }
+        },
+      });
+    });
+  };
+
+  const onAnchorClick = e => {
+    gsap.to(window, {
+      duration: 1.2,
+      ease: 'expo.inOut',
+      scrollTo: `#${e.target.dataset.section}`,
+    });
+  };
+
+  watch(
+    () => props.observerTargets,
+    newArr => {
+      if (newArr.length && !onMobile.value) {
+        configureScrollTrigger();
+      }
+    },
+    { immediate: true }
+  );
+
+  watch(
+    () => props.observeSections,
+    newVal => {
+      if (!newVal) configureScrollTrigger();
+    },
+    { immediate: true }
+  );
+
+  watch(
+    onMobile,
+    newVal => {
+      if (!newVal) configureScrollTrigger();
+    },
+    { immediate: true }
+  );
+</script>
+
 <template>
   <aside class="sidebar">
     <div class="mail">
@@ -43,7 +144,7 @@
       </a>
     </div>
 
-    <div class="current-section">
+    <div class="current-section" ref="currentSectionEl">
       <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
         <p v-if="!noScrollArrow">
           <button
@@ -56,93 +157,11 @@
           </button>
         </p>
 
-        <p v-else>{{ this.$route.name || ' ' }}</p>
+        <p v-else>{{ route.name || ' ' }}</p>
       </transition>
     </div>
   </aside>
 </template>
-
-<script>
-  import { gsap } from 'gsap';
-  import { TextPlugin } from 'gsap/TextPlugin';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { resumeLink } from '@/utils/data/jobs';
-
-  gsap.registerPlugin(TextPlugin);
-  gsap.registerPlugin(ScrollTrigger);
-
-  export default {
-    name: 'Sidebar',
-    data() {
-      return {
-        resumeLink,
-      };
-    },
-    props: {
-      observeSections: Boolean,
-      observerTargets: Array,
-      onMobile: Boolean,
-      noScrollArrow: Boolean,
-    },
-    methods: {
-      updateText(triggerObj) {
-        let textEl = this.$el.querySelector('.current-section p');
-        gsap.to(textEl, {
-          duration: 0.75,
-          text: {
-            value: `${triggerObj.trigger.dataset.sidebar}`,
-            padSpace: true,
-          },
-          ease: 'power1.out',
-        });
-      },
-      configureScrollTrigger() {
-        if (!this.observeSections) {
-          if (ScrollTrigger.getById('sidebar')) ScrollTrigger.getById('sidebar').kill(true);
-          return (this.$el.querySelector('.current-section p').innerText = this.$route.name);
-        }
-
-        this.observerTargets.forEach(section => {
-          ScrollTrigger.create({
-            id: 'sidebar',
-            trigger: section,
-            start: 'top 55%',
-            end: 'center 20%',
-            toggleActions: 'play restart play reverse',
-            onEnter: self => {
-              if (this.observeSections) {
-                this.updateText(self);
-              }
-            },
-            onEnterBack: self => {
-              if (this.observeSections) this.updateText(self);
-            },
-          });
-        });
-      },
-      onAnchorClick(e) {
-        gsap.to(window, {
-          duration: 1.2,
-          ease: 'expo.inOut',
-          scrollTo: `#${e.target.dataset.section}`,
-        });
-      },
-    },
-    watch: {
-      observerTargets: function (newArr) {
-        if (newArr.length && !this.onMobile) {
-          this.configureScrollTrigger();
-        }
-      },
-      observeSections: function (newVal) {
-        if (!newVal) this.configureScrollTrigger();
-      },
-      onMobile: function (newVal) {
-        if (!newVal) this.configureScrollTrigger();
-      },
-    },
-  };
-</script>
 
 <style scoped lang="scss">
   .no-scroll .sidebar {

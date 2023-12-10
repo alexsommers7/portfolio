@@ -12,11 +12,5 @@
 </script>
 
 <template>
-  <component :is="icon" class="fill-current" />
+  <component :is="icon" />
 </template>
-
-<style scoped>
-  .fill-current {
-    fill: currentColor;
-  }
-</style>
