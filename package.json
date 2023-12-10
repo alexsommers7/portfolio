@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.21.4",
-    "gsap": "^3.7.0",
+    "gsap": "^3.12.3",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
