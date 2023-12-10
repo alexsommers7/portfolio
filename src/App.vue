@@ -18,8 +18,6 @@
     <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
       <Footer></Footer>
     </transition>
-
-    <IE></IE>
   </div>
 </template>
 
@@ -27,7 +25,6 @@
   import Nav from '@/components/layout/Nav.vue';
   import Sidebar from '@/components/layout/Sidebar.vue';
   import Footer from '@/components/layout/Footer.vue';
-  import IE from '@/components/ie/IE.vue';
 
   export default {
     name: 'App',
@@ -71,7 +68,6 @@
       Nav,
       Sidebar,
       Footer,
-      IE,
     },
   };
 </script>
