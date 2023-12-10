@@ -5,9 +5,7 @@
     <SectionHeading mainTitle="PROJECTS" secondaryTitle="Interfaces for the Modern World" />
 
     <div class="project-group" ref="projects">
-      <template v-for="project in projects">
-        <ProjectCard :project="project" :key="project.title" />
-      </template>
+      <ProjectCard :project="project" v-for="project in projects" :key="project.title" />
     </div>
 
     <router-link to="/project-showcase" class="btn btn--secondary cta"

@@ -33,7 +33,7 @@
         observerTargets: [],
         observeSections: true,
         onMobile: false,
-        noScrollArrow: this.$router.resolve(this.$route.path).route.meta.noScrollArrow || false,
+        noScrollArrow: this.$router.resolve(this.$route).meta.noScrollArrow || false,
       };
     },
     methods: {

@@ -6,9 +6,7 @@
         <h2 class="heading heading--4 heading--section">Interfaces for the Modern World</h2>
       </div>
       <div class="project-group">
-        <template v-for="project in projects">
-          <ProjectCard :project="project" :key="project.title" />
-        </template>
+        <ProjectCard :project="project" v-for="project in projects" :key="project.title" />
       </div>
       <router-link to="/" class="btn btn--secondary cta">Return Home</router-link>
     </section>

@@ -1,14 +1,14 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
+import { createApp } from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
 import App from './App.vue';
 import Homepage from './views/Home.vue';
 import Projects from './views/ProjectShowcase.vue';
 import formSuccess from './views/FormSuccess.vue';
 import formFailure from './views/FormFailure.vue';
 
-Vue.use(VueRouter);
+const app = createApp(App);
 
-export const router = new VueRouter({
+const router = createRouter({
   routes: [
     { path: '/', name: 'Home', component: Homepage, meta: { noScrollArrow: false } },
     {
@@ -19,21 +19,20 @@ export const router = new VueRouter({
     },
     { path: '/thanks', name: 'Thanks!', component: formSuccess, meta: { noScrollArrow: true } },
     { path: '/error', name: '', component: formFailure, meta: { noScrollArrow: true } },
-    { path: '*', name: '', component: Homepage, meta: { noScrollArrow: false } },
+    { path: '/:pathMatch(.*)*', name: '', component: Homepage, meta: { noScrollArrow: false } },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;
     }
     if (to.hash) {
-      return { selector: to.hash };
+      return { el: to.hash };
     }
-    return { x: 0, y: 0 };
+    return { left: 0, top: 0 };
   },
-  mode: 'history',
+  history: createWebHistory(),
 });
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app');
+app.use(router);
+
+app.mount('#app');
