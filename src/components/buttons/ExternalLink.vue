@@ -1,44 +1,18 @@
+<script setup>
+  defineProps({
+    targetLink: {
+      type: String,
+      default: '#',
+    },
+  });
+</script>
+
 <template>
-  <a
-    :href="targetLink"
-    class="btn"
-    :class="classes"
-    target="_blank"
-    rel="noopener noreferrer"
-    :aria-label="ariaLabel"
-  >
-    {{ content }}
+  <a :href="targetLink" class="btn" target="_blank" rel="noopener noreferrer">
+    <slot />
     <Icon name="external-window" />
   </a>
 </template>
-
-<script>
-  export default {
-    name: 'ExternalLink',
-    props: {
-      classes: {
-        type: String,
-        default: '',
-      },
-      content: {
-        type: String,
-        default: '',
-      },
-      type: {
-        type: String,
-        default: 'button',
-      },
-      targetLink: {
-        type: String,
-        default: '#',
-      },
-      ariaLabel: {
-        type: String,
-        default: '',
-      },
-    },
-  };
-</script>
 
 <style scoped lang="scss">
   .btn {

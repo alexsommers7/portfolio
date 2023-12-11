@@ -4,19 +4,15 @@
       <h1 class="heading heading--2">
         <strong>Whoops, looks like something went wrong.</strong>
       </h1>
+
       <h2>Please try again</h2>
+
       <router-link to="/">
         <button class="btn btn--secondary">Return to Home Page</button>
       </router-link>
     </div>
   </transition>
 </template>
-
-<script>
-  export default {
-    name: 'formFailure',
-  };
-</script>
 
 <style scoped lang="scss">
   .wrapper {

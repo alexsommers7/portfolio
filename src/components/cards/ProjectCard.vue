@@ -1,3 +1,24 @@
+<script>
+  const getAriaLabel = (project, cta) => {
+    return `${cta} for ${project.title}`;
+  };
+</script>
+
+<script setup>
+  import ExternalLink from '@/components/buttons/ExternalLink.vue';
+
+  defineProps({
+    classes: {
+      type: String,
+      default: '',
+    },
+    project: {
+      type: Object,
+      required: true,
+    },
+  });
+</script>
+
 <template>
   <article class="project" :class="classes">
     <picture>
@@ -15,20 +36,22 @@
 
     <div class="btns">
       <ExternalLink
-        :targetLink="project.primaryLink"
-        classes="btn--primary"
-        :ariaLabel="getAriaLabel(project, project.primaryCTA)"
-        :content="project.primaryCTA"
         v-if="project.primaryCTA"
-      />
+        class="btn--primary"
+        :targetLink="project.primaryLink"
+        :aria-label="getAriaLabel(project, project.primaryCTA)"
+      >
+        {{ project.primaryCTA }}
+      </ExternalLink>
 
       <ExternalLink
-        :targetLink="project.secondaryLink"
-        classes="btn--secondary"
-        :ariaLabel="getAriaLabel(project, project.secondaryCTA)"
-        :content="project.secondaryCTA"
         v-if="project.secondaryCTA"
-      />
+        class="btn--secondary"
+        :targetLink="project.secondaryLink"
+        :aria-label="getAriaLabel(project, project.secondaryCTA)"
+      >
+        {{ project.secondaryCTA }}
+      </ExternalLink>
 
       <p v-if="!project.openSource" class="private">
         <em>Behind a login and not open source, but happy to demo and discuss</em>
@@ -36,29 +59,6 @@
     </div>
   </article>
 </template>
-
-<script>
-  import ExternalLink from '@/components/buttons/ExternalLink.vue';
-
-  export default {
-    name: 'ProjectCard',
-    props: {
-      classes: {
-        type: String,
-        default: '',
-      },
-      project: Object,
-    },
-    methods: {
-      getAriaLabel(project, cta) {
-        return `${cta} for ${project.title}`;
-      },
-    },
-    components: {
-      ExternalLink,
-    },
-  };
-</script>
 
 <style scoped>
   .private {

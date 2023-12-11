@@ -1,34 +1,39 @@
-<template>
-  <button class="btn" :class="classes" :type="type" :data-section="section" @click="onAnchorClick">
-    <strong class="pointer-none">{{ content }}</strong>
-  </button>
-</template>
+<script setup>
+  import { gsap } from 'gsap';
+  import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+  gsap.registerPlugin(ScrollToPlugin);
 
-<script>
-import { onAnchorClick } from '@/utils/events/anchor-click.js';
-
-export default {
-  name: 'AnchorButton',
-  props: {
-    classes: {
-      type: String,
-      default: '',
-    },
-    content: {
-      type: String,
-      default: '',
-    },
-    type: {
-      type: String,
-      default: 'button',
-    },
+  defineProps({
     section: {
       type: String,
       default: '',
     },
-  },
-  methods: {
-    onAnchorClick,
-  },
-};
+  });
+
+  const onAnchorClick = ({ target }) => {
+    if (!target) return;
+
+    const section = target.dataset.section;
+    if (!section) return;
+
+    gsap.to(window, {
+      duration: 1.2,
+      ease: 'expo.inOut',
+      scrollTo: { y: `#${section}`, offsetY: -20 },
+    });
+
+    // a bit hacky here, but ...
+    // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
+    setTimeout(() => {
+      window.location = `#${section}`;
+    }, 500);
+  };
 </script>
+
+<template>
+  <button class="btn" :data-section="section" @click="onAnchorClick">
+    <strong class="pointer-none">
+      <slot />
+    </strong>
+  </button>
+</template>

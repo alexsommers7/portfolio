@@ -1,5 +1,34 @@
+<script setup>
+  import { ref, onMounted } from 'vue';
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { jobs, resumeLink } from '@/utils/data/jobs';
+  import { education } from '@/utils/data/education';
+  import SectionHeading from '@/components/headings/SectionHeading.vue';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionEl = ref(null);
+
+  const configureScrollTrigger = () => {
+    const items = sectionEl.value.querySelectorAll('.gsap-ul');
+
+    items.forEach(item => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 85%',
+        onEnter: self => self.trigger.classList.add('active'),
+      });
+    });
+  };
+
+  onMounted(() => {
+    configureScrollTrigger();
+  });
+</script>
+
 <template>
-  <section class="track resume full-width" data-sidebar="Resume">
+  <section class="track resume full-width" data-sidebar="Resume" ref="sectionEl">
     <span class="anchor-span" id="resume"></span>
 
     <SectionHeading mainTitle="RESUME" secondaryTitle="Professional and Freelance Experience" />
@@ -49,51 +78,6 @@
     </div>
   </section>
 </template>
-
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-  import { jobs, resumeLink } from '@/utils/data/jobs';
-  import { education } from '@/utils/data/education';
-  import SectionHeading from '@/components/headings/SectionHeading.vue';
-
-  export default {
-    name: 'Resume',
-    data() {
-      return {
-        resumeLink,
-      };
-    },
-    computed: {
-      jobs: function () {
-        return [...jobs];
-      },
-      education: function () {
-        return [...education];
-      },
-    },
-    methods: {
-      configureScrollTrigger() {
-        const items = this.$el.querySelectorAll('.gsap-ul');
-
-        items.forEach(item => {
-          ScrollTrigger.create({
-            trigger: item,
-            start: 'top 85%',
-            onEnter: self => self.trigger.classList.add('active'),
-          });
-        });
-      },
-    },
-    mounted() {
-      this.configureScrollTrigger();
-    },
-    components: {
-      SectionHeading,
-    },
-  };
-</script>
 
 <style scoped lang="scss">
   .resume {

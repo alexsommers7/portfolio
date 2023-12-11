@@ -1,17 +1,14 @@
 import { ref, onMounted, watch, nextTick, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 export default function useNav(navEl, navListEl) {
-  const navIsOpen = ref(false);
-
-  const portraitMode = ref(window.matchMedia('(orientation: portrait)').matches);
-
   gsap.registerPlugin(ScrollToPlugin);
   const timeline = gsap.timeline();
 
+  const navIsOpen = ref(false);
+  const portraitMode = ref(window.matchMedia('(orientation: portrait)').matches);
   const route = useRoute();
   const router = useRouter();
 
@@ -48,21 +45,23 @@ export default function useNav(navEl, navListEl) {
   const onNavItemClick = e => {
     e.preventDefault();
 
-    if (e.target.dataset.path && route.path !== e.target.dataset.path) {
-      router.push(e.target.dataset.path);
+    const { path: targetPath, section: targetSection } = e.target.dataset;
+
+    if (targetPath && route.path !== targetPath) {
+      router.push(targetPath);
     }
 
     nextTick(() => {
       gsap.to(window, {
         duration: 0.8,
         ease: 'expo.inOut',
-        scrollTo: e.target.dataset.section ? `#${e.target.dataset.section}` : { x: 0, y: 0 },
+        scrollTo: targetSection ? `#${targetSection}` : { x: 0, y: 0 },
       });
 
       // a bit hacky here, but ...
       // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
       setTimeout(function () {
-        window.location = `#${e.target.dataset.section}`;
+        window.location = `#${targetSection}`;
       }, 500);
     });
   };

@@ -1,57 +1,31 @@
+<script setup>
+  import AnchorButton from '@/components/buttons/AnchorButton.vue';
+</script>
+
 <template>
   <section class="hero full-width" id="hero">
     <div class="intro">
       <h1 class="heading heading--1">Alex <strong>Sommers</strong></h1>
-
       <h2 class="heading heading--2">Full-Stack Javascript Developer</h2>
 
       <div class="intro__buttons">
-        <AnchorButton classes="btn--primary" section="projects" content="My Work" />
-        <AnchorButton classes="btn--secondary" section="contact" content="Contact Me" />
+        <AnchorButton class="btn--primary" section="projects">My Work</AnchorButton>
+        <AnchorButton class="btn--secondary" section="contact">Contact Me</AnchorButton>
       </div>
     </div>
 
     <picture>
-      <source srcset="../../assets/alex-sommers.webp" type="image/webp" />
+      <source srcset="@/assets/alex-sommers.webp" type="image/webp" />
 
       <img
         class="photo"
-        src="../../assets/alex-sommers.png"
+        src="@/assets/alex-sommers.png"
         alt="Alex Sommers | Full-Stack Javascript Developer"
         height="373"
       />
     </picture>
   </section>
 </template>
-
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-  gsap.registerPlugin(ScrollToPlugin);
-
-  import AnchorButton from '@/components/buttons/AnchorButton.vue';
-
-  export default {
-    name: 'Hero',
-    methods: {
-      onAnchorClick(e) {
-        gsap.to(window, {
-          duration: 1.2,
-          ease: 'expo.inOut',
-          scrollTo: `#${e.target.dataset.section}`,
-        });
-        // a bit hacky here, but ...
-        // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
-        setTimeout(function () {
-          window.location = `#${e.target.dataset.section}`;
-        }, 500);
-      },
-    },
-    components: {
-      AnchorButton,
-    },
-  };
-</script>
 
 <style scoped lang="scss">
   section.hero {

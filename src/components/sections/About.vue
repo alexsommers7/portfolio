@@ -1,3 +1,55 @@
+<script setup>
+  import { onMounted } from 'vue';
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { TextPlugin } from 'gsap/TextPlugin';
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+  const configureScrollTrigger = () => {
+    const cursor = gsap.fromTo(
+      '#cursor',
+      { autoAlpha: 0, x: -10 },
+      {
+        autoAlpha: 1,
+        duration: 0.5,
+        repeat: 8,
+        ease: 'steps(1)',
+        onComplete: function () {
+          if (document.getElementById('cursor'))
+            document.getElementById('cursor').style.opacity = '0';
+        },
+      }
+    );
+
+    const tl = gsap.timeline();
+    tl.to('.typewriter-1', {
+      text: { value: 'Hey there, ' },
+      duration: 1.15,
+      delay: 0.6,
+    }).to('.typewriter-2', {
+      text: { value: "I'm Alex." },
+      duration: 1.15,
+      delay: 0.4,
+    });
+
+    ScrollTrigger.create({
+      animation: tl,
+      trigger: '.typewriter-1',
+      start: 'top 75%',
+    });
+
+    ScrollTrigger.create({
+      animation: cursor,
+      trigger: '.typewriter-1',
+      start: 'top 70%',
+    });
+  };
+
+  onMounted(() => {
+    configureScrollTrigger();
+  });
+</script>
+
 <template>
   <section class="track about" data-sidebar="About">
     <span class="anchor-span" id="about"></span>
@@ -24,61 +76,6 @@
     </div>
   </section>
 </template>
-
-<script>
-  import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { TextPlugin } from 'gsap/TextPlugin';
-  gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
-  export default {
-    name: 'About',
-    methods: {
-      configureScrollTrigger() {
-        const cursor = gsap.fromTo(
-          '#cursor',
-          { autoAlpha: 0, x: -10 },
-          {
-            autoAlpha: 1,
-            duration: 0.5,
-            repeat: 8,
-            ease: 'steps(1)',
-            onComplete: function () {
-              if (document.getElementById('cursor'))
-                document.getElementById('cursor').style.opacity = '0';
-            },
-          }
-        );
-
-        const tl = gsap.timeline();
-        tl.to('.typewriter-1', {
-          text: { value: 'Hey there, ' },
-          duration: 1.15,
-          delay: 0.6,
-        }).to('.typewriter-2', {
-          text: { value: "I'm Alex." },
-          duration: 1.15,
-          delay: 0.4,
-        });
-
-        ScrollTrigger.create({
-          animation: tl,
-          trigger: '.typewriter-1',
-          start: 'top 75%',
-        });
-
-        ScrollTrigger.create({
-          animation: cursor,
-          trigger: '.typewriter-1',
-          start: 'top 70%',
-        });
-      },
-    },
-    mounted() {
-      this.configureScrollTrigger();
-    },
-  };
-</script>
 
 <style lang="scss">
   .about {

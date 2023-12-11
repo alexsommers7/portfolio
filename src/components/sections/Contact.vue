@@ -1,3 +1,41 @@
+<script>
+  const axiosConfig = {
+    header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  };
+
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&');
+  };
+</script>
+
+<script setup>
+  import { reactive } from 'vue';
+  import { useRouter } from 'vue-router';
+  import axios from 'axios';
+  import SectionHeading from '@/components/headings/SectionHeading.vue';
+
+  const router = useRouter();
+
+  const form = reactive({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const formSubmit = () => {
+    axios
+      .post('/', encode({ 'form-name': 'contact', ...form }), axiosConfig)
+      .then(() => {
+        router.push('thanks');
+      })
+      .catch(() => {
+        router.push('error');
+      });
+  };
+</script>
+
 <template>
   <section class="track" data-sidebar="Contact">
     <span class="anchor-span" id="contact"></span>
@@ -57,47 +95,6 @@
     </form>
   </section>
 </template>
-
-<script>
-  import axios from 'axios';
-  import SectionHeading from '@/components/headings/SectionHeading.vue';
-
-  export default {
-    name: 'Contact',
-    data() {
-      return {
-        form: {
-          name: '',
-          email: '',
-          message: '',
-        },
-      };
-    },
-    methods: {
-      encode(data) {
-        return Object.keys(data)
-          .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-          .join('&');
-      },
-      formSubmit() {
-        const axiosConfig = {
-          header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        };
-        axios
-          .post('/', this.encode({ 'form-name': 'contact', ...this.form }), axiosConfig)
-          .then(() => {
-            this.$router.push('thanks');
-          })
-          .catch(() => {
-            this.$router.push('error');
-          });
-      },
-    },
-    components: {
-      SectionHeading,
-    },
-  };
-</script>
 
 <style scoped lang="scss">
   .form {
