@@ -6,7 +6,7 @@ export const jobs = [
     location: 'Remote',
     timeframe: 'October 2023 - Present',
     description:
-      'Use Vue.js to create and manage various internal applications and libraries to support business-critical applications.',
+      'Manage internal applications and component libraries using Vue.js and its ecosystem as a member of the Core Tech Team.',
   },
   {
     id: 2,
