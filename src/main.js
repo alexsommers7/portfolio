@@ -1,11 +1,11 @@
 import { createApp } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import App from './App.vue';
-import Homepage from './views/Home.vue';
-import Projects from './views/ProjectShowcase.vue';
-import formSuccess from './views/FormSuccess.vue';
-import formFailure from './views/FormFailure.vue';
-import icon from './components/Icon.vue';
+import App from '@/App.vue';
+import Homepage from '@/views/Home.vue';
+import Projects from '@/views/ProjectShowcase.vue';
+import formSuccess from '@/views/FormSuccess.vue';
+import formFailure from '@/views/FormFailure.vue';
+import icon from '@/components/Icon.vue';
 
 const app = createApp(App);
 app.component('Icon', icon);
