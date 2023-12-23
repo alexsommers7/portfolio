@@ -155,7 +155,7 @@
 
       &.open {
         .navigation__list {
-          top: var(--nav-mobile-height);
+          top: 0;
         }
       }
     }

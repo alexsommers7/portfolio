@@ -14,6 +14,6 @@
 <template>
   <div>
     <h3 class="heading heading--3 hide-for-large">{{ mainTitle }}</h3>
-    <h4 class="heading heading--4 heading--section">{{ secondaryTitle }}</h4>
+    <h3 class="heading heading--4 heading--section">{{ secondaryTitle }}</h3>
   </div>
 </template>

@@ -4,7 +4,7 @@ export const jobs = [
     jobTitle: 'Sr. UI/UX Developer',
     company: `O'Reilly Auto Parts`,
     location: 'Remote',
-    timeframe: 'October 2023 - Present',
+    timeframe: 'November 2023 - Present',
     description:
       'Manage internal applications and component libraries using Vue.js and its ecosystem as a member of the Core Tech Team.',
   },
