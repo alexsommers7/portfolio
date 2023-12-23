@@ -1,14 +1,13 @@
-import { ref, onMounted, watch, nextTick, onUnmounted } from 'vue';
+import { ref, onMounted, nextTick, onUnmounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-export default function useNav(navEl, navListEl) {
+export default function useNav(navEl) {
   gsap.registerPlugin(ScrollToPlugin);
   const timeline = gsap.timeline();
 
   const navIsOpen = ref(false);
-  const portraitMode = ref(window.matchMedia('(orientation: portrait)').matches);
   const route = useRoute();
   const router = useRouter();
 
@@ -35,11 +34,6 @@ export default function useNav(navEl, navListEl) {
 
   const toggleNav = () => {
     navIsOpen.value ? closeNav() : openNav();
-  };
-
-  const resetNav = () => {
-    navIsOpen.value = false;
-    navListEl.value.setAttribute('style', '');
   };
 
   const onNavItemClick = e => {
@@ -80,14 +74,9 @@ export default function useNav(navEl, navListEl) {
     window.removeEventListener('resize', safariOrientationFix);
   });
 
-  watch(portraitMode, () => {
-    resetNav();
-  });
-
   return {
     navIsOpen,
     toggleNav,
-    resetNav,
     onNavItemClick,
   };
 }

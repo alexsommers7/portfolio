@@ -24,22 +24,13 @@
 </script>
 
 <script setup>
-  import { ref, watch, inject } from 'vue';
+  import { ref, inject } from 'vue';
   import useNav from '@/composables/useNav.js';
 
   const onMobile = inject('onMobile');
 
   const navEl = ref(null);
-  const navListEl = ref(null);
-
-  const { navIsOpen, toggleNav, resetNav, onNavItemClick } = useNav(navEl, navListEl);
-
-  watch(
-    () => onMobile,
-    () => {
-      resetNav();
-    }
-  );
+  const { navIsOpen, toggleNav, onNavItemClick } = useNav(navEl);
 </script>
 
 <template>
@@ -62,7 +53,7 @@
         <span class="navigation__hamburger navigation__hamburger--3"></span>
       </button>
 
-      <ul class="navigation__list" @click="toggleNav" ref="navListEl">
+      <ul class="navigation__list" @click="toggleNav">
         <li v-for="item in navListItems" :key="item.name">
           <button
             :data-path="item.path"
