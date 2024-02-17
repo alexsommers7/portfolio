@@ -1,6 +1,6 @@
 <template>
   <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
-    <div class="wrapper">
+    <div class="form-result-wrapper">
       <h1 class="heading heading--2">
         <strong>Whoops, looks like something went wrong.</strong>
       </h1>
@@ -14,8 +14,8 @@
   </transition>
 </template>
 
-<style scoped lang="scss">
-  .wrapper {
+<style lang="scss">
+  .form-result-wrapper {
     min-height: 100vh;
     display: flex;
     justify-content: center;
