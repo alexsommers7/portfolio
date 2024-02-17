@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, provide, onMounted, onUnmounted, watch, nextTick } from 'vue';
+  import { ref, provide, onMounted, onBeforeUnmount, watch, nextTick } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
   import Nav from '@/components/layout/Nav.vue';
   import Sidebar from '@/components/layout/Sidebar.vue';
@@ -37,7 +37,7 @@
     window.addEventListener('resize', checkScreenSize);
   });
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('resize', checkScreenSize);
   });
 
@@ -65,11 +65,7 @@
       </main>
     </transition>
 
-    <Sidebar
-      :observerTargets="observerTargets"
-      :observeSections="observeSections"
-      :noScrollArrow="noScrollArrow"
-    ></Sidebar>
+    <Sidebar :observerTargets :observeSections :noScrollArrow></Sidebar>
 
     <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
       <Footer />

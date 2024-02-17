@@ -69,6 +69,7 @@ export const projects = [
     alt: 'AlexSommers.com interface',
     showOnHomePage: false,
     openSource: true,
+    isSelf: true,
   },
   {
     title: 'Heritage Assisted Living',

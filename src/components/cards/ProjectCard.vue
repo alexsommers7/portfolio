@@ -36,7 +36,16 @@
 
     <div class="btns">
       <ExternalLink
-        v-if="project.primaryCTA"
+        v-if="project.isSelf"
+        class="btn--primary"
+        title="Big fan of recursion eh?"
+        @click.prevent
+      >
+        {{ project.primaryCTA }}
+      </ExternalLink>
+
+      <ExternalLink
+        v-else-if="project.primaryCTA"
         class="btn--primary"
         :targetLink="project.primaryLink"
         :aria-label="getAriaLabel(project, project.primaryCTA)"

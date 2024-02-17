@@ -1,4 +1,4 @@
-import { ref, onMounted, nextTick, onUnmounted } from 'vue';
+import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
@@ -70,7 +70,7 @@ export default function useNav(navEl) {
     window.addEventListener('resize', safariOrientationFix);
   });
 
-  onUnmounted(() => {
+  onBeforeUnmount(() => {
     window.removeEventListener('resize', safariOrientationFix);
   });
 

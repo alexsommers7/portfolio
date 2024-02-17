@@ -45,9 +45,7 @@
     });
   };
 
-  onMounted(() => {
-    configureScrollTrigger();
-  });
+  onMounted(configureScrollTrigger);
 </script>
 
 <template>
