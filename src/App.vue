@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, provide, onMounted, onBeforeUnmount } from 'vue';
+  import { ref, onMounted, onBeforeUnmount } from 'vue';
   import Nav from '@/components/layout/Nav.vue';
   import Sidebar from '@/components/layout/Sidebar.vue';
   import Footer from '@/components/layout/Footer.vue';
@@ -7,22 +7,6 @@
 
   const mainEl = ref(null);
   const scrollTracker = useScrollTracker(mainEl);
-
-  const onMobile = ref(false);
-  provide('onMobile', onMobile);
-
-  const checkScreenSize = () => {
-    onMobile.value = Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 1200;
-  };
-
-  onMounted(() => {
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
-  });
-
-  onBeforeUnmount(() => {
-    window.removeEventListener('resize', checkScreenSize);
-  });
 </script>
 
 <template>

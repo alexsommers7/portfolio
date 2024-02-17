@@ -26,8 +26,11 @@
 <script setup>
   import { ref, inject } from 'vue';
   import useNav from '@/composables/useNav.js';
+  import { useRouter } from 'vue-router';
 
   const onMobile = inject('onMobile');
+
+  const router = useRouter();
 
   const navEl = ref(null);
   const { navIsOpen, toggleNav } = useNav(navEl);
@@ -55,7 +58,11 @@
 
       <ul class="navigation__list" @click="toggleNav">
         <li v-for="item in navListItems" :key="item.name">
-          <a :href="`#${item.section}`" class="btn">
+          <a
+            :href="`#${item.section}`"
+            class="btn"
+            @click.prevent="router.push({ path: '/', hash: `#${item.section}` })"
+          >
             {{ item.name }}
           </a>
         </li>
