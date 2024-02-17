@@ -40,7 +40,7 @@ export default function useSidebar(currentSectionRef, scrollTracker) {
       ScrollTrigger.create({
         id: 'sidebar',
         trigger: section,
-        start: 'top 55%',
+        start: 'top 33%',
         end: 'center 20%',
         toggleActions: 'play restart play reverse',
         onEnter: self => {
