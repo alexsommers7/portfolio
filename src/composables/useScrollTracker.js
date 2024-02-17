@@ -17,8 +17,6 @@ export default function useScrollTracker(mainElRef) {
     mainElRef.value.scrollIntoView();
   };
 
-  watch(mainElRef, updateTargets);
-
   watch(
     () => route.name,
     (to, from) => {
