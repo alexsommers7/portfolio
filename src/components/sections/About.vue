@@ -65,9 +65,9 @@
       </p>
 
       <p>
-        Passionate about all things JavaScript. Experienced in building sites from scratch with no
-        frameworks/libraries, and just as experienced in doing the same using the latest
-        technologies and abstractions. Avid WCAG follower.
+        Passionate about all things JavaScript, with an emphasis on Vue.js. Experienced in building
+        sites from scratch with no frameworks/libraries, and just as experienced in doing the same
+        using the latest technologies and abstractions. Avid WCAG follower.
       </p>
     </div>
   </section>
