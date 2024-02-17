@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, onMounted, onBeforeUnmount } from 'vue';
+  import { ref } from 'vue';
   import Nav from '@/components/layout/Nav.vue';
   import Sidebar from '@/components/layout/Sidebar.vue';
   import Footer from '@/components/layout/Footer.vue';
