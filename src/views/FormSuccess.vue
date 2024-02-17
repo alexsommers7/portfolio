@@ -3,9 +3,9 @@
     <div class="wrapper">
       <h1 class="heading heading--2">Hey, thanks for reaching out. I'll be in touch.</h1>
 
-      <router-link to="/">
+      <RouterLink to="/">
         <button class="btn btn--secondary">Return to Home Page</button>
-      </router-link>
+      </RouterLink>
     </div>
   </transition>
 </template>

@@ -37,9 +37,7 @@
 </script>
 
 <template>
-  <section class="track" data-sidebar="Contact">
-    <span class="anchor-span" id="contact"></span>
-
+  <section class="track" id="contact" data-sidebar="Contact">
     <SectionHeading mainTitle="CONTACT" secondaryTitle="In Need of a Developer? Let's Chat" />
 
     <form

@@ -64,9 +64,11 @@ img {
 section {
   padding: 4rem 1rem;
   position: relative;
+  scroll-margin-top: var(--nav-mobile-height);
 
   @include respond(desk-small) {
     padding: 5rem 2rem;
+    scroll-margin-top: -2rem;
   }
 
   @include respond(desk-large) {

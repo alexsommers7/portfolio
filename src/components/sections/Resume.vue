@@ -28,9 +28,7 @@
 </script>
 
 <template>
-  <section class="track resume full-width" data-sidebar="Resume" ref="sectionEl">
-    <span class="anchor-span" id="resume"></span>
-
+  <section class="track resume full-width" id="resume" data-sidebar="Resume" ref="sectionEl">
     <SectionHeading mainTitle="RESUME" secondaryTitle="Professional and Freelance Experience" />
 
     <div class="resume__content">

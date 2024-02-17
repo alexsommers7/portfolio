@@ -1,5 +1,4 @@
-import { ref, onMounted, nextTick, onBeforeUnmount } from 'vue';
-import { useRoute, useRouter } from 'vue-router';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
@@ -8,8 +7,6 @@ export default function useNav(navEl) {
   const timeline = gsap.timeline();
 
   const navIsOpen = ref(false);
-  const route = useRoute();
-  const router = useRouter();
 
   const openNav = () => {
     navIsOpen.value = true;
@@ -36,30 +33,6 @@ export default function useNav(navEl) {
     navIsOpen.value ? closeNav() : openNav();
   };
 
-  const onNavItemClick = e => {
-    e.preventDefault();
-
-    const { path: targetPath, section: targetSection } = e.target.dataset;
-
-    if (targetPath && route.path !== targetPath) {
-      router.push(targetPath);
-    }
-
-    nextTick(() => {
-      gsap.to(window, {
-        duration: 0.8,
-        ease: 'expo.inOut',
-        scrollTo: targetSection ? `#${targetSection}` : { x: 0, y: 0 },
-      });
-
-      // a bit hacky here, but ...
-      // let gsap.to start running, then while it is, set hash so tabindex moves to the appropriate element
-      setTimeout(function () {
-        window.location = `#${targetSection}`;
-      }, 500);
-    });
-  };
-
   const safariOrientationFix = () => {
     document.body.clientWidth < 1195
       ? (navEl.value.style.width = `${document.body.clientWidth}px`)
@@ -77,6 +50,5 @@ export default function useNav(navEl) {
   return {
     navIsOpen,
     toggleNav,
-    onNavItemClick,
   };
 }

@@ -30,7 +30,7 @@
   const onMobile = inject('onMobile');
 
   const navEl = ref(null);
-  const { navIsOpen, toggleNav, onNavItemClick } = useNav(navEl);
+  const { navIsOpen, toggleNav } = useNav(navEl);
 </script>
 
 <template>
@@ -55,14 +55,9 @@
 
       <ul class="navigation__list" @click="toggleNav">
         <li v-for="item in navListItems" :key="item.name">
-          <button
-            :data-path="item.path"
-            :data-section="item.section"
-            class="btn"
-            @click="onNavItemClick"
-          >
+          <a :href="`#${item.section}`" class="btn">
             {{ item.name }}
-          </button>
+          </a>
         </li>
       </ul>
     </nav>
@@ -307,7 +302,8 @@
           }
         }
 
-        button {
+        button,
+        .btn {
           padding: 0.5rem 1rem;
           text-decoration: none;
           color: $color-text-light;

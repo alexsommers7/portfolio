@@ -83,7 +83,7 @@
           margin-top: 0.5rem;
         }
 
-        button {
+        a {
           width: 45%;
           max-width: 10rem;
 

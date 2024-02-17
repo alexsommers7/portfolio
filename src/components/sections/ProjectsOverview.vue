@@ -39,17 +39,15 @@
 </script>
 
 <template>
-  <section class="track projects full-width" data-sidebar="Projects">
-    <span class="anchor-span" id="projects"></span>
-
+  <section class="track projects full-width" id="projects" data-sidebar="Projects">
     <SectionHeading mainTitle="PROJECTS" secondaryTitle="Interfaces for the Modern World" />
 
     <div class="project-group">
       <ProjectCard :project="project" v-for="project in filteredProjects" :key="project.title" />
     </div>
 
-    <router-link to="/project-showcase" class="btn btn--secondary cta"
+    <RouterLink to="/project-showcase" class="btn btn--secondary cta"
       >View All Projects
-    </router-link>
+    </RouterLink>
   </section>
 </template>

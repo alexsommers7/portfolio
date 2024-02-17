@@ -29,16 +29,6 @@
     display: none !important;
   }
 }
-.anchor-span {
-  position: absolute;
-  visibility: hidden;
-  opacity: 0;
-  top: calc(-1.25 * var(--nav-mobile-height));
-
-  @include respond(desk-small) {
-    top: 0;
-  }
-}
 .pointer-none {
   pointer-events: none;
 }

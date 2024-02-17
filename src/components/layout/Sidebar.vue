@@ -7,13 +7,8 @@
   const route = useRoute();
   const currentSectionEl = ref(null);
 
-  const props = defineProps({
-    observeSections: Boolean,
-    observerTargets: Array,
-    noScrollArrow: Boolean,
-  });
-
-  const { onAnchorClick } = useSidebar(currentSectionEl, props);
+  const props = defineProps(['isObserving', 'observerTargets']);
+  const { hasScrollArrow } = useSidebar(currentSectionEl, props);
 </script>
 
 <template>
@@ -22,21 +17,16 @@
       <a
         href="mailto:alex@alexsommers.com"
         class="flex-center"
-        aria-label="Send Email to Alex Sommers"
+        aria-label="Send email to Alex Sommers"
       >
-        <Icon name="mail" />
+        <Icon name="mail" aria-hidden="true" />
         <p>Email</p>
       </a>
     </div>
 
     <div class="social">
-      <a
-        href="https://github.com/alexsommers7"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Link to Github Profile"
-      >
-        <Icon name="github" />
+      <a href="https://github.com/alexsommers7" target="_blank" rel="noopener noreferrer">
+        <Icon name="github" aria-hidden="true" />
         <p>Github</p>
       </a>
 
@@ -44,34 +34,23 @@
         href="https://www.linkedin.com/in/alex-sommers-15561a10a/"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Link to LinkedIn Profile"
       >
-        <Icon name="linkedin" />
+        <Icon name="linkedin" aria-hidden="true" />
         <p>LinkedIn</p>
       </a>
 
-      <a
-        :href="resumeLink"
-        aria-label="Link to Download Resume"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Icon name="document" />
+      <a :href="resumeLink" aria-label="Download resume" target="_blank" rel="noopener noreferrer">
+        <Icon name="document" aria-hidden="true" />
         <p>Resume</p>
       </a>
     </div>
 
     <div class="current-section" ref="currentSectionEl">
       <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
-        <p v-if="!noScrollArrow">
-          <button
-            aria-label="Go to Main Content"
-            data-section="about"
-            class="btn"
-            @click="onAnchorClick"
-          >
-            <Icon name="down-arrow" />
-          </button>
+        <p v-if="hasScrollArrow">
+          <a aria-label="Go to first section" href="#about" class="btn">
+            <Icon name="down-arrow" aria-hidden="true" />
+          </a>
         </p>
 
         <p v-else>{{ route.name || ' ' }}</p>
@@ -213,7 +192,7 @@
           font-size: 4rem;
         }
 
-        button {
+        a {
           appearance: none;
           background: transparent;
           border: none;

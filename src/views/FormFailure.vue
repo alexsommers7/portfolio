@@ -7,9 +7,9 @@
 
       <h2>Please try again</h2>
 
-      <router-link to="/">
+      <RouterLink to="/">
         <button class="btn btn--secondary">Return to Home Page</button>
-      </router-link>
+      </RouterLink>
     </div>
   </transition>
 </template>

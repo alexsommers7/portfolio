@@ -12,16 +12,16 @@ app.component('Icon', icon);
 
 const router = createRouter({
   routes: [
-    { path: '/', name: 'Home', component: Homepage, meta: { noScrollArrow: false } },
+    { path: '/', name: 'Home', component: Homepage, meta: { scrollArrow: true } },
     {
       path: '/project-showcase',
       name: 'Projects',
       component: Projects,
-      meta: { noScrollArrow: true },
+      meta: { scrollArrow: false },
     },
-    { path: '/thanks', name: 'Thanks!', component: formSuccess, meta: { noScrollArrow: true } },
-    { path: '/error', name: '', component: formFailure, meta: { noScrollArrow: true } },
-    { path: '/:pathMatch(.*)*', name: '', component: Homepage, meta: { noScrollArrow: false } },
+    { path: '/thanks', name: 'Thanks!', component: formSuccess, meta: { scrollArrow: false } },
+    { path: '/error', name: '', component: formFailure, meta: { scrollArrow: false } },
+    { path: '/:pathMatch(.*)*', name: '', component: Homepage, meta: { scrollArrow: true } },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {

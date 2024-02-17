@@ -1,12 +1,15 @@
-import { watch, inject } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref, watch, inject } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-export default function useSidebar(currentSectionRef, props) {
+export default function useSidebar(currentSectionRef, scrollTracker) {
   const onMobile = inject('onMobile');
   const route = useRoute();
+  const router = useRouter();
+
+  const hasScrollArrow = ref(router.resolve(route).meta.scrollArrow || false);
 
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -25,7 +28,7 @@ export default function useSidebar(currentSectionRef, props) {
   };
 
   const configureScrollTrigger = () => {
-    if (!props.observeSections) {
+    if (!scrollTracker.isObserving.value) {
       if (ScrollTrigger.getById('sidebar')) {
         ScrollTrigger.getById('sidebar').kill(true);
       }
@@ -33,7 +36,7 @@ export default function useSidebar(currentSectionRef, props) {
       return (currentSectionRef.value.querySelector('p').innerText = route.name);
     }
 
-    props.observerTargets.forEach(section => {
+    scrollTracker.observerTargets.value.forEach(section => {
       ScrollTrigger.create({
         id: 'sidebar',
         trigger: section,
@@ -41,12 +44,12 @@ export default function useSidebar(currentSectionRef, props) {
         end: 'center 20%',
         toggleActions: 'play restart play reverse',
         onEnter: self => {
-          if (props.observeSections) {
+          if (scrollTracker.isObserving.value) {
             updateText(self);
           }
         },
         onEnterBack: self => {
-          if (props.observeSections) {
+          if (scrollTracker.isObserving.value) {
             updateText(self);
           }
         },
@@ -54,16 +57,8 @@ export default function useSidebar(currentSectionRef, props) {
     });
   };
 
-  const onAnchorClick = e => {
-    gsap.to(window, {
-      duration: 1.2,
-      ease: 'expo.inOut',
-      scrollTo: `#${e.target.dataset.section}`,
-    });
-  };
-
   watch(
-    () => props.observerTargets,
+    scrollTracker.observerTargets,
     newArr => {
       if (newArr.length && !onMobile.value) {
         configureScrollTrigger();
@@ -73,7 +68,7 @@ export default function useSidebar(currentSectionRef, props) {
   );
 
   watch(
-    () => props.observeSections,
+    scrollTracker.isObserving,
     newVal => {
       if (!newVal) configureScrollTrigger();
     },
@@ -88,7 +83,5 @@ export default function useSidebar(currentSectionRef, props) {
     { immediate: true }
   );
 
-  return {
-    onAnchorClick,
-  };
+  return { hasScrollArrow };
 }

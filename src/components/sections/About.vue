@@ -49,9 +49,7 @@
 </script>
 
 <template>
-  <section class="track about" data-sidebar="About">
-    <span class="anchor-span" id="about"></span>
-
+  <section class="track about" id="about" data-sidebar="About">
     <div class="about__intro">
       <h3 class="heading heading--3 hide-for-large">ABOUT ME</h3>
 
