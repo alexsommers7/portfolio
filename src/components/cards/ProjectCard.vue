@@ -36,7 +36,7 @@
 
     <div class="btns">
       <ExternalLink
-        v-if="!project.isSelf"
+        v-if="!project.isSelf && project.primaryCTA"
         class="btn--primary"
         :targetLink="project.primaryLink"
         :aria-label="getAriaLabel(project, project.primaryCTA)"
