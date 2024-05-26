@@ -12,7 +12,7 @@
       </div>
 
       <div class="project-group">
-        <ProjectCard :project="project" v-for="project in projects" :key="project.title" />
+        <ProjectCard :project v-for="project in projects" :key="project.title" />
       </div>
 
       <RouterLink to="/" class="btn btn--secondary cta">Return Home</RouterLink>
