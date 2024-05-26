@@ -89,7 +89,7 @@
         margin-top: 4rem;
         display: grid;
         grid-template-columns: repeat(2, minmax(400px, 45%));
-        grid-gap: 2rem;
+        gap: 2rem;
         justify-content: flex-end; // assumes education section doesn't have as much content
         justify-items: center;
       }

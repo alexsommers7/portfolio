@@ -31,7 +31,7 @@
   section.hero {
     padding: 0 1rem;
     display: grid;
-    grid-gap: 2rem;
+    gap: 2rem;
 
     @include respond(tab-land) {
       height: Min(100vh, 1080px);
