@@ -8,10 +8,6 @@
   import ExternalLink from '@/components/buttons/ExternalLink.vue';
 
   defineProps({
-    classes: {
-      type: String,
-      default: '',
-    },
     project: {
       type: Object,
       required: true,
@@ -20,7 +16,7 @@
 </script>
 
 <template>
-  <article class="project" :class="classes">
+  <article class="project">
     <picture>
       <source :srcset="project.imageWebp" type="image/webp" />
       <img class="photo" :src="project.image" :alt="project.alt" width="333" height="285" />
