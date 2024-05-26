@@ -15,7 +15,7 @@
         <ProjectCard :project v-for="project in projects" :key="project.title" />
       </div>
 
-      <RouterLink to="/" class="btn btn--secondary cta">Return Home</RouterLink>
+      <RouterLink to="/#projects" class="btn btn--secondary cta">Return Home</RouterLink>
     </section>
   </transition>
 </template>
