@@ -23,11 +23,8 @@
         body: encode({ 'form-name': 'contact', ...form }),
       });
 
-      if (res.ok) {
-        router.push('thanks');
-      } else {
-        router.push('error');
-      }
+      const nextPage = res.ok ? '/contact-success' : '/contact-failure';
+      router.push(nextPage);
     } catch (err) {
       console.error(err);
       router.push('error');
