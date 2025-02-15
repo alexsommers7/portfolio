@@ -1,0 +1,103 @@
+@use 'mixins';
+@use 'variables';
+
+.btn {
+  font-family: variables.$font-family-main;
+  font-size: clamp(0.5rem, calc(-0.875rem + 8.333vw), 1.15rem);
+  font-weight: 700;
+  width: 100%;
+  height: 47px;
+  padding: 0.5rem 0.8rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+  display: inline-block;
+  border: 1px solid variables.$color-primary;
+  border-radius: variables.$design-border-radius-default;
+  white-space: nowrap;
+  cursor: pointer;
+
+  &--primary {
+    background-color: variables.$color-primary;
+    color: variables.$color-text-dark;
+
+    &:hover,
+    &:active {
+      background-color: rgba(variables.$color-primary, 0.85);
+    }
+
+    &:focus {
+      color: variables.$color-text-dark;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: variables.$color-primary;
+
+    &:hover,
+    &:active {
+      background-color: variables.$color-primary;
+    }
+
+    &:focus {
+      color: variables.$color-primary;
+    }
+  }
+
+  &:hover,
+  &:active {
+    color: variables.$color-text-dark;
+  }
+}
+
+.heading {
+  line-height: 1;
+
+  &--1 {
+    font-size: clamp(3rem, calc(-0.875rem + 8.333vw), 6rem);
+    font-weight: 300;
+    color: variables.$color-primary;
+  }
+
+  &--2 {
+    font-size: clamp(2rem, calc(-0.875rem + 8.333vw), 2.5rem);
+    font-weight: 300;
+  }
+
+  &--3 {
+    // mobile section headers
+    font-size: clamp(4.5rem, calc(-0.875rem + 8.333vw), 6rem);
+    font-weight: 700;
+    color: variables.$color-background-light;
+    position: absolute;
+    top: 1.75rem;
+    left: 0;
+    z-index: -1;
+  }
+
+  &--4 {
+    font-weight: 500;
+    font-size: clamp(1.8rem, calc(-0.875rem + 8.333vw), 2rem);
+    color: variables.$color-primary;
+  }
+
+  &--section {
+    text-align: center;
+
+    @include mixins.respond(tab-port) {
+      text-align: left;
+    }
+
+    @include mixins.respond(desk-small) {
+      text-align: center;
+    }
+  }
+}
+
+p {
+  font-size: clamp(1rem, calc(-0.875rem + 8.333vw), 1.3rem);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
