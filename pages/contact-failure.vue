@@ -1,3 +1,7 @@
+<script setup>
+  definePageMeta({ sidebarLabel: '' });
+</script>
+
 <template>
   <transition appear appear-to-class="opacity-1" appear-active-class="opacity-0">
     <div class="form-result-wrapper">

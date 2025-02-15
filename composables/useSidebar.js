@@ -6,8 +6,10 @@ export default function useSidebar(currentSectionRef, scrollTracker) {
   const onMobile = inject('onMobile');
   const route = useRoute();
   const router = useRouter();
+  const resolvedRoute = router.resolve(route);
 
-  const hasScrollArrow = ref(router.resolve(route).meta.scrollArrow ?? false);
+  const hasScrollArrow = resolvedRoute.meta.scrollArrow ?? false;
+  const sidebarLabel = resolvedRoute.meta.sidebarLabel ?? resolvedRoute.name ?? '';
 
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -81,5 +83,5 @@ export default function useSidebar(currentSectionRef, scrollTracker) {
     { immediate: true }
   );
 
-  return { hasScrollArrow };
+  return { hasScrollArrow, sidebarLabel };
 }

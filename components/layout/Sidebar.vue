@@ -27,7 +27,7 @@
   const route = useRoute();
   const currentSectionEl = ref(null);
   const props = defineProps(['isObserving', 'observerTargets']);
-  const { hasScrollArrow } = useSidebar(currentSectionEl, props);
+  const { hasScrollArrow, sidebarLabel } = useSidebar(currentSectionEl, props);
 </script>
 
 <template>
@@ -64,7 +64,7 @@
           </NuxtLink>
         </p>
 
-        <p v-else>{{ route.name || ' ' }}</p>
+        <p v-else>{{ sidebarLabel }}</p>
       </transition>
     </div>
   </aside>
