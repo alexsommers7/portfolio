@@ -13,23 +13,3 @@
     </div>
   </transition>
 </template>
-
-<style lang="scss">
-  .form-result-wrapper {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    h1,
-    h2 {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-
-    h2 {
-      font-weight: 400;
-    }
-  }
-</style>
