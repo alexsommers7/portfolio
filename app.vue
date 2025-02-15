@@ -1,5 +1,8 @@
 <script setup>
   useHead({
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Alex Sommers | Full-Stack Javascript Developer',
     meta: [
       {
