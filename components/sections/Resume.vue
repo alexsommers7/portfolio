@@ -29,7 +29,7 @@
 
     <div class="resume__content">
       <div>
-        <h5 class="resume__heading"><strong>Experience</strong></h5>
+        <h4 class="resume__heading"><strong>Experience</strong></h4>
 
         <ul class="gsap-ul">
           <li v-for="job in jobs" :key="job.id">
