@@ -52,9 +52,13 @@
 
       <ul class="navigation__list" @click="toggleNav">
         <li v-for="item in navListItems" :key="item.name">
-          <NuxtLink :to="{ hash: `#${item.section}` }" class="btn">
+          <a
+            :href="`#${item.section}`"
+            class="btn"
+            @click.prevent="router.push({ path: '/', hash: `#${item.section}` })"
+          >
             {{ item.name }}
-          </NuxtLink>
+          </a>
         </li>
       </ul>
     </nav>
