@@ -81,9 +81,10 @@
 
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
-    window.addEventListener('unload', () => {
-      window.removeEventListener('resize', checkScreenSize);
-    });
+  });
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', checkScreenSize);
   });
 </script>
 
