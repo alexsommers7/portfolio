@@ -59,6 +59,7 @@
         content: '630',
       },
     ],
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon-32x32.png' }],
   });
 
   const mainEl = ref(null);
