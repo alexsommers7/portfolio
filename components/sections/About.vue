@@ -60,13 +60,13 @@
 
       <p>
         I'm a <span class="color-primary">Full-Stack JavaScript Developer</span> based out of
-        Greater Cleveland.
+        Cleveland, Ohio.
       </p>
 
       <p>
-        Passionate about all things JavaScript, with an emphasis on Vue.js. Experienced in building
-        sites from scratch with no frameworks/libraries, and just as experienced in doing the same
-        using the latest technologies and abstractions. Avid WCAG follower.
+        I bring 6+ years of experience building scalable, accessible web apps and APIs using Vue,
+        React, Node.js, and modern JavaScript. Recognized for strong JS fundamentals, leading UI/UX
+        initiatives, and architecting reusable solutions in agile teams.
       </p>
     </div>
   </section>

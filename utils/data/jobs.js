@@ -1,12 +1,12 @@
 export const jobs = [
   {
     id: 1,
-    jobTitle: 'Sr. UI/UX Developer',
+    jobTitle: 'Software Engineer II',
     company: `O'Reilly Auto Parts`,
     location: 'Remote',
-    timeframe: 'November 2023 - Present',
+    timeframe: 'November 2023 - June 2025',
     description:
-      'Manage internal applications and component libraries using Vue.js and its ecosystem as a member of the Core Tech Team.',
+      'Developed and maintained full-stack JavaScript applications and component libraries, working across both front-end and back-end systems.',
   },
   {
     id: 2,
@@ -15,19 +15,10 @@ export const jobs = [
     location: 'Remote',
     timeframe: 'April 2021 - October 2023',
     description:
-      'Develop and maintain large-scale, internal and external web platforms as a part of a scrum team using Vue, Alpine.js, Javascript, CSS, and semantic HTML.',
+      'Developed and maintained large-scale, internal and external web platforms as a part of a scrum team using Vue, Alpine.js, Javascript, CSS, and semantic HTML.',
   },
   {
     id: 3,
-    jobTitle: 'Freelance Web Developer',
-    company: 'Self-Employed',
-    location: 'Chandler, AZ',
-    timeframe: 'July 2020 - Present',
-    description:
-      'Partner with various businesses to design and develop custom websites, ranging from static sites to dynamic, full-stack applications.',
-  },
-  {
-    id: 4,
     jobTitle: 'Digital Developer',
     company: 'Isagenix',
     location: 'Gilbert, AZ',
