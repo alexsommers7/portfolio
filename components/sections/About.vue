@@ -66,7 +66,8 @@
       <p>
         I bring 6+ years of experience building scalable, accessible web apps and APIs using Vue,
         React, Node.js, and modern JavaScript. Recognized for strong JS fundamentals, leading UI/UX
-        initiatives, and architecting reusable solutions in agile teams.
+        initiatives, and architecting reusable solutions in agile teams, with expertise in Scrum and
+        Kanban.
       </p>
     </div>
   </section>
